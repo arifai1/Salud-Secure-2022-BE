@@ -41,6 +41,7 @@ $("#divt").hide();                                                              
         data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val() + '&que=L',                                                 //le mando los datos al servidor
         success: function (data){                                                                                           //la informacion que le llega al ajax esta en este data que es distitno al de arriba.          
                     if(data.status == 'ok'){
+                        alert("Bienvenido");
                         mensaje="Bienvenido mi estimado: "+data.result['nombre']+" "+data.result['apellido']+"";
                         $("#divt").html(mensaje);
                         $("#divt").show();

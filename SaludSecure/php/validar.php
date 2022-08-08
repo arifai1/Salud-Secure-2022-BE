@@ -10,7 +10,7 @@ if ($con->connect_error){
 $data=array();
 
 //if ($_REQUEST ['que']=='L'){     															//el REQUEST es lo que le llega de la pantalla
-	$sql="Select IDusuario, nombre, apellido from usuarios where usuario='".$_REQUEST['usu']."' and contrasena='".$_REQUEST['pass']."'";	
+	$sql="SELECT IDpaciente, nombre, apellido from paciente where usuario='".$_REQUEST['usu']."' and contrasena='".$_REQUEST['pass']."'";	
 																							//$res =$con -> query($sql);   //con el query le llega a la bbdd la sentencia de arriba. Lo devuelve en forma organizada.
 	//echo $sql;
 	$res=$con->query($sql);
