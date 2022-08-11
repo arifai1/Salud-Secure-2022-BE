@@ -42,7 +42,7 @@ $("#divt").hide();                                                              
         success: function (data){                                                                                           //la informacion que le llega al ajax esta en este data que es distitno al de arriba.          
                     if(data.status == 'ok'){
                         alert("Bienvenido");
-                        mensaje="Bienvenido mi estimado: "+data.result['nombre']+" "+data.result['apellido']+"";
+                        mensaje="Bienvenido: "+data.result['nombre']+" "+data.result['apellido']+"";
                         $("#divt").html(mensaje);
                         $("#divt").show();
                     }
