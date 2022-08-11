@@ -65,7 +65,7 @@ $("#R").click(function(){
         type:'POST',
         url: '../php/registrar.php',
         dataType: "json",               
-        data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val() + '&nom='+$("#n").val()+'&ape='+$("#a").val()+'&dni='+$("#d").val()+'&mail='+$("#m").val(), 
+        data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val() + '&nom='+$("#n").val()+'&ape='+$("#a").val()+'&DNI='+$("#d").val()+'&Credencial='+$("#m").val()+'&FechadeNacimiento='+$("#m").val(), 
         success: function (data){   
                     if(data.status == 'ok'){
                         //mensaje="Bienvenido mi estimado: "+data.result['Nombre']+" "+data.result['Apellido']+"";
