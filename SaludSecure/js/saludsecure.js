@@ -31,22 +31,24 @@ $("#divt").hide();                                                              
         });
 
     $("#E").click(function(){
-        $.ajax({                                                                                                            //funcion de js para tomar valores de la pantalla como variables y enviarlas al servidor interactua con la pantalla y envia datos 
-                                                                                                                            //al archivo php y este envia resultado al ajax. es un ida y vuelta. El cliente se lo pide al ajax, ajax a php, y este al servidor. 
-                                                                                                                            //Y luego vuelve igual.
+        if ($("#u").val()!='' && $("#p").val()!=''){
+        $.ajax({                                                                                                          //funcion de js para tomar valores de la pantalla como variables y enviarlas al servidor interactua con la pantalla y envia datos                                                                                                     //Y luego vuelve igual.
         type:'POST',
         url: '../php/validar.php',
         dataType: "json",                                                                                                   //los datos que van a volver estan codificados en json
         data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val() + '&que=L',                                                 //le mando los datos al servidor
-        success: function (data){                                                                                           //la informacion que le llega al ajax esta en este data que es distitno al de arriba.          
-                    if(data.status == 'ok'){
-                        alert("Bienvenido");
+        success: function (data){ 
+                    if(data == ""){
+                        mensaje="Ocurrio un error";
+                    }                                                                                          //la informacion que le llega al ajax esta en este data que es distitno al de arriba.          
+                    else if(data.status == 'ok'){
+                        //alert("Bienvenido");
                         mensaje="Bienvenido: "+data.result['nombre']+" "+data.result['apellido']+"";
                         $("#divt").html(mensaje);
                         $("#divt").show();
                     }
                     else{
-                        mensaje="Usuario no encontrado, si desea registrarse haga click";
+                        mensaje="Usuario no encontrado, si desea registrarse haga click ";
                         mensaje+="<a href='../html/registrar.html' /a>aqui.";                                               //sintaxis de link en html. Etiqueta a me indica link. Href me indica destino.
                         $("#divt").html(mensaje);
                         $("#divt").show();
@@ -56,29 +58,37 @@ $("#divt").hide();                                                              
                 ;
             },
         });
+        }else{
+            mensaje="Debe completar el usuario y la contraseña";                                               //sintaxis de link en html. Etiqueta a me indica link. Href me indica destino.
+            $("#divt").html(mensaje);
+            $("#divt").show();
+        }
     });
 
 
 $("#R").click(function(){
+    
         $.ajax({                        
         type:'POST',
         url: '../php/registrar.php',
         dataType: "json",               
-        data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val() + '&nom='+$("#n").val()+'&ape='+$("#a").val()+'&DNI='+$("#d").val()+'&Credencial='+$("#m").val()+'&FechadeNacimiento='+$("#m").val(), 
+        data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val() + '&nom='+$("#n").val()+'&ape='+$("#a").val()+'&DNI='+$("#d").val()+'&Credencial='+$("#c").val()+'&FechadeNacimiento='+$("#f").val(), 
         success: function (data){   
                     if(data.status == 'ok'){
                         //mensaje="Bienvenido mi estimado: "+data.result['Nombre']+" "+data.result['Apellido']+"";
                         //$("#divt").html(mensaje);
                         //$("divt").show();
+                        alert("Se registro el usuario")
                         $(location).attr('href',"index.html")                                                               //con esta linea de codigo hacemos la redireccion
                    }
                     else if(data.status=='err'){
-                        mensaje="Usuario y contraseña existente";
+                        //mensaje="Usuario y contraseña existente";
+                        alert("El usuario que intento ingresar ya existe")
                         $("#divt").html(mensaje);
                         $("divt").show();
                     }
                     else{
-                        mensaje="Ocurrio un error";
+                        alert("Ocurrio un error");
                         $("#divt").html(mensaje);
                         $("divt").show();
                     }
