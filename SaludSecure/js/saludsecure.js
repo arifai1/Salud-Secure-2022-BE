@@ -20,7 +20,6 @@ $("#divt").hide();                                                              
         }
     });
 		
-
         $("#u").focus(function(){
     		$("#divt").html("");
     		$("#divt").hide();
