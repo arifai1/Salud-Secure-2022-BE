@@ -31,5 +31,6 @@ $data=array();
 	//retorno los datos en formato JSON
 	echo json_encode($data);
 	$con->close();						                                                       //de esta forma se cierra la conexion con la base de datos.
+
 ?>
 
