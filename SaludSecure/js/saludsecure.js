@@ -3,8 +3,7 @@ $(document).ready(function(){                                                   
 							                                                                                                //$(document ). //hago referencia a todo el archivo. Sobre este elemento, ejecuta la siguiente funcion(). funcion
                                                                                                                             //lo que hace todo lo de abajo es modificar lo html luego de que el navegador haya leido ese index.html para desp modificarlo.
 $("#divt").hide();                                                                                                          //# hago referencia al id. .Hago referencia a la clase de ese objeto.
-    $("#E").mouseover(function(){                                                                                           //hago referencia a la clase boton.
-    	//alert("Hola");    		                                                                                        //si hay un alert se corta todo el proceso debajo.
+    $("#E").mouseover(function(){                                                                                           //hago referencia a la clase boton		                                                                                        //si hay un alert se corta todo el proceso debajo.
     	$(".boton").css("cursor","pointer");                                                                                //cambio la forma del cursor a una mano cuando el mouse se apoya sobre el objeto, en este caso sobre el Log In que seria boton
                                                                                                                             //si la linea de arriba la pongo al principio de todo, la forma del mouse va a quedar con esa forma todo el tiempo.
                                                                                                                             //los eventos que hace el usuario sobre la pantalla son de js
@@ -42,10 +41,11 @@ $("#divt").hide();                                                              
                         mensaje="Ocurrio un error";
                     }                                                                                          //la informacion que le llega al ajax esta en este data que es distitno al de arriba.          
                     else if(data.status == 'ok'){
-                        //alert("Bienvenido");
                         mensaje="Bienvenido: "+data.result['nombre']+" "+data.result['apellido']+"";
                         $("#divt").html(mensaje);
+                        window.location.replace('../html/pantallaprincipal.html');
                         $("#divt").show();
+                        
                     }
                     else{
                         mensaje="Usuario no encontrado, si desea registrarse haga click ";
@@ -66,6 +66,7 @@ $("#divt").hide();                                                              
     });
 
 
+    
 $("#R").click(function(){
     
         $.ajax({                        
@@ -77,9 +78,9 @@ $("#R").click(function(){
                     if(data.status == 'ok'){
                         //mensaje="Bienvenido mi estimado: "+data.result['Nombre']+" "+data.result['Apellido']+"";
                         //$("#divt").html(mensaje);
-                        //$("divt").show();
-                        alert("Se registro el usuario")
-                        $(location).attr('href',"index.html")                                                               //con esta linea de codigo hacemos la redireccion
+                        //$("divt").show();                       
+                        $(location).attr('href',"pantallaprincipal.html");   
+                        alert("Se registro el usuario");                                                            //con esta linea de codigo hacemos la redireccion
                    }
                     else if(data.status=='err'){
                         //mensaje="Usuario y contraseña existente";
@@ -104,5 +105,29 @@ $("#R").click(function(){
         $(".boton").css("cursor","pointer");                                                                                //cambio la forma del cursor a una mano cuando el mouse se apoya sobre el objeto, en este caso sobre el Log In que seria boton
          
     });
+
+        
+
+
+//botones pantallaprincipal.html
+    $("#N").click(function(){
+        //mostramos info sobre nosotros
+    });
+
+
+    $("#T").click(function(){
+        //redireccionamos a recetas
+    });
+
+
+    $("#M").click(function(){
+        //redireccionamos a pantalla medicos para buscar recetas
+    });
+
+
+
+
+
+
     
 });
