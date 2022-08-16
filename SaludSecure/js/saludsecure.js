@@ -11,10 +11,10 @@ $("#divt").hide();                                                              
         if($("#u").val()=='' && $("#p").val()==''){
         	$("#divt").html("Debe agregar Usuario y Contraseña");
         	$("#divt").show();
-        }else if($("#u").val()=='' && $("#p").val()!=""){
+        }else if($("#u").val()=='' && $("#p").val()!=""){               
         	$("#divt").html("Debe agregar Usuario");
         	$("#divt").show();
-        }else if($("#u").val()=='' && $("#p").val()==""){
+        }else if($("#u").val()!='' && $("#p").val()==""){
         	$("#divt").html("Debe agregar Contraseña");
         	$("#divt").show();
         }
