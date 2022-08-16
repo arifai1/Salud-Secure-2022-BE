@@ -66,7 +66,7 @@ $("#divt").hide();                                                              
     });
 
 
-    
+
 $("#R").click(function(){
     
         $.ajax({                        
@@ -107,7 +107,6 @@ $("#R").click(function(){
     });
 
         
-
 
 //botones pantallaprincipal.html
     $("#N").click(function(){
