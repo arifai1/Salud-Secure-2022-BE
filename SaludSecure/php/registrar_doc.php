@@ -10,7 +10,7 @@ if ($con->connect_error){
 $data=array();
 
     												
-	$sql="SELECT IDpaciente from paciente where usuario='".$_REQUEST['Dni']."' AND contrasena='".$_REQUEST['pass']."'";
+	$sql="SELECT idmedico from medico where usuario='".$_REQUEST['Dni']."' AND contrasena='".$_REQUEST['pass']."'";
 	$res=$con->query($sql);
 	
 	if($res->num_rows > 0){ 		//ya existe un usuario														
@@ -18,7 +18,7 @@ $data=array();
 		$data['status']='err';
     	$data['result']= '';
 	}else{							//como no existe el usuario, va a registrarse con ese nombre, por lo tanto ejecutamos y preparamos al sql.
-		$sql= "INSERT INTO paciente (usuario,contrasena,nombre,apellido,dni,credencial,nacimiento) VALUES ('".$_REQUEST['usu']."','".$_REQUEST['pass']."','".$_REQUEST['nom']."','".$_REQUEST['ape']."','".$_REQUEST['DNI']."','".$_REQUEST['Credencial']."','".$_REQUEST['FechadeNacimiento']."')";
+		$sql= "INSERT INTO medico (usuario,contrasena,nombre,apellido,dni,area) VALUES ('".$_REQUEST['usu']."','".$_REQUEST['pass']."','".$_REQUEST['nom']."','".$_REQUEST['ape']."','".$_REQUEST['DNI']."','".$_REQUEST['Area']."';
 			$res=$con->query($sql);
 			if($res==1){
 				$data['status']='ok';
