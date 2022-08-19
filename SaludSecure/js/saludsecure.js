@@ -1,7 +1,7 @@
 $(document).ready(function(){                                                                                               //todo lo escrito abajo se va a cargar en el navegador cuando todo se cargue a la memoria. El . atrapa un metodo
 							                                                                                                //$("#div"). //hago referencia a un id $(".caja"). //hago referencia a una clase
 							                                                                                                //$(document ). //hago referencia a todo el archivo. Sobre este elemento, ejecuta la siguiente funcion(). funcion
-                                                                                                                            //lo que hace todo lo de abajo es modificar lo html luego de que el navegador haya leido ese index.html para desp modificarlo.
+//LogIn del paciente                                                                                                                        //lo que hace todo lo de abajo es modificar lo html luego de que el navegador haya leido ese index.html para desp modificarlo.
 $("#divt").hide();                                                                                                          //# hago referencia al id. .Hago referencia a la clase de ese objeto.
     $("#E").mouseover(function(){                                                                                           //hago referencia a la clase boton		                                                                                        //si hay un alert se corta todo el proceso debajo.
     	$(".boton").css("cursor","pointer");                                                                                //cambio la forma del cursor a una mano cuando el mouse se apoya sobre el objeto, en este caso sobre el Log In que seria boton
@@ -64,9 +64,11 @@ $("#divt").hide();                                                              
             $("#divt").show();
         }
     });
+//finaliza aca
 
 
 
+//Registrar del paciente
 $("#R").click(function(){
     
         $.ajax({                        
@@ -99,44 +101,74 @@ $("#R").click(function(){
     $("#R").mouseover(function(){                                                   
         $(".boton").css("cursor","pointer");                                            
     });
-
+//finaliza aca
         
 
+
+
+
+
+
+
+
 //botones pantallaprincipal.html
-    $("#N").click(function(){
+    $("#S").click(function(){
         window.location.replace('../html/pantallanosotros.html'); //mostramos info sobre nosotros
     });
 
-    $("#N").mouseover(function(){                                                                                           //hago referencia a la clase boton.                                                                                                    //si hay un alert se corta todo el proceso debajo.
-        $(".boton").css("cursor","pointer");                                                                                //cambio la forma del cursor a una mano cuando el mouse se apoya sobre el objeto, en este caso sobre el Log In que seria boton
-         
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+//LogIn del Medico
+$("#divt").hide();                                                                                                          //# hago referencia al id. .Hago referencia a la clase de ese objeto.
+    $("#W").mouseover(function(){                                                                                           //hago referencia a la clase boton		                                                                                        //si hay un alert se corta todo el proceso debajo.
+    	$(".boton").css("cursor","pointer");                                                                                //cambio la forma del cursor a una mano cuando el mouse se apoya sobre el objeto, en este caso sobre el Log In que seria boton
+                                                                                                                            //si la linea de arriba la pongo al principio de todo, la forma del mouse va a quedar con esa forma todo el tiempo.
+                                                                                                                            //los eventos que hace el usuario sobre la pantalla son de js
+        if($("#q").val()=='' && $("#c").val()==''){
+        	$("#divt").html("Debe agregar Usuario y Contraseña");
+        	$("#divt").show();
+        }else if($("#q").val()=='' && $("#c").val()!=""){               
+        	$("#divt").html("Debe agregar Usuario");
+        	$("#divt").show();
+        }else if($("#q").val()!='' && $("#c").val()==""){
+        	$("#divt").html("Debe agregar Contraseña");
+        	$("#divt").show();
+        }
     });
+		
+        $("#q").focus(function(){
+    		$("#divt").html("");
+    		$("#divt").hide();
+        });
+        
+        $("#c").focus(function(){                                                                                           //identifico el objeto html por el ID. "El ID cuyo objeto es U, levanta lo siguiente"
+                $("#divt").html("");
+                $("#divt").hide();
+        });
 
-    $("#T").click(function(){
-        //redireccionamos a recetas
-    });
-
-
-    $("#M").click(function(){
-        //redireccionamos a pantalla medicos para buscar recetas
-    });
-
-    //botones pantallainicial.html
-    $("#D").click(function(){
-    });
-
-    $("#P").click(function(){
-        //hacemos que los datos del login o registrar se guarden en la tabla de pacientes
-    });
-
-
-    $("#EM").click(function(){
-        if ($("#u").val()!='' && $("#p").val()!=''){
+    $("#W").click(function(){
+        if ($("#q").val()!='' && $("#c").val()!=''){
         $.ajax({                                                                                                          //funcion de js para tomar valores de la pantalla como variables y enviarlas al servidor interactua con la pantalla y envia datos                                                                                                     //Y luego vuelve igual.
         type:'POST',
         url: '../php/validar_doc.php',
         dataType: "json",                                                                                                   //los datos que van a volver estan codificados en json
-        data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val() + '&que=L',                                                 //le mando los datos al servidor
+        data: 'usum=' + $("#q").val() + '&passm=' + $("#c").val() + '&que=L',                                                 //le mando los datos al servidor
         success: function (data){ 
                     if(data == ""){
                         mensaje="Ocurrio un error";
@@ -144,7 +176,7 @@ $("#R").click(function(){
                     else if(data.status == 'ok'){
                         mensaje="Bienvenido: "+data.result['nombre']+" "+data.result['apellido']+"";
                         $("#divt").html(mensaje);
-                        window.location.replace('../html/pantallaprincipal.html');
+                        window.location.replace('../html/pantallaprincipal_doc.html');
                         $("#divt").show();
                         
                     }
@@ -165,34 +197,35 @@ $("#R").click(function(){
             $("#divt").show();
         }
     });
+//finaliza aca
 
 
 
-
-
-
-    $("#Rm").click(function(){
-    
+//Registrar del medico
+$("#Z").click(function(){
+    //alert ('usum=' + $("#UsuMed").val() + '&passm=' + $("#PassMed").val() + '&nom='+$("#NomMed").val()+'&ape='+$("#ApeMed").val()+'&DNI='+$("#DNIMed").val()+'&Aream='+$("#AreaMed").val());
         $.ajax({                        
         type:'POST',
-        url: '../php/registrar.php',
+        url: '../php/registrar_doc.php',
         dataType: "json",               
-        data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val() + '&nom='+$("#n").val()+'&ape='+$("#a").val()+'&DNI='+$("#d").val()+'&Credencial='+$("#c").val()+'&FechadeNacimiento='+$("#f").val(), 
+        data: 'usum=' + $("#UsuMed").val() + '&passm=' + $("#PassMed").val() + '&nom='+$("#NomMed").val()+'&ape='+$("#ApeMed").val()+'&DNI='+$("#DNIMed").val()+'&Aream='+$("#AreaMed").val(), 
         success: function (data){   
-                    if(data.status == 'ok'){         
-                        //no se registran los usuarios en la tabla medicos             
-                        $(location).attr('href',"pantallaprincipal.html");   
-                        alert("Se registro el usuario");                                                            
+                    if(data.status == 'ok'){      
+                        mensaje="Se registro el usuario";                
+                        $(location).attr('href',"pantallaprincipal_doc.html");   
+                        //alert("Se registro el usuario");                                                            
                    }
                     else if(data.status=='err'){
-                        alert("El usuario que intento ingresar ya existe")
+                        mensaje="El usuario que intento ingresar ya existe";
+                        //alert("El usuario que intento ingresar ya existe");
                         $("#divt").html(mensaje);
-                        $("divt").show();
+                        $("#divt").show();
                     }
                     else{
-                        alert("Ocurrio un error");
+                        mensaje="Ocurrio un error";
+                        //alert("Ocurrio un error");
                         $("#divt").html(mensaje);
-                        $("divt").show();
+                        $("#divt").show();
                     }
             },
             error: function(error){
@@ -201,10 +234,9 @@ $("#R").click(function(){
         });
 });
 
-    $("#R").mouseover(function(){                                                   
+    $("#Z").mouseover(function(){                                                   
         $(".boton").css("cursor","pointer");                                            
     });
-
 
     
 });
