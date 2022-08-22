@@ -160,7 +160,7 @@ $("#CrearRec").mouseover(function(){
 
 
 $("#MisPacientes").click(function(){
-    window.location.replace('../html/.html'); //redirigimos a una pagina en la que esten todos los pacientes asignados.
+    window.location.replace('../html/.html'); //redirigimos a donde estan todos los pacientes asignados.
 });
 $("#MisPacientes").mouseover(function(){                                                   
     $(".boton").css("cursor","pointer");                                            
@@ -316,6 +316,53 @@ $("#Z").click(function(){
     $("#LO").mouseover(function(){                                                   
         $(".boton").css("cursor","pointer");                                            
     });
+
+
+
+
+
+
+
+/*
+    $("#Recetas").click(function(){
+        new QRious({
+            element: document.querySelector("#qr"),
+            value: "../html/recetas.html", // La URL o el texto
+            size: 200,
+            backgroundAlpha: 0, 
+            foreground: "#8bc34a", 
+            level: "H", // L,M,Q y H (L es el de menor nivel, H el mayor)
+          });
+        window.location.replace('../html/recetas.html'); //redirigimos a donde estan todos los pacientes asignados.
+    });
+    $("#Recetas").mouseover(function(){                                                   
+        $(".boton").css("cursor","pointer");                                            
+    });
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
