@@ -129,7 +129,7 @@ $("#R").click(function(){
 
 
     $("#Medicos").click(function(){
-        window.location.replace('../html/recetas.html'); //redirigimos a una pagina en la que esten todos los medicos asignados.
+        window.location.replace('../html/MisMedicos.html'); //redirigimos a una pagina en la que esten todos los medicos asignados.
     });
     $("#Medicos").mouseover(function(){                                                   
         $(".boton").css("cursor","pointer");                                            
@@ -160,7 +160,7 @@ $("#CrearRec").mouseover(function(){
 
 
 $("#MisPacientes").click(function(){
-    window.location.replace('../html/.html'); //redirigimos a donde estan todos los pacientes asignados.
+    window.location.replace('../html/MisPacientes.html'); //redirigimos a donde estan todos los pacientes asignados.
 });
 $("#MisPacientes").mouseover(function(){                                                   
     $(".boton").css("cursor","pointer");                                            
@@ -345,12 +345,9 @@ $("#Z").click(function(){
 
 
 
-
-
-    $("#Recetas").mouseover(function(){                                                   
+    $("#Buscar").mouseover(function(){                                                   
         $(".boton").css("cursor","pointer");                                            
     });
-
 
 
 
