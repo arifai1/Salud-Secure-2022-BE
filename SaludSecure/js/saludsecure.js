@@ -121,7 +121,7 @@ $("#R").click(function(){
 
 
     $("#Recetas").click(function(){
-        window.location.replace('../html/.html'); //redirigimos a una pagina en la que luego de poner una contraseña, nos lleve a una pagina donde esten todas las recetas.
+        window.location.replace('../html/recetas.html'); //redirigimos a una pagina en la que luego de poner una contraseña, nos lleve a una pagina donde esten todas las recetas.
     });
     $("#Recetas").mouseover(function(){                                                   
         $(".boton").css("cursor","pointer");                                            
@@ -129,7 +129,7 @@ $("#R").click(function(){
 
 
     $("#Medicos").click(function(){
-        window.location.replace('../html/.html'); //redirigimos a una pagina en la que esten todos los medicos asignados.
+        window.location.replace('../html/recetas.html'); //redirigimos a una pagina en la que esten todos los medicos asignados.
     });
     $("#Medicos").mouseover(function(){                                                   
         $(".boton").css("cursor","pointer");                                            
@@ -323,22 +323,34 @@ $("#Z").click(function(){
 
 
 
-/*
+
     $("#Recetas").click(function(){
-        new QRious({
+/*        new QRious({
             element: document.querySelector("#qr"),
             value: "../html/recetas.html", // La URL o el texto
             size: 200,
             backgroundAlpha: 0, 
             foreground: "#8bc34a", 
             level: "H", // L,M,Q y H (L es el de menor nivel, H el mayor)
-          });
-        window.location.replace('../html/recetas.html'); //redirigimos a donde estan todos los pacientes asignados.
+          });*/
+        window.location.replace('../html/recetas.html'); //redirigimos a donde estan todos las recetas.
     });
     $("#Recetas").mouseover(function(){                                                   
         $(".boton").css("cursor","pointer");                                            
     });
-*/
+
+
+
+
+
+
+
+
+
+    $("#Recetas").mouseover(function(){                                                   
+        $(".boton").css("cursor","pointer");                                            
+    });
+
 
 
 
