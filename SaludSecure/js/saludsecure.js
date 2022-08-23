@@ -8,13 +8,13 @@ $("#divt").hide();                                                              
                                                                                                                             //si la linea de arriba la pongo al principio de todo, la forma del mouse va a quedar con esa forma todo el tiempo.
                                                                                                                             //los eventos que hace el usuario sobre la pantalla son de js
         if($("#u").val()=='' && $("#p").val()==''){
-        	$("#divt").html("Debe agregar Usuario y Contraseña");
+        	$("#divt").html("Debe agregar Usuario y Contrase&ntildea");
         	$("#divt").show();
         }else if($("#u").val()=='' && $("#p").val()!=""){               
         	$("#divt").html("Debe agregar Usuario");
         	$("#divt").show();
         }else if($("#u").val()!='' && $("#p").val()==""){
-        	$("#divt").html("Debe agregar Contraseña");
+        	$("#divt").html("Debe agregar Contrase&ntildea");
         	$("#divt").show();
         }
     });
@@ -59,7 +59,7 @@ $("#divt").hide();                                                              
             },
         });
         }else{
-            mensaje="Debe completar el usuario y la contraseña";                                               //sintaxis de link en html. Etiqueta a me indica link. Href me indica destino.
+            mensaje="Debe completar el usuario y la contrase&ntildea";                                               //sintaxis de link en html. Etiqueta a me indica link. Href me indica destino.
             $("#divt").html(mensaje);
             $("#divt").show();
         }
@@ -200,13 +200,13 @@ $("#divt").hide();                                                              
                                                                                                                             //si la linea de arriba la pongo al principio de todo, la forma del mouse va a quedar con esa forma todo el tiempo.
                                                                                                                             //los eventos que hace el usuario sobre la pantalla son de js
         if($("#q").val()=='' && $("#c").val()==''){
-        	$("#divt").html("Debe agregar Usuario y Contraseña");
+        	$("#divt").html("Debe agregar Usuario y Contrase&ntildea");
         	$("#divt").show();
         }else if($("#q").val()=='' && $("#c").val()!=""){               
         	$("#divt").html("Debe agregar Usuario");
         	$("#divt").show();
         }else if($("#q").val()!='' && $("#c").val()==""){
-        	$("#divt").html("Debe agregar Contraseña");
+        	$("#divt").html("Debe agregar Contrase&ntildea");
         	$("#divt").show();
         }
     });
@@ -251,7 +251,7 @@ $("#divt").hide();                                                              
             },
         });
         }else{
-            mensaje="Debe completar el usuario y la contraseña";                                               //sintaxis de link en html. Etiqueta a me indica link. Href me indica destino.
+            mensaje="Debe completar el usuario y la contrase&ntildea";                                               //sintaxis de link en html. Etiqueta a me indica link. Href me indica destino.
             $("#divt").html(mensaje);
             $("#divt").show();
         }
