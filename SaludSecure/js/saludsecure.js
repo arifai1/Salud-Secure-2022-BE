@@ -66,37 +66,9 @@ $("#divt").hide();                                                              
     });
 //finaliza aca
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //Registrar del paciente
-
 $("#divt").hide();                                                                                                          //# hago referencia al id. .Hago referencia a la clase de ese objeto.
-    $("#R").mouseover(function(){                                                                                                 //hago referencia a la clase boton		                                                                                        //si hay un alert se corta todo el proceso debajo.
+    $("#Registrarse").mouseover(function(){                                                                                                 //hago referencia a la clase boton		                                                                                        //si hay un alert se corta todo el proceso debajo.
     	$(".boton").css("cursor","pointer");                                                                                //cambio la forma del cursor a una mano cuando el mouse se apoya sobre el objeto, en este caso sobre el Log In que seria boton
                                                                                                                             //si la linea de arriba la pongo al principio de todo, la forma del mouse va a quedar con esa forma todo el tiempo.
                                                                                                                             //los eventos que hace el usuario sobre la pantalla son de js
@@ -116,13 +88,13 @@ $("#divt").hide();                                                              
                 $("#divt").hide();
         });
 
-    $("#R").click(function(){
-        if ($("#u").val()!='' && $("#p").val()!=''){
-        $.ajax({                                                                                                          //funcion de js para tomar valores de la pantalla como variables y enviarlas al servidor interactua con la pantalla y envia datos                                                                                                     //Y luego vuelve igual.
+    $("#Registrarse").click(function(){   upnacf
+        if ($("#u").val()!='' && $("#p").val()!='' && $("#n").val()!=''&& $("#a").val()!=''&& $("#c").val()!=''&& $("#f").val()!=''){
+        $.ajax({                                                                                                                                                                                                                //Y luego vuelve igual.
         type:'POST',
         url: '../php/validar.php',
-        dataType: "json",                                                                                                   //los datos que van a volver estan codificados en json
-        data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val() + '&que=L',                                                 //le mando los datos al servidor
+        dataType: "json",                                                                                                   
+        data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val() + '&que=L',                                                 
         success: function (data){ 
                     if(data == ""){
                         mensaje="Ocurrio un error";
@@ -161,28 +133,6 @@ $("#divt").hide();                                                              
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
 
 
 
