@@ -18,7 +18,7 @@ $data=array();
 		$data['status']='err';
     	$data['result']= '';
 	}else{							//como no existe el usuario, va a registrarse con ese nombre, por lo tanto ejecutamos y preparamos al sql.
-		$sql= "INSERT INTO paciente (usuario,contrasena,nombre,apellido,dni,credencial,nacimiento) VALUES ('".$_REQUEST['usu']."','".$_REQUEST['pass']."','".$_REQUEST['nom']."','".$_REQUEST['ape']."','".$_REQUEST['DNI']."','".$_REQUEST['Credencial']."','".$_REQUEST['FechadeNacimiento']."')";
+		$sql= "INSERT INTO paciente (usuario,contrasena,nombre,apellido,credencial,nacimiento) VALUES ('".$_REQUEST['usu']."','".$_REQUEST['pass']."','".$_REQUEST['nom']."','".$_REQUEST['ape']."','".$_REQUEST['Credencial']."','".$_REQUEST['FechadeNacimiento']."')";		//"','".$_REQUEST['DNI'].
 			$res=$con->query($sql);
 			if($res==1){
 				$data['status']='ok';
