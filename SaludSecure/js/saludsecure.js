@@ -102,92 +102,6 @@ $("#R").click(function(){
         $(".boton").css("cursor","pointer");                                            
     });
 //finaliza aca
-        
-
-
-
-
-
-
-
-
-//botones pantallaprincipal.html
-    $("#Nosotros").click(function(){
-        window.location.replace('../html/pantallanosotros.html'); //mostramos info sobre nosotros
-    });
-    $("#Nosotros").mouseover(function(){                                                   
-        $(".boton").css("cursor","pointer");                                            
-    });
-
-
-    $("#Recetas").click(function(){
-        window.location.replace('../html/recetas.html'); //redirigimos a una pagina en la que luego de poner una contraseña, nos lleve a una pagina donde esten todas las recetas.
-    });
-    $("#Recetas").mouseover(function(){                                                   
-        $(".boton").css("cursor","pointer");                                            
-    });
-
-
-    $("#Medicos").click(function(){
-        window.location.replace('../html/MisMedicos.html'); //redirigimos a una pagina en la que esten todos los medicos asignados.
-    });
-    $("#Medicos").mouseover(function(){                                                   
-        $(".boton").css("cursor","pointer");                                            
-    });
-
-
-
-
-
-
-
-
-//botones pantallaprincipal_doc.html
-$("#Nosotros").click(function(){
-    window.location.replace('../html/pantallanosotros.html'); //mostramos info sobre nosotros
-});
-$("#Nosotros").mouseover(function(){                                                   
-    $(".boton").css("cursor","pointer");                                            
-});
-
-
-$("#CrearRec").click(function(){
-    window.location.replace('../html/.html'); //redirigimos al smartcontract.
-});
-$("#CrearRec").mouseover(function(){                                                   
-    $(".boton").css("cursor","pointer");                                            
-});
-
-
-$("#MisPacientes").click(function(){
-    window.location.replace('../html/MisPacientes.html'); //redirigimos a donde estan todos los pacientes asignados.
-});
-$("#MisPacientes").mouseover(function(){                                                   
-    $(".boton").css("cursor","pointer");                                            
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
 
 
 //LogIn del Medico
@@ -293,7 +207,7 @@ $("#Z").click(function(){
     $("#Z").mouseover(function(){                                                   
         $(".boton").css("cursor","pointer");                                            
     });
-
+//finaliza aca
     
 
 
@@ -334,11 +248,6 @@ $("#Z").click(function(){
     });
 
 
-
-
-
-
-
     $("#Buscar").mouseover(function(){                                                   
         $(".boton").css("cursor","pointer");                                            
     });
@@ -352,29 +261,53 @@ $("#Z").click(function(){
 
 
 
+//botones pantallaprincipal.html
+$("#Nosotros").click(function(){
+    window.location.replace('../html/pantallanosotros.html'); //mostramos info sobre nosotros
+});
+$("#Nosotros").mouseover(function(){                                                   
+    $(".boton").css("cursor","pointer");                                            
+});
 
 
+$("#Recetas").click(function(){
+    window.location.replace('../html/recetas.html'); //redirigimos a una pagina en la que luego de poner una contraseña, nos lleve a una pagina donde esten todas las recetas.
+});
+$("#Recetas").mouseover(function(){                                                   
+    $(".boton").css("cursor","pointer");                                            
+});
 
 
+$("#Medicos").click(function(){
+    window.location.replace('../html/MisMedicos.html'); //redirigimos a una pagina en la que esten todos los medicos asignados.
+});
+$("#Medicos").mouseover(function(){                                                   
+    $(".boton").css("cursor","pointer");                                            
+});
+
+//botones pantallaprincipal_doc.html
+$("#Nosotros").click(function(){
+window.location.replace('../html/pantallanosotros.html'); //mostramos info sobre nosotros
+});
+$("#Nosotros").mouseover(function(){                                                   
+$(".boton").css("cursor","pointer");                                            
+});
 
 
+$("#CrearRec").click(function(){
+window.location.replace('../html/.html'); //redirigimos al smartcontract.
+});
+$("#CrearRec").mouseover(function(){                                                   
+$(".boton").css("cursor","pointer");                                            
+});
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+$("#MisPacientes").click(function(){
+window.location.replace('../html/MisPacientes.html'); //redirigimos a donde estan todos los pacientes asignados.
+});
+$("#MisPacientes").mouseover(function(){                                                   
+$(".boton").css("cursor","pointer");                                            
+});
 
 
 });
