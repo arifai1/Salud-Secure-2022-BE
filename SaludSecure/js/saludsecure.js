@@ -187,9 +187,6 @@ $("#MisPacientes").mouseover(function(){
 
 
 
-
-
-
     
 
 
@@ -300,6 +297,8 @@ $("#Z").click(function(){
     
 
 
+
+    
 
 
     //al apretar el boton de Log Out, redirigimos a la pantalla de inicio
