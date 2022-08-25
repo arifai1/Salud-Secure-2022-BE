@@ -346,7 +346,9 @@ $("#Z").click(function(){
     $("#mostrarContrasena").mouseover(function(){                                                   
         $(".boton").css("cursor","pointer");                                            
     });
-
+    $("#sp").mouseover(function(){                                                   
+        $(".boton").css("cursor","pointer");                                            
+    });
 
 
 
