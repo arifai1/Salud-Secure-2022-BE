@@ -75,7 +75,7 @@ $("#R").click(function(){
         type:'POST',
         url: '../php/registrar.php',
         dataType: "json",               
-        data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val() + '&nom='+$("#n").val()+'&ape='+$("#a").val()+'&DNI='+$("#d").val()+'&Credencial='+$("#c").val()+'&FechadeNacimiento='+$("#f").val(), 
+        data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val() + '&nom='+$("#n").val()+'&ape='+$("#a").val()+'&Credencial='+$("#c").val()+'&FechadeNacimiento='+$("#f").val(), //'&DNI='+$("#d").val()+
         success: function (data){   
                     if(data.status == 'ok'){                      
                         $(location).attr('href',"pantallaprincipal.html");   
