@@ -319,11 +319,6 @@ $("#Z").click(function(){
 
 
 
-
-
-
-
-
     $("#Recetas").click(function(){
 /*        new QRious({
             element: document.querySelector("#qr"),
@@ -349,7 +344,9 @@ $("#Z").click(function(){
         $(".boton").css("cursor","pointer");                                            
     });
 
-
+    $("#mostrarContrasena").mouseover(function(){                                                   
+        $(".boton").css("cursor","pointer");                                            
+    });
 
 
 
