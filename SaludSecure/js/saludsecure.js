@@ -3,7 +3,7 @@ $(document).ready(function(){                                                   
 							                                                                                                //$(document ). //hago referencia a todo el archivo. Sobre este elemento, ejecuta la siguiente funcion(). funcion
 //LogIn del paciente                                                                                                                        //lo que hace todo lo de abajo es modificar lo html luego de que el navegador haya leido ese index.html para desp modificarlo.
 $("#divt").hide();                                                                                                          //# hago referencia al id. .Hago referencia a la clase de ese objeto.
-    $("#E").mouseover(function(){                                                                                           //hago referencia a la clase boton		                                                                                        //si hay un alert se corta todo el proceso debajo.
+    $("#LogIn").mouseover(function(){                                                                                           //hago referencia a la clase boton		                                                                                        //si hay un alert se corta todo el proceso debajo.
     	$(".boton").css("cursor","pointer");                                                                                //cambio la forma del cursor a una mano cuando el mouse se apoya sobre el objeto, en este caso sobre el Log In que seria boton
                                                                                                                             //si la linea de arriba la pongo al principio de todo, la forma del mouse va a quedar con esa forma todo el tiempo.
                                                                                                                             //los eventos que hace el usuario sobre la pantalla son de js
@@ -29,7 +29,7 @@ $("#divt").hide();                                                              
                 $("#divt").hide();
         });
 
-    $("#E").click(function(){
+    $("#LogIn").click(function(){
         if ($("#u").val()!='' && $("#p").val()!=''){
         $.ajax({                                                                                                          //funcion de js para tomar valores de la pantalla como variables y enviarlas al servidor interactua con la pantalla y envia datos                                                                                                     //Y luego vuelve igual.
         type:'POST',
