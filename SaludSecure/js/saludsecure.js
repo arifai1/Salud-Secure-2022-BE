@@ -252,13 +252,6 @@ $("#Z").click(function(){
         $(".boton").css("cursor","pointer");                                            
     });
 
-    $("#mostrarContrasena").mouseover(function(){                                                   
-        $(".boton").css("cursor","pointer");                                            
-    });
-    $("#sp").mouseover(function(){                                                   
-        $(".boton").css("cursor","pointer");                                            
-    });
-
 
 
 //botones pantallaprincipal.html
