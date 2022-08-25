@@ -267,12 +267,12 @@ $("#Z").click(function(){
         type:'POST',
         url: '../php/registrar_doc.php',
         dataType: "json",               
-        data: 'usum=' + $("#UsuMed").val() + '&passm=' + $("#PassMed").val() + '&nom='+$("#NomMed").val()+'&ape='+$("#ApeMed").val()+'&DNI='+$("#DNIMed").val()+'&Aream='+$("#AreaMed").val(), 
+        data: 'usum=' + $("#UsuMed").val() + '&passm=' + $("#PassMed").val() + '&nom='+$("#NomMed").val()+'&ape='+$("#ApeMed").val()+'&Aream='+$("#AreaMed").val(), //'&DNI='+$("#DNIMed").val()+
         success: function (data){   
                     if(data.status == 'ok'){      
                         mensaje="Se registro el usuario";                
                         $(location).attr('href',"pantallaprincipal_doc.html");   
-                        //alert("Se registro el usuario");                                                            
+                        alert("Se registro el usuario");                                                            
                    }
                     else if(data.status=='err'){
                         mensaje="El usuario que intento ingresar ya existe";
