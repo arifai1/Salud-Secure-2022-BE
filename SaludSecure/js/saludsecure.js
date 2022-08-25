@@ -267,7 +267,7 @@ $("#Z").click(function(){
         type:'POST',
         url: '../php/registrar_doc.php',
         dataType: "json",               
-        data: 'usum=' + $("#UsuMed").val() + '&passm=' + $("#PassMed").val() + '&nom='+$("#NomMed").val()+'&ape='+$("#ApeMed").val()+'&Aream='+$("#AreaMed").val(), //'&DNI='+$("#DNIMed").val()+
+        data: 'usum=' + $("#UsuMed").val() + '&passm=' + $("#PassMed").val() + '&nom='+$("#NomMed").val()+'&ape='+$("#ApeMed").val()+'&Aream='+$("#AreaMed").val()+'&telefonoMed='+$("#teleMed").val(), //'&DNI='+$("#DNIMed").val()+
         success: function (data){   
                     if(data.status == 'ok'){      
                         mensaje="Se registro el usuario";                
