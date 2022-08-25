@@ -16,7 +16,7 @@
 
 
 <body>                  
-    <div id="contenedor">            
+    <div id="contenedor">
         <div id="reg">
             <h1 style="text-align: center;">Crear Cuenta</h1>
             <label id="1" class="caja">DNI</label>
@@ -34,7 +34,20 @@
             <label id="7" class="caja">Telefono</label>
             <input id="teleMed" name="Telefonom" type="number" class="caja" /><br><br>
             <a href="./iniciarsesion_med.html">Regresar</a>
-            <label id="RegistrarseMed" class="boton">Registrarse</label>
+            <label id="Z" class="boton">Registrarse</label>
+
+            <button class="btn btn-primary" type="button" onclick="mostrarContrasena()">Mostrar Contrase&ntildea</button>
+			<script>
+			  function mostrarContrasena(){
+				  var tipo = document.getElementById("p");
+					if(tipo.type == "password"){
+					  tipo.type = "text";
+				  }else{
+					  tipo.type = "password";
+				  }
+				}
+			</script>
+            
             <div id="divt">
             </div>
         </div>

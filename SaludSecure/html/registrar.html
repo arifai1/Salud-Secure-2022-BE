@@ -19,7 +19,7 @@
         <div id="reg">
             <h1 style="text-align: center;">Crear Cuenta</h1>
             <label id="1" class="caja">DNI</label>
-            <input id="u" name="SignInUsu" type="text" class="caja" /><br><br>
+            <input id="u" name="SignInUsu" type="number" class="caja" /><br><br>
             <label id="2" class="caja">Contrase&ntilde;a</label>
             <input id="p" name="SingInContra" type="password" class="caja" /><br><br>
             <label id="3" class="caja">Nombre</label>
@@ -29,13 +29,24 @@
             <!--<label id="5" class="caja">Dni</label>
             <input id="d" name="DNI" type="text" class="caja" /><br><br>-->
             <label id="6" class="caja">Credencial</label>
-            <input id="c" name="Credencial" type="text" class="caja" /><br><br>
+            <input id="c" name="Credencial" type="number" class="caja" /><br><br>
             <label id="7" class="caja">Fecha de Nacimiento</label>
             <input id="f" name="FechadeNacimiento" type="date" class="caja" /><br><br>
             <a href="./iniciarsesion.html">Regresar</a>
-            <label id="Registrarse" class="boton">Registrarse</label>
+            <label id="R" class="boton">Registrarse</label>
+
+            <button class="btn btn-primary" type="button" onclick="mostrarContrasena()">Mostrar Contrase&ntildea</button>
+			<script>
+			  function mostrarContrasena(){
+				  var tipo = document.getElementById("p");
+					if(tipo.type == "password"){
+					  tipo.type = "text";
+				  }else{
+					  tipo.type = "password";
+				  }
+				}
+			</script>
             <div id="divt">
-                
             </div>
         </div>
     </div>

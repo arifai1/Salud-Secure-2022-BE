@@ -66,73 +66,43 @@ $("#divt").hide();                                                              
     });
 //finaliza aca
 
-//Registrar del paciente
-$("#divt").hide();                                                                                                          //# hago referencia al id. .Hago referencia a la clase de ese objeto.
-    $("#Registrarse").mouseover(function(){                                                                                                 //hago referencia a la clase boton		                                                                                        //si hay un alert se corta todo el proceso debajo.
-    	$(".boton").css("cursor","pointer");                                                                                //cambio la forma del cursor a una mano cuando el mouse se apoya sobre el objeto, en este caso sobre el Log In que seria boton
-                                                                                                                            //si la linea de arriba la pongo al principio de todo, la forma del mouse va a quedar con esa forma todo el tiempo.
-                                                                                                                            //los eventos que hace el usuario sobre la pantalla son de js
-        if($("#u").val()=='' || $("#p").val()==''|| $("#n").val()==''|| $("#a").val()==''|| $("#c").val()==''|| $("#f").val()==''){
-        	$("#divt").html("Hay campos vacios. Por favor completarlos");
-        	$("#divt").show();
-        }
-    });
-		
-        $("#u").focus(function(){
-    		$("#divt").html("");
-    		$("#divt").hide();
-        });
-        
-        $("#p").focus(function(){                                                                                           //identifico el objeto html por el ID. "El ID cuyo objeto es U, levanta lo siguiente"
-                $("#divt").html("");
-                $("#divt").hide();
-        });
 
-    $("#Registrarse").click(function(){   upnacf
-        if ($("#u").val()!='' && $("#p").val()!='' && $("#n").val()!=''&& $("#a").val()!=''&& $("#c").val()!=''&& $("#f").val()!=''){
-        $.ajax({                                                                                                                                                                                                                //Y luego vuelve igual.
+
+//Registrar del paciente
+$("#R").click(function(){
+    
+        $.ajax({                        
         type:'POST',
-        url: '../php/validar.php',
-        dataType: "json",                                                                                                   
-        data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val() + '&que=L',                                                 
-        success: function (data){ 
-                    if(data == ""){
-                        mensaje="Ocurrio un error";
-                    }                                                                                          //la informacion que le llega al ajax esta en este data que es distitno al de arriba.          
-                    else if(data.status == 'ok'){
-                        mensaje="Bienvenido: "+data.result['nombre']+" "+data.result['apellido']+"";
+        url: '../php/registrar.php',
+        dataType: "json",               
+        data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val() + '&nom='+$("#n").val()+'&ape='+$("#a").val()+'&Credencial='+$("#c").val()+'&FechadeNacimiento='+$("#f").val(), //'&DNI='+$("#d").val()+
+        success: function (data){   
+                    if(data.status == 'ok'){                      
+                        $(location).attr('href',"pantallaprincipal.html");   
+                        alert("Se registro el usuario");                                                            
+                   }
+                    else if(data.status=='err'){
+                        alert("El usuario que intento ingresar ya existe")
                         $("#divt").html(mensaje);
-                        window.location.replace('../html/pantallaprincipal.html');
-                        $("#divt").show();
-                        
+                        $("divt").show();
                     }
                     else{
-                        mensaje="Usuario no encontrado, si desea registrarse haga click ";
-                        mensaje+="<a href='../html/registrar.html' /a>aqui.";                                               //sintaxis de link en html. Etiqueta a me indica link. Href me indica destino.
+                        alert("Ocurrio un error");
                         $("#divt").html(mensaje);
-                        $("#divt").show();
+                        $("divt").show();
                     }
             },
             error: function(error){
                 ;
             },
         });
-        }else{
-            mensaje="Debe completar el usuario y la contrase&ntildea";                                               //sintaxis de link en html. Etiqueta a me indica link. Href me indica destino.
-            $("#divt").html(mensaje);
-            $("#divt").show();
-        }
+});
+
+    $("#R").mouseover(function(){                                                   
+        $(".boton").css("cursor","pointer");                                            
     });
-
-
-
-
-
-
-
-
-
-
+//finaliza aca
+        
 
 
 
@@ -297,12 +267,12 @@ $("#Z").click(function(){
         type:'POST',
         url: '../php/registrar_doc.php',
         dataType: "json",               
-        data: 'usum=' + $("#UsuMed").val() + '&passm=' + $("#PassMed").val() + '&nom='+$("#NomMed").val()+'&ape='+$("#ApeMed").val()+'&Aream='+$("#AreaMed").val(), //+'&DNI='+$("#DNIMed").val()
+        data: 'usum=' + $("#UsuMed").val() + '&passm=' + $("#PassMed").val() + '&nom='+$("#NomMed").val()+'&ape='+$("#ApeMed").val()+'&Aream='+$("#AreaMed").val()+'&telefonoMed='+$("#teleMed").val(), //'&DNI='+$("#DNIMed").val()+
         success: function (data){   
                     if(data.status == 'ok'){      
                         mensaje="Se registro el usuario";                
                         $(location).attr('href',"pantallaprincipal_doc.html");   
-                        //alert("Se registro el usuario");                                                            
+                        alert("Se registro el usuario");                                                            
                    }
                     else if(data.status=='err'){
                         mensaje="El usuario que intento ingresar ya existe";
@@ -349,11 +319,6 @@ $("#Z").click(function(){
 
 
 
-
-
-
-
-
     $("#Recetas").click(function(){
 /*        new QRious({
             element: document.querySelector("#qr"),
@@ -379,79 +344,36 @@ $("#Z").click(function(){
         $(".boton").css("cursor","pointer");                                            
     });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-});
-
-
-
-
-
-
-
-
-
-
-// aca esta el que funciona
-$("#R").click(function(){
-    
-        $.ajax({                        
-        type:'POST',
-        url: '../php/registrar.php',
-        dataType: "json",               
-        data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val() + '&nom='+$("#n").val()+'&ape='+$("#a").val()+'&DNI='+$("#d").val()+'&Credencial='+$("#c").val()+'&FechadeNacimiento='+$("#f").val(), 
-        success: function (data){   
-                    if(data.status == 'ok'){                      
-                        $(location).attr('href',"pantallaprincipal.html");   
-                        alert("Se registro el usuario");                                                            
-                   }
-                    else if(data.status=='err'){
-                        alert("El usuario que intento ingresar ya existe")
-                        $("#divt").html(mensaje);
-                        $("divt").show();
-                    }
-                    else{
-                        alert("Ocurrio un error");
-                        $("#divt").html(mensaje);
-                        $("divt").show();
-                    }
-            },
-            error: function(error){
-                ;
-            },
-        });
-});
-
-    $("#R").mouseover(function(){                                                   
+    $("#mostrarContrasena").mouseover(function(){                                                   
         $(".boton").css("cursor","pointer");                                            
-    });     
-//finaliza aca
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+});
