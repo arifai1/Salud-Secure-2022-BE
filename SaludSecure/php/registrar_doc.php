@@ -10,7 +10,7 @@ if ($con->connect_error){
 $data=array();
 
     												
-	$sql="SELECT idmedico from medico where usuario='".$_REQUEST['usum']."' AND contrasena='".$_REQUEST['passm']."'";
+	$sql="SELECT idmedico from medico where usuario='".$_REQUEST['usum']."'";
 	
 	$res=$con->query($sql);
 	
