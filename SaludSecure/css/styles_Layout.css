@@ -1,0 +1,36 @@
+#ISbody{
+    background-color: rgba(184, 238, 255, 0.5);
+
+}
+#MPbody{
+    background-color: white;
+}
+.greyBody{
+    background-color: white(247, 247, 247, 0.5);
+}
+
+/*Layouts*/
+.autoLayoutIS{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 122px 362px;
+    gap: 63px;
+
+    position: relative;
+    
+}
+
+.container{
+    
+    overflow: hidden;
+	width: 100%; 
+    
+    /*
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 100px 100px 100px;
+    background-color: #fff;
+    color: #444;
+    */
+}
