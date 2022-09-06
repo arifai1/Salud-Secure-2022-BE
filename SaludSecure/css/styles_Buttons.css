@@ -1,0 +1,210 @@
+
+/*Textos*/
+h1 {
+    font-family: Arial, sans-serif;
+    color: #555555;
+    text-align: center;
+    
+}
+p{
+    font-family: Arial, sans-serif;
+    color: #555555;
+}
+.text{
+    font-family: Arial, sans-serif;
+    color: #555555;
+}
+.title{
+    font-family: Arial, sans-serif;
+    color: #555555;
+    font-size: 20px;
+}
+
+.links{
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: blue;
+}
+
+#loginformM{
+    width: 400px;
+    height: 350px;
+    text-align: center;
+    margin: auto;
+    background-image: url("../imagenes/FondoForm.png");
+    background-position: center;
+    border-radius: 40px 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+#registerformM{
+    position: absolute;
+    left:30%;
+    top:15%;
+    width: 500px;
+    height: 450px;
+    text-align: center;
+    margin: auto;
+    background-image: url("../imagenes/FondoForm.png");
+    background-position: center;
+    border-radius: 40px 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+#loginformP{
+    width: 400px;
+    height: 350px;
+    text-align: center;
+    margin: auto;
+    background-image: url("../imagenes/FondoForm.png");
+    background-position: center;
+    border-radius: 40px 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+
+#mainMenuform{
+    position: absolute;
+    top: 10%;
+    left:20%
+    
+
+}
+
+
+
+.ingresar {
+    border-radius: 40px;
+    border: 2px solid #3FADCF;
+    padding: 10px 30px;
+    font-size: 18px;
+    
+}
+.ingresarR {
+    border-radius: 40px;
+    border: 2px solid #3FADCF;
+    padding: 10px 30px;
+    font-size: 18px;
+    width: 150px;
+}
+
+
+
+
+
+
+
+/*Botones*/
+.minibutton{
+    background-color: #B8EEFF;
+    border-radius: 30px;
+    color:#555555;
+    border: 0px;
+    width: 172px;
+    height: 54px;
+    font-size: 18px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    
+
+}
+
+.minibuttmed{
+    background-color: #B8EEFF;
+    border-radius: 30px;
+    color:#555555;
+    border: 0px;
+    width: 200px;
+    height: 54px;
+    font-size: 18px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    
+}
+.botmed{
+    position: absolute;
+    text-align: center;
+    
+    top: 20%;
+    right: 80%;
+    left: 20%;
+    height: 400px;
+    width: 270px;
+    border:4px solid #4A4EB5;
+    border-radius: 40px;
+    
+    background-image: url("../imagenes/imgUsuarioM.png");
+    background-position: center;
+    background-size: 161px 161px;
+    background-repeat: no-repeat;
+    background-position-y: 20%;
+    
+}
+
+.botpac{
+    
+    text-align: center;
+    top: 20%;
+    right: 20%;
+    left: 60%;
+    height: 400px;
+    width: 270px;
+    border:4px solid #4A4EB5;
+    border-radius: 40px;
+
+    background-image: url("../imagenes/imgUsuarioP.png");
+    background-position: center;
+    background-size: 161px 161px;
+    background-repeat: no-repeat;
+    background-position-y: 20%;
+}
+
+.bigBTN{
+    background-color: rgba(63, 173, 207,0.6);
+    border-radius: 40px;
+    border: 0px;
+    height: 410px;
+    width: 208px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    color: white;
+    font-size: 18px;
+    align-items: 20%;
+    background-image: url("../imagenes/SobreNosotros.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 208px 410px;
+}
+#btnPacientes{
+    background-color: rgba(63, 173, 207,0.6);
+    border-radius: 40px;
+    border: 0px;
+    height: 410px;
+    width: 208px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    color: white;
+    font-size: 18px;
+    background-image: url("../imagenes/UsuPaciente-1.png");
+    background-repeat: no-repeat;
+    background-size: 208px 410px;
+    
+}
+#mainbuttonM{
+    background-color: #3FADCF;
+    border-radius: 40px;
+    border: 0px;
+    height: 572px;
+    width: 293px;
+    color: white;
+    font-size: 18px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    background-image: url("../imagenes/Receta.png");
+    background-position: center;
+    background-position-y: 100%;
+    background-size: 400px 400px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
