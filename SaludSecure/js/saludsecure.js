@@ -1,5 +1,19 @@
 $(document).ready(function(){                                                                                               
-							                                                                                                
+
+$("#LogInComoPac").click(function(){
+    window.location.replace('../html/iniciarsesion.html');
+});
+$("#RegistrarseComoPac").click(function(){
+    window.location.replace('../html/registrar.html');
+});
+$("#LogInComoMedico").click(function(){
+    window.location.replace('../html/iniciarsesion_med.html');
+});
+$("#RegistrarseComoMedico").click(function(){
+    window.location.replace('../html/registrar_doc.html');
+});
+
+
 							                                                                                                
 //LogIn del paciente                                                                                                        
 $("#divt").hide();                                                                                                          
