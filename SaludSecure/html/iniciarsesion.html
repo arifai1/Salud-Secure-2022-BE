@@ -1,30 +1,39 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
 	<meta http-equiv="Contet-Type" content="text/html; charset=UTF-8">
-<title>Documento sin titulo</title>
+	<UTF-8>
+<title>Iniciar Sesion</title>
 
-<script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>         	
-<script src="../js/saludsecure.js" type="text/javascript"></script>						
-
+<script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
+<script src="../js/saludsecure.js" type="text/javascript"></script>
+<link rel="stylesheet" href="../css/styles_Buttons.css">
+<link rel="stylesheet" href="../css/styles_Layout.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 
-<body>
-	<div ud="contenedor"> 
+<body class="autoLayoutIS" id="ISbody">
+	<div id="contenedor">
 		<div id="log">
-			
-			<input id="u" name="usu" type="number" class="caja"/><br><br>
-			<input id="p" name="pass" type ="password" class="caja"/><br>
-			<input type="submit" value="Log In" id="LogIn" class="boton" />
-			<label id="cuenta" class="caja">No tienes cuenta?</label>
-			<a href="./registrar.html">Registrate</a>
-			<br>
-			<a href="./pantallainicio.html">Regresar</a>		
+			<form id="loginformP">
+				<br>
+				<h1>Iniciar Sesion</h1>
+				<br>
+				<input id="u" name="usu" type="number" class="ingresar" placeholder="Ingresar DNI" /><br><br>
+				<input id="p" name="pass" type="password" class="ingresar" placeholder="Ingresar Contraseña" />
+				<br><br>
+				<input type="submit" value="Iniciar Sesion" id="LogIn" class="minibutton" />
+				<br><br>
+				<label id="cuenta" class="caja">No tienes cuenta?</label>
+				<a href="./registrar.html" class="links">Registrate</a>
+				<br><br>
+				<a href="./pantallainicio.html" class="links">Regresar</a>
+			</form>
 
-		<div id="divt">
-		
+
+
+	<div id="divt">
 	</div>
- </div>
-</body>
-
+</div>
+</html>
