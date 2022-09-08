@@ -1,26 +1,32 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
 	<meta http-equiv="Contet-Type" content="text/html; charset=UTF-8">
-<title>Documento sin titulo</title>
+<title>Menu Principal</title>
 
-
+<link rel="stylesheet" href="../css/styles_Buttons.css">
+<link rel="stylesheet" href="../css/styles_Layout.css">
 <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>         	
 <script src="../js/saludsecure.js" type="text/javascript"></script>						
 
 
 </head>
 
-<body>
+<body id="MPbody">
+	<header class="headerContainer">
+		<h1 class="titleLayout">Menu Principal</h1>
+	</header>
 	<div ud="contenedor"> 
 		<div id="log">
-			<input type="submit" value="Nosotros" id="NosotrosM" class="boton" />
-			<input type="submit" value="Crear Receta" id="CrearRec" class="boton" />
-			<input type="submit" value="Mis Pacientes" id="MisPacientes" class="boton" />
-			<input type="submit" value="Log Out" id="LO_M" class="boton" />
-
+			<form id="mainMenuform">
+			<input type="button" value="Nosotros" id="NosotrosM" class="boton" />
+			<input type="button" value="Crear Receta" id="CrearRec" class="boton" />
+			<input type="button" value="Mis Pacientes" id="MisPacientes" class="boton" />
+			<input type="button" value="Log Out" id="LO_M" class="boton" />
+			</form>
 	<div id="divt">
 	</div>
  </div>
 	
 </body>
+</html>

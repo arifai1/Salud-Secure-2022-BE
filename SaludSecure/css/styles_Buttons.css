@@ -176,7 +176,7 @@ p{
     background-repeat: no-repeat;
     background-size: 208px 410px;
 }
-#btnPacientes{
+#MisPacientes{
     background-color: rgba(63, 173, 207,0.6);
     border-radius: 40px;
     border: 0px;
@@ -191,7 +191,7 @@ p{
     background-size: 208px 410px;
     
 }
-#mainbuttonM{
+#CrearRec{
     background-color: #3FADCF;
     border-radius: 40px;
     border: 0px;
