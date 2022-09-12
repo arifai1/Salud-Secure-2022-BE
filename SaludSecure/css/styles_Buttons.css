@@ -143,7 +143,7 @@ p{
 }
 
 .botpac{
-    
+    position: absolute;
     text-align: center;
     top: 20%;
     right: 20%;
@@ -175,6 +175,8 @@ p{
     background-position: center;
     background-repeat: no-repeat;
     background-size: 208px 410px;
+    cursor: pointer;
+
 }
 #MisPacientes{
     background-color: rgba(63, 173, 207,0.6);
