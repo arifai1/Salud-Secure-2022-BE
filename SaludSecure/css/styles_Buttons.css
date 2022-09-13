@@ -69,7 +69,7 @@ p{
 #mainMenuform{
     position: absolute;
     top: 25%;
-    left:23%;
+    left:20.5%;
     
 
 }
@@ -163,7 +163,7 @@ p{
 }
 
 .bigBTN{
-    background-color: rgba(63, 173, 207,0.6);
+    background-color: rgba(63, 173, 207);
     border-radius: 40px;
     border: 0px;
     height: 410px;
@@ -181,7 +181,7 @@ p{
 
 }
 #MisPacientes{
-    background-color: rgba(63, 173, 207,0.6);
+    background-color: rgba(63, 173, 207);
     border-radius: 40px;
     border: 0px;
     height: 410px;
@@ -196,7 +196,7 @@ p{
     
 }
 #CrearRec{
-    background-color: #3FADCF;
+    background-color: #4a4eb5;
     border-radius: 40px;
     border: 0px;
     height: 472px;
