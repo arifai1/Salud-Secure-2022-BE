@@ -26,9 +26,11 @@ p{
     color: blue;
 }
 
+
+
 #loginformM{
-    width: 400px;
-    height: 350px;
+    width: 500px;
+    height: 450px;
     text-align: center;
     margin: auto;
     background-image: url("../imagenes/FondoForm.png");
@@ -52,8 +54,8 @@ p{
 
 }
 #loginformP{
-    width: 400px;
-    height: 350px;
+    width: 500px;
+    height: 450px;
     text-align: center;
     margin: auto;
     background-image: url("../imagenes/FondoForm.png");
@@ -66,8 +68,8 @@ p{
 
 #mainMenuform{
     position: absolute;
-    top: 10%;
-    left:20%
+    top: 25%;
+    left:23%;
     
 
 }
@@ -197,7 +199,7 @@ p{
     background-color: #3FADCF;
     border-radius: 40px;
     border: 0px;
-    height: 572px;
+    height: 472px;
     width: 293px;
     color: white;
     font-size: 18px;
