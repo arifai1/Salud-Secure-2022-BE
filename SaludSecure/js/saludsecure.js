@@ -12,7 +12,9 @@ $("#LogInComoMedico").click(function(){
 $("#RegistrarseComoMedico").click(function(){
     window.location.replace('../html/registrar_doc.html');
 });
-
+$("#GoToDecide").click(function(){
+    window.location.replace('../html/pantallainicio.html');
+});
 
 							                                                                                                
 //LogIn del paciente                                                                                                        
