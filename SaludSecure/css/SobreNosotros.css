@@ -1,0 +1,192 @@
+
+
+#logo{
+    position: absolute;
+    top:2%;
+    left:0%;
+    width: 126px;
+    height: 124px;
+    border-width: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    background-repeat: no-repeat;
+    background-image: url(../imagenes/Logo-Header.png);
+    
+}
+
+.color{
+    background-color: #addcf6;
+}
+
+.header{
+    position: fixed;
+    padding: 40px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    
+    z-index: 9999;
+    top: 0%;
+    left:0%;
+
+}
+#hr1{
+    position: absolute;
+    top: 50%;
+}
+.titulo{
+    position: absolute;
+    top:5%;
+    left:10%;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top:2%;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+}
+
+.txtCeleste{
+    position: absolute;
+    top:35%;
+    left:10%;
+    color:#3FADCF;
+    font-size: 40px;
+}
+.subrayado{
+    text-decoration: underline;
+}
+
+label{
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    
+}
+#background1{
+    position: fixed;
+    left:0%;
+    margin: 0px;
+    height: 620px;
+    width: 1400px;
+    background-color: #addcf6;
+    z-index: -5;
+
+}
+#background2{
+    position: absolute;
+    left:0%;
+    top: 100%;
+    margin: 0px;
+    height: 620px;
+    width: 1400px;
+    background-color: #ffffff;
+    z-index: -5;
+
+}
+#background3{
+    position: absolute;
+    left:0%;
+    top: 190%;
+    margin: 0px;
+    height: 620px;
+    width: 1400px;
+    background-color: #addcf6;
+    z-index: -5;
+
+}
+#background4{
+    position: absolute;
+    left:0%;
+    top: 280%;
+    margin: 0px;
+    height: 520px;
+    width: 1400px;
+    background-color: #000000;
+    z-index: -5;
+
+}
+
+#position1{
+    position: absolute;
+    right:10%;
+    top:37%;
+    
+    padding: 8px;
+    border-left-style: solid;
+    border-color: black;
+    border-width: 8px;
+}
+#position2{
+    position: absolute;
+    right:5%;
+    top:25%;
+
+    padding: 8px;
+    border-left-style: solid;
+    border-color: black;
+    border-width: 8px;
+}
+
+#position3{
+    position: absolute;
+    right: 30%;
+    top:20%;
+    padding: 8px;
+    border-left-style: solid;
+    border-color: #4A4EB5;
+    border-width: 8px;
+}
+#position4{
+    position: absolute;
+    left:10%;
+    top:20%;
+    padding: 8px;
+    border-left-style: solid;
+    border-color: #4A4EB5;
+    border-width: 8px;
+    color: #ffffff;
+}
+
+
+
+
+#SaludImg{
+    position: absolute;
+    height: 426px;
+    width: 558px;
+    left:5%;
+    top:10%;
+    border-width: 0px;
+    background-repeat: no-repeat;
+    background-image: url(../imagenes/IMGsalud.png);
+    background-size: 558px 426px;
+    
+}
+#BlockChainImg{
+    position: absolute;
+    top: 90%;
+    left:5%;
+    height: 610px;
+    width: 611px;
+    border-width: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    background-repeat: no-repeat;
+    background-image: url(../imagenes/blockchain1.png);
+    background-size: 611px 610px;
+}
+
+#MedicoCompuImg{
+    position: absolute;
+    top: 10%;
+    left:13%;
+    height: 456px;
+    width: 451px;
+    border-width: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    background-repeat: no-repeat;
+    background-image: url(../imagenes/MedicoCompu.png);
+    background-size: 451px 456px;
+    
+}
+
+
+
+
