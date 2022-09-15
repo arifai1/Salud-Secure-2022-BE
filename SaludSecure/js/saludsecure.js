@@ -44,6 +44,7 @@ $("#divt").hide();
         });
 
     $("#LogIn").click(function(){
+        event.preventDefault();                     //evitamos que se refresque la pagina asi podemos ver por mas tiempo el mensaje de Usuario no encontrado
         if ($("#u").val()!='' && $("#p").val()!=''){
         $.ajax({                                                                                                                                                                                                               //Y luego vuelve igual.
         type:'POST',
@@ -147,6 +148,7 @@ $("#divt").hide();
         });
 
     $("#LogInMed").click(function(){
+        event.preventDefault();
         if ($("#q").val()!='' && $("#c").val()!=''){
         $.ajax({                                                                                                                                                                                                               
         type:'POST',
