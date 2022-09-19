@@ -174,5 +174,22 @@ header{
     top: 12%;
     left:10%;
 }
-
+.regresar{
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    width: 80px;
+    height: 80px;
+    background-color: #ffffff9f;
+    border-radius: 40px;
+    border-width: 0px;
+    cursor: pointer;
+}
+#Iconregresar{
+    position: absolute;
+    top: 53.2%;
+    left: 16.4%;
+    font-size: 40px;
+    cursor: pointer;
+}
 
