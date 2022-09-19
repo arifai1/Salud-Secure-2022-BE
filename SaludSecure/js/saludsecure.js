@@ -298,7 +298,7 @@ $(".boton").css("cursor","pointer");
 
 
 $("#CrearRec").click(function(){
-window.location.replace('../html/.html'); //redirigimos al smartcontract.
+window.location.replace('../html/CrearReceta.html'); //redirigimos al smartcontract.
 });
 $("#CrearRec").mouseover(function(){                                                   
 $(".boton").css("cursor","pointer");                                            
