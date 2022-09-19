@@ -99,22 +99,25 @@ header{
     align-items: 20%;
     
 }
-#sobreNosotros{
+#NosotrosM{
     background-image: url("../imagenes/SobreNos.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 245px 410px;
+    cursor: pointer;
     
 }
-#crearReceta{
+#CrearRec{
     background-image: url("../imagenes/CrearReceta.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 245px 410px;
+    cursor: pointer;
 }
-#misPacientes{
+#MisPacientes{
     background-image: url("../imagenes/misPacientes.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 245px 410px;
+    cursor: pointer;
 }
