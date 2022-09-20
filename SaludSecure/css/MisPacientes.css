@@ -101,12 +101,26 @@ color: #adadad;
     height: 500px;
 }
 
+.ayuda{
+    position: absolute;
+    top: 25%;
+    left:2.3%;
+    width: 65px;
+    height: 65px;
+    background-color: #ffffff9f;
+    border-radius: 40px;
+    border-width: 0px;
+    font-size: 35px;
+    text-align: center;
+    color: rgb(102, 102, 102);
+    cursor: pointer;
+}
 .regresar{
     position: absolute;
-    top: 50%;
-    left: 13%;
-    width: 80px;
-    height: 80px;
+    top: 40%;
+    left: 2.3%;
+    width: 65px;
+    height: 65px;
     background-color: #ffffff9f;
     border-radius: 40px;
     border-width: 0px;
@@ -114,8 +128,9 @@ color: #adadad;
 }
 #Iconregresar{
     position: absolute;
-    top: 53.2%;
-    left: 14.4%;
-    font-size: 40px;
+    top: 42.3%;
+    left: 3.4%;
+    font-size: 35px;
+    color: rgb(102, 102, 102);
     cursor: pointer;
 }
