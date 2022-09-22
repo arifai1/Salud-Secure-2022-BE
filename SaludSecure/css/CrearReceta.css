@@ -183,7 +183,7 @@ header{
     color: rgb(102, 102, 102);
     cursor:pointer;
 }
-.regresar{
+#RegresarM{
     position: absolute;
     top: 40%;
     left: 2.3%;
@@ -196,8 +196,8 @@ header{
 }
 #Iconregresar{
     position: absolute;
-    top: 42.3%;
-    left: 3.4%;
+    top: 21.5%;
+    left: 21.5%;
     font-size: 35px;
     color: rgb(102, 102, 102);
     cursor: pointer;
