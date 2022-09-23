@@ -313,6 +313,4 @@ $(document).ready(function () {
     $("#MisPacientes").mouseover(function () {
         $(".boton").css("cursor", "pointer");
     });
-
-
 });
