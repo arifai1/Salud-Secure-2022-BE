@@ -98,10 +98,10 @@ $(document).ready(function () {
             success: function (data) {
                 if (data.status == 'ok') {
                     $(location).attr('href', "pantallaprincipal.html");
-                    alert("Se registro el usuario");
+                    mensaje=("Se registro el usuario");
                 }
                 else if (data.status == 'err') {
-                    alert("El usuario que intento ingresar ya existe")
+                    mensaje=("El usuario que intento ingresar ya existe")
                     $("#divt").html(mensaje);
                     $("divt").show();
                 }
@@ -275,18 +275,18 @@ $(document).ready(function () {
     });
 
 
-    $("#Recetas").click(function () {
+    $("#MisRecetas").click(function () {
         window.location.replace('../html/recetas.html'); //redirigimos a una pagina en la que luego de poner una contraseña, nos lleve a una pagina donde esten todas las recetas.
     });
-    $("#Recetas").mouseover(function () {
+    $("#MisRecetas").mouseover(function () {
         $(".boton").css("cursor", "pointer");
     });
 
 
-    $("#Medicos").click(function () {
+    $("#MisMedicos").click(function () {
         window.location.replace('../html/MisMedicos.html'); //redirigimos a una pagina en la que esten todos los medicos asignados.
     });
-    $("#Medicos").mouseover(function () {
+    $("#MisMedicos").mouseover(function () {
         $(".boton").css("cursor", "pointer");
     });
 
@@ -308,7 +308,7 @@ $(document).ready(function () {
 
 
     $("#MisPacientes").click(function () {
-        window.location.replace('../html/MisPacientes.html'); //redirigimos a donde estan todos los pacientes asignados.
+        window.location.replace('../html/MisPacientes.html'); 
     });
     $("#MisPacientes").mouseover(function () {
         $(".boton").css("cursor", "pointer");

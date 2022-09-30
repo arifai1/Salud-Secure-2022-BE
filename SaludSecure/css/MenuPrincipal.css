@@ -153,14 +153,14 @@ header{
     color: rgb(102, 102, 102);
 }
 #MisRecetas{
-    background-image: url("../imagenes/CrearReceta.png");
+    background-image: url("../imagenes/MisRecetas.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 245px 410px;
     cursor: pointer;
 }
 #MisMedicos{
-    background-image: url("../imagenes/misPacientes.png");
+    background-image: url("../imagenes/MisMedicos.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 245px 410px;
