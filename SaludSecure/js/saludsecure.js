@@ -49,7 +49,7 @@ $(document).ready(function () {
 
     $("#LogIn").click(function (event) {
         event.preventDefault();                     //evitamos que se refresque la pagina asi podemos ver por mas tiempo el mensaje de Usuario no encontrado
-        console.log("a");
+        
         if ($("#u").val() != '' && $("#p").val() != '') {
             $.ajax({                                                                                                                                                                                                               //Y luego vuelve igual.
                 type: 'POST',
@@ -155,7 +155,6 @@ $(document).ready(function () {
     $("#LogInMed").click(function (event) {
         event.preventDefault();
         if ($("#q").val() != '' && $("#c").val() != '') {
-            console.log("a");
             $.ajax({
                 type: 'POST',
                 url: '../php/validar_doc.php',

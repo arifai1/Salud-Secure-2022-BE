@@ -3,8 +3,6 @@ include_once("db.php");
 
 $data=array();
 
-echo "hola";
-
 //if ($_REQUEST ['que']=='L'){     															//el REQUEST es lo que le llega de la pantalla
 	$sql="SELECT IDpaciente, nombre, apellido from paciente where usuario='".$_REQUEST['usu']."' and contrasena='".$_REQUEST['pass']."'";	
 																							//$res =$con -> query($sql);   //con el query le llega a la bbdd la sentencia de arriba. Lo devuelve en forma organizada.

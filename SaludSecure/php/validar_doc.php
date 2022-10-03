@@ -1,7 +1,7 @@
 <?php
 include_once("db.php");
 
-echo "asdasdas";
+//echo "asdasdas";
 
 $data=array();
 
