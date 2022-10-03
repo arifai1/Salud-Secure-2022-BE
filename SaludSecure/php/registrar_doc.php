@@ -1,11 +1,5 @@
 <?php
-
-$con = new mysqli("localhost", "root", "rootroot");
-mysqli_select_db($con,"saludsecure");
-
-if ($con->connect_error){
-	die("Connection failed: ".$con ->connect_error);
-}
+include_once("db.php");
 
 $data=array();
 
@@ -22,13 +16,13 @@ $data=array();
 		$sql= "INSERT INTO medico (usuario,contrasena,nombre,apellido,area,telefono) VALUES ('".$_REQUEST['usum']."','".$_REQUEST['passm']."','".$_REQUEST['nom']."','".$_REQUEST['ape']."','".$_REQUEST['Aream']."','".$_REQUEST['telefonoMed']."')";    //'".$_REQUEST['DNI']."',
 		
 		$res=$con->query($sql);
-			if($res==1){
-				$data['status']='ok';
-    			$data['result']= '1';
-			}else{
-				$data['status']='error';
-    			$data['result']= '1';
-			}
+		if($res==1){
+			$data['status']='ok';
+			$data['result']= '1';
+		}else{
+			$data['status']='error';
+			$data['result']= '1';
+		}
 	}
 
 	

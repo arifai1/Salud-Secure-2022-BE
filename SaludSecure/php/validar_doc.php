@@ -1,11 +1,7 @@
 <?php
+include_once("db.php");
 
-$con = new mysqli("localhost", "root", "rootroot");
-mysqli_select_db($con,"saludsecure");
-
-if ($con->connect_error){
-	die("Connection failed: ".$con ->connect_error);
-}
+echo "asdasdas";
 
 $data=array();
 

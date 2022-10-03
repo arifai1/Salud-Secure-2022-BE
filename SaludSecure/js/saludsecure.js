@@ -47,8 +47,9 @@ $(document).ready(function () {
         $("#divt").hide();
     });
 
-    $("#LogIn").click(function () {
+    $("#LogIn").click(function (event) {
         event.preventDefault();                     //evitamos que se refresque la pagina asi podemos ver por mas tiempo el mensaje de Usuario no encontrado
+        console.log("a");
         if ($("#u").val() != '' && $("#p").val() != '') {
             $.ajax({                                                                                                                                                                                                               //Y luego vuelve igual.
                 type: 'POST',
@@ -151,15 +152,17 @@ $(document).ready(function () {
         $("#divt").hide();
     });
 
-    $("#LogInMed").click(function () {
+    $("#LogInMed").click(function (event) {
         event.preventDefault();
         if ($("#q").val() != '' && $("#c").val() != '') {
+            console.log("a");
             $.ajax({
                 type: 'POST',
                 url: '../php/validar_doc.php',
                 dataType: "json",
                 data: 'usum=' + $("#q").val() + '&passm=' + $("#c").val() + '&que=L',
                 success: function (data) {
+                    console.log(data);
                     if (data == "") {
                         mensaje = "Ocurrio un error";
                     }
@@ -178,7 +181,7 @@ $(document).ready(function () {
                     }
                 },
                 error: function (error) {
-                    ;
+                    console.log(error);
                 },
             });
         } else {

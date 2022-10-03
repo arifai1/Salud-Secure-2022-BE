@@ -1,13 +1,9 @@
 <?php
-
-$con = new mysqli("localhost", "root", "rootroot");
-mysqli_select_db($con,"saludsecure");
-
-if ($con->connect_error){
-	die("Connection failed: ".$con ->connect_error);
-}
+include_once("db.php");
 
 $data=array();
+
+echo "hola";
 
 //if ($_REQUEST ['que']=='L'){     															//el REQUEST es lo que le llega de la pantalla
 	$sql="SELECT IDpaciente, nombre, apellido from paciente where usuario='".$_REQUEST['usu']."' and contrasena='".$_REQUEST['pass']."'";	
