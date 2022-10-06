@@ -1,0 +1,168 @@
+body{
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color:rgb(236, 234, 234);
+}
+
+
+header{
+    position: fixed;
+    padding: 15px;
+    text-align: center;
+    background: #ffffff;
+    width: 100%;
+    z-index: 9999;
+    top: 0%;
+    left:0%;
+}
+#headertitle{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+#Txtlogo{
+    position:absolute;
+    top:25%;
+    left:10%;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: bolder;
+    color: #3FADCF;
+}
+#logo{
+    position: absolute;
+    top:2%;
+    left:0%;
+    width: 126px;
+    height: 124px;
+    border-width: 0px;
+    background-color: rgba(0,0, 0, 0);
+    background-repeat: no-repeat;
+    background-image: url(../imagenes/Logo-Header.png);
+    
+}
+
+.titles{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+    
+}
+
+
+#LogOut{
+    position: absolute;
+    top:8%;
+    left: 80%;
+}
+#Usuario{
+    position: absolute;
+    top:3%;
+    left: 90%;
+    width: 60px;
+    height: 60px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../imagenes/imgUsuarioM.png");
+    background-size: 60px 60px;
+    background-color: rgba(0, 0, 0,0);
+    border-width: 0px;
+}
+.minibutton{
+    background-color: #B8EEFF;
+    border-radius: 30px;
+    color: #222222;
+
+    border: 0px;
+    width: 120px;
+    height: 54px;
+    font-size: 18px;
+    cursor: pointer;
+}
+#mainMenuform{
+    position: absolute;
+    top: 20%;
+    left:20%;
+    
+}
+.bigBTN{
+    background-color: rgba(63, 173, 207);
+    border-radius: 40px;
+    border: 0px;
+    height: 410px;
+    width: 245px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    color: white;
+    font-size: 18px;
+    align-items: 20%;
+    
+}
+#NosotrosM{
+    background-image: url("../imagenes/SobreNos.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 245px 410px;
+    cursor: pointer;
+    
+}
+#CrearRec{
+    background-image: url("../imagenes/CrearReceta.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 245px 410px;
+    cursor: pointer;
+}
+#MisPacientes{
+    background-image: url("../imagenes/misPacientes.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 245px 410px;
+    cursor: pointer;
+}
+.ayuda{
+    position: absolute;
+    top: 25%;
+    left:2.3%;
+    width: 65px;
+    height: 65px;
+    background-color: #ffffff9f;
+    border-radius: 40px;
+    border-width: 0px;
+    font-size: 35px;
+    text-align: center;
+    color: rgb(102, 102, 102);
+    cursor: pointer;
+}
+.regresar{
+    position: absolute;
+    top: 40%;
+    left: 2.3%;
+    width: 65px;
+    height: 65px;
+    background-color: #ffffff9f;
+    border-radius: 40px;
+    border-width: 0px;
+}
+#Iconregresar{
+    position: absolute;
+    top: 42.3%;
+    left: 3.4%;
+    font-size: 35px;
+    color: rgb(102, 102, 102);
+}
+#MisRecetas{
+    background-image: url("../imagenes/MisRecetas.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 245px 410px;
+    cursor: pointer;
+}
+#MisMedicos{
+    background-image: url("../imagenes/MisMedicos.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 245px 410px;
+    cursor: pointer;
+}

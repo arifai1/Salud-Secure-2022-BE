@@ -26,9 +26,11 @@ p{
     color: blue;
 }
 
+
+
 #loginformM{
-    width: 400px;
-    height: 350px;
+    width: 500px;
+    height: 450px;
     text-align: center;
     margin: auto;
     background-image: url("../imagenes/FondoForm.png");
@@ -52,8 +54,8 @@ p{
 
 }
 #loginformP{
-    width: 400px;
-    height: 350px;
+    width: 500px;
+    height: 450px;
     text-align: center;
     margin: auto;
     background-image: url("../imagenes/FondoForm.png");
@@ -66,8 +68,8 @@ p{
 
 #mainMenuform{
     position: absolute;
-    top: 10%;
-    left:20%
+    top: 25%;
+    left:20.5%;
     
 
 }
@@ -143,7 +145,7 @@ p{
 }
 
 .botpac{
-    
+    position: absolute;
     text-align: center;
     top: 20%;
     right: 20%;
@@ -161,7 +163,7 @@ p{
 }
 
 .bigBTN{
-    background-color: rgba(63, 173, 207,0.6);
+    background-color: rgba(63, 173, 207);
     border-radius: 40px;
     border: 0px;
     height: 410px;
@@ -175,9 +177,11 @@ p{
     background-position: center;
     background-repeat: no-repeat;
     background-size: 208px 410px;
+    cursor: pointer;
+
 }
-#btnPacientes{
-    background-color: rgba(63, 173, 207,0.6);
+#MisPacientes{
+    background-color: rgba(63, 173, 207);
     border-radius: 40px;
     border: 0px;
     height: 410px;
@@ -191,11 +195,11 @@ p{
     background-size: 208px 410px;
     
 }
-#mainbuttonM{
-    background-color: #3FADCF;
+#CrearRec{
+    background-color: #4a4eb5;
     border-radius: 40px;
     border: 0px;
-    height: 572px;
+    height: 472px;
     width: 293px;
     color: white;
     font-size: 18px;
