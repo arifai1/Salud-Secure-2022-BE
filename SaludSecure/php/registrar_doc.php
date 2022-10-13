@@ -2,7 +2,6 @@
 include_once("db.php");
 
 $data=array();
-
     												
 	$sql="SELECT idmedico from medico where usuario='".$_REQUEST['usum']."'";
 	
