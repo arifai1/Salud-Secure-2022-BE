@@ -14,6 +14,9 @@ $data=array();
 		}*/
 		$data['status']='ok';
     	$data['result']= $userData;
+		/*session_start()
+			 = 'usuario';
+			echo $_SESSION['idmedSes'];*/
 	}else{
 		$data['status']='err';
     	$data['result']= '';
