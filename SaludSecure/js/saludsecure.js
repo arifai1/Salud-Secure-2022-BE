@@ -18,6 +18,9 @@ $(document).ready(function () {
     $("#RegresarM").click(function () {
         window.location.replace('../html/pantallaprincipal_doc.html');
     });
+    $("#NosotrosP").click(function () {
+        window.location.replace('../html/pantallanosotros.html');
+    });
 
     //LogIn del paciente                                                                                                        
     $("#divt").hide();
