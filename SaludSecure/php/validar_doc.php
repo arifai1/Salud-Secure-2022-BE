@@ -1,8 +1,5 @@
 <?php
 include_once("db.php");
-
-//echo "asdasdas";
-
 $data=array();
 
 	$sql="SELECT idmedico, nombre, apellido from medico where usuario='".$_REQUEST['usum']."' and contrasena='".$_REQUEST['passm']."'";	
@@ -21,7 +18,6 @@ $data=array();
 		$data['status']='err';
     	$data['result']= '';
 	}
-	//retorno los datos en formato JSON
 	echo json_encode($data);
 	$con->close();						                                                      
 
