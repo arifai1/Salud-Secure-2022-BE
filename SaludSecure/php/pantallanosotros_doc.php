@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 
 <head>
@@ -18,9 +19,9 @@
 				<label id="Txtlogo">BESMO</label>
 				<label id="headertitle">Menu principal</label>
 				<input type="button" id="logo">
-				<div id="LogOut">
+				<!-- <div id="LogOut">
 					<input type="button" class="minibutton" value="Log Out" id="LO_M">
-				</div>
+				</div> -->
 				<input id="Usuario" type="button">
 
 		</div>

@@ -1,4 +1,5 @@
-<!--<?php session_start();?> -->
+<?php session_start();?> 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +34,7 @@
 	<div id="contenedor">
 		<div id="log">
 			<form id="mainMenuform">
-				<input type="button" id="NosotrosM" class="bigBTN" />
+				<input type="button" id="NosotrosM" class="bigBTN"/> <!--value= echo $_SESSION['user']"/>   esto es para mostrar la variable de sesión-->
 				<input type="button" id="CrearRec" class="bigBTN" />
 				<input type="button" id="MisPacientes" class="bigBTN" />
 

@@ -16,10 +16,10 @@ $(document).ready(function () {
         window.location.replace('../html/pantallainicio.html');
     });
     $("#RegresarM").click(function () {
-        window.location.replace('../html/pantallaprincipal_doc.html');
+        window.location.replace('../php/pantallaprincipal_doc.php');
     });
     $("#NosotrosP").click(function () {
-        window.location.replace('../html/pantallanosotros.html');
+        window.location.replace('../php/pantallanosotros.php');
     });
 
     //LogIn del paciente                                                                                                        
@@ -66,13 +66,13 @@ $(document).ready(function () {
                     else if (data.status == 'ok') {
                         mensaje = "Bienvenido: " + data.result['nombre'] + " " + data.result['apellido'] + "";
                         $("#divt").html(mensaje);
-                        window.location.replace('../html/pantallaprincipal.html');
+                        window.location.replace('../php/pantallaprincipal.php');
                         $("#divt").show();
 
                     }
                     else {
                         mensaje = "Usuario no encontrado, si desea registrarse haga click ";
-                        mensaje += "<a href='../html/registrar.html' /a>aqui.";                                               //sintaxis de link en html. Etiqueta a me indica link. Href me indica destino.
+                        mensaje += "<a href='../php/registrar.html' /a>aqui.";                                               //sintaxis de link en html. Etiqueta a me indica link. Href me indica destino.
                         $("#divt").html(mensaje);
                         $("#divt").show();
                     }
@@ -101,7 +101,7 @@ $(document).ready(function () {
             data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val() + '&nom=' + $("#n").val() + '&ape=' + $("#a").val() + '&Credencial=' + $("#c").val() + '&FechadeNacimiento=' + $("#f").val(), //'&DNI='+$("#d").val()+
             success: function (data) {
                 if (data.status == 'ok') {
-                    $(location).attr('href', "pantallaprincipal.html");
+                    $(location).attr('href', "pantallaprincipal.php");
                     mensaje=("Se registro el usuario");
                 }
                 else if (data.status == 'err') {
@@ -171,7 +171,7 @@ $(document).ready(function () {
                     else if (data.status == 'ok') {
                         mensaje = "Bienvenido: " + data.result['nombre'] + " " + data.result['apellido'] + "";
                         $("#divt").html(mensaje);
-                        window.location.replace('../html/pantallaprincipal_doc.html');
+                        window.location.replace('../php/pantallaprincipal_doc.php');
                         $("#divt").show();
 
                     }
@@ -207,7 +207,7 @@ $(document).ready(function () {
             success: function (data) {
                 if (data.status == 'ok') {
                     mensaje = "Se registro el usuario";
-                    $(location).attr('href', "pantallaprincipal_doc.html");
+                    $(location).attr('href', "pantallaprincipal_doc.php");
                     alert("Se registro el usuario");
                 }
                 else if (data.status == 'err') {
@@ -242,14 +242,15 @@ $(document).ready(function () {
 
     //al apretar el boton de Log Out, redirigimos a la pantalla de inicio
     $("#LO_M").click(function () {
-        window.location.replace('../html/pantallainicio.html');
+        //window.location.replace('../html/pantallainicio.html');
+        window.location.replace('../php/logout.php');
     });
     $("#LO_M").mouseover(function () {
         $(".boton").css("cursor", "pointer");
     });
 
     $("#LO").click(function () {
-        window.location.replace('../html/pantallainicio.html');
+        window.location.replace('../php/logout.php');
     });
     $("#LO").mouseover(function () {
         $(".boton").css("cursor", "pointer");
@@ -258,7 +259,7 @@ $(document).ready(function () {
 
 
     $("#Recetas").click(function () {
-        window.location.replace('../html/recetas.html'); //redirigimos a donde estan todos las recetas.
+        window.location.replace('../php/recetas.php'); //redirigimos a donde estan todos las recetas.
     });
     $("#Recetas").mouseover(function () {
         $(".boton").css("cursor", "pointer");
@@ -273,7 +274,7 @@ $(document).ready(function () {
 
     //botones pantallaprincipal.html
     $("#Nosotros").click(function () {
-        window.location.replace('../html/pantallanosotros.html'); //mostramos info sobre nosotros
+        window.location.replace('../php/pantallanosotros.php'); //mostramos info sobre nosotros
     });
     $("#Nosotros").mouseover(function () {
         $(".boton").css("cursor", "pointer");
@@ -281,7 +282,7 @@ $(document).ready(function () {
 
 
     $("#MisRecetas").click(function () {
-        window.location.replace('../html/recetas.html'); //redirigimos a una pagina en la que luego de poner una contraseña, nos lleve a una pagina donde esten todas las recetas.
+        window.location.replace('../php/recetas.php'); //redirigimos a una pagina en la que luego de poner una contraseña, nos lleve a una pagina donde esten todas las recetas.
     });
     $("#MisRecetas").mouseover(function () {
         $(".boton").css("cursor", "pointer");
@@ -289,7 +290,7 @@ $(document).ready(function () {
 
 
     $("#MisMedicos").click(function () {
-        window.location.replace('../html/MisMedicos.html'); //redirigimos a una pagina en la que esten todos los medicos asignados.
+        window.location.replace('../php/MisMedicos.php'); //redirigimos a una pagina en la que esten todos los medicos asignados.
     });
     $("#MisMedicos").mouseover(function () {
         $(".boton").css("cursor", "pointer");
@@ -297,7 +298,7 @@ $(document).ready(function () {
 
     //botones pantallaprincipal_doc.html
     $("#NosotrosM").click(function () {
-        window.location.replace('../html/pantallanosotros_doc.html'); //mostramos info sobre nosotros
+        window.location.replace('../php/pantallanosotros_doc.php'); //mostramos info sobre nosotros
     });
     $("#NosotrosM").mouseover(function () {
         $(".boton").css("cursor", "pointer");
@@ -305,7 +306,7 @@ $(document).ready(function () {
 
 
     $("#CrearRec").click(function () {
-        window.location.replace('../html/CrearReceta.html'); //redirigimos al smartcontract.
+        window.location.replace('../php/CrearReceta.php'); //redirigimos al smartcontract.
     });
     $("#CrearRec").mouseover(function () {
         $(".boton").css("cursor", "pointer");
@@ -313,7 +314,7 @@ $(document).ready(function () {
 
 
     $("#MisPacientes").click(function () {
-        window.location.replace('../html/MisPacientes.html'); 
+        window.location.replace('../php/MisPacientes.php'); 
     });
     $("#MisPacientes").mouseover(function () {
         $(".boton").css("cursor", "pointer");
