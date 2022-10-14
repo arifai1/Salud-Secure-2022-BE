@@ -1,4 +1,7 @@
-<?php session_start();?> 
+<?php session_start();
+if (!isset($_SESSION['user'])){
+    header('Location: ../html/pantallainicio.html');
+    }?> 
 
 <!DOCTYPE html>
 <html lang="en">
