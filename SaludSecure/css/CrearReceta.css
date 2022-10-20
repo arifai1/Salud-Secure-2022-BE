@@ -202,3 +202,10 @@ header{
     color: rgb(102, 102, 102);
     cursor: pointer;
 }
+#confirmDNI{
+    position: absolute;
+    top: 38%;
+    left: 80%;
+    color: green;
+    cursor: pointer;
+}

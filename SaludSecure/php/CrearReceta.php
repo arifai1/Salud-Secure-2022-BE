@@ -44,7 +44,10 @@ if (!isset($_SESSION['user'])){
         <br><br>
         <input placeholder="Apellido" class="txtbox">
         <br><br>
+        
         <input placeholder="DNI" class="txtbox" type="number" id="dnidelpacCrearRec" name="usuario">
+        <i class="material-icons" id="confirmDNI">check</i>
+        
         <br><br>
         <input placeholder="Credencial" class="txtbox">
         <br><br>
