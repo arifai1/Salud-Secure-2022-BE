@@ -52,7 +52,7 @@ $(document).ready(function () {
 
     $("#LogIn").click(function (event) {
         event.preventDefault();                     //evitamos que se refresque la pagina asi podemos ver por mas tiempo el mensaje de Usuario no encontrado
-        
+
         if ($("#u").val() != '' && $("#p").val() != '') {
             $.ajax({                                                                                                                                                                                                               //Y luego vuelve igual.
                 type: 'POST',
@@ -102,10 +102,10 @@ $(document).ready(function () {
             success: function (data) {
                 if (data.status == 'ok') {
                     $(location).attr('href', "pantallaprincipal.php");
-                    mensaje=("Se registro el usuario");
+                    mensaje = ("Se registro el usuario");
                 }
                 else if (data.status == 'err') {
-                    mensaje=("El usuario que intento ingresar ya existe")
+                    mensaje = ("El usuario que intento ingresar ya existe")
                     $("#divt").html(mensaje);
                     $("divt").show();
                 }
@@ -237,7 +237,37 @@ $(document).ready(function () {
 
 
 
+    $("#EnviarSC").click(function () {
+        $.ajax({
+            type: 'POST',
+            url: '../php/CrearReceta_asignacion.php',
+            dataType: "json",
+            data: {"usuario": document.getElementById("dnidelpacCrearRec")},
+            success: function (data) {
+                if (data.status == 'ok') {
+                    //mostramos la $data en una pantalla
+                    alert("la asignacion fue exitosa");
+                }
+                else if (data.status == 'err') {
+                    mensaje = "Ocurrio un error";
+                    $("#divt").html(mensaje);
+                    $("#divt").show();
+                }
+                else {
+                    mensaje = "Ocurrio un error";
+                    $("#divt").html(mensaje);
+                    $("#divt").show();
+                }
+            },
+            error: function (error) {
+                ;
+            },
+        });
 
+
+
+
+    });
 
 
     //al apretar el boton de Log Out, redirigimos a la pantalla de inicio
@@ -314,7 +344,7 @@ $(document).ready(function () {
 
 
     $("#MisPacientes").click(function () {
-        window.location.replace('../php/MisPacientes.php'); 
+        window.location.replace('../php/MisPacientes.php');
     });
     $("#MisPacientes").mouseover(function () {
         $(".boton").css("cursor", "pointer");
