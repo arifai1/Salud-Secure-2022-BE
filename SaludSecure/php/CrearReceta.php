@@ -13,11 +13,40 @@ if (!isset($_SESSION['user'])){
     <UTF-8>
         <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
         <script src="../js/saludsecure.js" type="text/javascript"></script>
+        <!--web3.js-->
+        <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script language="javascript" type="text/javascript" src="web3.min.js"></script>
+        <script language="javascript" type="text/javascript" scr="SaludSecure_abi.js"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
 
 </head>
 
 <body>
+    <script>
+        var initializeContract;
+        function startApp(){
+            var contractAddress = "CONTRACT_ADDRESS" //Completar con el address
+            initializeContract = new web3js.eth.Contract(SaludSecureABI, contractAddress);
+        }
+        
+        window.addEventListener('load', function() {if (typeof web3 !== 'undefined') {
+         
+            web3js = new Web3(web3.currentProvider);
+            } else {
+        
+        
+            }
+
+      
+            startApp()
+
+        })
+
+        function getRecetasDetails(id) {
+            return cryptoZombies.methods.zombies(id).call()
+        }
+   </script>
 
     <header>
         <label id="Txtlogo">BESMO</label>
