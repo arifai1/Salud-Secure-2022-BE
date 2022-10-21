@@ -32,7 +32,7 @@ if (!isset($_SESSION['user'])){
     </header>
     <!--BTN Regresar-->
     <input type="button" value="?" class="ayuda">
-    <a class="btn-floating btn-large waves-effect" id="RegresarM"><i id="Iconregresar"
+    <a class="btn-floating btn-large waves-effect" id="RegresarM"><i id="IconregresarM"
             class="material-icons">arrow_back</i></a>
     <form action="CrearReceta.php" method="POST">
     <div id="IngresarDatos">

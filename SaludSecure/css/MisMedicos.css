@@ -10,14 +10,17 @@ body{
 header{
     position: fixed;
     padding: 15px;
-    text-align: center;
+    
     background: #ffffff;
     width: 100%;
     z-index: 9999;
     top: 0%;
     left:0%;
 }
+
 #headertitle{
+    position: relative;
+    left: 20%;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
 }
@@ -73,6 +76,49 @@ header{
     font-size: 18px;
     cursor: pointer;
 }
+.ayuda{
+    position: absolute;
+    top: 25%;
+    left:2.3%;
+    width: 65px;
+    height: 65px;
+    background-color: #ffffff9f;
+    border-radius: 40px;
+    border-width: 0px;
+    font-size: 35px;
+    text-align: center;
+    color: rgb(102, 102, 102);
+    cursor: pointer;
+}
+#RegresarP{
+    position: absolute;
+    top: 40%;
+    left: 2.3%;
+    width: 65px;
+    height: 65px;
+    background-color: #ffffff9f;
+    border-radius: 40px;
+    border-width: 0px;
+    cursor: pointer;
+}
+#IconregresarP{
+    position: absolute;
+    top: 21.5%;
+    left: 21.5%;
+    font-size: 35px;
+    color: rgb(102, 102, 102);
+    cursor: pointer;
+}
+#MisMedicos{
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    z-index: -999999;
+    width: 800px;
+    height: 500px;
+    background-color: rgba(255, 255, 255,0.6);
+    border-radius: 40px ;
+}
 #headerbuscador{
     position: fixed;
     top: 15%;
@@ -106,25 +152,13 @@ header{
 ::placeholder{
     font-size: 16px;
 }
-.paciente{
+.medico{
     position: absolute;
     left: 10%;
     top: 15%;
     background-color: #3FADCF;
     border-radius: 10px;
     width: 420px;
-    height:100px;
-    padding-left: 4%;
-    padding-top: 4%;
-    
-}
-#recetasAsignadas{
-    position: absolute;
-    right: 10%;
-    top: 15%;
-    background-color: #3FADCF;
-    border-radius: 10px;
-    width: 120px;
     height:100px;
     padding-left: 4%;
     padding-top: 4%;
@@ -141,33 +175,8 @@ header{
     height: 400px;
     z-index: -99999;
 }
-.ayuda{
-    position: absolute;
-    top: 25%;
-    left:2.3%;
-    width: 65px;
-    height: 65px;
-    background-color: #b8eeffa9;
-    border-radius: 40px;
-    border-width: 0px;
-    font-size: 35px;
-    text-align: center;
-    color: rgb(102, 102, 102);
-}
-.regresar{
-    position: absolute;
-    top: 40%;
-    left: 2.3%;
-    width: 65px;
-    height: 65px;
-    background-color: #ffffff9f;
-    border-radius: 40px;
-    border-width: 0px;
-}
-#IconregresarM{
-    position: absolute;
-    top: 42.3%;
-    left: 3.4%;
-    font-size: 35px;
-    cursor:pointer;
-}
+
+
+
+
+

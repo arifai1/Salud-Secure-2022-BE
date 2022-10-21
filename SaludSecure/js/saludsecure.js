@@ -18,6 +18,15 @@ $(document).ready(function () {
     $("#RegresarM").click(function () {
         window.location.replace('../php/pantallaprincipal_doc.php');
     });
+    $("#IconregresarM").click(function () {
+        window.location.replace('../php/pantallaprincipal_doc.php');
+    });
+    $("#RegresarP").click(function () {
+        window.location.replace('../php/pantallaprincipal.php');
+    });
+    $("#IconregresarP").click(function () {
+        window.location.replace('../php/pantallaprincipal.php');
+    });
     $("#NosotrosP").click(function () {
         window.location.replace('../php/pantallanosotros.php');
     });
