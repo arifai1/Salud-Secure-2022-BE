@@ -24,7 +24,7 @@ if (!isset($_SESSION['user'])){
         <label id="headertitle">Menu principal</label>
         <input type="button" id="logo">
         <div id="LogOut">
-            <input type="button" class="minibutton" value="Log Out" id="LO_M">
+            <input type="button"  value="Log Out" id="LO_M">
         </div>
         <input id="Usuario" type="button">
 
@@ -46,12 +46,11 @@ if (!isset($_SESSION['user'])){
         <br><br>
         
         <input placeholder="DNI" class="txtbox" type="number" id="dnidelpacCrearRec" name="usuario">
-        <i class="material-icons" id="confirmDNI">check</i>
         
         <br><br>
         <input placeholder="Credencial" class="txtbox">
-        <br><br>
-
+        <br><br><br><br>
+       
         <input type="submit" value="Enviar" id="EnviarSC" class="minibutton"/>
         <!--HACER BOTON CON TYPE SUBMIT-->
 
