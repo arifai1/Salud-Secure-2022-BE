@@ -15,6 +15,7 @@ contract Estudiante{
     //mapping(string => uint) private _cantidadMedicamentos;
     //bytes32 _cantidad;
     
+    
 
     constructor(string memory nombre_, string memory apellido_, string memory DNI_, string memory Credencial_){
         _medico = msg.sender;
