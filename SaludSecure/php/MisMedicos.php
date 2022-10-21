@@ -32,13 +32,13 @@
     <div class="medico">
         hola
     </div>
-</div>
-    <div id="ResetasAsignadas">
+
+    <div id="ResetasMedicas">
      code
     </div>
     </div>
     <!--BTN Regresar-->
-    <input type="button" value="?" class="ayuda" id="RegresarP">
+    <input type="button" value="?" class="ayuda" >
     <a class="btn-floating btn-large waves-effect" id="RegresarP"><i id="IconregresarP" class="material-icons">arrow_back</i></a>
 
     
