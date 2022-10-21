@@ -14,6 +14,15 @@ p{
     font-family: Arial, sans-serif;
     color: #555555;
 }
+#cuenta{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+}
+#divt{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    color: red;
+}
 .title{
     font-family: Arial, sans-serif;
     color: #555555;
@@ -77,8 +86,12 @@ p{
 
 
 .ingresar {
-    border-radius: 40px;
-    border: 2px solid #3FADCF;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom-style: solid;
+    border-color: #3FADCF;
+    border-width: 2px;
     padding: 10px 30px;
     font-size: 18px;
     
@@ -100,13 +113,13 @@ p{
 /*Botones*/
 .minibutton{
     background-color: #B8EEFF;
-    border-radius: 30px;
+    border-radius: 10px;
     color:#555555;
     border: 0px;
-    width: 172px;
+    width: 280px;
     height: 54px;
     font-size: 18px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   
     cursor: pointer;
     
 

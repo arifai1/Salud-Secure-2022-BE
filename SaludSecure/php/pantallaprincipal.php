@@ -1,4 +1,7 @@
-<!--<?php session_start();?> -->
+<?php session_start();
+if (!isset($_SESSION['user'])){
+    header('Location: ../html/pantallainicio.html');
+    }?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,9 +36,9 @@
 	<div id="contenedor">
 		<div id="log">
 			<form id="mainMenuform">
-				<input type="button" id="NosotrosM" class="bigBTN" />
-				<input type="button" id="CrearRec" class="bigBTN" />
-				<input type="button" id="MisPacientes" class="bigBTN" />
+				<input type="button" id="NosotrosP" class="bigBTN" />
+				<input type="button" id="MisRecetas" class="bigBTN" />
+				<input type="button" id="MisMedicos" class="bigBTN" />
 
 			</form>
 			<div id="divt">

@@ -1,3 +1,8 @@
+<?php session_start();
+if (!isset($_SESSION['user'])){
+    header('Location: ../html/pantallainicio.html');
+    }?>
+
 <!DOCTYPE html>
 
 <head>
