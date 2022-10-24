@@ -1,8 +1,10 @@
 
 /*Textos*/
 h1 {
+    position: absolute;
+    left: 8%;
     font-family: Arial, sans-serif;
-    color: #555555;
+    color: #3FADCF;
     text-align: center;
     
 }
@@ -97,13 +99,23 @@ p{
     
 }
 .ingresarR {
-    border-radius: 40px;
-    border: 2px solid #3FADCF;
+    color: black;
+    background-color: rgba(255, 255, 255,0);
+    width: 150px;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom-style: solid;
+    border-color: #3FADCF;
+    border-width: 2px;
     padding: 10px 30px;
     font-size: 18px;
-    width: 150px;
 }
-
+#positiontext{
+    position: absolute;
+    top: 35%;
+    left: 8%;
+}
 #usuariotext{
     font-weight: bold;
     text-decoration: underline;
@@ -113,7 +125,23 @@ label{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 60px;
 }
-
+.regresar{
+    position: absolute;
+    top: 2%;
+    left: 2.3%;
+    width: 65px;
+    height: 65px;
+    background-color: #ffffff9f;
+    border-radius: 40px;
+    border-width: 0px;
+}
+#Iconregresar{
+    position: absolute;
+    top: 4.3%;
+    left: 3.4%;
+    font-size: 35px;
+    color: rgb(102, 102, 102);
+}
 
 /*Botones*/
 .minibutton{
@@ -121,7 +149,7 @@ label{
     border-radius: 10px;
     color:#555555;
     border: 0px;
-    width: 280px;
+    width: 190px;
     height: 54px;
     font-size: 18px;
    

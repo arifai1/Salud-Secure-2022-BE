@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+    $("#RegresarSB").click(function () {
+        window.location.replace('../html/SobreBesmo.html');
+    });
     $("#LogInComoPac").click(function () {
         window.location.replace('../html/iniciarsesion.html');
     });
