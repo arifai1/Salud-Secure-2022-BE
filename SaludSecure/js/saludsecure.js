@@ -249,30 +249,21 @@ $(document).ready(function () {
 
 
 
-    $("#EnviarSC").click(function () {
+    $("#EnviarSC").click(function (e) {
+        e.preventDefault();
+
         $.ajax({
             type: 'POST',
             url: '../php/CrearReceta_asignacion.php',
             dataType: "json",
-            data: {"usuario": document.getElementById("dnidelpacCrearRec")},
+            data: { "usuario": $("#dnidelpacCrearRec").value },
             success: function (data) {
-                if (data.status == 'ok') {
-                    //mostramos la $data en una pantalla
-                    alert("la asignacion fue exitosa");
-                }
-                else if (data.status == 'err') {
-                    mensaje = "Ocurrio un error";
-                    $("#divt").html(mensaje);
-                    $("#divt").show();
-                }
-                else {
-                    mensaje = "Ocurrio un error";
-                    $("#divt").html(mensaje);
-                    $("#divt").show();
-                }
+                //mostramos la $data en una pantalla
+                console.log(data);
+                alert("La asignacion fue exitosa");
             },
             error: function (error) {
-                ;
+                console.log(error);
             },
         });
 

@@ -34,28 +34,28 @@ if (!isset($_SESSION['user'])){
     <input type="button" value="?" class="ayuda">
     <a class="btn-floating btn-large waves-effect" id="RegresarM"><i id="IconregresarM"
             class="material-icons">arrow_back</i></a>
-    <form action="CrearReceta.php" method="POST">
-    <div id="IngresarDatos">
-        <div class="smallheader">
-            <label id="title1" class="titles">Ingresar datos del Paciente</label>
-        </div>
-        <br>
-        <input placeholder="Nombre" class="txtbox">
-        <br><br>
-        <input placeholder="Apellido" class="txtbox">
-        <br><br>
+    <form method="POST">
+        <div id="IngresarDatos">
+            <div class="smallheader">
+                <label id="title1" class="titles">Ingresar datos del Paciente</label>
+            </div>
+            <br>
+            <input placeholder="Nombre" class="txtbox">
+            <br><br>
+            <input placeholder="Apellido" class="txtbox">
+            <br><br>
+            
+            <input placeholder="DNI" class="txtbox" type="number" id="dnidelpacCrearRec" name="usuario">
+            
+            <br><br>
+            <input placeholder="Credencial" class="txtbox">
+            <br><br><br><br>
         
-        <input placeholder="DNI" class="txtbox" type="number" id="dnidelpacCrearRec" name="usuario">
-        
-        <br><br>
-        <input placeholder="Credencial" class="txtbox">
-        <br><br><br><br>
-       
-        <input type="submit" value="Enviar" id="EnviarSC" class="minibutton"/>
-        <!--HACER BOTON CON TYPE SUBMIT-->
+            <input type="submit" value="Enviar" id="EnviarSC" class="minibutton"/>
+            <!--HACER BOTON CON TYPE SUBMIT-->
 
-    </div>
-</form>
+        </div>
+    </form>
 
     <div id="CrearReceta">
         <div class="smallheader2">
