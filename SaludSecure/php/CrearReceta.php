@@ -30,6 +30,7 @@ if (!isset($_SESSION['user'])){
             initializeContract = new web3js.eth.Contract(SaludSecureABI, contractAddress);
         }
         
+        
         window.addEventListener('load', function() {if (typeof web3 !== 'undefined') {
          
             web3js = new Web3(web3.currentProvider);
