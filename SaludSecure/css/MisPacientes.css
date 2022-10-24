@@ -64,7 +64,7 @@ header{
 
 .minibutton{
     background-color: #B8EEFF;
-    border-radius: 30px;
+    border-radius: 10px;
     color: #222222;
 
     border: 0px;
@@ -147,7 +147,7 @@ header{
     left:2.3%;
     width: 65px;
     height: 65px;
-    background-color: #b8eeffa9;
+    background-color: #ffffff9f;
     border-radius: 40px;
     border-width: 0px;
     font-size: 35px;

@@ -24,8 +24,10 @@
     <div id="headerbuscador">
         <input type="search" class="buscador" placeholder="Puedes buscar por nombre, apellido, edad, dni">
         <i class="large material-icons" id="buscar">search</i>
-     </div>
-   <div class="background">
+    </div>
+
+
+    <div id="background">
    
     <div class="paciente">
         hola

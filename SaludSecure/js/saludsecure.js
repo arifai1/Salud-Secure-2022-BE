@@ -81,7 +81,7 @@ $(document).ready(function () {
                     }
                     else {
                         mensaje = "Usuario no encontrado, si desea registrarse haga click ";
-                        mensaje += "<a href='../php/registrar.html' /a>aqui.";                                               //sintaxis de link en html. Etiqueta a me indica link. Href me indica destino.
+                        mensaje += "<a href='../html/registrar.html' /a>aqui.";                                               //sintaxis de link en html. Etiqueta a me indica link. Href me indica destino.
                         $("#divt").html(mensaje);
                         $("#divt").show();
                     }
@@ -110,7 +110,7 @@ $(document).ready(function () {
             data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val() + '&nom=' + $("#n").val() + '&ape=' + $("#a").val() + '&Credencial=' + $("#c").val() + '&FechadeNacimiento=' + $("#f").val(), //'&DNI='+$("#d").val()+
             success: function (data) {
                 if (data.status == 'ok') {
-                    $(location).attr('href', "pantallaprincipal.php");
+                    $(location).attr('href', "../php/pantallaprincipal.php");
                     mensaje = ("Se registro el usuario");
                 }
                 else if (data.status == 'err') {
