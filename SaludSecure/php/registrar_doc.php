@@ -18,9 +18,6 @@ $data=array();
 		if($res==1){
 			$data['status']='ok';
 			$data['result']= '1';
-			/*session_start()
-			$_SESSION['idmedSes'] = 'usuario';
-			echo $_SESSION['idmedSes'];*/
 		}else{
 			$data['status']='error';
 			$data['result']= '1';

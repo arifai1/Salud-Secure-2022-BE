@@ -78,6 +78,7 @@ $(document).ready(function () {
                     else if (data.status == 'ok') {
                         mensaje = "Bienvenido: " + data.result['nombre'] + " " + data.result['apellido'] + "";
                         $("#divt").html(mensaje);
+                        console.log("estoy aca");
                         window.location.replace('../php/pantallaprincipal.php');
                         $("#divt").show();
 
@@ -113,7 +114,7 @@ $(document).ready(function () {
             data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val() + '&nom=' + $("#n").val() + '&ape=' + $("#a").val() + '&Credencial=' + $("#c").val() + '&FechadeNacimiento=' + $("#f").val(), //'&DNI='+$("#d").val()+
             success: function (data) {
                 if (data.status == 'ok') {
-                    $(location).attr('href', "../php/pantallaprincipal.php");
+                    $(location).attr('href', '../php/pantallaprincipal.php');
                     mensaje = ("Se registro el usuario");
                 }
                 else if (data.status == 'err') {

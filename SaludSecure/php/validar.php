@@ -9,6 +9,8 @@ $data=array();
 		$userData = $res->fetch_assoc(); 												    
 		$data['status']='ok';
     	$data['result']= $userData;
+		session_start();
+		$_SESSION['user']=$userData['idpaciente'];
 	}else{
 		$data['status']='err';
     	$data['result']= '';
