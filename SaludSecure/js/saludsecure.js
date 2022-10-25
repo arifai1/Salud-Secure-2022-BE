@@ -114,6 +114,7 @@ $(document).ready(function () {
             success: function (data) {
                 if (data.status == 'ok') {
                     window.location.replace('../php/pantallaprincipal.php');
+                    
                     //$(location).attr('href', 'pantallaprincipal.php');
                     alert("Se registro el usuario");
                 }
