@@ -25,29 +25,107 @@ if (!isset($_SESSION['user'])){
 <body>
     <script>
         var initializeContract;
+        var userAccounts;
         function startApp(){
             var contractAddress = "CONTRACT_ADDRESS" //Completar con el address
             initializeContract = new web3js.eth.Contract(SaludSecureABI, contractAddress);
+
+            var accountInterval = setInterval(function() {
+         
+         if (web3.eth.accounts[0] !== userAccount) {
+           userAccount = web3.eth.accounts[0];
+          
+           getZombiesByOwner(userAccount)
+           .then(displayZombies);
+         }
+       }, 100);
+     }
+
         }
         
-        
+
         window.addEventListener('load', function() {if (typeof web3 !== 'undefined') {
          
             web3js = new Web3(web3.currentProvider);
             } else {
         
-        
-            }
-
-      
+            }      
             startApp()
 
         })
 
-        function getRecetasDetails(id) {
-            return cryptoZombies.methods.zombies(id).call()
+        //DISPLAY
+        function displayZombies(ids) {
+            $("#zombies").empty();
+            for (id of ids) {
+         
+                getZombieDetails(id)
+                .then(function(zombie) {
+           
+           
+                $("#zombies").append(`<div class="zombie">
+                <ul>
+                    <li>Name: ${zombie.name}</li>
+                    <li>DNA: ${zombie.dna}</li>
+                    <li>Level: ${zombie.level}</li>
+                    <li>Wins: ${zombie.winCount}</li>
+                    <li>Losses: ${zombie.lossCount}</li>
+                    <li>Ready Time: ${zombie.readyTime}</li>
+                </ul>
+                </div>`);
+          });
         }
+
+        function createRandomZombie(name) {   
+            $("#txStatus").text("Creating new zombie on the blockchain. This may take a while...");
+      
+            return cryptoZombies.methods.createRandomZombie(name)
+            .send({ from: userAccount })
+            .on("receipt", function(receipt) {
+                $("#txStatus").text("Successfully created " + name + "!");
+        
+            getZombiesByOwner(userAccount).then(displayZombies);
+       })
+            .on("error", function(error) {
+        
+            $("#txStatus").text(error);
+            });
+    }
+
+        function feedOnKitty(zombieId, kittyId) {
+      
+      
+            $("#txStatus").text("Eating a kitty. This may take a while...");
+      
+            return cryptoZombies.methods.feedOnKitty(zombieId, kittyId)
+            .send({ from: userAccount })
+            .on("receipt", function(receipt) {
+             $("#txStatus").text("Ate a kitty and spawned a new Zombie!");
+        
+             getZombiesByOwner(userAccount).then(displayZombies);
+       })
+             .on("error", function(error) {
+        
+             $("#txStatus").text(error);
+       });
+     }
+
+
+        //completar con nombres correctos
+        function getRecetasDetails(id) { 
+            return SaludSecure.methods.funcion(id).call()
+        }
+
+        function zombieToOwner(id) {
+            return cryptoZombies.methods.zombieToOwner(id).call()
+      }
+
+        function getZombiesByOwner(owner) {
+            return cryptoZombies.methods.getZombiesByOwner(owner).call()
+      }
+      
    </script>
+
 
     <header>
         <label id="Txtlogo">BESMO</label>
