@@ -280,6 +280,9 @@ $(document).ready(function () {
     $("#IconregresarM").click(function () {
         window.location.replace('../php/pantallaprincipal_doc.php');
     });
+    $("#Iconregresar").click(function () {
+        window.location.replace('../html/SobreBesmo.html');
+    });
     $("#RegresarP").click(function () {
         window.location.replace('../php/pantallaprincipal.php');
     });
