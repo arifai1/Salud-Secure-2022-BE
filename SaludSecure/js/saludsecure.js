@@ -106,7 +106,6 @@ $(document).ready(function () {
 
     //Registrar del paciente
     $("#RegistrarPac").click(function () {
-
         $.ajax({
             type: 'POST',
             url: '../php/registrar.php',
@@ -114,8 +113,9 @@ $(document).ready(function () {
             data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val() + '&nom=' + $("#n").val() + '&ape=' + $("#a").val() + '&Credencial=' + $("#c").val() + '&FechadeNacimiento=' + $("#f").val(), //'&DNI='+$("#d").val()+
             success: function (data) {
                 if (data.status == 'ok') {
-                    $(location).attr('href', '../php/pantallaprincipal.php');
-                    mensaje = ("Se registro el usuario");
+                    window.location.replace('../php/pantallaprincipal.php');
+                    //$(location).attr('href', 'pantallaprincipal.php');
+                    alert("Se registro el usuario");
                 }
                 else if (data.status == 'err') {
                     mensaje = ("El usuario que intento ingresar ya existe")
@@ -220,7 +220,8 @@ $(document).ready(function () {
             success: function (data) {
                 if (data.status == 'ok') {
                     mensaje = "Se registro el usuario";
-                    $(location).attr('href', "pantallaprincipal_doc.php");
+                    window.location.replace('../php/pantallaprincipal_doc.php');
+                    //$(location).attr('href', "pantallaprincipal_doc.php");
                     alert("Se registro el usuario");
                 }
                 else if (data.status == 'err') {
