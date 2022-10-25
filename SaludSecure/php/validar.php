@@ -10,7 +10,7 @@ $data=array();
 		$data['status']='ok';
     	$data['result']= $userData;
 		session_start();
-		$_SESSION['user']=$userData['idpaciente'];
+		$_SESSION['user']=$userData["IDpaciente"];
 	}else{
 		$data['status']='err';
     	$data['result']= '';

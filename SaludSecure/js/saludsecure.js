@@ -78,14 +78,13 @@ $(document).ready(function () {
                     else if (data.status == 'ok') {
                         mensaje = "Bienvenido: " + data.result['nombre'] + " " + data.result['apellido'] + "";
                         $("#divt").html(mensaje);
-                        console.log("estoy aca");
+                        console.log(data.result);
                         window.location.replace('../php/pantallaprincipal.php');
                         $("#divt").show();
 
                     }
                     else {
-                        mensaje = "Usuario no encontrado, si desea registrarse haga click ";
-                        mensaje += "<a href='../html/registrar.html' /a>aqui.";                                               //sintaxis de link en html. Etiqueta a me indica link. Href me indica destino.
+                        mensaje = "Usuario no encontrado, por favor registrarse";                                               //sintaxis de link en html. Etiqueta a me indica link. Href me indica destino.
                         $("#divt").html(mensaje);
                         $("#divt").show();
                     }
