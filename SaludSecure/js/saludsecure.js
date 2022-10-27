@@ -154,8 +154,7 @@ $(document).ready(function () {
 
                     }
                     else {
-                        mensaje = "Usuario no encontrado, si desea registrarse haga click ";
-                        mensaje += "<a href='../html/registrar_doc.html' /a>aqui.";
+                        mensaje = "Usuario no encontrado, por favor registrarse";
                         $("#divt").html(mensaje);
                         $("#divt").show();
                     }
