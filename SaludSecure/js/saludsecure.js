@@ -78,20 +78,20 @@ $(document).ready(function () {
             data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val() + '&nom=' + $("#n").val() + '&ape=' + $("#a").val() + '&Credencial=' + $("#c").val() + '&FechadeNacimiento=' + $("#f").val(),       //mandamos toda la info para que se registre en nuestra bdd.
             success: function (data) {
                 if (data.status == 'ok') {
+                    mensaje = ("Se registro el usuario");
+                    $("#divt").html(mensaje);
+                    $("#divt").show();
                     window.location.replace('../php/pantallaprincipal.php');
-
-                    //$(location).attr('href', 'pantallaprincipal.php');
-                    alert("Se registro el usuario");
                 }
                 else if (data.status == 'err') {
-                    mensaje = ("El usuario que intento ingresar ya existe")
+                    mensaje= ("El usuario que intento ingresar ya existe");
                     $("#divt").html(mensaje);
-                    $("divt").show();
+                    $("#divt").show();
                 }
                 else {
                     alert("Ocurrio un error");
                     $("#divt").html(mensaje);
-                    $("divt").show();
+                    $("#divt").show();
                 }
             },
             error: function (error) {
@@ -149,8 +149,9 @@ $(document).ready(function () {
                     else if (data.status == 'ok') {
                         mensaje = "Bienvenido: " + data.result['nombre'] + " " + data.result['apellido'] + "";
                         $("#divt").html(mensaje);
-                        window.location.replace('../php/pantallaprincipal_doc.php');
                         $("#divt").show();
+                        window.location.replace('../php/pantallaprincipal_doc.php');
+                        
 
                     }
                     else {
@@ -183,8 +184,9 @@ $(document).ready(function () {
             success: function (data) {
                 if (data.status == 'ok') {
                     mensaje = "Se registro el usuario";
+                    $("#divt").html(mensaje);
+                    $("#divt").show();
                     window.location.replace('../php/pantallaprincipal_doc.php');
-                    //$(location).attr('href', "pantallaprincipal_doc.php");
                 }
                 else if (data.status == 'err') {
                     mensaje = "El usuario que intento ingresar ya existe";
@@ -193,7 +195,6 @@ $(document).ready(function () {
                 }
                 else {
                     mensaje = "Ocurrio un error";
-                    //alert("Ocurrio un error");
                     $("#divt").html(mensaje);
                     $("#divt").show();
                 }

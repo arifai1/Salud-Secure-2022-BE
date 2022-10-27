@@ -1,11 +1,9 @@
 <?php
-
 include_once("db.php");
 
 $data=array();
 
-    												
-	$sql="SELECT IDpaciente from paciente where usuario='".$_REQUEST['usu']."' AND contrasena='".$_REQUEST['pass']."'";
+    $sql="SELECT IDpaciente from paciente where usuario='".$_REQUEST['usu'] . "'";
 	$res=$con->query($sql);
 	
 	if($res->num_rows > 0){ 		//ya existe un usuario														
