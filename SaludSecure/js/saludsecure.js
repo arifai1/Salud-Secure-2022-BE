@@ -247,7 +247,7 @@ $(document).ready(function () {
     //finaliza aca los LogOut
 
     $("#Recetas").click(function () {
-        window.location.replace('../php/recetas.php'); //redirigimos a donde estan todos las recetas.
+        window.location.replace('../php/misRecetas.php'); //redirigimos a donde estan todos las recetas.
     });
     $("#Recetas").mouseover(function () {
         $(".boton").css("cursor", "pointer");
@@ -286,6 +286,9 @@ $(document).ready(function () {
     $("#RegresarP").click(function () {
         window.location.replace('../php/pantallaprincipal.php');
     });
+    $("#regresarP").click(function () {
+        window.location.replace('../php/pantallaprincipal.php');
+    });
     $("#IconregresarP").click(function () {
         window.location.replace('../php/pantallaprincipal.php');
     });
@@ -301,7 +304,7 @@ $(document).ready(function () {
         $(".boton").css("cursor", "pointer");
     });
     $("#MisRecetas").click(function () {
-        window.location.replace('../php/recetas.php'); //redirigimos a una pagina en la que luego de poner una contraseña, nos lleve a una pagina donde esten todas las recetas.
+        window.location.replace('../php/misRecetas.php'); 
     });
     $("#MisRecetas").mouseover(function () {
         $(".boton").css("cursor", "pointer");
