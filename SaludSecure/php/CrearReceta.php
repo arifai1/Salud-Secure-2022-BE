@@ -27,16 +27,16 @@ if (!isset($_SESSION['user'])){
         var initializeContract;
         var userAccounts;
         function startApp(){
-            var contractAddress = "CONTRACT_ADDRESS" //Completar con el address
+            var contractAddress = "0x0a487A8a6ee4ee519E9B932aEe3BD9a6f3f4aEf7" //Completar con el address
             initializeContract = new web3js.eth.Contract(SaludSecureABI, contractAddress);
 
             var accountInterval = setInterval(function() {
          
-         if (web3.eth.accounts[0] !== userAccount) {
-           userAccount = web3.eth.accounts[0];
+            if (web3.eth.accounts[0] !== userAccount) {
+                userAccount = web3.eth.accounts[0];
           
-           getZombiesByOwner(userAccount)
-           .then(displayZombies);
+                getZombiesByOwner(userAccount)
+                .then(displayZombies);
          }
        }, 100);
      }
