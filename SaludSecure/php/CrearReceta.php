@@ -13,6 +13,7 @@ if (!isset($_SESSION['user'])){
     <UTF-8>
         <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
         <script src="../js/saludsecure.js" type="text/javascript"></script>
+        <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
         <!--web3.js-->
         <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script language="javascript" type="text/javascript" src="web3.min.js"></script>
@@ -24,108 +25,100 @@ if (!isset($_SESSION['user'])){
 
 <body>
     <script>
-        var initializeContract;
-        var userAccounts;
+        const saludSecure = [
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "medicamento_",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "cantidad_",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "aclaracion_",
+				"type": "string"
+			}
+		],
+		"name": "set_receta",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "nombre_",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "apellido_",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "DNI_",
+				"type": "string"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "ver_Receta",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
+            // copy the contract ABI here
+            //const provider = new EtherscanProvider("goerli");
+            const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.matic.today');   //https://goerlifaucet.com/   
+            function contractInteraction() {
+                const contractAddress = '0xa0ccDD96AE52777f1eCe7D1efF6A02ae7341614b'
+                const connectedContract = new ethers.Contract(contractAddress, saludSecure, provider);
+                const txn = connectedContract.ver_Receta() // FUNCTION NUESTRA DE MOSTRAR TODO
+                alert("This is working");
+                txn.then(function(result) {
+                    alert(result)
+                })
+            }
+            <input id="clickMe" type="button" value="Call Contract Function" onclick="contractInteraction();" />       
+        /*var initializeContract;
         function startApp(){
-            var contractAddress = "0x0a487A8a6ee4ee519E9B932aEe3BD9a6f3f4aEf7" //Completar con el address
+            var contractAddress = "CONTRACT_ADDRESS" //Completar con el address
             initializeContract = new web3js.eth.Contract(SaludSecureABI, contractAddress);
-
-            var accountInterval = setInterval(function() {
-         
-            if (web3.eth.accounts[0] !== userAccount) {
-                userAccount = web3.eth.accounts[0];
-          
-                getZombiesByOwner(userAccount)
-                .then(displayZombies);
-         }
-       }, 100);
-     }
-
         }
         
-
+        
         window.addEventListener('load', function() {if (typeof web3 !== 'undefined') {
          
             web3js = new Web3(web3.currentProvider);
             } else {
-        
-            }      
+                        
+            }
+      
             startApp()
 
         })
 
-        //DISPLAY
-        function displayZombies(ids) {
-            $("#zombies").empty();
-            for (id of ids) {
-         
-                getZombieDetails(id)
-                .then(function(zombie) {
-           
-           
-                $("#zombies").append(`<div class="zombie">
-                <ul>
-                    <li>Name: ${zombie.name}</li>
-                    <li>DNA: ${zombie.dna}</li>
-                    <li>Level: ${zombie.level}</li>
-                    <li>Wins: ${zombie.winCount}</li>
-                    <li>Losses: ${zombie.lossCount}</li>
-                    <li>Ready Time: ${zombie.readyTime}</li>
-                </ul>
-                </div>`);
-          });
-        }
-
-        function createRandomZombie(name) {   
-            $("#txStatus").text("Creating new zombie on the blockchain. This may take a while...");
-      
-            return cryptoZombies.methods.createRandomZombie(name)
-            .send({ from: userAccount })
-            .on("receipt", function(receipt) {
-                $("#txStatus").text("Successfully created " + name + "!");
-        
-            getZombiesByOwner(userAccount).then(displayZombies);
-       })
-            .on("error", function(error) {
-        
-            $("#txStatus").text(error);
-            });
-    }
-
-        function feedOnKitty(zombieId, kittyId) {
-      
-      
-            $("#txStatus").text("Eating a kitty. This may take a while...");
-      
-            return cryptoZombies.methods.feedOnKitty(zombieId, kittyId)
-            .send({ from: userAccount })
-            .on("receipt", function(receipt) {
-             $("#txStatus").text("Ate a kitty and spawned a new Zombie!");
-        
-             getZombiesByOwner(userAccount).then(displayZombies);
-       })
-             .on("error", function(error) {
-        
-             $("#txStatus").text(error);
-       });
-     }
-
-
-        //completar con nombres correctos
-        function getRecetasDetails(id) { 
-            return SaludSecure.methods.funcion(id).call()
-        }
-
-        function zombieToOwner(id) {
-            return cryptoZombies.methods.zombieToOwner(id).call()
-      }
-
-        function getZombiesByOwner(owner) {
-            return cryptoZombies.methods.getZombiesByOwner(owner).call()
-      }
-      
+        function getRecetasDetails(id) {
+            return cryptoZombies.methods.zombies(id).call()
+        }*/
    </script>
-
 
     <header>
         <label id="Txtlogo">BESMO</label>
