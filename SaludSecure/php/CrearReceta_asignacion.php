@@ -1,12 +1,15 @@
 <?php
     include_once("db.php");
-    
-    echo "TEST";
 
-    $nombrepac= $_POST["usuario"];
+    $nombrepac = $_POST["usuario"];
     $id = "SELECT idpaciente FROM `paciente` WHERE usuario = $nombrepac";
-    $sql = "INSERT INTO medico_paciente (idmedico,idpaciente) VALUES (" . $_SESSION['user'] . "," . $id . ")";     //Falta hacer SESSIONS para que el ID del medico sea obligatoriamente con el que se Loguea, como una firma. De esta manera vamos a poder hacer luego la autoasignacion con 2 SELECT más. 
-	
+    $res = $con->query($id);     
+    $sql = "INSERT INTO medico_paciente (idmedico,idpaciente) VALUES (" . $_SESSION['user'] . "," . $res . ")"; 
+    $res2 = $con->query($sql);     //falta mostrar los datos en pantalla.
+
+
+
+
     echo json_encode($data);
     $con->close();	
 ?>
