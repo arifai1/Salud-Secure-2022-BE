@@ -235,8 +235,8 @@ $(document).ready(function () {
         //     },
         //     error: function (error) {
         //         console.log(error);
-        //     },
-        // });
+               },
+            });
     });
 
     //Botones LogOut
