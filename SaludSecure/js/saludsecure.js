@@ -140,7 +140,7 @@ $(document).ready(function () {
                 type: 'POST',
                 url: '../php/validar_doc.php',
                 dataType: "json",
-                data: 'usum=' + $("#q").val() + '&passm=' + $("#c").val(),// + '&que=L',
+                data: 'usum=' + $("#q").val() + '&passm=' + $("#c").val(),
                 success: function (data) {
                     console.log(data);
                     if (data == "") {
@@ -151,8 +151,6 @@ $(document).ready(function () {
                         $("#divt").html(mensaje);
                         $("#divt").show();
                         window.location.replace('../php/pantallaprincipal_doc.php');
-
-
                     }
                     else {
                         mensaje = "Usuario no encontrado, por favor registrarse";
@@ -214,9 +212,7 @@ $(document).ready(function () {
 
     $("#EnviarSC").click(function (e) {
         e.preventDefault();
-
-        console.log(document.querySelector("#dnidelpacCrearRec").value);
-
+        //console.log(document.querySelector("#dnidelpacCrearRec").value);
         $.ajax({
             type: 'POST',
             url: '../php/CrearReceta_asignacion.php',
@@ -235,6 +231,7 @@ $(document).ready(function () {
                              $("#divt").show();
                          }
                          //mostramos la $data en una pantalla
+                         console.log("te muestro la data");
                          console.log(data);
                      },
                      error: function (error) {
