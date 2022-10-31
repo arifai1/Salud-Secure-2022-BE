@@ -224,21 +224,21 @@ $(document).ready(function () {
             data: { "usuario": document.querySelector("#dnidelpacCrearRec").value.toString() },
             success: function (data) {
                 console.log(data);
-                //         if (data.status == 'ok') {
-                //             mensaje = "Se envio la receta correctamente";
-                //             $("#divt").html(mensaje);
-                //             $("#divt").show();
-                //         }
-                //         else{
-                //             mensaje = "Ocurrio un error";
-                //             $("#divt").html(mensaje);
-                //             $("#divt").show();
-                //         }
-                //         //mostramos la $data en una pantalla
-                //         console.log(data);
-                //     },
-                //     error: function (error) {
-                //         console.log(error);
+                         if (data.status == 'ok') {
+                             mensaje = "Se envio la receta correctamente";
+                             $("#divt").html(mensaje);
+                             $("#divt").show();
+                         }
+                         else{
+                             mensaje = "Ocurrio un error";
+                             $("#divt").html(mensaje);
+                             $("#divt").show();
+                         }
+                         //mostramos la $data en una pantalla
+                         console.log(data);
+                     },
+                     error: function (error) {
+                         console.log(error);
             },
         });
     });
