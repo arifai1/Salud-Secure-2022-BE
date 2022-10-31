@@ -16,10 +16,16 @@
     // var_dump($res2);
     if($res2){														
         $data['status']='ok';   //falta agarrar los datos y mostrarlos en las pantallas correspondientes.
-        $sql2 = "SELECT nombre, apellido, credencial, nacimiento, usuario FROM paciente LEFT JOIN medico_paciente ON (paciente.idpaciente = medico_paciente.idpaciente)";
+        $sql2 = "SELECT nombre, apellido, credencial, nacimiento, usuario FROM paciente LEFT JOIN medico_paciente ON (paciente.idpaciente = medico_paciente.idpaciente) WHERE medico_paciente.idmedico = '". $_SESSION["user"] ."'"; //GROUP BY idpaciente;
         $res3 = $con->query($sql2);
-        if($res3->num_rows > 0){ 																//num_rows me da el numero de filas como resultado, me da la cantidad de filas de res, nos sirve para saber si existen filas o no.
-            $userData3 = $res3->fetch();//fetch_assoc(); 												    
+
+        if($res3->num_rows > 0){
+            $userData3 = array();
+            
+            while($fila = $res3->fetch_assoc()){
+                $userData3[] = $fila;
+            }
+
             $data['status']='ok';
             $data['result']= $userData3;
         }else{
