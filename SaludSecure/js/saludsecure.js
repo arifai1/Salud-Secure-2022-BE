@@ -32,7 +32,7 @@ $(document).ready(function () {
         event.preventDefault();                     //evitamos que se refresque la pagina asi podemos ver por mas tiempo el mensaje de Usuario no encontrado
 
         if ($("#u").val() != '' && $("#p").val() != '') {
-            $.ajax({                                                                                                                                                                                                               
+            $.ajax({
                 type: 'POST',
                 url: '../php/validar.php',                              //va a mandar la info a este archivo para validar si el suario es correcto  o no.
                 dataType: "json",
@@ -50,7 +50,7 @@ $(document).ready(function () {
 
                     }
                     else {
-                        mensaje = "Usuario no encontrado, por favor registrarse";                                               
+                        mensaje = "Usuario no encontrado, por favor registrarse";
                         $("#divt").html(mensaje);
                         $("#divt").show();
                     }
@@ -84,7 +84,7 @@ $(document).ready(function () {
                     window.location.replace('../php/pantallaprincipal.php');
                 }
                 else if (data.status == 'err') {
-                    mensaje= ("El usuario que intento ingresar ya existe");
+                    mensaje = ("El usuario que intento ingresar ya existe");
                     $("#divt").html(mensaje);
                     $("#divt").show();
                 }
@@ -151,7 +151,7 @@ $(document).ready(function () {
                         $("#divt").html(mensaje);
                         $("#divt").show();
                         window.location.replace('../php/pantallaprincipal_doc.php');
-                        
+
 
                     }
                     else {
@@ -211,32 +211,36 @@ $(document).ready(function () {
     //finaliza aca
 
     //asignacion paciente-medico por el dni ingresado en el input del Smart Contract.
+
     $("#EnviarSC").click(function (e) {
         e.preventDefault();
+
+        console.log(document.querySelector("#dnidelpacCrearRec").value);
 
         $.ajax({
             type: 'POST',
             url: '../php/CrearReceta_asignacion.php',
             dataType: "json",
-            data: { "usuario": $("#dnidelpacCrearRec").value },
+            data: { "usuario": document.querySelector("#dnidelpacCrearRec").value.toString() },
             success: function (data) {
-        //         if (data.status == 'ok') {
-        //             mensaje = "Se envio la receta correctamente";
-        //             $("#divt").html(mensaje);
-        //             $("#divt").show();
-        //         }
-        //         else{
-        //             mensaje = "Ocurrio un error";
-        //             $("#divt").html(mensaje);
-        //             $("#divt").show();
-        //         }
-        //         //mostramos la $data en una pantalla
-        //         console.log(data);
-        //     },
-        //     error: function (error) {
-        //         console.log(error);
-               },
-            });
+                console.log(data);
+                //         if (data.status == 'ok') {
+                //             mensaje = "Se envio la receta correctamente";
+                //             $("#divt").html(mensaje);
+                //             $("#divt").show();
+                //         }
+                //         else{
+                //             mensaje = "Ocurrio un error";
+                //             $("#divt").html(mensaje);
+                //             $("#divt").show();
+                //         }
+                //         //mostramos la $data en una pantalla
+                //         console.log(data);
+                //     },
+                //     error: function (error) {
+                //         console.log(error);
+            },
+        });
     });
 
     //Botones LogOut
@@ -313,7 +317,7 @@ $(document).ready(function () {
         $(".boton").css("cursor", "pointer");
     });
     $("#MisRecetas").click(function () {
-        window.location.replace('../php/misRecetas.php'); 
+        window.location.replace('../php/misRecetas.php');
     });
     $("#MisRecetas").mouseover(function () {
         $(".boton").css("cursor", "pointer");
