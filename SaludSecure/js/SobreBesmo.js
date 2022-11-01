@@ -18,7 +18,7 @@ $(document).ready(function() {
     der -= 250;
     $(".receta").css({"position": "relative", top: "14%", left: izq-der})
   })
-    $(function() {
+    //$(function() {
         $( "#button" ).click(function() {
            // alert ("hola");
           $( "#button" ).addClass( "onclic", 250, validate());
@@ -43,5 +43,5 @@ $(document).ready(function() {
             // alert ("hola");
             $( "#receta" ).addClass( "recetaIzq");
          });
-        });
+      //  });
 })

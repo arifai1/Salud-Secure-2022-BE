@@ -11,45 +11,35 @@ if (!isset($_SESSION['user'])){
     <link rel="stylesheet" href="../css/CrearReceta.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <UTF-8>
-        <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-3.6.0.min.js"></script>
         <script src="../js/saludsecure.js" type="text/javascript"></script>
-        <script src="../js/SobreBesmo.js" type="text/javascript"></script>
+        <script src="../js/SobreBesmo.js"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
     <script> 
+       // $(document).ready(function() {
         async function conexionWeb3(){
 				if (typeof window.ethereum !== "undefined") {
-                    $(function() {
-                            $( "#button" ).click(function() {
-                            $( "#button" ).addClass( "onclic", 250, validate);
-                             });
-
-                            function validate() {
-                                setTimeout(function() {
-                                $( "#button" ).removeClass( "onclic" );
-                                $( "#button" ).addClass( "validate", 450, callback );
-                                    }, 2250 );
-                                }
-                            function callback() {
-                                setTimeout(function() {
-                                $( "#button" ).removeClass( "validate" );
-                                }, 1250 );
-                                 }
-                        });     
+                     //alert("SEE");
+                     
 			 		ethereum.request({ method: "eth_requestAccounts" })
-					}
+					
+                }
 				else{
 				alert("No tiene MetaMask instalado, por favor descarguelo");
                  
 			}
-		}
+        
+    
         async function conexionMetaMask(){
             mensaje = "No tiene instalado MetaMask, por favor instalelo apretando el boton 'Conectar con MetaMask'";                                               //Href me indica destino.
             $("#divt").html(mensaje);
             $("#divt").show();
             await window.open("https://metamask.io/download/", "_blank")
         }
+    }
+        
     </script>
 <body>
 
@@ -86,10 +76,13 @@ if (!isset($_SESSION['user'])){
             <br><br><br><br>
         
             <!--<input type="submit" value="Enviar" id="EnviarSC" class="minibutton" onclick="conexionWeb3();"/> -->
-            <div class="container">
-                <button id="button"></button>
-            </div>
-                
+            <html>
+                <body>
+                    <div class="container">
+                        <button id="button" onclick="conexionWeb3();"></button>
+                    </div>
+                </body>
+            </hmtl>  
             <input type="submit" value="Conectar con MetaMask" id="ConecMsk" class="minibutton" onclick="conexionMetaMask();"/>
              
             <!--HACER BOTON CON TYPE SUBMIT-->
