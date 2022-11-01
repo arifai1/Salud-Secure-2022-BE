@@ -222,7 +222,7 @@ $(document).ready(function () {
             success: function (data) {
                 //mostramos la $data en una pantalla
                 console.log(data);
-                alert("La asignacion fue exitosa");
+                //alert("La asignacion fue exitosa");
             },
             error: function (error) {
                 console.log(error);

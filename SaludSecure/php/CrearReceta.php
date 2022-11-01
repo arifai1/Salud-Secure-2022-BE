@@ -24,10 +24,16 @@ if (!isset($_SESSION['user'])){
 			 		ethereum.request({ method: "eth_requestAccounts" })
 					}
 				else{
-				//window.open("https://metamask.io/download/", "_blank")
 				alert("No tiene MetaMask instalado, por favor descarguelo");
+                 
 			}
 		}
+        async function conexionMetaMask(){
+            mensaje = "No tiene instalado MetaMask, por favor instalelo apretando el boton 'Conectar con MetaMask'";                                               //Href me indica destino.
+            $("#divt").html(mensaje);
+            $("#divt").show();
+            await window.open("https://metamask.io/download/", "_blank")
+        }
     </script>
 <body>
 
@@ -64,6 +70,7 @@ if (!isset($_SESSION['user'])){
             <br><br><br><br>
         
             <input type="submit" value="Enviar" id="EnviarSC" class="minibutton" onclick="conexionWeb3();"/>
+            <input type="submit" value="Conectar con MetaMask" id="ConecMsk" class="minibutton" onclick="conexionMetaMask();"/>
              
             <!--HACER BOTON CON TYPE SUBMIT-->
 
