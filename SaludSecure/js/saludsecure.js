@@ -340,7 +340,7 @@ $(document).ready(function () {
         $(".boton").css("cursor", "pointer");
     });
     $("#MisPacientes").click(function () {
-        window.location.replace('../php/MisPacientes.php');
+        window.location.replace('../php/CrearReceta_asignacion.php');
     });
     $("#MisPacientes").mouseover(function () {
         $(".boton").css("cursor", "pointer");

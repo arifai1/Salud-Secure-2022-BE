@@ -15,6 +15,7 @@ if (!isset($_SESSION['user'])){
         <script src="../js/saludsecure.js" type="text/javascript"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="../js/SobreBesmo.js" type="text/javascript"></script>
+	<link rel="Icon" href="../imagenes/logo-Header.png">
     
    
     <title>Document</title>
