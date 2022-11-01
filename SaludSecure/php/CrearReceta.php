@@ -17,7 +17,18 @@ if (!isset($_SESSION['user'])){
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
-
+    <script> 
+        async function conexionWeb3(){
+				if (typeof window.ethereum !== "undefined") {
+					
+			 		ethereum.request({ method: "eth_requestAccounts" })
+					}
+				else{
+				//window.open("https://metamask.io/download/", "_blank")
+				alert("No tiene MetaMask instalado, por favor descarguelo");
+			}
+		}
+    </script>
 <body>
 
     <header>
@@ -52,7 +63,8 @@ if (!isset($_SESSION['user'])){
             <input placeholder="Credencial" class="txtbox">
             <br><br><br><br>
         
-            <input type="submit" value="Enviar" id="EnviarSC" class="minibutton"/>
+            <input type="submit" value="Enviar" id="EnviarSC" class="minibutton" onclick="conexionWeb3();"/>
+             
             <!--HACER BOTON CON TYPE SUBMIT-->
 
         </div>
@@ -74,3 +86,13 @@ if (!isset($_SESSION['user'])){
 </body>
 
 </html>
+
+<script>
+    function sendReceta(id) {
+        saludSecure.methods.myMethod(nombre).send()
+        saludSecure.methods.myMethod(apellido).send()
+        saludSecure.methods.myMethod(DNI).send()
+        saludSecure.methods.myMethod(tratamientos).send()
+
+      }
+    </script>
