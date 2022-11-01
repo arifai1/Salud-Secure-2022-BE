@@ -11,15 +11,19 @@ if (!isset($_SESSION['user'])){
     
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <UTF-8>
-    <link rel="stylesheet" href="../css/CrearReceta.css">
-    <link rel="stylesheet" href="../css/font-awesome.css">
-    <link rel="stylesheet" href="../css/jquery-ui.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/saludsecure.js" type="text/javascript"></script>
+        <script src="../js/SobreBesmo.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="../css/font-awesome.css">
+        <link rel="stylesheet" href="../css/jquery-ui.css">
+  
     <script src="../js/jquery-3.6.0.min.js"></script>
     <script src="../js/jquery.min.js"></script>
     <script src="../js/jquery-ui.min.js"></script>
-    <script src="../js/SobreBesmo.js"></script>
    
+
 </head>
     <script> 
             $(function() {
@@ -60,7 +64,32 @@ if (!isset($_SESSION['user'])){
             await window.open("https://metamask.io/download/", "_blank")
         }
     }
-        
+    $(function() {
+        $( "#button" ).click(function() {
+           // alert ("hola");
+          $( "#button" ).addClass( "onclic", 250, validate());
+        });
+      
+        function validate() {
+          setTimeout(function() {
+            $( "#button" ).removeClass( "onclic" );
+            $( "#button" ).addClass( "validate", 450, callback());
+          }, 2250 );
+        }
+          function callback() {
+            setTimeout(function() {
+              $( "#button" ).removeClass( "validate" );
+            }, 1250 );
+          }
+
+
+
+          $( "#receta" ).click(function() {
+          
+            // alert ("hola");
+            $( "#receta" ).addClass( "recetaIzq");
+         });
+        });
     </script>
 <body>
 
@@ -157,6 +186,6 @@ if (!isset($_SESSION['user'])){
         });
       
         
-
+//h
       }
     </script>
