@@ -20,7 +20,23 @@ if (!isset($_SESSION['user'])){
     <script> 
         async function conexionWeb3(){
 				if (typeof window.ethereum !== "undefined") {
-					
+                    $(function() {
+                            $( "#button" ).click(function() {
+                            $( "#button" ).addClass( "onclic", 250, validate);
+                             });
+
+                            function validate() {
+                                setTimeout(function() {
+                                $( "#button" ).removeClass( "onclic" );
+                                $( "#button" ).addClass( "validate", 450, callback );
+                                    }, 2250 );
+                                }
+                            function callback() {
+                                setTimeout(function() {
+                                $( "#button" ).removeClass( "validate" );
+                                }, 1250 );
+                                 }
+                        });     
 			 		ethereum.request({ method: "eth_requestAccounts" })
 					}
 				else{
@@ -69,7 +85,11 @@ if (!isset($_SESSION['user'])){
             <input placeholder="Credencial" class="txtbox">
             <br><br><br><br>
         
-            <input type="submit" value="Enviar" id="EnviarSC" class="minibutton" onclick="conexionWeb3();"/>
+            <!--<input type="submit" value="Enviar" id="EnviarSC" class="minibutton" onclick="conexionWeb3();"/> -->
+            <div class="container">
+                <button id="button"></button>
+            </div>
+                
             <input type="submit" value="Conectar con MetaMask" id="ConecMsk" class="minibutton" onclick="conexionMetaMask();"/>
              
             <!--HACER BOTON CON TYPE SUBMIT-->
