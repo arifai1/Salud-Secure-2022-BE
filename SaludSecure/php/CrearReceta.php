@@ -41,12 +41,14 @@ if (!isset($_SESSION['user'])){
         async function conexionWeb3(){
         
          
-        import detectEthereumProvider from '@metamask/detect-provider';
+        //import detectEthereumProvider from '@metamask/detect-provider';
 			 	 if (typeof window.ethereum !== "undefined") {
                     ethereum.request({ method: "eth_requestAccounts" })
-                    connectWallet()
-                      sendReceta();
-			 	
+                    //connectWallet()
+                      //sendReceta();
+                      mensajeM = "Conectando con MetaMask";                                               //Href me indica destino.
+                    $("#divt").html(mensajeM);
+                    $("#divt").show();
                   }
 			 	else{
 			 	    alert("No tiene MetaMask instalado, por favor descarguelo");
@@ -56,6 +58,7 @@ if (!isset($_SESSION['user'])){
                     await window.open("https://metamask.io/download/", "_blank")
 			    }
             }
+
              async function connectWallet() {
                     const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.matic.today');
                     await provider.send("eth_requestAccounts", []);
@@ -65,7 +68,7 @@ if (!isset($_SESSION['user'])){
         
     
         
-    }
+    
     $(function() {
         $( "#button" ).click(function() {
            // alert ("hola");
@@ -147,6 +150,7 @@ if (!isset($_SESSION['user'])){
     </div>
 
 </body>
+</html>
 <script>
 
     
@@ -180,4 +184,3 @@ if (!isset($_SESSION['user'])){
 //h
       }
     </script>
-</html>
