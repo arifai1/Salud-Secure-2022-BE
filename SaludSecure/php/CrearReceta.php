@@ -44,7 +44,7 @@ if (!isset($_SESSION['user'])){
         //import detectEthereumProvider from '@metamask/detect-provider';
 			 	 if (typeof window.ethereum !== "undefined") {
                     ethereum.request({ method: "eth_requestAccounts" })
-                    //connectWallet()
+                    connectWallet()
                       //sendReceta();
                       await window.ethereum.enable()
                       
@@ -70,6 +70,7 @@ if (!isset($_SESSION['user'])){
                     const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.matic.today');
                     await provider.send("eth_requestAccounts", []);
                     const signer = provider.getSigner()
+                    alert("Conectado");
              }
         
         
