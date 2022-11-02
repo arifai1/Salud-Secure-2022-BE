@@ -122,6 +122,8 @@ $(document).ready(function () {
     //LogIn del Medico
     $("#divi").hide();
     $("#LogInMed").click(function () {
+        $( "#LogInMed" ).removeClass( "minibutton" );
+        $( "#LogInMed" ).addClass( "minibuttonClick");
         $(".boton").css("cursor", "pointer");
         //hacemos que el que intenta ingresar este obligado a llenar todos los inputs.
         if ($("#q").val() == '' && $("#c").val() == '') {
@@ -195,6 +197,8 @@ $(document).ready(function () {
 
     //Registrar del medico
     $("#RegistrarMed").click(function () {
+        $( "#RegistrarMed" ).removeClass( "minibutton" );
+        $( "#RegistrarMed" ).addClass( "minibuttonClick");
         $.ajax({
             type: 'POST',
             url: '../php/registrar_doc.php',
