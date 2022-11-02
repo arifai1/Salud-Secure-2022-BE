@@ -19,6 +19,7 @@ if (!isset($_SESSION['user'])){
 
 </head>
 <script> 
+
             $(function() {
         $( "#button" ).click(function() {
             $( "#button" ).addClass( "onclic", 250, validate);
@@ -38,29 +39,32 @@ if (!isset($_SESSION['user'])){
         });
        
         async function conexionWeb3(){
-				if (typeof window.ethereum !== "undefined") {
-                     alert("SEE");
-                    sendReceta();
-			 	const accounts=	ethereum.request({ method: "eth_ccounts" })
-                    if (accounts && accounts.length > 0) {
-                        alert("user is connected");
-                        sendReceta();
-                        } else {
-                             alert("user not connected");
-                    }
-                }
-				else{
-				alert("No tiene MetaMask instalado, por favor descarguelo");
-                 conexionMetaMask();
-			}
+        
+         
+        import detectEthereumProvider from '@metamask/detect-provider';
+			 	 if (typeof window.ethereum !== "undefined") {
+                    ethereum.request({ method: "eth_requestAccounts" })
+                    connectWallet()
+                      sendReceta();
+			 	
+                  }
+			 	else{
+			 	    alert("No tiene MetaMask instalado, por favor descarguelo");
+                    mensaje = "No tiene instalado MetaMask, por favor instalelo apretando el boton 'Conectar con MetaMask'";                                               //Href me indica destino.
+                    $("#divt").html(mensaje);
+                    $("#divt").show();
+                    await window.open("https://metamask.io/download/", "_blank")
+			    }
+            }
+             async function connectWallet() {
+                    const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.matic.today');
+                    await provider.send("eth_requestAccounts", []);
+                    const signer = provider.getSigner()
+             }
+        
         
     
-        async function conexionMetaMask(){
-            mensaje = "No tiene instalado MetaMask, por favor instalelo apretando el boton 'Conectar con MetaMask'";                                               //Href me indica destino.
-            $("#divt").html(mensaje);
-            $("#divt").show();
-            await window.open("https://metamask.io/download/", "_blank")
-        }
+        
     }
     $(function() {
         $( "#button" ).click(function() {
