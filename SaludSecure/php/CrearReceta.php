@@ -19,11 +19,7 @@ if (!isset($_SESSION['user'])){
         <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 </head>
 <script> 
-<<<<<<< Updated upstream
   const Web3 = require("web3")
-=======
-    
->>>>>>> Stashed changes
             $(function() {
         $( "#button" ).click(function() {
             $( "#button" ).addClass( "onclic", 250, validate);
@@ -50,12 +46,13 @@ if (!isset($_SESSION['user'])){
                     ethereum.request({ method: "eth_requestAccounts" })
                     //connectWallet()
                       //sendReceta();
-                      alert("Siii");
-                      try {
-                        // Request account access if needed
                       await window.ethereum.enable()
-                        // Acccounts now exposed
-                        }
+                      
+                      // try {
+                      //   // Request account access if needed
+                      // await window.ethereum.enable()
+                      //   // Acccounts now exposed
+                      //   }
                       mensajeM = "Conectando con MetaMask";                                               //Href me indica destino.
                     $("#divt").html(mensajeM);
                     $("#divt").show();
