@@ -47,13 +47,13 @@ if (!isset($_SESSION['user'])){
         async function conexionWeb3(){
 				if (typeof window.ethereum !== "undefined") {
                      //alert("SEE");
-                     
+                    sendReceta();
 			 		ethereum.request({ method: "eth_requestAccounts" })
 					
                 }
 				else{
 				alert("No tiene MetaMask instalado, por favor descarguelo");
-                 
+                 conexionMetaMask();
 			}
         
     
@@ -128,7 +128,7 @@ if (!isset($_SESSION['user'])){
             <!--<input type="submit" value="Enviar" id="EnviarSC" class="minibutton" onclick="conexionWeb3();"/> -->
            
            <div class="container">
-               <button id="button" onclick="sendReceta();"></button>
+               <button id="button" onclick="conexionWeb3();"></button>
                         
             </div>
                 
@@ -155,9 +155,10 @@ if (!isset($_SESSION['user'])){
 
 </body>
 
-</html>
 
 <script>
+
+    
     var userAccount = web3.eth.account[0]
     var account accountInterval = setInterval(function() {
   // Check if account has changed
@@ -188,3 +189,5 @@ if (!isset($_SESSION['user'])){
 //h
       }
     </script>
+
+</html>
