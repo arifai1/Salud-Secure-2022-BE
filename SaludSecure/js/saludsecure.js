@@ -1,20 +1,31 @@
 $(document).ready(function () {
 
+
+
     //LogIn del paciente                                                                                                        
     $("#divt").hide();
-    $("#LogIn").mouseover(function () {
-        $(".boton").css("cursor", "pointer");
-
+    $("#LogIn").click(function () {
+        $( "#LogIn" ).removeClass( "minibutton" );
+        $( "#LogIn" ).addClass( "minibuttonClick");
+      
 
         if ($("#u").val() == '' && $("#p").val() == '') {
             $("#divt").html("Debe agregar Usuario y Contrase&ntildea");
             $("#divt").show();
+            $( "#u" ).removeClass( "ingresar" );
+            $( "#u" ).addClass( "noIngresado");
+            $( "#p" ).removeClass( "ingresar" );
+            $( "#p" ).addClass( "noIngresado");
         } else if ($("#u").val() == '' && $("#p").val() != "") {
             $("#divt").html("Debe agregar Usuario");
             $("#divt").show();
+            $( "#u" ).removeClass( "ingresar" );
+            $( "#u" ).addClass( "noIngresado");
         } else if ($("#u").val() != '' && $("#p").val() == "") {
             $("#divt").html("Debe agregar Contrase&ntildea");
             $("#divt").show();
+            $( "#p" ).removeClass( "ingresar" );
+            $( "#p" ).addClass( "noIngresado");
         }
     });
 
@@ -71,6 +82,8 @@ $(document).ready(function () {
 
     //Registrar del paciente
     $("#RegistrarPac").click(function () {
+        $( "#RegistrarPac" ).removeClass( "minibutton" );
+        $( "#RegistrarPac" ).addClass( "minibuttonClick");
         $.ajax({
             type: 'POST',
             url: '../php/registrar.php',
@@ -107,19 +120,27 @@ $(document).ready(function () {
 
 
     //LogIn del Medico
-    $("#divt").hide();
-    $("#LogInMed").mouseover(function () {
+    $("#divi").hide();
+    $("#LogInMed").click(function () {
         $(".boton").css("cursor", "pointer");
         //hacemos que el que intenta ingresar este obligado a llenar todos los inputs.
         if ($("#q").val() == '' && $("#c").val() == '') {
-            $("#divt").html("Debe agregar Usuario y Contrase&ntildea");
-            $("#divt").show();
+            $("#divi").html("Debe agregar Usuario y Contrase&ntildea");
+            $("#divi").show();
+            $( "#q" ).removeClass( "ingresar" );
+            $( "#q" ).addClass( "noIngresado");
+            $( "#c" ).removeClass( "ingresar" );
+            $( "#c" ).addClass( "noIngresado");
         } else if ($("#q").val() == '' && $("#c").val() != "") {
-            $("#divt").html("Debe agregar Usuario");
-            $("#divt").show();
+            $("#divi").html("Debe agregar Usuario");
+            $("#divi").show();
+            $( "#q" ).removeClass( "ingresar" );
+            $( "#q" ).addClass( "noIngresado");
         } else if ($("#q").val() != '' && $("#c").val() == "") {
-            $("#divt").html("Debe agregar Contrase&ntildea");
-            $("#divt").show();
+            $("#divi").html("Debe agregar Contrase&ntildea");
+            $("#divi").show();
+            $( "#c" ).removeClass( "ingresar" );
+            $( "#c" ).addClass( "noIngresado");
         }
     });
 
