@@ -17,7 +17,72 @@ if (!isset($_SESSION['user'])){
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
+<script> 
+            $(function() {
+        $( "#button" ).click(function() {
+            $( "#button" ).addClass( "onclic", 250, validate);
+        });
 
+        function validate() {
+            setTimeout(function() {
+            $( "#button" ).removeClass( "onclic" );
+            $( "#button" ).addClass( "validate", 450, callback );
+            }, 2250 );
+        }
+            function callback() {
+            setTimeout(function() {
+                $( "#button" ).removeClass( "validate" );
+            }, 1250 );
+            }
+        });
+       
+        async function conexionWeb3(){
+				if (typeof window.ethereum !== "undefined") {
+                     alert("SEE");
+                    sendReceta();
+			 		ethereum.request({ method: "eth_requestAccounts" })
+					
+                }
+				else{
+				alert("No tiene MetaMask instalado, por favor descarguelo");
+                 conexionMetaMask();
+			}
+        
+    
+        async function conexionMetaMask(){
+            mensaje = "No tiene instalado MetaMask, por favor instalelo apretando el boton 'Conectar con MetaMask'";                                               //Href me indica destino.
+            $("#divt").html(mensaje);
+            $("#divt").show();
+            await window.open("https://metamask.io/download/", "_blank")
+        }
+    }
+    $(function() {
+        $( "#button" ).click(function() {
+           // alert ("hola");
+          $( "#button" ).addClass( "onclic", 250, validate());
+        });
+      
+        function validate() {
+          setTimeout(function() {
+            $( "#button" ).removeClass( "onclic" );
+            $( "#button" ).addClass( "validate", 450, callback());
+          }, 2250 );
+        }
+          function callback() {
+            setTimeout(function() {
+              $( "#button" ).removeClass( "validate" );
+            }, 1250 );
+          }
+
+
+
+          $( "#receta" ).click(function() {
+          
+            // alert ("hola");
+            $( "#receta" ).addClass( "recetaIzq");
+         });
+        });
+    </script>
 <body>
 
     <header>
