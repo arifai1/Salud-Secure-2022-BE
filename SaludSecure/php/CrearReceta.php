@@ -126,14 +126,13 @@ if (!isset($_SESSION['user'])){
             <br><br><br><br>
         
             <!--<input type="submit" value="Enviar" id="EnviarSC" class="minibutton" onclick="conexionWeb3();"/> -->
-            <html>
-                <body>
-                    <div class="container">
-                        <button id="button" onclick="sendReceta();"></button>
+           
+           <div class="container">
+               <button id="button" onclick="sendReceta();"></button>
                         
-                    </div>
-                </body>
-            </hmtl>  
+            </div>
+                
+            
             <input type="submit" value="Conectar con MetaMask" id="ConecMsk" class="minibutton" onclick="conexionMetaMask();"/>
              
             <!--HACER BOTON CON TYPE SUBMIT-->
