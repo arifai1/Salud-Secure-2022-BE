@@ -87,7 +87,7 @@ if (!isset($_SESSION['user'])){
 
     <header>
         <label id="Txtlogo">BESMO</label>
-        <label id="headertitle">Menu principal</label>
+        <label id="headertitle">Crear Receta</label>
         <input type="button" id="logo">
         <div id="LogOut">
             <input type="button"  value="Log Out" id="LO_M">
@@ -117,7 +117,7 @@ if (!isset($_SESSION['user'])){
             <input placeholder="Credencial" class="txtbox">
             <br><br><br><br>
         
-            <input type="submit" value="Enviar" id="EnviarSC" class="minibutton"/>
+            <input type="submit" value="Enviar" id="EnviarSC" class="minibutton" onclick="conexionWeb3();"/>
             <!--HACER BOTON CON TYPE SUBMIT-->
 
         </div>
