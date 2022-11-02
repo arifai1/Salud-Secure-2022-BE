@@ -1,57 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <UTF-8>
-
-        <title>Registrarse</title>
-
-        <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
-        <script src="../js/saludsecure.js" type="text/javascript"></script>
-        <link rel="stylesheet" href="../css/styles_Buttons.css">
-        <link rel="stylesheet" href="../css/styles_Layout.css">
-        
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="../css/Sesiones.css">
+    <script src="../js/jquery-3.6.0.min.js"></script>
+   <script src="../js/saludsecure.js"></script>
+    
 </head>
-
-<body class="Rbody">
-    <div id="contenedor">
-        <div id="reg">
-            <div id="registerformM" class="container">
-                <h1>Crear Cuenta Medica</h1>
-                <div class="ingresarCol1">
-                    <input id="NomMed" name="SignInNombrem" type="text" class="ingresarR" placeholder="Nombre Real" />
-                    <br><br>
-                    <input id="AreaMed" name="Aream" type="text" class="ingresarR" placeholder="Area medica" />
-                    <br><br>
-                    <input id="UsuMed" name="SignInUsum" type="number" class="ingresarR" placeholder="Ingresar DNI" />
-                    <br><br><br><br>
-                    <a href="./pantallainicio.html">Regresar</a>
-                </div>
-                <div class="ingresarCol2">
-                    <input id="ApeMed" name="SingInApellm" type="text" class="ingresarR" placeholder="Apellido real">
-                    <br><br>
-                    <input id="teleMed" name="Telefonom" type="number" class="ingresarR" placeholder="Telefono" />
-                    <br><br>
-                    <input id="PassMed" name="SingInContram" type="password" class="ingresarR"
-                        placeholder="Crear contrase&ntilde;a" />
-                    <br>
-                    <div id="minibuttonPosition">
-                        <input type="submit" class="minibutton" name="Registrarse" value="Crear cuenta"
-                            id="RegistrarMed" />
-                    </div>
-
-                </div>
+<body class= "autoLayoutIS" id="Rbody">
+    <input type="button" id="backgroundimgReg"value="">
+<div id="transition"> 
+    <label id="textlos">Los </label> <label id="medicostxt">médicos</label> <label id="textpueden"> pueden:</label>
+</div>
+   
+    <br><br><br>
+    <label id="lbl1">- Agregar pacientes de forma rápida</label>
+    <br><br><br>
+    <label id="lbl2">- Crear recetas para cada paciente</label>
+    <br><br><br>
+    <label id="lbl3">- Visualizar las recetas creadas</label>
+    
 
 
 
-                <div id="divt">
-                </div>
-            </div>
-        </div>
+    <div id="registerformM">
+      <h1 id="regh1">Registrarse</h1>
+      <br>
+        <input class= "ingresarR" name="SignInNombrem" id="NomMed" placeholder="Nombre real" />
+        <br><br>
+        <input class= "ingresarR" name= "Aream" id="AreaMed" placeholder="Area medica" />
+        <br><br>
+        <input class= "ingresarR" name= "SignInUsum" id="UsuMed"placeholder="Ingresar DNI" />
+        <br><br>
+        <input class= "ingresarR" name="SingInContram" type= "password"  placeholder="Crea una contrasenia" />
+        <br><br>
+        <input class= "ingresarR" name="SingInApellm" id="ApeMed" placeholder="Apellido real" />
+        <br><br>
+        <input class= "ingresarR" name= "Telefonom" id="teleMed" placeholder="Telefono" />
+        <br><br> 
+        <input id="RegistrarMed" type= "submit" class="minibutton" name= "Registrarse" value="Crear cuenta"/>
+        <br><br>    
+        <label id="yatienescuenta"  >ya tienes cuenta? </label>
+        <a href="../html/Iniciarsesion_med.html" class="linkIS">Inicia Sesion</a>
+        <br>
+        <input type="button" href="" class="links" value="Regresar">
+
+        
+        
+        
     </div>
 </body>
-
 </html>

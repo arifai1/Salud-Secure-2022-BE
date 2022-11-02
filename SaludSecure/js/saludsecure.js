@@ -135,6 +135,8 @@ $(document).ready(function () {
 
     $("#LogInMed").click(function (event) {
         event.preventDefault();                 //evitamos que se refresque la pagina.
+        $( "#LogInMed" ).removeClass( "minibutton" );
+       $( "#LogInMed" ).addClass( "minibuttonClick");
         if ($("#q").val() != '' && $("#c").val() != '') {
             $.ajax({
                 type: 'POST',
@@ -176,6 +178,8 @@ $(document).ready(function () {
 
     //Registrar del medico
     $("#RegistrarMed").click(function () {
+        $( "#RegistrarMed" ).removeClass( "minibutton" );
+        $( "#RegistrarMed" ).addClass( "minibuttonClick");
         $.ajax({
             type: 'POST',
             url: '../php/registrar_doc.php',
