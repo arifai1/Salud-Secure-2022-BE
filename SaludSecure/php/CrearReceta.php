@@ -41,8 +41,13 @@ if (!isset($_SESSION['user'])){
 				if (typeof window.ethereum !== "undefined") {
                      alert("SEE");
                     sendReceta();
-			 		ethereum.request({ method: "eth_requestAccounts" })
-					
+			 	const accounts=	ethereum.request({ method: "eth_ccounts" })
+                    if (accounts && accounts.length > 0) {
+                        alert("user is connected");
+                        sendReceta();
+                        } else {
+                             alert("user not connected");
+                    }
                 }
 				else{
 				alert("No tiene MetaMask instalado, por favor descarguelo");
@@ -138,5 +143,37 @@ if (!isset($_SESSION['user'])){
     </div>
 
 </body>
+<script>
 
+    
+    var userAccount = web3.eth.account[0]
+    var account accountInterval = setInterval(function() {
+  // Check if account has changed
+  if (web3.eth.accounts[0] !== userAccount) {
+    userAccount = web3.eth.accounts[0];
+    // Call some function to update the UI with the new account
+    updateInterface();
+  }
+}, 100);
+
+    function sendReceta(_nombre, _apellido, _DNI, _aclaracion, _cantidad, _medicamento) {
+        
+        $("#txStatus").text("Mandando receta. Puede tardar un rato...");
+       
+        return saludSecure.methods.sendReceta(_nombre, _apellido, _DNI, _aclaracion, _cantidad, _medicamento)
+        .send({ from: userAccount })
+        .on("receipt", function(receipt) {
+          $("#txStatus").text("¡Receta mandada exitosamente!");
+         
+          //getZombiesByOwner(userAccount).then(displayZombies);  MOSTRAR PACIENTE??
+        })
+        .on("error", function(error) {
+         
+          $("#txStatus").text(error);
+        });
+      
+        
+//h
+      }
+    </script>
 </html>
