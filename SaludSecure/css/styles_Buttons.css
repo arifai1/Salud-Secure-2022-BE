@@ -16,15 +16,8 @@ p{
     font-family: Arial, sans-serif;
     color: #555555;
 }
-#cuenta{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: medium;
-}
-#divt{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: medium;
-    color: red;
-}
+
+
 .title{
     font-family: Arial, sans-serif;
     color: #555555;
@@ -37,6 +30,24 @@ p{
     color: blue;
 }
 
+.regresar{
+    position: absolute;
+    top: 2%;
+    left: 2.3%;
+    width: 65px;
+    height: 65px;
+    background-color: #ffffff9f;
+    border-radius: 40px;
+    border-width: 0px;
+}
+#Iconregresar{
+    position: absolute;
+    top: 4.3%;
+    left: 3.4%;
+    font-size: 35px;
+    color: rgb(102, 102, 102);
+    cursor: pointer;
+}
 
 
 #loginformM{
@@ -64,17 +75,7 @@ p{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 }
-#loginformP{
-    width: 500px;
-    height: 450px;
-    text-align: center;
-    margin: auto;
-    background-image: url("../imagenes/FondoForm.png");
-    background-position: center;
-    border-radius: 40px 0px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-}
 
 
 #mainMenuform{
@@ -111,38 +112,9 @@ p{
     padding: 10px 30px;
     font-size: 18px;
 }
-#positiontext{
-    position: absolute;
-    top: 35%;
-    left: 8%;
-}
-#usuariotext{
-    font-weight: bold;
-    text-decoration: underline;
-}
 
-label{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 60px;
-}
-.regresar{
-    position: absolute;
-    top: 2%;
-    left: 2.3%;
-    width: 65px;
-    height: 65px;
-    background-color: #ffffff9f;
-    border-radius: 40px;
-    border-width: 0px;
-}
-#Iconregresar{
-    position: absolute;
-    top: 4.3%;
-    left: 3.4%;
-    font-size: 35px;
-    color: rgb(102, 102, 102);
-    cursor: pointer;
-}
+
+
 
 /*Botones*/
 .minibutton{
@@ -159,59 +131,7 @@ label{
 
 }
 
-.minibuttmed{
-  
-        background-color: #B8EEFF;
-        border-radius: 10px;
-        color:#555555;
-        border: 0px;
-        width: 200px;
-        height: 54px;
-        font-size: 18px;
-       
-        cursor: pointer;
-        
-    
- 
-    
-}
-.botmed{
-    position: absolute;
-    text-align: center;
-    
-    top: 20%;
-    right: 50%;
-    left: 50%;
-    height: 400px;
-    width: 270px;
-    border:4px solid #4A4EB5;
-    border-radius: 40px;
-    
-    background-image: url("../imagenes/imgUsuarioM.png");
-    background-position: center;
-    background-size: 161px 161px;
-    background-repeat: no-repeat;
-    background-position-y: 20%;
-    
-}
 
-.botpac{
-    position: absolute;
-    text-align: center;
-    top: 20%;
-    right: 5%;
-    left: 75%;
-    height: 400px;
-    width: 270px;
-    border:4px solid #4A4EB5;
-    border-radius: 40px;
-
-    background-image: url("../imagenes/imgUsuarioP.png");
-    background-position: center;
-    background-size: 161px 161px;
-    background-repeat: no-repeat;
-    background-position-y: 20%;
-}
 
 .bigBTN{
     background-color: rgba(63, 173, 207);
@@ -262,4 +182,8 @@ label{
     background-repeat: no-repeat;
     cursor: pointer;
 }
+
+
+
+
 

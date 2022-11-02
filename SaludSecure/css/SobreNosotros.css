@@ -1,33 +1,107 @@
 
-
-#logo{
+*{
+    margin:0;
+    padding:0;
+  }
+  .container {
     position: absolute;
-    top:2%;
-    left:0%;
-    width: 126px;
-    height: 124px;
-    border-width: 0px;
-    background-color: rgba(0, 0, 0, 0);
-    background-repeat: no-repeat;
-    background-image: url(../imagenes/Logo-Header.png);
-    
+    top: -18%;
+    left: -2%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 650px;
+    height: 200px;
+    z-index: -5;
+  }
+  .box {
+    border-radius: 20px;
+    width: 650px;
+    height: 200px;
+    background: #fafafa;
+    box-shadow:  0px 20px 20px #cccccc, 0 0 0 #ffffff,0 0 0 #cccccc inset,2px 2px 2px #ffffff inset;
+    animation: anime 3s cubic-bezier(0.16, 1, 0.3, 1) ;
+    /* animation-fill-mode: forwards; */
+  }
+
+  @keyframes anime {
+    0% {
+      width: 50px;
+      height: 50px;
+      background: #f0f0f0;
+      box-shadow:  0 0 0 #cccccc,
+                   0 0 0 #ffffff,
+                    10px 10px 10px #cccccc inset,
+                    -10px -10px 10px #ffffff inset;
+    }
+    25% {
+      width: 50px;
+      height: 50px;
+      background: #f8f8f8;
+      box-shadow:  10px 10px 10px #cccccc,
+                   10px 10px 10px #ffffff,
+                   0 0 0 #cccccc inset,
+                   0 0 0 #ffffff inset;
+    }
+    50% {
+      width: 50px;
+      height: 200px;
+      background: #f8f8f8;
+      box-shadow:  10px 10px 10px #cccccc,
+                   10px 10px 10px #ffffff,
+                   0 0 0 #cccccc inset,
+                   0 0 0 #ffffff inset;
+    }
+    100% {
+      width: 650px;
+      height: 200px;
+      background: #fafafa;
+      box-shadow:  0px 20px 20px #cccccc,
+                   0 0 0 #ffffff,
+                   0 0 0 #cccccc inset,
+                   2px 2px 2px #ffffff inset;
+    }
+
+
+  }
+
+@keyframes anim-lineUp {
+    0% {
+      opacity: 0;
+      transform: translateY(80%);
+    }
+    20% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
 }
+
+body{
+    width: 100%;
+    margin: auto;
+}
+
+
+
+
+
+
+
+
 
 .color{
     background-color: #addcf6;
 }
 
-.header{
-    position: fixed;
-    padding: 40px;
-    width: 100%;
-    background-color: rgb(255, 255, 255);
-    
-    z-index: 9999;
-    top: 0%;
-    left:0%;
 
-}
 #hr1{
     position: absolute;
     top: 50%;
@@ -49,6 +123,29 @@
     left:10%;
     color:#3FADCF;
     font-size: 40px;
+    
+}
+.BESMO{
+    animation: 9.5s anim-lineUp ease-out ;
+    left:48%;
+    color:#3FADCF;
+    font-size: 80px;
+    font-weight: bolder;
+}
+#scroll{
+    animation: 16s anim-lineUp  ease-in ;
+    
+    position: absolute;
+  
+    left:30%;
+    color:#3FADCF;
+    font-size: 80px;
+    font-weight: bolder;
+}
+.txt{
+    animation: 9.5s anim-lineUp ease-out ;
+    color: #000000;
+    font-size: 80px;
 }
 .subrayado{
     text-decoration: underline;
@@ -60,54 +157,80 @@ label{
     font-size: 50px;
     
 }
-#background1{
-    position: fixed;
+#background0{
+    position: relative;
+    top: 0%;
     left:0%;
     margin: 0px;
     height: 620px;
-    width: 1400px;
+    width: 1200px;
+    background-color: #ffffff;
+    z-index: -5;
+}
+#background1{
+   
+    margin: 0px;
+    height: 620px;
+    width: 1250px;
     background-color: #addcf6;
     z-index: -5;
 
 }
 #background2{
-    position: absolute;
-    left:0%;
-    top: 100%;
+    
     margin: 0px;
     height: 620px;
-    width: 1400px;
+    width: 1250px;
     background-color: #ffffff;
     z-index: -5;
 
 }
+
 #background3{
-    position: absolute;
-    left:0%;
-    top: 190%;
+    
     margin: 0px;
     height: 620px;
-    width: 1400px;
+    width: 1250px;
     background-color: #addcf6;
     z-index: -5;
 
 }
-#background4{
+.minibutton{
     position: absolute;
+    top: 480%;
+    left: 12%;
+    background-color: #B8EEFF;
+    border-radius: 10px;
+    color:#000000;
+    border: 0px;
+    width: 190px;
+    height: 54px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 99999;
+}
+#background4{
+    position: relative;
     left:0%;
-    top: 280%;
+    top: 570%;
     margin: 0px;
-    height: 520px;
-    width: 1400px;
+    height: 620px;
+    width: 1348px;
     background-color: #000000;
     z-index: -5;
 
 }
-
+#position0{
+    
+    position: fixed;
+    top:35%;
+    left: 28%;
+    width: 800px;
+}
 #position1{
     position: absolute;
-    right:10%;
-    top:37%;
+    right:6%;
+    top:32%;
     
     padding: 8px;
     border-left-style: solid;
@@ -117,23 +240,25 @@ label{
 #position2{
     position: absolute;
     right:5%;
-    top:25%;
+    top:35%;
 
     padding: 8px;
     border-left-style: solid;
     border-color: black;
     border-width: 8px;
+    
 }
 
 #position3{
     position: absolute;
-    right: 30%;
+    right: 25%;
     top:20%;
     padding: 8px;
     border-left-style: solid;
     border-color: #4A4EB5;
     border-width: 8px;
 }
+
 #position4{
     position: absolute;
     left:10%;
@@ -162,8 +287,8 @@ label{
 }
 #BlockChainImg{
     position: absolute;
-    top: 90%;
-    left:5%;
+    top: 10%;
+    left:4%;
     height: 610px;
     width: 611px;
     border-width: 0px;
@@ -171,6 +296,7 @@ label{
     background-repeat: no-repeat;
     background-image: url(../imagenes/blockchain.png);
     background-size: 611px 610px;
+   
 }
 
 #MedicoCompuImg{
