@@ -363,7 +363,7 @@ $(document).ready(function () {
         $(".boton").css("cursor", "pointer");
     });
     $("#MisPacientes").click(function () {
-        window.location.replace('../php/CrearReceta_asignacion.php');
+        window.location.replace('../php/CrearReceta_asignacion - copia.php');
     });
     $("#MisPacientes").mouseover(function () {
         $(".boton").css("cursor", "pointer");
