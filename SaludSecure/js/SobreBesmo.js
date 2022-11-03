@@ -18,10 +18,18 @@ $(document).ready(function() {
      der -= 250;
      $(".receta").css({"position": "relative", top: "14%", left: izq-der})
    })
+
+
     // $(function() {
+<<<<<<< Updated upstream
          $( "#EnviarSC" ).click(function() {
             // alert ("hola");
            $( "#EnviarSC" ).addClass( "onclic", 250, validate());
+=======
+         $( "#button" ).click(function() {
+            // Agrega la clase de giro y llama la funcion validar
+           $( "#button" ).addClass( "onclic", 250, validate());
+>>>>>>> Stashed changes
          });
        
          function validate() {
