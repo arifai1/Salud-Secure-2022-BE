@@ -92,6 +92,7 @@ if (!isset($_SESSION['user'])){
 		"type": "function"
 	}
 ]
+const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.matic.today'); 
 
 	async function myFunction() {
   			alert("holapa");
@@ -102,8 +103,8 @@ if (!isset($_SESSION['user'])){
                     alert(result) 
              })
     }
-	const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.matic.today'); 
-       </script>
+	</script>
+       
 	<script type="module" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 <body>
 
