@@ -99,7 +99,7 @@ if (!isset($_SESSION['user'])){
         </div>
         
     </div>
-    <input class="minibutton" type="button" value="Regresar" id="RegresarP">
+    <input class="minibutton" type="button" value="Comenzar" id="RegresarP">
 </body>
 
 </html>

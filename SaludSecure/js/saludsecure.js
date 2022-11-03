@@ -330,7 +330,7 @@ $(document).ready(function () {
 
     //botones pantallaprincipal.html
     $("#Nosotros").click(function () {
-        window.location.replace('../php/pantallanosotros.php'); //mostramos info sobre nosotros
+        window.location.replace('../php/SobreBesmoM.php'); //mostramos info sobre nosotros
     });
     $("#Nosotros").mouseover(function () {
         $(".boton").css("cursor", "pointer");

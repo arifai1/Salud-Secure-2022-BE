@@ -63,7 +63,7 @@
         <input id="Usuario"type ="button"/>
        
     </header>
-    <input type="button" value="?" class="ayuda">
+     <input type="button" value="?" class="ayuda">
     <input type="button" value="" class="regresar" id="RegresarM">
     <i class="large material-icons" id="IconregresarM">arrow_back</i>
     <div id="headerbuscador">
