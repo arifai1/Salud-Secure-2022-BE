@@ -8,6 +8,7 @@ if (!isset($_SESSION['user'])){
 
     <title>Crear Receta</title>
     <link rel="stylesheet" href="../css/CrearReceta.css">
+    <link rel="stylesheet" href="../css/font.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <UTF-8>
         <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
@@ -17,6 +18,8 @@ if (!isset($_SESSION['user'])){
 	    <link rel="Icon" href="../imagenes/logo-Header.png">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+        <link href="" rel="shortcut icon">
+
 </head>
 <script> 
   const Web3 = require("web3")
@@ -152,8 +155,13 @@ if (!isset($_SESSION['user'])){
             cols="30"></textarea>
 
     </div>
+<<<<<<< Updated upstream
         <div class = "container">
           <button id= "EnviarSC" onclick="conexionWeb3();"></button>
+=======
+    <div class="container">
+        <button id="button"></button>
+>>>>>>> Stashed changes
       </div>
 </body>
 </html>

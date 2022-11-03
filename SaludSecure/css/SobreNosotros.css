@@ -110,7 +110,7 @@ body{
     position: absolute;
     top:5%;
     left:10%;
-    font-family: Arial, Helvetica, sans-serif;
+font-family: 'Poppins', sans-serif;
     position: absolute;
     top:2%;
     color: rgb(0, 0, 0);
@@ -129,7 +129,7 @@ body{
     animation: 9.5s anim-lineUp ease-out ;
     left:48%;
     color:#3FADCF;
-    font-size: 80px;
+    font-size: 75px;
     font-weight: bolder;
 }
 #scroll{
@@ -145,7 +145,7 @@ body{
 .txt{
     animation: 9.5s anim-lineUp ease-out ;
     color: #000000;
-    font-size: 80px;
+    font-size: 75px;
 }
 .subrayado{
     text-decoration: underline;
@@ -153,7 +153,7 @@ body{
 
 label{
 
-    font-family: Arial, Helvetica, sans-serif;
+font-family: 'Poppins', sans-serif;
     font-size: 50px;
     
 }
@@ -229,8 +229,8 @@ label{
 }
 #position1{
     position: absolute;
-    right:6%;
-    top:32%;
+    right:4%;
+    top:26%;
     
     padding: 8px;
     border-left-style: solid;
@@ -239,8 +239,8 @@ label{
 }
 #position2{
     position: absolute;
-    right:5%;
-    top:35%;
+    right:3%;
+    top:28%;
 
     padding: 8px;
     border-left-style: solid;
@@ -287,8 +287,8 @@ label{
 }
 #BlockChainImg{
     position: absolute;
-    top: 10%;
-    left:4%;
+    top: 7%;
+    left:1%;
     height: 610px;
     width: 611px;
     border-width: 0px;

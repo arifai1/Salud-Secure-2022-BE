@@ -18,7 +18,7 @@ header{
     left:0%;
 }
 #headertitle{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 30px;
 }
 #Txtlogo{
@@ -26,7 +26,7 @@ header{
     top:25%;
     left:10%;
     font-size: 30px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
     text-decoration: bolder;
     color: #3FADCF;
 }
