@@ -7,23 +7,23 @@ $(document).ready(function () {
     $("#LogIn").click(function () {
         $( "#LogIn" ).removeClass( "minibutton" );
         $( "#LogIn" ).addClass( "minibuttonClick");
-      
+        $(".boton").css("cursor", "pointer");
 
-        if ($("#u").val() == '' && $("#p").val() == '') {
-            $("#divt").html("Debe agregar Usuario y Contrase&ntildea");
-            $("#divt").show();
+        if ($("#u").val() == '' && $("#p").val() =='') {
+            $("#divi").html("Debe agregar Usuario y Contrase&ntildea");
+            $("#divi").show();
             $( "#u" ).removeClass( "ingresar" );
             $( "#u" ).addClass( "noIngresado");
             $( "#p" ).removeClass( "ingresar" );
             $( "#p" ).addClass( "noIngresado");
         } else if ($("#u").val() == '' && $("#p").val() != "") {
-            $("#divt").html("Debe agregar Usuario");
-            $("#divt").show();
+            $("#divi").html("Debe agregar Usuario");
+            $("#divi").show();
             $( "#u" ).removeClass( "ingresar" );
             $( "#u" ).addClass( "noIngresado");
         } else if ($("#u").val() != '' && $("#p").val() == "") {
-            $("#divt").html("Debe agregar Contrase&ntildea");
-            $("#divt").show();
+            $("#divi").html("Debe agregar Contrase&ntildea");
+            $("#divi").show();
             $( "#p" ).removeClass( "ingresar" );
             $( "#p" ).addClass( "noIngresado");
         }
@@ -41,7 +41,6 @@ $(document).ready(function () {
 
     $("#LogIn").click(function (event) {
         event.preventDefault();                     //evitamos que se refresque la pagina asi podemos ver por mas tiempo el mensaje de Usuario no encontrado
-
         if ($("#u").val() != '' && $("#p").val() != '') {
             $.ajax({
                 type: 'POST',
@@ -55,15 +54,14 @@ $(document).ready(function () {
                     else if (data.status == 'ok') {
                         mensaje = "Bienvenido: " + data.result['nombre'] + " " + data.result['apellido'] + "";
                         $("#divt").html(mensaje);
+                        $("#divt").show();
                         console.log(data.result);                       //verificamos que nos manda en caso de error.
                         window.location.replace('../php/pantallaprincipal.php');
-                        $("#divt").show();
-
                     }
                     else {
                         mensaje = "Usuario no encontrado, por favor registrarse";
-                        $("#divt").html(mensaje);
-                        $("#divt").show();
+                        $("#divi").html(mensaje);
+                        $("#divi").show();
                     }
                 },
                 error: function (error) {
@@ -71,7 +69,7 @@ $(document).ready(function () {
                 },
             });
         } else {
-            mensaje = "Debe completar el usuario y la contrase&ntildea";                                               //Href me indica destino.
+            mensaje = "Debe completar el usuario y la contrase&ntildea";                                               
             $("#divt").html(mensaje);
             $("#divt").show();
         }
@@ -126,7 +124,7 @@ $(document).ready(function () {
         $( "#LogInMed" ).addClass( "minibuttonClick");
         $(".boton").css("cursor", "pointer");
         //hacemos que el que intenta ingresar este obligado a llenar todos los inputs.
-        if ($("#q").val() == '' && $("#c").val() == '') {
+        if ($("#q").val() == '' && $("#c").val() =='') {
             $("#divi").html("Debe agregar Usuario y Contrase&ntildea");
             $("#divi").show();
             $( "#q" ).removeClass( "ingresar" );
