@@ -1,7 +1,213 @@
 
-/*Textos*/
+
+/*ANIMACIONES*/
+@keyframes slideInFromRight {
+    0% {
+      transform: translateX(100%);
+      
+    }
+    100% {
+      transform: translateX(0%);
+      
+    }
+}
+
+@keyframes FadeIn {
+    0% {
+        transform: translateX(-30%);
+        opacity: 0.4;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 0.6;
+      }
+}
+@keyframes popUp {
+    0% {
+       
+        opacity: 0;
+      }
+    85% {
+       
+        opacity: 0;
+      }
+    86% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    87% {
+        transform: scale(1.1);
+        opacity: 1;
+      }
+    92% {
+        opacity: 1;
+        transform: scale(1.2);
+        
+      }
+    97% {
+        opacity: 1;
+        transform: scale(1.1);
+        
+      }
+      100%{
+        transform: scale(1);
+        opacity:1;
+      }
+}
+@keyframes FadeIntoView {
+    0% {
+       
+        opacity: 0;
+      }
+      10% {
+        
+        opacity: 0;
+      }
+      30% {
+        
+        opacity: 0;
+      }
+      50% {
+        
+        opacity: 0;
+      }
+      70% {
+        
+        opacity: 0;
+      }
+      100% {
+        
+        opacity: 1;
+      }
+}
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
+@keyframes slideInFromLeft2 {
+    0% {
+      transform: translateX(-50%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
+@keyframes slideToLeft {
+    from {
+        margin-left: 60%;
+    }
+    to {
+        margin-left: -1%;
+    }
+}
+@keyframes anim-lineUp {
+    0% {
+      opacity: 0;
+      transform: translatex(80%);
+    }
+    20% {
+      opacity: 0;
+    }
+    90% {
+      opacity: 1;
+      transform: translatex(0%);
+    }
+    100% {
+      opacity: 1;
+      transform: translatex(0%);
+    }
+}
+
+
+/*MINI BUTTON*/
+.minibutton{
+   
+    background-color: #B8EEFF;
+    border-radius: 10px;
+    color:#555555;
+    border: 0px;
+    width: 320px;
+    height: 54px;
+    font-size: 22px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    
+
+}
+.minibuttonClick{
+   
+    background-color: #B8EEFF;
+    border-radius: 10px;
+    color:#555555;
+    border: 0px;
+    width: 320px;
+    height: 54px;
+    font-size: 22px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    
+
+}
+
+
+
+/*NO ORDENADO*/
+#MPbody{
+    background-color: white;
+}
+
+
+
+#Usuario{
+    position: absolute;
+    top:3%;
+    left: 90%;
+}
+#LogOut{
+    position: absolute;
+    top:3%;
+    left: 77%;
+}
+
+.header{
+  padding: 40px;
+  text-align: center;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+    
+#BtnSobreNos{
+    position: absolute;
+    top: 10%;
+    left:20%;
+}
+#BtnMain{
+    position: absolute;
+    top: 5%;
+    left:40%;
+}
+#BtnpacLayout{
+    position: absolute;
+    top: 10%;
+    left:80%;
+
+}
+header{
+    background-color: blueviolet;
+}
+    
+
 h1 {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #555555;
 
     
@@ -16,13 +222,178 @@ h1 {
     color: #555555;
 }
 
+
+label{
+    font-family: 'Poppins', sans-serif;
+    z-index: 9;
+}
+
+
+
+
+#mainMenuform{
+    position: absolute;
+    top: 10%;
+    left:20%
+    
+
+}
+
+
+
+
+
+#btnPacientes{
+    background-color: rgba(63, 173, 207,0.6);
+    border-radius: 40px;
+    border: 0px;
+    height: 410px;
+    width: 208px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    color: white;
+    font-size: 18px;
+    background-image: url("../imagenes/UsuPaciente-1.png");
+    background-repeat: no-repeat;
+    background-size: 208px 410px;
+    
+}
+#mainbuttonM{
+    background-color: #3FADCF;
+    border-radius: 40px;
+    border: 0px;
+    height: 572px;
+    width: 293px;
+    color: white;
+    font-size: 18px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    background-image: url("../imagenes/Receta.png");
+    background-position: center;
+    background-position-y: 100%;
+    background-size: 400px 400px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+
+body{
+    background-color: #ffffff;
+}
+
+
+
+
+/*LogIn + Reg = MÉDICO*/
+#Rbody{
+    background-color: #ffffff;
+}
+#ISbody{
+    background-color: #ffffff;
+   
+
+}
+#backgroundimgReg{
+    animation: 1s ease-out 0s 1 FadeIn;
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    margin: 0 auto;
+    background-image: url("../imagenes/medica-img-reg.png");
+    opacity: 0.6;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1200px;
+    height: 630px;
+    background-color: #ffffff;
+    border-width: 0px;
+    
+}
+#backgroundimg{
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    margin: 0 auto;
+    background-image: url("../imagenes/medica-img-is.png");
+    opacity: 0.6;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1200px;
+    height: 630px;
+    background-color: #ffffff;
+    border-width: 0px;
+    
+}
+#registerformM{
+    animation: 1s ease-out 0s 1 slideToLeft;
+    position: absolute;
+    top: 0%;
+    left: -60%;
+    width: 1200px;
+    height: 640px;
+    text-align: end;
+    padding-right: 5%;
+    margin: auto;
+    background-color: #ffffff;
+    border-radius: 0px 40px 40px 0px;
+   
+    z-index: 9999999;
+
+}
+#loginformM{
+    animation: 2s ease-out 0s 1 slideInFromRight;
+    
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 500px;
+    height: 640px;
+    text-align: center;
+    margin: auto;
+    background-image: url("../imagenes/FondoForm.png");
+    background-position: center;
+    border-radius: 40px 0px 0px 40px;
+   
+
+}
+.besmolbl{
+    
+    animation: 1.5s ease-out 0s 1 slideInFromLeft;
+    position: absolute;
+    top: 100%;
+    left: 26%;
+    font-size: 90px;
+    font-family: 'Poppins', sans-serif;
+     z-index: 999999;
+    color: #3FADCF;
+    font-weight: bolder;
+}
+.bienvenido{
+    animation: 1.5s ease-out 0s 1 slideInFromLeft;
+    position: absolute;
+    top: 60%;
+    left: 12%;
+    font-weight: bold;
+    font-size: 80px;
+font-family: 'Poppins', sans-serif;
+     z-index: 999999;
+}
+#LogInMed{
+    position: relative;
+    top: 12%;
+}
+.autoLayoutIS{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 122px 362px;
+    gap: 63px;
+
+    position: relative;
+    
+}
 #regh1{
     position: relative;
     right: 6%;
-}
-p{
-    font-family: Arial, sans-serif;
-    color: #555555;
 }
 .text{
     position: relative;
@@ -72,7 +443,6 @@ p{
     color: #555555;
     font-size: 20px;
 }
-
 .links{
     position: relative;
     top: 12%;
@@ -80,44 +450,70 @@ p{
     font-size: 18px;
     color: blue;
 }
-label{
-    font-family: Arial, sans-serif;
-    z-index: 9;
+#RegistrarMed{
+    position: relative;
+    top: 4%;
+    
+   
+}
+.ingresar {
+    outline: 0px;
+    position: relative;
+    top: 5%;
+    border-top: 0px;
+    border-left: 0px;
+    border-right:0px ;
+    border-color: #3FADCF;
+    padding: 10px 30px;
+    font-size: 22px;
+    
+}
+.ingresarR {
+    outline: 0px;
+    position: relative;
+    top: 2%;
+    border-top: 0px;
+    border-left: 0px;
+    border-right:0px ;
+    border-color: #3FADCF;
+    padding: 10px 30px;
+    font-size: 22px;
+    
 }
 #lbl1{
     animation: 2s ease-out 0s 1 slideInFromLeft2;
     position: absolute;
-    top: 48%;
-    left: 45%;
+    top: 40%;
+    left: 42%;
     font-size: 40px;
     font-family: Arial, sans-serif;
 }
 #lbl2{
     animation: 2s ease-out 0s 1 slideInFromLeft2;
     position: absolute;
-    top: 64%;
-    left: 45%;
+    top: 55%;
+    left: 42%;
     font-size: 40px;
     font-family: Arial, sans-serif;
 }
 #lbl3{
     animation: 2s ease-out 0s 1 slideInFromLeft2;
     position: absolute;
-    top: 78%;
-    left: 45%;
+    top: 70%;
+    left: 42%;
     font-size: 40px;
     font-family: Arial, sans-serif;
 }
 #transition{
     position: absolute;
-    top: 30%;
-    left: 45%;
+    top: 20%;
+    left: 42%;
     animation: 2s ease-out 0s 1 slideInFromLeft2;
     height: 200px;
     width: 1000px;
 }
 #medicostxt{
-    color: #3FADCF;
+    color: black;
    padding: 1%;
     font-size: 60px;
     font-family: Arial, sans-serif;
@@ -135,248 +531,71 @@ label{
     font-size: 60px;
     font-weight: bold;
 }
+#divi{
+    position:absolute;
+    top: 38%;
+    right: 21%;
+font-family: 'Poppins', sans-serif;
+    font-size: medium;
+    color: red;
+}
+
+
+
+/*LogIn + Reg = PACIENTE*/
+
 #loginformP{
-    width: 400px;
-    height: 350px;
+    animation: 2s ease-out 0s 1 slideInFromRight;
+    
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 500px;
+    height: 640px;
     text-align: center;
     margin: auto;
     background-image: url("../imagenes/FondoForm.png");
     background-position: center;
-    border-radius: 40px 0px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
+    border-radius: 40px 0px 0px 40px;
 }
-
-
-#mainMenuform{
-    position: absolute;
-    top: 10%;
-    left:20%
-    
-
+#LogIn{
+    position: relative;
+    top: 9%;
 }
-
-
-
-.ingresar {
+#divt{
+    position:absolute;
+    top: 36%;
+    right: 21%;
+font-family: 'Poppins', sans-serif;
+    font-size: medium;
+    color: red;
+}
+.noIngresado{
     position: relative;
     top: 5%;
     border-top: 0px;
     border-left: 0px;
     border-right:0px ;
-    border-color: #3FADCF;
+    border-color: red;
     padding: 10px 30px;
     font-size: 22px;
-    
 }
-
-.ingresarR {
-    position: relative;
-    top: 2%;
-    border-top: 0px;
-    border-left: 0px;
-    border-right:0px ;
-    border-color: #3FADCF;
-    padding: 10px 30px;
-    font-size: 22px;
-    
-}
-
-
-
-
-
-/*Botones*/
-
-
-.minibuttmed{
-    background-color: #B8EEFF;
-    border-radius: 30px;
-    color:#555555;
-    border: 0px;
-    width: 200px;
-    height: 54px;
-    font-size: 18px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
-    
-}
-.botmed{
-    position: absolute;
-    text-align: center;
-    
-    top: 20%;
-    right: 80%;
-    left: 20%;
-    height: 400px;
-    width: 270px;
-    border:4px solid #4A4EB5;
-    border-radius: 40px;
-    
-    background-image: url("../imagenes/imgUsuarioM.png");
-    background-position: center;
-    background-size: 161px 161px;
-    background-repeat: no-repeat;
-    background-position-y: 20%;
-    
-}
-
-.botpac{
-    
-    text-align: center;
-    top: 20%;
-    right: 20%;
-    left: 60%;
-    height: 400px;
-    width: 270px;
-    border:4px solid #4A4EB5;
-    border-radius: 40px;
-
-    background-image: url("../imagenes/imgUsuarioP.png");
-    background-position: center;
-    background-size: 161px 161px;
-    background-repeat: no-repeat;
-    background-position-y: 20%;
-}
-
-.bigBTN{
-    background-color: rgba(63, 173, 207,0.6);
-    border-radius: 40px;
-    border: 0px;
-    height: 410px;
-    width: 208px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-    margin: 20px;
-    color: white;
-    font-size: 18px;
-    align-items: 20%;
-    background-image: url("../imagenes/SobreNosotros.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 208px 410px;
-}
-#btnPacientes{
-    background-color: rgba(63, 173, 207,0.6);
-    border-radius: 40px;
-    border: 0px;
-    height: 410px;
-    width: 208px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-    margin: 20px;
-    color: white;
-    font-size: 18px;
-    background-image: url("../imagenes/UsuPaciente-1.png");
-    background-repeat: no-repeat;
-    background-size: 208px 410px;
-    
-}
-#mainbuttonM{
-    background-color: #3FADCF;
-    border-radius: 40px;
-    border: 0px;
-    height: 572px;
-    width: 293px;
-    color: white;
-    font-size: 18px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-    background-image: url("../imagenes/Receta.png");
-    background-position: center;
-    background-position-y: 100%;
-    background-size: 400px 400px;
-    background-repeat: no-repeat;
-    cursor: pointer;
-}
-#ISbody{
-    background-color: #ffffff;
-   
-
-}
-#Rbody{
-    background-color: #ffffff;
-
-}
-#backgroundimgReg{
-    animation: 1s ease-out 0s 1 FadeIn;
-    position: absolute;
-    right: 0%;
-    top: 0%;
-    margin: 0 auto;
-    background-image: url("../imagenes/medica-img-reg.png");
-    opacity: 0.6;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 1200px;
-    height: 630px;
-    background-color: #ffffff;
-    border-width: 0px;
-    
-}
-#backgroundimg{
+#backgroundimgP{
     position: absolute;
     left: 0%;
     top: 0%;
     margin: 0 auto;
-    background-image: url("../imagenes/medica-img-is.png");
+    background-image: url("../imagenes/paciente-img.png");
     opacity: 0.6;
     background-repeat: no-repeat;
     background-size: cover;
     width: 1200px;
-    height: 630px;
+    height: 620px;
     background-color: #ffffff;
     border-width: 0px;
     
 }
-@keyframes slideInFromRight {
-    0% {
-      transform: translateX(100%);
-      
-    }
-    100% {
-      transform: translateX(0%);
-      
-    }
-}
-
-@keyframes FadeIn {
-    0% {
-        transform: translateX(-30%);
-        opacity: 0.4;
-      }
-      100% {
-        transform: translateX(0);
-        opacity: 0.6;
-      }
-}
-
-@keyframes slideInFromLeft {
-    0% {
-      transform: translateX(-100%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-}
-@keyframes slideInFromLeft2 {
-    0% {
-      transform: translateX(-50%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-}
-@keyframes slideToLeft {
-    from {
-        margin-left: 60%;
-    }
-    to {
-        margin-left: -1%;
-    }
-}
-#registerformM{
+#registerformP{
     animation: 1s ease-out 0s 1 slideToLeft;
     position: absolute;
     top: 0%;
@@ -392,160 +611,148 @@ label{
     z-index: 9999999;
 
 }
-#loginformM{
-    animation: 2s ease-out 0s 1 slideInFromRight;
-    
-    position: absolute;
-    top: 0%;
-    right: 0%;
-    width: 500px;
-    height: 640px;
-    text-align: center;
-    margin: auto;
-    background-image: url("../imagenes/FondoForm.png");
-    background-position: center;
-    border-radius: 40px 0px 0px 40px;
-   
-
+#regPh1{
+    position: relative;
+    right: 6%;
 }
-.besmolbl{
-    
-    animation: 1.5s ease-out 0s 1 slideInFromLeft;
+#f{
+    position: relative;
+    right: 7.5%;
+}
+#RegistrarPac{
+    position: relative;
+    top: 4%;   
+}
+#pacientestxt{
+    color: black;
+    padding: 1%;
+    font-size: 60px;
+    font-family: Arial, sans-serif;
+    text-decoration: underline;
+    z-index: 9;
+    font-weight: bold;
+}
+#backgroundimgPReg{
+    animation: 1s ease-out 0s 1 FadeIn;
     position: absolute;
-    top: 100%;
-    left: 26%;
-    font-size: 90px;
-    font-family:Arial, Helvetica, sans-serif;
-     z-index: 999999;
+    right: 0%;
+    top: 0%;
+    margin: 0 auto;
+    background-image: url("../imagenes/paciente-img-reg.png");
+    opacity: 0.6;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1200px;
+    height: 630px;
+    background-color: #ffffff;
+    border-width: 0px;
+}
+#lbl4{
+    animation: 2s ease-out 0s 1 slideInFromLeft2;
+    position: absolute;
+    top: 54%;
+    left: 45%;
+    font-size: 40px;
+    font-family: Arial, sans-serif;
+}
+#lbl5{
+    animation: 2s ease-out 0s 1 slideInFromLeft2;
+    position: absolute;
+    top: 70%;
+    left: 45%;
+    font-size: 40px;
+    font-family: Arial, sans-serif;
+}
+
+
+
+/*Elegir Usu*/
+.greyBody{
+    background: #ffffff;
+}
+.BESMO{
+    position: absolute;
+    top: 22%;
+    left: 6%;
     color: #3FADCF;
+    font-size: 42px;
+font-family: 'Poppins', sans-serif;
     font-weight: bolder;
 }
 
-.bienvenido{
+#positiontext{
     animation: 1.5s ease-out 0s 1 slideInFromLeft;
     position: absolute;
-    top: 60%;
-    left: 12%;
+    top: 35%;
+    left: 5%;
+    
+}
+#usuariotext{
+font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    font-size: 80px;
-    font-family:Arial, Helvetica, sans-serif;
-     z-index: 999999;
+    text-decoration: underline;
+    font-size: 70px;
 }
-
-
-#MPbody{
-    background-color: white;
+.lblPi{
+font-family: 'Poppins', sans-serif;
+    font-size: 70px;
 }
-.greyBody{
-    background-color: white(247, 247, 247, 0.5);
-}
-
-/*Layouts*/
-
-
-#Usuario{
+.botmed{
+    animation: 2.5s popUp  ease-in ;
     position: absolute;
-    top:3%;
-    left: 90%;
-}
-#LogOut{
-    position: absolute;
-    top:3%;
-    left: 77%;
-}
-
-
-
-
-
-.header{
-  padding: 40px;
-  text-align: center;
-  background: #ffffff;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-}
+    text-align: center;
     
+    top: 20%;
+    right: 50%;
+    left: 50%;
+    height: 400px;
+    width: 270px;
+    border:4px solid #4A4EB5;
+    border-radius: 40px;
     
-    
-
-#BtnSobreNos{
-    position: absolute;
-    top: 10%;
-    left:20%;
-}
-#BtnMain{
-    position: absolute;
-    top: 5%;
-    left:40%;
-}
-#BtnpacLayout{
-    position: absolute;
-    top: 10%;
-    left:80%;
-
-}
-header{
-    background-color: blueviolet;
-}
-    
-
-
-
-.autoLayoutIS{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 122px 362px;
-    gap: 63px;
-
-    position: relative;
+    background-image: url("../imagenes/imgUsuarioM.png");
+    background-position: center;
+    background-size: 161px 161px;
+    background-repeat: no-repeat;
+    background-position-y: 20%;
     
 }
-.titleLayout{
+
+.botpac{
+    animation: 3s popUp  ease-in ;
     position: absolute;
-    left: 41%
+    text-align: center;
+    top: 20%;
+    right: 5%;
+    left: 75%;
+    height: 400px;
+    width: 270px;
+    border:4px solid #4A4EB5;
+    border-radius: 40px;
+
+    background-image: url("../imagenes/imgUsuarioP.png");
+    background-position: center;
+    background-size: 161px 161px;
+    background-repeat: no-repeat;
+    background-position-y: 20%;
 }
-
-
-
-
-
-.minibutton{
-   
+.minibuttmed{
     background-color: #B8EEFF;
     border-radius: 10px;
     color:#555555;
     border: 0px;
-    width: 320px;
+    width: 200px;
     height: 54px;
-    font-size: 22px;
+    font-size: 18px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     
-
 }
-.minibuttonClick{
-   
-    background-color: #B8EEFF;
-    border-radius: 10px;
-    color:#555555;
-    border: 0px;
-    width: 320px;
-    height: 54px;
-    font-size: 22px;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
-    
-
-}
-#RegistrarMed{
-    position: relative;
-    top: 4%;
-    
-   
-}
-#LogInMed{
-    position: relative;
-    top: 12%;
+#contenedor{
+    animation: 1.5s ease-out 0s 1 slideInFromLeft;
+    background-color: rgba(63, 174, 207, 0.3);
+    width: 640px;
+    height: 630px;
+    border-bottom-right-radius: 200px;
+    border-top-right-radius: 200px;
 }

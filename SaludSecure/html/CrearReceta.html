@@ -1,70 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    
+
     <title>Crear Receta</title>
+    <link rel="stylesheet" href="../css/font.css">
     <link rel="stylesheet" href="../css/CrearReceta.css">
-    <link rel="stylesheet" href="../css/font-awesome.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <UTF-8>
+        <link rel="stylesheet" href="../css/font-awesome.css">
     <link rel="stylesheet" href="../css/jquery-ui.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="../js/jquery-3.6.0.min.js"></script>
     <script src="../js/jquery.min.js"></script>
     <script src="../js/jquery-ui.min.js"></script>
     <script src="../js/SobreBesmo.js"></script>
-   
+
 </head>
+
 <body>
 
     <header>
         <label id="Txtlogo">BESMO</label>
-       
-        <label id="headertitle"> Crear Receta </label>
-        <input id="logo"type="button">
+        <label id="headertitle">Menu principal</label>
+        <input type="button" id="logo">
         <div id="LogOut">
-            <input type ="button" class="minibutton" value="Log Out"/>
+            <input type="button" class="minibutton" value="Log Out" id="LO_M">
         </div>
-        <input id="Usuario"type ="button"/>
+        <input id="Usuario" type="button">
+
+        </div>
     </header>
-    
     <!--BTN Regresar-->
     <input type="button" value="?" class="ayuda">
-    <a class="btn-floating btn-large waves-effect" id="regresar"><i id="Iconregresar" class="material-icons">arrow_back</i></a>
-    
-    <div id=IngresarDatos>
-    
-
-    <div class="smallheader">    
-    <label id="title1" class="titles">Ingresar datos del Paciente</label>
-    </div>
-    <br>
-    
-    <input placeholder="Nombre" class="txtbox">
-    <br><br>
-    <input placeholder="Apellido"class="txtbox">
-    <br><br>
-    <input placeholder="DNI" class="txtbox" type="number">
-    <br><br>
-    <input placeholder="Credencial"class="txtbox">
-    <br><br>
-        
-    </div>
-    
-   
-    <div id="CrearReceta">
-        <div class="smallheader2">    
-        <label id="title2" class="titles">Crear Receta</label>
+    <a class="btn-floating btn-large waves-effect" id="RegresarM"><i id="Iconregresar"
+            class="material-icons">arrow_back</i></a>
+    <form action="CrearReceta_asignacion.php" method="POST">
+    <div id="IngresarDatos">
+        <div class="smallheader">
+            <label id="title1" class="titles">Ingresar datos del Paciente</label>
         </div>
-        
-        <input placeholder="Tratamiento"class="txtbox"id="tratamiento">
-        
+        <br>
+        <input placeholder="Nombre" class="txtbox">
+        <br><br>
+        <input placeholder="Apellido" class="txtbox">
+        <br><br>
+        <input placeholder="DNI" class="txtbox" type="number" id="dnidelpacCrearRec" name="usuario">
+        <br><br>
+        <input placeholder="Credencial" class="txtbox">
+        <br><br>
+
+      
+        <!--HACER BOTON CON TYPE SUBMIT-->
+
+
+    </div>
+</form>
+
+    <div id="CrearReceta">
+        <div class="smallheader2">
+            <label id="title2" class="titles">Crear Receta</label>
+        </div>
+
+        <input placeholder="Tratamiento" class="txtbox" id="tratamiento">
+
         <br><br><br><br>
-        <textarea placeholder="Escribe las indicaciones aqui..." class="Bigtxtbox" id="indicaciones"  rows="4" cols="30"></textarea>
-        
-        <div class="container">
-            <button id="button"></button>
-          </div>
+        <textarea placeholder="Escribe las indicaciones aqui..." class="Bigtxtbox" id="indicaciones" rows="4"
+            cols="30"></textarea>
+
     </div>
 
-    
+    <div class="container">
+        <button id="button"></button>
+      </div>
+
 </body>
+
 </html>

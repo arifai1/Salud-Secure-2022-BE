@@ -13,6 +13,8 @@ if (!isset($_SESSION['user'])){
 	<!--<link rel="stylesheet" href="../css/styles_Buttons.css">
 <link rel="stylesheet" href="../css/styles_Layout.css">-->
 	<link rel="stylesheet" href="../css/MenuPrincipal.css">
+	
+	<link rel="Icon" href="../imagenes/logo-Header.png">
 	<script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
 	<script src="../js/saludsecure.js" type="text/javascript"></script>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

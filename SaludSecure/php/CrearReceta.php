@@ -4,28 +4,25 @@ if (!isset($_SESSION['user'])){
     }?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <title>Crear Receta</title>
-    
+    <link rel="stylesheet" href="../css/CrearReceta.css">
+    <link rel="stylesheet" href="../css/font.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <UTF-8>
-
-<script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
+        <script src="../js/metaMask.js" type="text/javascript"></script>
         <script src="../js/saludsecure.js" type="text/javascript"></script>
-        <script src="../js/SobreBesmo.js"></script>
+        <script src="../js/SobreBesmo.js" type="text/javascript"></script>
+	    <link rel="Icon" href="../imagenes/logo-Header.png">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="../css/font-awesome.css">
-        <link rel="stylesheet" href="../css/jquery-ui.css">
-  
-    <script src="../js/jquery-3.6.0.min.js"></script>
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/jquery-ui.min.js"></script>
-   
+        <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+        <link href="" rel="shortcut icon">
 
 </head>
-    <script> 
+<script> 
+  const Web3 = require("web3")
             $(function() {
         $( "#button" ).click(function() {
             $( "#button" ).addClass( "onclic", 250, validate);
@@ -44,26 +41,41 @@ if (!isset($_SESSION['user'])){
             }
         });
        
+        
         async function conexionWeb3(){
-				if (typeof window.ethereum !== "undefined") {
-                     //alert("SEE");
-                    sendReceta();
-			 		ethereum.request({ method: "eth_requestAccounts" })
-					
-                }
-				else{
-				alert("No tiene MetaMask instalado, por favor descarguelo");
-                 conexionMetaMask();
-			}
+        
+         //import detectEthereumProvider from '@metamask/detect-provider';
+			 	 if (typeof window.ethereum !== "undefined") {
+                    ethereum.request({ method: "eth_requestAccounts" })
+                   //connectWallet()
+                      //sendReceta();
+                      await window.ethereum.enable()
+                      
+                      
+                  //     mensajeM = "Conectando con MetaMask";                                               //Href me indica destino.
+                  //   $("#divt").html(mensajeM);
+                  //   $("#divt").show();
+                   }
+			 	else{
+			 	    alert("No tiene MetaMask instalado, por favor descarguelo");
+                    mensaje = "No tiene instalado MetaMask, por favor instalelo apretando el boton 'Conectar con MetaMask'";                                               //Href me indica destino.
+                    $("#divt").html(mensaje);
+                    $("#divt").show();
+                    await window.open("https://metamask.io/download/", "_blank")
+			    }
+            }
+
+             async function connectWallet() {
+                    const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.matic.today');
+                    await provider.send("eth_requestAccounts", []);
+                    const signer = provider.getSigner()
+                    alert("Conectado");
+             }
+        
         
     
-        async function conexionMetaMask(){
-            mensaje = "No tiene instalado MetaMask, por favor instalelo apretando el boton 'Conectar con MetaMask'";                                               //Href me indica destino.
-            $("#divt").html(mensaje);
-            $("#divt").show();
-            await window.open("https://metamask.io/download/", "_blank")
-        }
-    }
+        
+    
     $(function() {
         $( "#button" ).click(function() {
            // alert ("hola");
@@ -95,7 +107,7 @@ if (!isset($_SESSION['user'])){
 
     <header>
         <label id="Txtlogo">BESMO</label>
-        <label id="headertitle">Menu principal</label>
+        <label id="headertitle">Crear Receta</label>
         <input type="button" id="logo">
         <div id="LogOut">
             <input type="button"  value="Log Out" id="LO_M">
@@ -104,7 +116,7 @@ if (!isset($_SESSION['user'])){
 
         </div>
     </header>
-    <!--BTN Regresar-->
+    <!--BTN Regresar--> 
     <input type="button" value="?" class="ayuda">
     <a class="btn-floating btn-large waves-effect" id="RegresarM"><i id="IconregresarM"
             class="material-icons">arrow_back</i></a>
@@ -125,17 +137,8 @@ if (!isset($_SESSION['user'])){
             <input placeholder="Credencial" class="txtbox">
             <br><br><br><br>
         
-            <!--<input type="submit" value="Enviar" id="EnviarSC" class="minibutton" onclick="conexionWeb3();"/> -->
            
-           <div class="container">
-               <button id="button" onclick="conexionWeb3();"></button>
-                        
-            </div>
-                
             
-            <input type="submit" value="Conectar con MetaMask" id="ConecMsk" class="minibutton" onclick="conexionMetaMask();"/>
-             
-            <!--HACER BOTON CON TYPE SUBMIT-->
 
         </div>
     </form>
@@ -153,16 +156,18 @@ if (!isset($_SESSION['user'])){
 
     </div>
 
+        <div class = "container">
+          <button id= "EnviarSC" onclick="conexionWeb3();"></button>
+        </div>
+
 </body>
-
-
+</html>
 <script>
 
-    
     var userAccount = web3.eth.account[0]
     var account accountInterval = setInterval(function() {
-  // Check if account has changed
-  if (web3.eth.accounts[0] !== userAccount) {
+    // Check if account has changed
+    if (web3.eth.accounts[0] !== userAccount) {
     userAccount = web3.eth.accounts[0];
     // Call some function to update the UI with the new account
     updateInterface();
@@ -187,7 +192,5 @@ if (!isset($_SESSION['user'])){
       
         
 //h
-      }
+    }
     </script>
-
-</html>

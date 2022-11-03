@@ -1,7 +1,7 @@
 <?php
 include_once("db.php");
-
 $data=array();
+
 	$sql="SELECT IDpaciente, nombre, apellido from paciente where usuario='".$_REQUEST['usu']."' and contrasena='".$_REQUEST['pass']."'";	
 	$res=$con->query($sql);
 	$i=0;

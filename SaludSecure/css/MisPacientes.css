@@ -1,3 +1,42 @@
+
+
+.paciente{
+    position: absolute;
+    left: 10%;
+    top: 15%;
+    background-color: #eeeeee;
+    box-shadow:  0px 20px 20px #cccccc, 0 0 0 #ffffff,0 0 0 #cccccc inset,2px 2px 2px #ffffff inset;
+    border-radius: 10px;
+    width: 620px;
+    height: 500px;
+    padding-left: 4%;
+    padding-top: 4%;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 body{
     height: 100%;
     margin: 0;
@@ -18,7 +57,7 @@ header{
     left:0%;
 }
 #headertitle{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 30px;
 }
 #Txtlogo{
@@ -26,7 +65,7 @@ header{
     top:25%;
     left:10%;
     font-size: 30px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
     text-decoration: bolder;
     color: #3FADCF;
 }
@@ -106,18 +145,7 @@ header{
 ::placeholder{
     font-size: 16px;
 }
-.paciente{
-    position: absolute;
-    left: 10%;
-    top: 15%;
-    background-color: #3FADCF;
-    border-radius: 10px;
-    width: 420px;
-    height:100px;
-    padding-left: 4%;
-    padding-top: 4%;
-    
-}
+
 #recetasAsignadas{
     position: absolute;
     right: 10%;

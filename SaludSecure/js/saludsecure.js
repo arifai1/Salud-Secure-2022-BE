@@ -1,20 +1,30 @@
 $(document).ready(function () {
 
+
     //LogIn del paciente                                                                                                        
     $("#divt").hide();
-    $("#LogIn").mouseover(function () {
+    $("#LogIn").click(function () {
+        $( "#LogIn" ).removeClass( "minibutton" );
+        $( "#LogIn" ).addClass( "minibuttonClick");
         $(".boton").css("cursor", "pointer");
 
-
-        if ($("#u").val() == '' && $("#p").val() == '') {
-            $("#divt").html("Debe agregar Usuario y Contrase&ntildea");
-            $("#divt").show();
+        if ($("#u").val() == '' && $("#p").val() =='') {
+            $("#divi").html("Debe agregar Usuario y Contrase&ntildea");
+            $("#divi").show();
+            $( "#u" ).removeClass( "ingresar" );
+            $( "#u" ).addClass( "noIngresado");
+            $( "#p" ).removeClass( "ingresar" );
+            $( "#p" ).addClass( "noIngresado");
         } else if ($("#u").val() == '' && $("#p").val() != "") {
-            $("#divt").html("Debe agregar Usuario");
-            $("#divt").show();
+            $("#divi").html("Debe agregar Usuario");
+            $("#divi").show();
+            $( "#u" ).removeClass( "ingresar" );
+            $( "#u" ).addClass( "noIngresado");
         } else if ($("#u").val() != '' && $("#p").val() == "") {
-            $("#divt").html("Debe agregar Contrase&ntildea");
-            $("#divt").show();
+            $("#divi").html("Debe agregar Contrase&ntildea");
+            $("#divi").show();
+            $( "#p" ).removeClass( "ingresar" );
+            $( "#p" ).addClass( "noIngresado");
         }
     });
 
@@ -30,9 +40,8 @@ $(document).ready(function () {
 
     $("#LogIn").click(function (event) {
         event.preventDefault();                     //evitamos que se refresque la pagina asi podemos ver por mas tiempo el mensaje de Usuario no encontrado
-
         if ($("#u").val() != '' && $("#p").val() != '') {
-            $.ajax({                                                                                                                                                                                                               
+            $.ajax({
                 type: 'POST',
                 url: '../php/validar.php',                              //va a mandar la info a este archivo para validar si el suario es correcto  o no.
                 dataType: "json",
@@ -44,13 +53,12 @@ $(document).ready(function () {
                     else if (data.status == 'ok') {
                         mensaje = "Bienvenido: " + data.result['nombre'] + " " + data.result['apellido'] + "";
                         $("#divt").html(mensaje);
+                        $("#divt").show();
                         console.log(data.result);                       //verificamos que nos manda en caso de error.
                         window.location.replace('../php/pantallaprincipal.php');
-                        $("#divt").show();
-
                     }
                     else {
-                        mensaje = "Usuario no encontrado, por favor registrarse";                                               
+                        mensaje = "Usuario no encontrado, por favor registrarse";
                         $("#divt").html(mensaje);
                         $("#divt").show();
                     }
@@ -60,7 +68,7 @@ $(document).ready(function () {
                 },
             });
         } else {
-            mensaje = "Debe completar el usuario y la contrase&ntildea";                                               //Href me indica destino.
+            mensaje = "Debe completar el usuario y la contrase&ntildea";                                               
             $("#divt").html(mensaje);
             $("#divt").show();
         }
@@ -71,6 +79,8 @@ $(document).ready(function () {
 
     //Registrar del paciente
     $("#RegistrarPac").click(function () {
+        $( "#RegistrarPac" ).removeClass( "minibutton" );
+        $( "#RegistrarPac" ).addClass( "minibuttonClick");
         $.ajax({
             type: 'POST',
             url: '../php/registrar.php',
@@ -84,7 +94,7 @@ $(document).ready(function () {
                     window.location.replace('../php/pantallaprincipal.php');
                 }
                 else if (data.status == 'err') {
-                    mensaje= ("El usuario que intento ingresar ya existe");
+                    mensaje = ("El usuario que intento ingresar ya existe");
                     $("#divt").html(mensaje);
                     $("#divt").show();
                 }
@@ -107,19 +117,29 @@ $(document).ready(function () {
 
 
     //LogIn del Medico
-    $("#divt").hide();
-    $("#LogInMed").mouseover(function () {
+    $("#divi").hide();
+    $("#LogInMed").click(function () {
+        $( "#LogInMed" ).removeClass( "minibutton" );
+        $( "#LogInMed" ).addClass( "minibuttonClick");
         $(".boton").css("cursor", "pointer");
         //hacemos que el que intenta ingresar este obligado a llenar todos los inputs.
-        if ($("#q").val() == '' && $("#c").val() == '') {
-            $("#divt").html("Debe agregar Usuario y Contrase&ntildea");
-            $("#divt").show();
+        if ($("#q").val() == '' && $("#c").val() =='') {
+            $("#divi").html("Debe agregar Usuario y Contrase&ntildea");
+            $("#divi").show();
+            $( "#q" ).removeClass( "ingresar" );
+            $( "#q" ).addClass( "noIngresado");
+            $( "#c" ).removeClass( "ingresar" );
+            $( "#c" ).addClass( "noIngresado");
         } else if ($("#q").val() == '' && $("#c").val() != "") {
-            $("#divt").html("Debe agregar Usuario");
-            $("#divt").show();
+            $("#divi").html("Debe agregar Usuario");
+            $("#divi").show();
+            $( "#q" ).removeClass( "ingresar" );
+            $( "#q" ).addClass( "noIngresado");
         } else if ($("#q").val() != '' && $("#c").val() == "") {
-            $("#divt").html("Debe agregar Contrase&ntildea");
-            $("#divt").show();
+            $("#divi").html("Debe agregar Contrase&ntildea");
+            $("#divi").show();
+            $( "#c" ).removeClass( "ingresar" );
+            $( "#c" ).addClass( "noIngresado");
         }
     });
 
@@ -135,14 +155,12 @@ $(document).ready(function () {
 
     $("#LogInMed").click(function (event) {
         event.preventDefault();                 //evitamos que se refresque la pagina.
-        $( "#LogInMed" ).removeClass( "minibutton" );
-       $( "#LogInMed" ).addClass( "minibuttonClick");
         if ($("#q").val() != '' && $("#c").val() != '') {
             $.ajax({
                 type: 'POST',
                 url: '../php/validar_doc.php',
                 dataType: "json",
-                data: 'usum=' + $("#q").val() + '&passm=' + $("#c").val(),// + '&que=L',
+                data: 'usum=' + $("#q").val() + '&passm=' + $("#c").val(),
                 success: function (data) {
                     console.log(data);
                     if (data == "") {
@@ -150,16 +168,14 @@ $(document).ready(function () {
                     }
                     else if (data.status == 'ok') {
                         mensaje = "Bienvenido: " + data.result['nombre'] + " " + data.result['apellido'] + "";
-                        $("#divt").html(mensaje);
-                        $("#divt").show();
+                        $("#divi").html(mensaje);
+                        $("#divi").show();
                         window.location.replace('../php/pantallaprincipal_doc.php');
-                        
-
                     }
                     else {
                         mensaje = "Usuario no encontrado, por favor registrarse";
-                        $("#divt").html(mensaje);
-                        $("#divt").show();
+                        $("#divi").html(mensaje);
+                        $("#divi").show();
                     }
                 },
                 error: function (error) {
@@ -215,21 +231,33 @@ $(document).ready(function () {
     //finaliza aca
 
     //asignacion paciente-medico por el dni ingresado en el input del Smart Contract.
+
     $("#EnviarSC").click(function (e) {
         e.preventDefault();
-
+        //console.log(document.querySelector("#dnidelpacCrearRec").value);
         $.ajax({
             type: 'POST',
             url: '../php/CrearReceta_asignacion.php',
             dataType: "json",
-            data: { "usuario": $("#dnidelpacCrearRec").value },
+            data: { "usuario": document.querySelector("#dnidelpacCrearRec").value.toString() },
             success: function (data) {
-                //mostramos la $data en una pantalla
                 console.log(data);
-                //alert("La asignacion fue exitosa");
-            },
-            error: function (error) {
-                console.log(error);
+                         if (data.status == 'ok') {
+                             mensaje = "Se envio la receta correctamente";
+                             $("#divt").html(mensaje);
+                             $("#divt").show();
+                         }
+                         else{
+                             mensaje = "Ocurrio un error";
+                             $("#divt").html(mensaje);
+                             $("#divt").show();
+                         }
+                         //mostramos la $data en una pantalla
+                         console.log("te muestro la data");
+                         console.log(data);
+                     },
+                     error: function (error) {
+                         console.log(error);
             },
         });
     });
@@ -302,13 +330,13 @@ $(document).ready(function () {
 
     //botones pantallaprincipal.html
     $("#Nosotros").click(function () {
-        window.location.replace('../php/pantallanosotros.php'); //mostramos info sobre nosotros
+        window.location.replace('../php/SobreBesmoM.php'); //mostramos info sobre nosotros
     });
     $("#Nosotros").mouseover(function () {
         $(".boton").css("cursor", "pointer");
     });
     $("#MisRecetas").click(function () {
-        window.location.replace('../php/misRecetas.php'); 
+        window.location.replace('../php/misRecetas.php');
     });
     $("#MisRecetas").mouseover(function () {
         $(".boton").css("cursor", "pointer");
@@ -334,7 +362,7 @@ $(document).ready(function () {
         $(".boton").css("cursor", "pointer");
     });
     $("#MisPacientes").click(function () {
-        window.location.replace('../php/MisPacientes.php');
+        window.location.replace('../php/MisPacientesOK.php');
     });
     $("#MisPacientes").mouseover(function () {
         $(".boton").css("cursor", "pointer");

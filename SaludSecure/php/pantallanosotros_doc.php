@@ -3,36 +3,103 @@ if (!isset($_SESSION['user'])){
     header('Location: ../html/pantallainicio.html');
     }?>
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
-	<meta http-equiv="Contet-Type" content="text/html; charset=UTF-8">
-	<title>Acerca de BESMO</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <UTF-8>
+        <title>SobreBesmo</title>
+
+        <link rel="stylesheet" href="../css/SobreNosotros.css">
+        <script src="../js/SobreBesmo.js" type="text/javascript"></script>
+        <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
+        <script src="../js/saludsecure.js" type="text/javascript"></script>
+
+        <link rel="Icon" href="../imagenes/logo-Header.png">
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
-	<script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
-	<script src="../js/saludsecure.js" type="text/javascript"></script>
+        <style>
+            div.sticky {
+              position: sticky;
+              top: 0;
+            
+              padding: 50px;
+
+            }
+            </style>
+
 
 
 </head>
 
 <body>
-	<div id="contenedor">
-		<div id="log">
-			<header>
-				<label id="Txtlogo">BESMO</label>
-				<label id="headertitle">Menu principal</label>
-				<input type="button" id="logo">
-				<!-- <div id="LogOut">
-					<input type="button" class="minibutton" value="Log Out" id="LO_M">
-				</div> -->
-				<input id="Usuario" type="button">
 
-		</div>
-		</header>
-		<label id="1" class="caja">Somos estudiantes de TIC</label>
-		<a href="./pantallaprincipal_doc.php">Regresar</a>
-		<div id="divt">
-		</div>
-	</div>
+      
+    <div id="background0">
+        <div id=position0>
+            <div class="container">
+                <div class="box"></div>
+              </div>
+            <label class="txt">¿Qué es </label><label class="BESMO">BESMO?</label>
+            <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
+            <i id="scroll" class="material-icons">arrow_downward</i>
+        </div>
+    </div>
 
+
+    <div class="sticky" id="background1">
+        <div id=position1>
+            <label>Una </label>
+            <label class="subrayado"> experiencia </label>
+            <br>
+            <label>centrada en la </label>
+            <label class="subrayado">seguridad</label>
+            <br>
+            <label> de los pacientes.</label>
+        </div>
+
+        <input id="SaludImg" type="button">
+    </div>
+    <hr id="hr1">
+
+    <div class="sticky" id="background2">
+        <div id=position2>
+            <label>Infraestructura tecnológica</label>
+            <br>
+            <label class="subrayado">conectada por blockchain</label>
+
+            <br>
+            <label>para la industria </label>
+            <br>
+            <label> de la salud</label>
+        </div>
+        <input id="BlockChainImg" type="button">
+    </div>
+    
+
+    <div class="sticky" id="background3">
+        <div id="position3">
+            <label>Blockchain</label> <br>
+            <label>Eficiencia</label> <br>
+            <label>Seguridad</label> <br>
+            <label>Medicina</label> <br>
+            <label>Organizador</label>
+        </div>
+        <input id="MedicoCompuImg" type="button">
+    </div>
+    <div id="background4">
+        <div id="position4">
+            <label>Vive una nueva </label>
+            <label class="subrayado">experiencia</label> <br>
+            <label>centrada en los</label>
+            <label class="subrayado">pacientes</label><br><br><br>
+            
+        </div>
+        
+    </div>
+    <input class="minibutton" type="button" value="Regresar" id="RegresarM">
 </body>
+
+</html>
