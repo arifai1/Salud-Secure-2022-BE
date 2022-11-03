@@ -155,14 +155,11 @@ if (!isset($_SESSION['user'])){
             cols="30"></textarea>
 
     </div>
-<<<<<<< Updated upstream
+
         <div class = "container">
           <button id= "EnviarSC" onclick="conexionWeb3();"></button>
-=======
-    <div class="container">
-        <button id="button"></button>
->>>>>>> Stashed changes
-      </div>
+        </div>
+
 </body>
 </html>
 <script>
