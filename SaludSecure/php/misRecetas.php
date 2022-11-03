@@ -119,9 +119,9 @@ if (!isset($_SESSION['user'])){
 		"type": "function"
 	}
 ]
-$(document).ready(function() {
-async function myFunction() {
-  alert("holapa");
+//$(document).ready(function() {
+	async function myFunction() {
+  			alert("holapa");
             const contract_address = '0xa0ccDD96AE52777f1eCe7D1efF6A02ae7341614b' ;
             const SaludSecure = new ethers.Contract(contract_address,contract_abi, provider); 
             const txn = SaludSecure.methods.ver_Receta().call(); 
@@ -129,7 +129,7 @@ async function myFunction() {
                     alert(result) 
              })
     }
-}
+
 // $(document).ready(function() {
 //         $('#verReceta').click(function(){
 //             console.log("funca");
@@ -144,10 +144,10 @@ async function myFunction() {
 //     });
         const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.matic.today'); 
         
-
+//}
           //FIJARSE SI ESTA BIEN LOS NOMBRES
         </script>
         
-       
+ 
 </body>
 </html>
