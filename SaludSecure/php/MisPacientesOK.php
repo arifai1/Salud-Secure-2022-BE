@@ -67,8 +67,8 @@
     <input type="button" value="" class="regresar" id="RegresarM">
     <i class="large material-icons" id="IconregresarM">arrow_back</i>
     <div id="headerbuscador">
-        <input type="search" class="buscador" placeholder="Puedes buscar por nombre, apellido, edad, dni">
-        <i class="large material-icons" id="buscar">search</i>
+        <!-- <input type="search" class="buscador" placeholder="Puedes buscar por nombre, apellido, edad, dni">
+        <i class="large material-icons" id="buscar">search</i> -->
     </div>
 
 
@@ -82,16 +82,23 @@
             } else {
                 foreach($userData3 as $p){ 
                     echo "<div class='pacientes'>";
-                    echo "<label>Nombre: </label>";
+                    echo "<label> Nombre: </label>";
                     echo "<label>". $p["nombre"] ."</label>";
+                    echo "<label> \n </label>";
+                    echo "<label> Apellido: </label>";
+                    echo "<label>". $p["apellido"] ."</label>";
+                    echo "<label>  DNI: </label>";
+                    echo "<label>". $p["usuario"] ."</label>";
+                    echo "<label> Fecha de Nacimiento: </label>";
+                    echo "<label>". $p["nacimiento"] ."</label>";
+                    echo "<label> Credencial: </label>";
+                    echo "<label>". $p["credencial"] ."</label>";
+                    echo "<label> \n </label>";
                 }
             }
         ?>
     </div>
-    <div id="recetasAsignadas">
-     0 recetas
-    </div>
-    </div>
+    
 
 
    
