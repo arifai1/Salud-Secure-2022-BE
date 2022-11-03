@@ -48,11 +48,7 @@ if (!isset($_SESSION['user'])){
                       //sendReceta();
                       await window.ethereum.enable()
                       
-                      // try {
-                      //   // Request account access if needed
-                      // await window.ethereum.enable()
-                      //   // Acccounts now exposed
-                      //   }
+                      
                       mensajeM = "Conectando con MetaMask";                                               //Href me indica destino.
                     $("#divt").html(mensajeM);
                     $("#divt").show();
@@ -161,11 +157,10 @@ if (!isset($_SESSION['user'])){
 </html>
 <script>
 
-    
     var userAccount = web3.eth.account[0]
     var account accountInterval = setInterval(function() {
-  // Check if account has changed
-  if (web3.eth.accounts[0] !== userAccount) {
+    // Check if account has changed
+    if (web3.eth.accounts[0] !== userAccount) {
     userAccount = web3.eth.accounts[0];
     // Call some function to update the UI with the new account
     updateInterface();

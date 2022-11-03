@@ -15,6 +15,7 @@ if (!isset($_SESSION['user'])){
         <script src="../js/saludsecure.js" type="text/javascript"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="../js/SobreBesmo.js" type="text/javascript"></script>
+        <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
 	<link rel="Icon" href="../imagenes/logo-Header.png">
     
    
@@ -23,7 +24,7 @@ if (!isset($_SESSION['user'])){
 <body>
     <header>
         <label id="Txtlogo">BESMO</label>
-       
+        
         <label id="headertitle"> Mis Recetas </label>
         <input id="logo"type="button">
         <div id="LogOut">
@@ -36,10 +37,13 @@ if (!isset($_SESSION['user'])){
         <div id="item1"class="receta">
         <label id="lbl1">Tratamiento</label>
         <label id="lbl2">Fecha</label>
+        <input type="submit" value="Ver" id="verReceta" class="minibutton" /> 
+        
         </div>
        
        
     </div>
+    
     <a id="Izq"><i id="chevron_left" class="material-icons">chevron_left</i></a>
     <a id="Der"><i id="chevron_right" class="material-icons">chevron_right
     </i></a>
@@ -47,5 +51,99 @@ if (!isset($_SESSION['user'])){
     <input type="button" value="?" class="ayuda">
     <a class="btn-floating btn-large waves-effect" id="RegresarP"><i id="IconregresarP" class="material-icons">arrow_back</i></a>
    
+    <script>
+        //CODIGO PARA LEER RECETA --> PACIENTE
+        
+        import Web3 from 'web3';
+
+        //const web3 = new Web3(window.ethereum);
+        //await window.ethereum.enable();
+
+       const contract_abi = [
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "medicamento_",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "cantidad_",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "aclaracion_",
+				"type": "string"
+			}
+		],
+		"name": "set_receta",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "nombre_",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "apellido_",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "DNI_",
+				"type": "string"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "ver_Receta",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
+$(document).ready(function() {
+        $('#verReceta').click(function(){
+            console.log("funca");
+            alert("viendo");
+            const contract_address = '0xa0ccDD96AE52777f1eCe7D1efF6A02ae7341614b' ;
+            const SaludSecure = new ethers.Contract(contract_address,contract_abi, provider); 
+            const txn = SaludSecure.methods.ver_Receta().call(); 
+             txn.then(function(result) {
+                    alert(result) 
+             })
+        });
+    });
+        const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.matic.today'); 
+        
+    //     async function verReceta(){
+    //         alert("viendo");
+    //         const contract_address = '0xa0ccDD96AE52777f1eCe7D1efF6A02ae7341614b' ;
+    //         const SaludSecure = new ethers.Contract(contract_address,contract_abi, provider); 
+    //         const txn = SaludSecure.methods.ver_Receta().call(); 
+    //          txn.then(function(result) {
+    //                 alert(result) 
+    //          })
+    // }
+          //FIJARSE SI ESTA BIEN LOS NOMBRES
+        </script>
+        
+       
 </body>
 </html>
