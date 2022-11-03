@@ -1,7 +1,6 @@
 $(document).ready(function () {
 
 
-
     //LogIn del paciente                                                                                                        
     $("#divt").hide();
     $("#LogIn").click(function () {
@@ -60,8 +59,8 @@ $(document).ready(function () {
                     }
                     else {
                         mensaje = "Usuario no encontrado, por favor registrarse";
-                        $("#divi").html(mensaje);
-                        $("#divi").show();
+                        $("#divt").html(mensaje);
+                        $("#divt").show();
                     }
                 },
                 error: function (error) {
@@ -169,14 +168,14 @@ $(document).ready(function () {
                     }
                     else if (data.status == 'ok') {
                         mensaje = "Bienvenido: " + data.result['nombre'] + " " + data.result['apellido'] + "";
-                        $("#divt").html(mensaje);
-                        $("#divt").show();
+                        $("#divi").html(mensaje);
+                        $("#divi").show();
                         window.location.replace('../php/pantallaprincipal_doc.php');
                     }
                     else {
                         mensaje = "Usuario no encontrado, por favor registrarse";
-                        $("#divt").html(mensaje);
-                        $("#divt").show();
+                        $("#divi").html(mensaje);
+                        $("#divi").show();
                     }
                 },
                 error: function (error) {
@@ -363,7 +362,7 @@ $(document).ready(function () {
         $(".boton").css("cursor", "pointer");
     });
     $("#MisPacientes").click(function () {
-        window.location.replace('../php/CrearReceta_asignacion - copia.php');
+        window.location.replace('../php/MisPacientesOK.php');
     });
     $("#MisPacientes").mouseover(function () {
         $(".boton").css("cursor", "pointer");
