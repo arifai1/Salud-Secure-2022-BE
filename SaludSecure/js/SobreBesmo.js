@@ -19,20 +19,20 @@ $(document).ready(function() {
     $(".receta").css({"position": "relative", top: "14%", left: izq-der})
   })
    // $(function() {
-        $( "#button" ).click(function() {
+        $( "#EnviarSC" ).click(function() {
            // alert ("hola");
-          $( "#button" ).addClass( "onclic", 250, validate());
+          $( "#EnviarSC" ).addClass( "onclic", 250, validate());
         });
       
         function validate() {
           setTimeout(function() {
-            $( "#button" ).removeClass( "onclic" );
-            $( "#button" ).addClass( "validate", 450, callback());
+            $( "#EnviarSC" ).removeClass( "onclic" );
+            $( "#EnviarSC" ).addClass( "validate", 450, callback());
           }, 2250 );
         }
           function callback() {
             setTimeout(function() {
-              $( "#button" ).removeClass( "validate" );
+              $( "#EnviarSC" ).removeClass( "validate" );
             }, 1250 );
           }
 

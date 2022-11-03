@@ -38,21 +38,21 @@ if (!isset($_SESSION['user'])){
             }
         });
        
+        
         async function conexionWeb3(){
         
-         
-        //import detectEthereumProvider from '@metamask/detect-provider';
+         //import detectEthereumProvider from '@metamask/detect-provider';
 			 	 if (typeof window.ethereum !== "undefined") {
                     ethereum.request({ method: "eth_requestAccounts" })
-                    connectWallet()
+                   //connectWallet()
                       //sendReceta();
                       await window.ethereum.enable()
                       
                       
-                      mensajeM = "Conectando con MetaMask";                                               //Href me indica destino.
-                    $("#divt").html(mensajeM);
-                    $("#divt").show();
-                  }
+                  //     mensajeM = "Conectando con MetaMask";                                               //Href me indica destino.
+                  //   $("#divt").html(mensajeM);
+                  //   $("#divt").show();
+                   }
 			 	else{
 			 	    alert("No tiene MetaMask instalado, por favor descarguelo");
                     mensaje = "No tiene instalado MetaMask, por favor instalelo apretando el boton 'Conectar con MetaMask'";                                               //Href me indica destino.
@@ -113,7 +113,7 @@ if (!isset($_SESSION['user'])){
 
         </div>
     </header>
-    <!--BTN Regresar-->
+    <!--BTN Regresar--> 
     <input type="button" value="?" class="ayuda">
     <a class="btn-floating btn-large waves-effect" id="RegresarM"><i id="IconregresarM"
             class="material-icons">arrow_back</i></a>
@@ -134,8 +134,8 @@ if (!isset($_SESSION['user'])){
             <input placeholder="Credencial" class="txtbox">
             <br><br><br><br>
         
-            <input type="submit" value="Enviar" id="EnviarSC" class="minibutton" onclick="conexionWeb3();"/>
-            <!--HACER BOTON CON TYPE SUBMIT-->
+           
+            
 
         </div>
     </form>
@@ -152,7 +152,9 @@ if (!isset($_SESSION['user'])){
             cols="30"></textarea>
 
     </div>
-
+        <div class = "container">
+          <button id= "EnviarSC" onclick="conexionWeb3();"></button>
+      </div>
 </body>
 </html>
 <script>
@@ -185,5 +187,5 @@ if (!isset($_SESSION['user'])){
       
         
 //h
-      }
+    }
     </script>
