@@ -37,7 +37,8 @@ if (!isset($_SESSION['user'])){
         <div id="item1"class="receta">
         <label id="lbl1">Tratamiento</label>
         <label id="lbl2">Fecha</label>
-        <input type="submit" value="Ver" id="verReceta" class="minibutton" /> 
+        <input type="submit" value="Ver" id="verReceta" class="minibutton" onclick="myFunction()"/> 
+  
         
         </div>
        
@@ -118,32 +119,35 @@ if (!isset($_SESSION['user'])){
 		"type": "function"
 	}
 ]
-$(document).ready(function() {
-        $('#verReceta').click(function(){
-            console.log("funca");
-            alert("viendo");
+//$(document).ready(function() {
+	async function myFunction() {
+  			alert("holapa");
             const contract_address = '0xa0ccDD96AE52777f1eCe7D1efF6A02ae7341614b' ;
             const SaludSecure = new ethers.Contract(contract_address,contract_abi, provider); 
             const txn = SaludSecure.methods.ver_Receta().call(); 
              txn.then(function(result) {
                     alert(result) 
              })
-        });
-    });
+    }
+
+// $(document).ready(function() {
+//         $('#verReceta').click(function(){
+//             console.log("funca");
+//             alert("viendo");
+//             const contract_address = '0xa0ccDD96AE52777f1eCe7D1efF6A02ae7341614b' ;
+//             const SaludSecure = new ethers.Contract(contract_address,contract_abi, provider); 
+//             const txn = SaludSecure.methods.ver_Receta().call(); 
+//              txn.then(function(result) {
+//                     alert(result) 
+//              })
+//         });
+//     });
         const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.matic.today'); 
         
-    //     async function verReceta(){
-    //         alert("viendo");
-    //         const contract_address = '0xa0ccDD96AE52777f1eCe7D1efF6A02ae7341614b' ;
-    //         const SaludSecure = new ethers.Contract(contract_address,contract_abi, provider); 
-    //         const txn = SaludSecure.methods.ver_Receta().call(); 
-    //          txn.then(function(result) {
-    //                 alert(result) 
-    //          })
-    // }
+//}
           //FIJARSE SI ESTA BIEN LOS NOMBRES
         </script>
         
-       
+ 
 </body>
 </html>
