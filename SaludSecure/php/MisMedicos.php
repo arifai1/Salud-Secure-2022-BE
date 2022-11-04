@@ -71,7 +71,13 @@
             if(count($userData3) == 0){
                 echo "No hay pacientes";
             } else {
-                foreach($userData3 as $p){ 
+                $med="<table border=0><tr><td width='15%'>Nombre</td><td width='15%'>Apellido</td><td width='10%'>Area</td><td width='20%'>Telefono</td></tr>";
+                foreach($userData3 as $p){
+                    $med.="<tr><td>".$p["nombre"]."</td>";
+                    $med.="<td>".$p["apellido"]."</td>";
+                    $med.="<td>".$p["area"]."</td>";
+                    $med.="<td>".$p["telefono"]."</td>";
+                    /* 
                     echo "<div class='pacientes'>";
                     echo "<label> Nombre: </label>";
                     echo "<label>". $p["nombre"] ."</label>";
@@ -81,8 +87,10 @@
                     echo "<label>  Area: </label>";
                     echo "<label>". $p["area"] ."</label>";
                     echo "<label> Telefono: </label>";
-                    echo "<label>". $p["telefono"] ."</label>";
+                    echo "<label>". $p["telefono"] ."</label>";*/
                 }
+                $med.="</table>";
+                echo $med;
             }
         ?>
     </div>

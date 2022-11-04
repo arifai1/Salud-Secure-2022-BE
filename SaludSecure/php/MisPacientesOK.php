@@ -58,7 +58,7 @@
         <label id="headertitle"> Mis Pacientes</label>
         <input id="logo"type="button">
         <div id="LogOut">
-            <input type ="button" class="minibutton" value="Log Out"/>
+            <input type ="button" class="minibutton" value="Log Out" id="LO_M"/>
         </div>
         <input id="Usuario"type ="button"/>
        
