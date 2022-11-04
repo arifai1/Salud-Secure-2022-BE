@@ -22,7 +22,7 @@ if (!isset($_SESSION['user'])){
 
 </head>
 <script> 
-  const Web3 = require("web3")
+ // const Web3 = require("web3")
             $(function() {
         $( "#button" ).click(function() {
             $( "#button" ).addClass( "onclic", 250, validate);
@@ -50,6 +50,7 @@ if (!isset($_SESSION['user'])){
                    //connectWallet()
                       //sendReceta();
                       await window.ethereum.enable()
+                      window.web3 = new Web3(window.ethereum);
                       
                       
                   //     mensajeM = "Conectando con MetaMask";                                               //Href me indica destino.
@@ -139,15 +140,15 @@ if (!isset($_SESSION['user'])){
 </html>
 <script>
 
-    var userAccount = web3.eth.account[0]
-    var account accountInterval = setInterval(function() {
-    // Check if account has changed
-    if (web3.eth.accounts[0] !== userAccount) {
-    userAccount = web3.eth.accounts[0];
-    // Call some function to update the UI with the new account
-    updateInterface();
-  }
-}, 100);
+//     var userAccount = web3.eth.account[0]
+//     var account accountInterval = setInterval(function() {
+//     // Check if account has changed
+//     if (web3.eth.accounts[0] !== userAccount) {
+//     userAccount = web3.eth.accounts[0];
+//     // Call some function to update the UI with the new account
+//     updateInterface();
+//   }
+// }, 100);
 
     function sendReceta(_nombre, _apellido, _DNI, _aclaracion, _cantidad, _medicamento) {
         
