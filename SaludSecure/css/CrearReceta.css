@@ -231,8 +231,8 @@ header{
 }
 .container {
     position: absolute;
-    top: 75%;
-    left:35%;
+    top: 90%;
+    right:35%;
     margin-left: -65px;
     margin-top: -20px;
     width: 130px;
@@ -263,7 +263,7 @@ button:active {
     letter-spacing: 2px;
 }
 button:after {
-    content: "Metamask";
+    content: "ENVIAR";
 }
 .onclic {
     width: 40px;
