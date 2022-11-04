@@ -52,8 +52,8 @@ $(document).ready(function () {
                     }
                     else if (data.status == 'ok') {
                         mensaje = "Bienvenido: " + data.result['nombre'] + " " + data.result['apellido'] + "";
-                        $("#divt").html(mensaje);
-                        $("#divt").show();
+                        alert(mensaje);
+                       
                         console.log(data.result);                       //verificamos que nos manda en caso de error.
                         window.location.replace('../php/pantallaprincipal.php');
                     }
@@ -88,9 +88,8 @@ $(document).ready(function () {
             data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val() + '&nom=' + $("#n").val() + '&ape=' + $("#a").val() + '&Credencial=' + $("#c").val() + '&FechadeNacimiento=' + $("#f").val(),       //mandamos toda la info para que se registre en nuestra bdd.
             success: function (data) {
                 if (data.status == 'ok') {
-                    mensaje = ("Se registro el usuario");
-                    $("#divt").html(mensaje);
-                    $("#divt").show();
+                    alert("Se registró correctamente el usuario");
+                    mensaje = "Se registró correctamente el usuario";
                     window.location.replace('../php/pantallaprincipal.php');
                 }
                 else if (data.status == 'err') {
@@ -203,9 +202,9 @@ $(document).ready(function () {
             data: 'usum=' + $("#UsuMed").val() + '&passm=' + $("#PassMed").val() + '&nom=' + $("#NomMed").val() + '&ape=' + $("#ApeMed").val() + '&Aream=' + $("#AreaMed").val() + '&telefonoMed=' + $("#teleMed").val(), //'&DNI='+$("#DNIMed").val()+
             success: function (data) {
                 if (data.status == 'ok') {
-                    mensaje = "Se registro el usuario";
-                    $("#divt").html(mensaje);
-                    $("#divt").show();
+                   
+                    alert("Se registró correctamente el usuario");
+                    mensaje = "Se registró correctamente el usuario";
                     window.location.replace('../php/pantallaprincipal_doc.php');
                 }
                 else if (data.status == 'err') {

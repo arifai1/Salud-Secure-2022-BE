@@ -566,9 +566,9 @@ font-family: 'Poppins', sans-serif;
     position:absolute;
     top: 36%;
     right: 21%;
-font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: medium;
-    color: red;
+    color: rgb(21, 255, 0);
 }
 .noIngresado{
     position: relative;
