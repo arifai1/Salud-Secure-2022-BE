@@ -54,22 +54,27 @@ const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.matic.
 <body>
 
     <header>
-        <label id="Txtlogo">BESMO</label>
+        <label id="Txtlogo">Mis Recetas</label>
         
-        <label id="headertitle"> Mis Recetas </label>
+        <label id="headertitle"> . </label>
         <input id="logo"type="button">
         <div id="LogOut">
             <input type ="button" class="minibutton" value="Log Out" id="LO_M"/>
         </div>
         <input id="Usuario"type ="button"/>
     </header>
-    
-	<div id="recetasContainer">
+
+
+
+
+
+	
+	<div id="recetasContainer" onclick="myFunction()">
         
         <div id="item1"class="receta">
         <label id="lbl1">Tratamiento</label>
         <label id="lbl2">Fecha</label>
-        <input type="submit" value="Ver" id="verReceta" class="minibutton" onclick="myFunction()"/> 
+        <label id="verReceta">	Clik para ver receta </label>
   
         
         </div>

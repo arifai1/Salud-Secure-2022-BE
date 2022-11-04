@@ -81,8 +81,8 @@ if (!isset($_SESSION['user'])){
 <body>
 
     <header>
-        <label id="Txtlogo">BESMO</label>
-        <label id="headertitle">Crear Receta</label>
+        <label id="Txtlogo">Crear Receta</label>
+        <label id="headertitle">.</label>
         <input type="button" id="logo">
         <div id="LogOut">
             <input type="button"  value="Log Out" id="LO_M">
@@ -98,7 +98,7 @@ if (!isset($_SESSION['user'])){
     <form method="POST">
         <div id="IngresarDatos">
             <div class="smallheader">
-                <label id="title1" class="titles">Ingresar datos del Paciente</label>
+                <label id="title1" class="titles">Datos del Paciente</label>
             </div>
             <br>
             <input placeholder="Nombre" class="txtbox">

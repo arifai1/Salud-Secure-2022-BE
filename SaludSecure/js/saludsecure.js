@@ -172,8 +172,12 @@ $(document).ready(function () {
                     }
                     else if (data.status == 'ok') {
                         mensaje = "Bienvenido: " + data.result['nombre'] + " " + data.result['apellido'] + "";
+<<<<<<< Updated upstream
                         $("#msgDoc").html(mensaje);
                         $("#msgDoc").show();
+=======
+                        alert(mensaje);
+>>>>>>> Stashed changes
                         window.location.replace('../php/pantallaprincipal_doc.php');
                     }
                     else {

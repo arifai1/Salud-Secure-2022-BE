@@ -1,22 +1,32 @@
 $(document).ready(function() {
   
- 
- 
- 
+  $( "#item1" ).click(function() {
+    setTimeout(function() {
+    $( "#item1" ).removeClass( "receta" );
+    $( "#item1" ).addClass( "recetaflip", fliprecetaback());
+  }, 1250 );
+    function fliprecetaback() {
+      
+        $( "#item1" ).removeClass( "recetaflip" );
+        $( "#item1" ).addClass( "receta");
+     
+    }
+    
+  });
  
  
  
   $(".receta").css({transition: ".2s all ease"})
-   let izq = 300;
+   let izq = 200;
    let der = 0;
    $("#Izq").click(()=>{
-     izq -= 250;
-     $(".receta").css({"position": "relative", top: "14%", left: izq-der})
+     izq -= 200;
+     $(".receta").css({"position": "relative", top: "8%", left: izq-der })
    
    })
    $("#Der").click(()=>{
-     der -= 250;
-     $(".receta").css({"position": "relative", top: "14%", left: izq-der})
+     der -= 200;
+     $(".receta").css({"position": "relative", top: "8%", left: izq-der})
    })
 
 

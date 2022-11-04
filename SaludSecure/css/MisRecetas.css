@@ -1,3 +1,5 @@
+
+
 body{
     height: 100%;
     margin: 0;
@@ -62,7 +64,16 @@ header{
     background-color: rgba(0, 0, 0,0);
     border-width: 0px;
 }
-
+#verReceta{
+    position: relative;
+    top:40%;
+    left: 3%;
+    
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+  
+    color: black;
+}
 .minibutton{
     background-color: #B8EEFF;
     border-radius: 20px;
@@ -120,48 +131,49 @@ div{
 }
 #recetasContainer{
     position:absolute;
-    top: 15%;
+    top: 12%;
     left: 20%;
-    background-color: rgba(63, 173, 207,0.30);
+    background-color: rgb(236, 234, 234);
     width: 850px;
-    height: 500px;
+    height: 600px;
     border-radius: 30px;
     overflow-x: scroll;
+  
 }
 #item1{
     position: relative;
-    top: 14%;
-    left: 35%;
+    top: 8%;
+    left: 20%;
 }
 
 .receta{
-    flex-direction: row;
-    width: 250px;
-    height: 365px;
-    background-color: rgb(240, 240, 240);
+ 
+    width: 450px;
+    height: 465px;
+    background-color: rgba(63, 173, 207);
     border-radius: 20px;
 }
-.recetaVisual{
-    position: relative;
-    top: 8%;
-    left: 35%;
-    width: 250px;
-    height: 365px;
-    background-color: rgb(240, 240, 240);
+.recetaflip{
+ 
+    width: 450px;
+    height: 465px;
+    background-color: rgb(73, 201, 240);
     border-radius: 20px;
 }
+
+
 #lbl1{
     position: absolute;
-    top: 85%;
-    left: 30%;
+    top: 90%;
+    left: 10%;
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
     
 }
 #lbl2{
     position: relative;
-    top: 92%;
-    left: 40%;
+    top: 87%;
+    left:75%;
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
 }
@@ -197,7 +209,7 @@ div{
 #Der{
     position: absolute;
     top: 50%;
-    right: 19%;
+    right: 12%;
     width: 55px;
     height: 55px;
     background-color: #ffffff9f;

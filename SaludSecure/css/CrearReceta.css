@@ -20,6 +20,7 @@ header{
 #headertitle{
     font-family: 'Poppins', sans-serif;
     font-size: 30px;
+    color: white;
 }
 #Txtlogo{
     position:absolute;

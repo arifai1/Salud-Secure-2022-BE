@@ -37,7 +37,7 @@
 </head>
 <body>
     <header>
-        <label id="Txtlogo">BESMO</label>        
+        <label id="Txtlogo">Mis medicos</label>        
         <label id="headertitle"> Mis Medicos </label>
         <input id="logo"type="button">
         <div id="LogOut">
