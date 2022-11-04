@@ -11,13 +11,15 @@ if (!isset($_SESSION['user'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
-		
-        <script src="../js/saludsecure.js" type="text/javascript"></script>
+		<script src="../js/saludsecure.js" type="text/javascript"></script>
 		<script src="../js/saludSecureABI.js" type="text/javascript"></script>
+		<script src="../js/SobreBesmo.js" type="text/javascript"></script>
+        <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script src="../js/SobreBesmo.js" type="text/javascript"></script>
         <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+		<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+		<script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 	<link rel="Icon" href="../imagenes/logo-Header.png">
     
    
