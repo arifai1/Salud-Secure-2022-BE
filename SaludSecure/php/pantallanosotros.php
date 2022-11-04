@@ -16,7 +16,7 @@ if (!isset($_SESSION['user'])){
         <script src="../js/saludsecure.js" type="text/javascript"></script>
 
         <link rel="Icon" href="../imagenes/logo-Header.png">
-
+        <link rel="stylesheet" href="../css/font.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 

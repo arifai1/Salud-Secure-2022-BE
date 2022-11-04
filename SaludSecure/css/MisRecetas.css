@@ -1,4 +1,45 @@
+#MoverRecetas{
+    position: absolute;
 
+    top: 5%;
+
+    height: 100%;
+    width: 1000%;
+
+}
+#recetasContainer{
+    position:absolute;
+    top: 12%;
+    left: 30%;
+    background-color: rgb(236, 234, 234);
+    width: 550px;
+    height: 600px;
+    border-radius: 30px;
+    overflow-x: scroll;
+  
+}
+#item1{
+    position: absolute;
+    top: 8%;
+    left: 1%;
+    cursor: pointer;
+    
+}
+#item2{
+    position: absolute;
+    top: 8%;
+    left: 11.9%;
+    cursor: pointer;
+}
+
+.receta{
+    align-content: center;
+    background-image: linear-gradient(to bottom right,  #B8EEFF, rgba(63, 173, 207), rgb(54, 152, 182));
+    width: 450px;
+    height: 465px;
+    border-radius: 20px;
+    cursor: pointer;
+}
 
 body{
     height: 100%;
@@ -68,10 +109,10 @@ header{
     position: relative;
     top:40%;
     left: 3%;
-    
+    text-decoration: underline;
     font-family: 'Poppins', sans-serif;
     font-size: 30px;
-  
+    cursor: pointer;
     color: black;
 }
 .minibutton{
@@ -129,30 +170,7 @@ header{
 div{
     overflow: hidden;
 }
-#recetasContainer{
-    position:absolute;
-    top: 12%;
-    left: 20%;
-    background-color: rgb(236, 234, 234);
-    width: 850px;
-    height: 600px;
-    border-radius: 30px;
-    overflow-x: scroll;
-  
-}
-#item1{
-    position: relative;
-    top: 8%;
-    left: 20%;
-}
 
-.receta{
- 
-    width: 450px;
-    height: 465px;
-    background-color: rgba(63, 173, 207);
-    border-radius: 20px;
-}
 .recetaflip{
  
     width: 450px;
@@ -164,25 +182,27 @@ div{
 
 #lbl1{
     position: absolute;
-    top: 90%;
-    left: 10%;
+    top: 50%;
+    left: 35%;
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
+    cursor: pointer;
     
 }
 #lbl2{
     position: relative;
-    top: 87%;
-    left:75%;
+    top: 55%;
+    left:42%;
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
+    cursor: pointer;
 }
 #chevron_left{
     position: absolute;
     top: 21.5%;
     left: 21.5%;
     font-size: 35px;
-    color: rgb(102, 102, 102);
+    color: rgb(0, 0, 0);
     cursor: pointer;
 }
 #chevron_right{
@@ -190,17 +210,17 @@ div{
     top: 21.5%;
     left: 21.5%;
     font-size: 35px;
-    color: rgb(102, 102, 102);
+    color: rgb(0, 0, 0);
     cursor: pointer;
 }
 
 #Izq{
     position: absolute;
-    top: 50%;
-    left: 15%;
+    top: 52%;
+    left: 26%;
     width: 55px;
     height: 55px;
-    background-color: #ffffff9f;
+    background-color: white;
     border-radius: 20px;
     
     border-width: 0px;
@@ -208,11 +228,11 @@ div{
 }
 #Der{
     position: absolute;
-    top: 50%;
-    right: 12%;
+    top: 52%;
+    right: 25%;
     width: 55px;
     height: 55px;
-    background-color: #ffffff9f;
+    background-color: white;
     border-radius: 20px;
     
     border-width: 0px;

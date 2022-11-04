@@ -5,7 +5,10 @@ body{
     background-attachment: fixed;
     background-color:rgb(236, 234, 234);
 }
-
+label{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+}
 
 header{
     position: fixed;
@@ -123,16 +126,7 @@ header{
     background-color: rgba(255, 255, 255,0.6);
     border-radius: 40px ;
 }
-#headerbuscador{
-    position: fixed;
-    top: 15%;
-    left: 20%;
-    width: 800px;
-    height:100px;
-    background-color: #dddddd;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
+
 .buscador{
     position: fixed;
     width: 450px;
@@ -160,10 +154,11 @@ header{
     position: absolute;
     left: 10%;
     top: 15%;
-    background-color: #3FADCF;
+    background-image: linear-gradient(to bottom right,  #B8EEFF, rgba(63, 173, 207), rgb(54, 152, 182));
+    box-shadow:  0px 10px 10px #cccccc, 0 0 0 #ffffff,0 0 0 #cccccc inset,2px 2px 2px #ffffff inset;
     border-radius: 10px;
-    width: 420px;
-    height:100px;
+    width: 620px;
+    height: 100px;
     padding-left: 4%;
     padding-top: 4%;
     
@@ -171,12 +166,12 @@ header{
 #background{
     position: absolute;
     overflow-y: scroll;
-    top:30%;
+    top:20%;
     left:20%;
-    background-color: rgba(255, 255, 255,0.6);
+    background-color: white;
     border-radius: 10px;
     width: 800px;
-    height: 400px;
+    height: 500px;
     z-index: -99999;
 }
 

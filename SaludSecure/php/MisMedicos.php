@@ -27,6 +27,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/font.css">
     <link rel="stylesheet" href="../css/MisMedicos.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
@@ -50,19 +51,22 @@
         
     </div>
     
-   <div id="background">
-    
-    </div>
+
     <!--BTN Regresar-->
     <input type="button" value="?" class="ayuda" >
     <a class="btn-floating btn-large waves-effect" id="RegresarP"><i id="IconregresarP" class="material-icons">arrow_back</i></a>
+   
     <div id="background">
    
-    <div class="paciente" id="losPacientesAsignados">
+    <div class="medico" id="losMedicosAsignados">
         <?php
         //tengo que mandar al doctor por POST antes de tocar el boton para ir a MisPacientes.php
             if(count($userData3) == 0){
+
                 echo "No hay medicos";
+
+                echo "<label>No hay médicos</label>";
+
             } else {
                 $med="<table border=0><tr><td width='15%'>Nombre</td><td width='15%'>Apellido</td><td width='10%'>Area</td><td width='20%'>Telefono</td></tr>";
                 foreach($userData3 as $p){      ////le asignamos a la variable $med los campos que queremos mostrar del array de usuarios asignados y en las lineas de abajo los ubicamos en las columnas que creamos arriba.
@@ -87,7 +91,7 @@
             }
         ?>
     </div>
-
+    </div>
 </body>
 
 </html>

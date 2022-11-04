@@ -5,12 +5,12 @@ if (!isset($_SESSION['user'])){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <UTF-8>
     <title>Crear Receta</title>
     <link rel="stylesheet" href="../css/CrearReceta.css">
     <link rel="stylesheet" href="../css/font.css">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <UTF-8>
+  
         <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
         <script src="../js/metaMask.js" type="text/javascript"></script>
         <script src="../js/saludsecure.js" type="text/javascript"></script>

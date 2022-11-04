@@ -16,17 +16,18 @@ $(document).ready(function() {
  
  
  
-  $(".receta").css({transition: ".2s all ease"})
-   let izq = 200;
+  $("#MoverRecetas").css({transition: ".2s all ease"})
+   let izq = 600;
    let der = 0;
-   $("#Izq").click(()=>{
-     izq -= 200;
-     $(".receta").css({"position": "relative", top: "8%", left: izq-der })
+   $("#Der").click(()=>{
+     izq -= 600;
+     $("#MoverRecetas").css({"position": "relative", top: "5%", left: izq-der })
+     
    
    })
-   $("#Der").click(()=>{
-     der -= 200;
-     $(".receta").css({"position": "relative", top: "8%", left: izq-der})
+   $("#Izq").click(()=>{
+     der -= 600;
+     $("#MoverRecetas").css({"position": "relative", top: "5%", left: izq-der})
    })
 
 

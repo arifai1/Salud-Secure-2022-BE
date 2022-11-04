@@ -16,6 +16,7 @@ if (!isset($_SESSION['user'])){
 		<script src="../js/saludSecureABI.js" type="text/javascript"></script>
 		<script src="../js/SobreBesmo.js" type="text/javascript"></script>
         <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="../css/font.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
 		<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
@@ -68,20 +69,29 @@ if (!isset($_SESSION['user'])){
     </header>
 
 
+    
+  
 
 
 
 	
-	<div id="recetasContainer" onclick="myFunction()">
+	<div id="recetasContainer" >
+        <div id="MoverRecetas">
+        <div id="item1"class="receta"onclick="myFunction()">
+            <label id="lbl1">Tratamiento</label>
+            <label id="lbl2">Fecha</label>
+            <label id="verReceta">	Click para ver receta </label>
         
-        <div id="item1"class="receta">
-        <label id="lbl1">Tratamiento</label>
-        <label id="lbl2">Fecha</label>
-        <label id="verReceta">	Clik para ver receta </label>
-  
         
         </div>
-       
+        <div id="item2"class="receta"onclick="myFunction()">
+            <label id="lbl1">Tratamiento</label>
+            <label id="lbl2">Fecha</label>
+            <label id="verReceta">	Clik para ver receta </label>
+        
+        
+        </div>
+        </div>
     </div>
     
     <a id="Izq"><i id="chevron_left" class="material-icons">chevron_left</i></a>
