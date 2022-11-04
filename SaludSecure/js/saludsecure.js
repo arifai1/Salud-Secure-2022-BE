@@ -207,20 +207,20 @@ $(document).ready(function () {
             data: 'usum=' + $("#UsuMed").val() + '&passm=' + $("#PassMed").val() + '&nom=' + $("#NomMed").val() + '&ape=' + $("#ApeMed").val() + '&Aream=' + $("#AreaMed").val() + '&telefonoMed=' + $("#teleMed").val(), //'&DNI='+$("#DNIMed").val()+
             success: function (data) {
                 if (data.status == 'ok') {
-                   
-                    alert("Se registró correctamente el usuario");
                     mensaje = "Se registró correctamente el usuario";
+                    $("#msgDoc").html(mensaje);
+                    $("#msgDoc").show();
                     window.location.replace('../php/pantallaprincipal_doc.php');
                 }
                 else if (data.status == 'err') {
                     mensaje = "El usuario que intento ingresar ya existe";
-                    $("#divt").html(mensaje);
-                    $("#divt").show();
+                    $("#msgDoc").html(mensaje);
+                    $("#msgDoc").show();
                 }
                 else {
                     mensaje = "Ocurrio un error";
-                    $("#divt").html(mensaje);
-                    $("#divt").show();
+                    $("#msgDoc").html(mensaje);
+                    $("#msgDoc").show();
                 }
             },
             error: function (error) {
