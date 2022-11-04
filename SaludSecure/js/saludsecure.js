@@ -172,12 +172,12 @@ $(document).ready(function () {
                     }
                     else if (data.status == 'ok') {
                         mensaje = "Bienvenido: " + data.result['nombre'] + " " + data.result['apellido'] + "";
-<<<<<<< Updated upstream
+
                         $("#msgDoc").html(mensaje);
                         $("#msgDoc").show();
-=======
+
                         alert(mensaje);
->>>>>>> Stashed changes
+
                         window.location.replace('../php/pantallaprincipal_doc.php');
                     }
                     else {
@@ -259,13 +259,8 @@ $(document).ready(function () {
                              $("#divt").html(mensaje);
                              $("#divt").show();
                          }
-<<<<<<< Updated upstream
                          //mostramos la $data en la consola para verificar que este todo en orden
-                         console.log("te muestro la data");
-=======
-                         //mostramos la $data en una pantalla
-                         //console.log("te muestro la data");
->>>>>>> Stashed changes
+                      //   console.log("te muestro la data");
                          console.log(data);
                      },
                      error: function (error) {
