@@ -125,8 +125,8 @@ $(document).ready(function () {
         $( "#LogInMed" ).addClass( "minibuttonClick");
         $(".boton").css("cursor", "pointer");
         //hacemos que el que intenta ingresar este obligado a llenar todos los inputs.
-        if ($("#q").val() == '' && $("#c").val() =='') {
-            $("#msgDOC").html("Debe agregar Usuario y Contrase&ntildea");
+        if ($("#q").val() =='' && $("#c").val() =='') {
+            $("#msgDoc").html("Debe agregar Usuario y Contrase&ntildea");
             $("#msgDoc").show();
             $( "#q" ).removeClass( "ingresar" );
             $( "#q" ).addClass( "noIngresado");
@@ -186,11 +186,11 @@ $(document).ready(function () {
                     console.log(error);
                 },
             });
-        } else {
-            mensaje = "Debe completar el usuario y la contrase&ntildea";
-            $("#msgDoc").html(mensaje);
-            $("#msgDoc").show();
-        }
+        } //else {
+            //mensaje = "Debe completar el usuario y la contrase&ntildea";
+            //$("#msgDoc").html(mensaje);
+            //$("#msgDoc").show();
+        //}
     });
     //finaliza aca
 
@@ -213,7 +213,7 @@ $(document).ready(function () {
                     window.location.replace('../php/pantallaprincipal_doc.php');
                 }
                 else if (data.status == 'err') {
-                    mensaje = "El usuario que intento ingresar ya existe";
+                    mensaje = "El usuario que intento ingresar ya existe";      //lo tira en cualquier lado
                     $("#msgDoc").html(mensaje);
                     $("#msgDoc").show();
                 }
@@ -235,7 +235,6 @@ $(document).ready(function () {
     //finaliza aca
 
     //asignacion paciente-medico por el dni ingresado en el input del Smart Contract.
-
     $("#EnviarSC").click(function (e) {
         e.preventDefault();
         //console.log(document.querySelector("#dnidelpacCrearRec").value);
@@ -256,7 +255,7 @@ $(document).ready(function () {
                              $("#divt").html(mensaje);
                              $("#divt").show();
                          }
-                         //mostramos la $data en una pantalla
+                         //mostramos la $data en la consola para verificar que este todo en orden
                          console.log("te muestro la data");
                          console.log(data);
                      },
@@ -268,7 +267,6 @@ $(document).ready(function () {
 
     //Botones LogOut
     $("#LO_M").click(function () {
-        //window.location.replace('../html/pantallainicio.html');
         window.location.replace('../php/logout.php');
     });
     $("#LO_M").mouseover(function () {
@@ -333,12 +331,6 @@ $(document).ready(function () {
     });
 
     //botones pantallaprincipal.html
-    $("#Nosotros").click(function () {
-        window.location.replace('../php/SobreBesmoM.php'); //mostramos info sobre nosotros
-    });
-    $("#Nosotros").mouseover(function () {
-        $(".boton").css("cursor", "pointer");
-    });
     $("#MisRecetas").click(function () {
         window.location.replace('../php/misRecetas.php');
     });

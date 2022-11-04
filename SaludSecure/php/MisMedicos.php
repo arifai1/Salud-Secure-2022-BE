@@ -47,18 +47,11 @@
     </header>
     
     <div id="headerbuscador">
-        <!-- <input type="search" class="buscador" placeholder="Puedes buscar por nombre, apellido, edad, dni">
-        <i class="large material-icons" id="buscar">search</i> -->
+        
     </div>
     
    <div id="background">
-    <!-- <div class="medico">
-        hola
-    </div> -->
-
-    <!-- <div id="ResetasMedicas">
-     code
-    </div> -->
+    
     </div>
     <!--BTN Regresar-->
     <input type="button" value="?" class="ayuda" >
@@ -72,7 +65,7 @@
                 echo "No hay pacientes";
             } else {
                 $med="<table border=0><tr><td width='15%'>Nombre</td><td width='15%'>Apellido</td><td width='10%'>Area</td><td width='20%'>Telefono</td></tr>";
-                foreach($userData3 as $p){
+                foreach($userData3 as $p){      ////le asignamos a la variable $med los campos que queremos mostrar del array de usuarios asignados y en las lineas de abajo los ubicamos en las columnas que creamos arriba.
                     $med.="<tr><td>".$p["nombre"]."</td>";
                     $med.="<td>".$p["apellido"]."</td>";
                     $med.="<td>".$p["area"]."</td>";
@@ -94,11 +87,6 @@
             }
         ?>
     </div>
-    
-    <!-- <div id=MisMedicos>
-        <label>hola</label>
-    </div> -->
-
 
 </body>
 
