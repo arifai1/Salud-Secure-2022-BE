@@ -155,6 +155,7 @@ header{
     border-width: 2px;
     padding: 10px 30px;
     font-size: 18px;
+    outline: 0px;
 }
 .Bigtxtbox{
     border-top-right-radius: 0px;
@@ -167,7 +168,7 @@ header{
     width: 320px;
     height: 300px;
     padding-right: 30px;
-    
+    outline: 0px;
 }
 
 #indicaciones {

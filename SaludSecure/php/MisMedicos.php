@@ -32,7 +32,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
 	<script src="../js/saludsecure.js" type="text/javascript"></script>
-	<link rel="Icon" href="../imagenes/logo-Header.png">
+    <link rel="Icon" href="../imagenes/Logo-Header.png">
     
     <title>Mis Medicos</title>
 </head>
@@ -63,7 +63,6 @@
         //tengo que mandar al doctor por POST antes de tocar el boton para ir a MisPacientes.php
             if(count($userData3) == 0){
 
-                echo "No hay medicos";
 
                 echo "<label>No hay médicos</label>";
 
