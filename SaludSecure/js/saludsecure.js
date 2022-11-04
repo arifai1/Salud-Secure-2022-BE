@@ -2,7 +2,7 @@ $(document).ready(function () {
 
 
     //LogIn del paciente                                                                                                        
-    $("#divt").hide();
+    $("#divi").hide();
     $("#LogIn").click(function () {
         $( "#LogIn" ).removeClass( "minibutton" );
         $( "#LogIn" ).addClass( "minibuttonClick");
@@ -29,13 +29,13 @@ $(document).ready(function () {
     });
 
     $("#u").focus(function () {
-        $("#divt").html("");
-        $("#divt").hide();
+        $("#divi").html("");
+        $("#divi").hide();
     });
 
     $("#p").focus(function () {
-        $("#divt").html("");
-        $("#divt").hide();
+        $("#divi").html("");
+        $("#divi").hide();
     });
 
     $("#LogIn").click(function (event) {
@@ -49,18 +49,20 @@ $(document).ready(function () {
                 success: function (data) {
                     if (data == "") {
                         mensaje = "Ocurrio un error";
+                        $("#divi").html(mensaje);
+                        $("#divi").show();
                     }
                     else if (data.status == 'ok') {
                         mensaje = "Bienvenido: " + data.result['nombre'] + " " + data.result['apellido'] + "";
-                        alert(mensaje);
-                       
+                        $("#divi").html(mensaje);
+                        $("#divi").show();
                         console.log(data.result);                       //verificamos que nos manda en caso de error.
                         window.location.replace('../php/pantallaprincipal.php');
                     }
                     else {
                         mensaje = "Usuario no encontrado, por favor registrarse";
-                        $("#divt").html(mensaje);
-                        $("#divt").show();
+                        $("#divi").html(mensaje);
+                        $("#divi").show();
                     }
                 },
                 error: function (error) {
@@ -69,8 +71,8 @@ $(document).ready(function () {
             });
         } else {
             mensaje = "Debe completar el usuario y la contrase&ntildea";                                               
-            $("#divt").html(mensaje);
-            $("#divt").show();
+            $("#divi").html(mensaje);
+            $("#divi").show();
         }
     });
     //finaliza aca
@@ -88,19 +90,20 @@ $(document).ready(function () {
             data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val() + '&nom=' + $("#n").val() + '&ape=' + $("#a").val() + '&Credencial=' + $("#c").val() + '&FechadeNacimiento=' + $("#f").val(),       //mandamos toda la info para que se registre en nuestra bdd.
             success: function (data) {
                 if (data.status == 'ok') {
-                    alert("Se registró correctamente el usuario");
-                    mensaje = "Se registró correctamente el usuario";
+                    mensaje = "Se registro correctamente el usuario";
+                    $("#divi").html(mensaje);
+                    $("#divi").show();
                     window.location.replace('../php/pantallaprincipal.php');
                 }
                 else if (data.status == 'err') {
                     mensaje = ("El usuario que intento ingresar ya existe");
-                    $("#divt").html(mensaje);
-                    $("#divt").show();
+                    $("#divi").html(mensaje);
+                    $("#divi").show();
                 }
                 else {
-                    alert("Ocurrio un error");
-                    $("#divt").html(mensaje);
-                    $("#divt").show();
+                    mensaje=("Ocurrio un error");
+                    $("#divi").html(mensaje);
+                    $("#divi").show();
                 }
             },
             error: function (error) {
@@ -116,40 +119,40 @@ $(document).ready(function () {
 
 
     //LogIn del Medico
-    $("#divi").hide();
+    $("#msgDoc").hide();
     $("#LogInMed").click(function () {
         $( "#LogInMed" ).removeClass( "minibutton" );
         $( "#LogInMed" ).addClass( "minibuttonClick");
         $(".boton").css("cursor", "pointer");
         //hacemos que el que intenta ingresar este obligado a llenar todos los inputs.
         if ($("#q").val() == '' && $("#c").val() =='') {
-            $("#divi").html("Debe agregar Usuario y Contrase&ntildea");
-            $("#divi").show();
+            $("#msgDOC").html("Debe agregar Usuario y Contrase&ntildea");
+            $("#msgDoc").show();
             $( "#q" ).removeClass( "ingresar" );
             $( "#q" ).addClass( "noIngresado");
             $( "#c" ).removeClass( "ingresar" );
             $( "#c" ).addClass( "noIngresado");
         } else if ($("#q").val() == '' && $("#c").val() != "") {
-            $("#divi").html("Debe agregar Usuario");
-            $("#divi").show();
+            $("#msgDoc").html("Debe agregar Usuario");
+            $("#msgDoc").show();
             $( "#q" ).removeClass( "ingresar" );
             $( "#q" ).addClass( "noIngresado");
         } else if ($("#q").val() != '' && $("#c").val() == "") {
-            $("#divi").html("Debe agregar Contrase&ntildea");
-            $("#divi").show();
+            $("#msgDoc").html("Debe agregar Contrase&ntildea");
+            $("#msgDoc").show();
             $( "#c" ).removeClass( "ingresar" );
             $( "#c" ).addClass( "noIngresado");
         }
     });
 
     $("#q").focus(function () {
-        $("#divt").html("");
-        $("#divt").hide();
+        $("#msgDoc").html("");
+        $("#msgDoc").hide();
     });
 
     $("#c").focus(function () {
-        $("#divt").html("");
-        $("#divt").hide();
+        $("#msgDoc").html("");
+        $("#msgDoc").hide();
     });
 
     $("#LogInMed").click(function (event) {
@@ -164,17 +167,19 @@ $(document).ready(function () {
                     console.log(data);
                     if (data == "") {
                         mensaje = "Ocurrio un error";
+                        $("#msgDoc").html(mensaje);
+                        $("#msgDoc").show();
                     }
                     else if (data.status == 'ok') {
                         mensaje = "Bienvenido: " + data.result['nombre'] + " " + data.result['apellido'] + "";
-                        $("#divi").html(mensaje);
-                        $("#divi").show();
+                        $("#msgDoc").html(mensaje);
+                        $("#msgDoc").show();
                         window.location.replace('../php/pantallaprincipal_doc.php');
                     }
                     else {
                         mensaje = "Usuario no encontrado, por favor registrarse";
-                        $("#divi").html(mensaje);
-                        $("#divi").show();
+                        $("#msgDoc").html(mensaje);
+                        $("#msgDoc").show();
                     }
                 },
                 error: function (error) {
@@ -183,8 +188,8 @@ $(document).ready(function () {
             });
         } else {
             mensaje = "Debe completar el usuario y la contrase&ntildea";
-            $("#divt").html(mensaje);
-            $("#divt").show();
+            $("#msgDoc").html(mensaje);
+            $("#msgDoc").show();
         }
     });
     //finaliza aca

@@ -34,7 +34,7 @@
         $data['status']='err';
         $data['result']= 'No hay pacientes';
     }
-    echo json_encode($data);
+    //echo json_encode($data);
     $con->close();
     //die();
 ?>
@@ -80,7 +80,15 @@
             if(count($userData3) == 0){
                 echo "No hay pacientes";
             } else {
+                $sal="<table border=0><tr><td width='15%'>Nombre</td><td width='15%'>Apellido</td><td width='10%'>DNI</td><td width='20%'>Fecha de Nacimiento</td><td width='15%'>Credencial</td></tr>";
                 foreach($userData3 as $p){ 
+                    $sal.="<tr><td>".$p["nombre"]."</td>";
+                    $sal.="<td>".$p["apellido"]."</td>";
+                    $sal.="<td>".$p["usuario"]."</td>";
+                    $sal.="<td>".$p["nacimiento"]."</td>";
+                    $sal.="<td>".$p["credencial"]."</td></tr>";
+
+                    /*
                     echo "<div class='pacientes'>";
                     echo "<label> Nombre: </label>";
                     echo "<label>". $p["nombre"] ."</label>";
@@ -94,7 +102,10 @@
                     echo "<label> Credencial: </label>";
                     echo "<label>". $p["credencial"] ."</label>";
                     echo "<label> \n </label>";
+                */
                 }
+                $sal.="</table>";
+                echo $sal;
             }
         ?>
     </div>
