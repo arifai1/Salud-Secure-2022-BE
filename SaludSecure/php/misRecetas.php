@@ -14,6 +14,7 @@ if (!isset($_SESSION['user'])){
         <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
 		
         <script src="../js/saludsecure.js" type="text/javascript"></script>
+		<script src="../js/saludSecureABI.js" type="text/javascript"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="../js/SobreBesmo.js" type="text/javascript"></script>
         <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
@@ -33,70 +34,12 @@ if (!isset($_SESSION['user'])){
         //const web3 = 
         //await window.ethereum.enable();
 
-       const contract_abi = [
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "medicamento_",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "cantidad_",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "aclaracion_",
-				"type": "string"
-			}
-		],
-		"name": "set_receta",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "nombre_",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "apellido_",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "DNI_",
-				"type": "string"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"inputs": [],
-		"name": "ver_Receta",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	}
-]
+      
 const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.matic.today'); 
 
 	async function myFunction() {
   			alert("holapa");
-            const contract_address = '0xa0ccDD96AE52777f1eCe7D1efF6A02ae7341614b' ;
+            const contract_address = '0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5' ;
             const SaludSecure = new ethers.Contract(contract_address,contract_abi, provider); 
             const txn = SaludSecure.methods.ver_Receta().call(); 
              txn.then(function(result) {
