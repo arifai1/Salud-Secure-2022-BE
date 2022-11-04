@@ -62,7 +62,7 @@
         <?php
         //tengo que mandar al doctor por POST antes de tocar el boton para ir a MisPacientes.php
             if(count($userData3) == 0){
-                echo "No hay pacientes";
+                echo "No hay medicos";
             } else {
                 $med="<table border=0><tr><td width='15%'>Nombre</td><td width='15%'>Apellido</td><td width='10%'>Area</td><td width='20%'>Telefono</td></tr>";
                 foreach($userData3 as $p){      ////le asignamos a la variable $med los campos que queremos mostrar del array de usuarios asignados y en las lineas de abajo los ubicamos en las columnas que creamos arriba.
