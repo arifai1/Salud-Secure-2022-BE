@@ -176,7 +176,11 @@ $(document).ready(function () {
                         $("#msgDoc").html(mensaje);
                         $("#msgDoc").show();
 
+<<<<<<< HEAD
                         //alert(mensaje);
+=======
+                        alert(mensaje);
+>>>>>>> 161391c2692614d172df38f69d6461a7476fcf1d
 
                         window.location.replace('../php/pantallaprincipal_doc.php');
                     }
@@ -260,7 +264,7 @@ $(document).ready(function () {
                              $("#divt").show();
                          }
                          //mostramos la $data en la consola para verificar que este todo en orden
-                         console.log("te muestro la data");
+                      //   console.log("te muestro la data");
                          console.log(data);
                      },
                      error: function (error) {

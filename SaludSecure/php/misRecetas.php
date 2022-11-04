@@ -19,6 +19,7 @@ if (!isset($_SESSION['user'])){
         <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
 		<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 		<script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
 
 	<link rel="Icon" href="../imagenes/logo-Header.png">
     
@@ -30,14 +31,15 @@ if (!isset($_SESSION['user'])){
 	
 	<script>
         //CODIGO PARA LEER RECETA --> PACIENTE
-        
-        const Web3 = new Web3(window.ethereum);
+        var Web3 = require("web3")
+		const web3 = new Web3("https://cloudflare-eth.com")
 
-        //const web3 = 
-        //await window.ethereum.enable();
+      //  const Web3 = new Web3(window.ethereum);
+
+        
 
       
-const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.matic.today'); 
+		const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.matic.today'); 
 
 	async function myFunction() {
   			alert("holapa");
