@@ -11,7 +11,8 @@ if (!isset($_SESSION['user'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<script src="../js/saludsecure.js" type="text/javascript"></script>
+        <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
+	    <script src="../js/saludsecure.js" type="text/javascript"></script>
 		<script src="../js/saludSecureABI.js" type="text/javascript"></script>
 		<script src="../js/SobreBesmo.js" type="text/javascript"></script>
         <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>

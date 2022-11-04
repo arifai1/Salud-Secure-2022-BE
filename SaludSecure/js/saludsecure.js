@@ -69,11 +69,11 @@ $(document).ready(function () {
                     ;
                 },
             });
-        } else {
-            mensaje = "Debe completar el usuario y la contrase&ntildea";                                               
-            $("#divi").html(mensaje);
-            $("#divi").show();
-        }
+         } //else {
+        //     mensaje = "Debe completar el usuario y la contrase&ntildea";                                               
+        //     $("#divi").html(mensaje);
+        //     $("#divi").show();
+        // }
     });
     //finaliza aca
 
@@ -175,12 +175,10 @@ $(document).ready(function () {
 
                         $("#msgDoc").html(mensaje);
                         $("#msgDoc").show();
-
-<<<<<<< HEAD
                         //alert(mensaje);
-=======
-                        alert(mensaje);
->>>>>>> 161391c2692614d172df38f69d6461a7476fcf1d
+
+                        //alert(mensaje);
+
 
                         window.location.replace('../php/pantallaprincipal_doc.php');
                     }
