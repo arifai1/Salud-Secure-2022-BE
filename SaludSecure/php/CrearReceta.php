@@ -18,6 +18,7 @@ if (!isset($_SESSION['user'])){
 	    <link rel="Icon" href="../imagenes/logo-Header.png">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+        <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
         <link href="" rel="shortcut icon">
 
 </head>
@@ -47,12 +48,18 @@ if (!isset($_SESSION['user'])){
          //import detectEthereumProvider from '@metamask/detect-provider';
 			 	 if (typeof window.ethereum !== "undefined") {
                     ethereum.request({ method: "eth_requestAccounts" })
-                   //connectWallet()
+                    await window.ethereum.enable()
+                    connectWallet();
+                   
+                    
+                   
+
+                      
+                      //await const accounts = await ethereum.send('eth_requestAccounts');
+                      
+                      
+                      
                       //sendReceta();
-                      await window.ethereum.enable()
-                      window.web3 = new Web3(window.ethereum);
-                      
-                      
                   //     mensajeM = "Conectando con MetaMask";                                               //Href me indica destino.
                   //   $("#divt").html(mensajeM);
                   //   $("#divt").show();
@@ -68,12 +75,27 @@ if (!isset($_SESSION['user'])){
 
              async function connectWallet() {
                     const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.matic.today');
-                    await provider.send("eth_requestAccounts", []);
+                    //await provider.send("eth_requestAccounts", []);
                     const signer = provider.getSigner()
                     alert("Conectado");
              }
+    //MANDAR RECETA, LAS VARIABLES NO ESTAN DEL TODO BIEN
+             function sendReceta(_nombre, _apellido, _DNI, _aclaracion, _cantidad, _medicamento) {
         
-        
+                $("#txStatus").text("Mandando receta. Puede tardar un rato...");
+       
+                return saludSecure.methods.sendReceta(_nombre, _apellido, _DNI, _aclaracion, _cantidad, _medicamento)
+                .send({ from: userAccount })
+                .on("receipt", function(receipt) {
+                 $("#txStatus").text("¡Receta mandada exitosamente!");
+         
+                //getZombiesByOwner(userAccount).then(displayZombies);  MOSTRAR PACIENTE??
+                })
+                .on("error", function(error) {
+         
+                $("#txStatus").text(error);
+                });
+             }
     
         
     
@@ -150,23 +172,5 @@ if (!isset($_SESSION['user'])){
 //   }
 // }, 100);
 
-    function sendReceta(_nombre, _apellido, _DNI, _aclaracion, _cantidad, _medicamento) {
-        
-        $("#txStatus").text("Mandando receta. Puede tardar un rato...");
-       
-        return saludSecure.methods.sendReceta(_nombre, _apellido, _DNI, _aclaracion, _cantidad, _medicamento)
-        .send({ from: userAccount })
-        .on("receipt", function(receipt) {
-          $("#txStatus").text("¡Receta mandada exitosamente!");
-         
-          //getZombiesByOwner(userAccount).then(displayZombies);  MOSTRAR PACIENTE??
-        })
-        .on("error", function(error) {
-         
-          $("#txStatus").text(error);
-        });
-      
-        
-//h
-    }
+    
     </script>
