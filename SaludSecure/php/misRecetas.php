@@ -33,18 +33,18 @@ if (!isset($_SESSION['user'])){
 	
 	<script>
         //CODIGO PARA LEER RECETA --> PACIENTE
-        var Web3 = require("web3")
-		const web3 = new Web3("https://cloudflare-eth.com")
+        // var Web3 = require("web3")
+		// const web3 = new Web3("https://cloudflare-eth.com")
 
       //  const Web3 = new Web3(window.ethereum);
 
         
 
       
-		const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.matic.today'); 
+		
 
 	async function myFunction() {
-  			alert("holapa");
+            const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.matic.today'); 
             const contract_address = '0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5' ;
             const SaludSecure = new ethers.Contract(contract_address,contract_abi, provider); 
             const txn = SaludSecure.methods.ver_Receta().call(); 

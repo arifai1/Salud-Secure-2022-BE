@@ -13,11 +13,12 @@ if (!isset($_SESSION['user'])){
   
         <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
         <script src="../js/metaMask.js" type="text/javascript"></script>
+        <script src="../js/saludSecureABI.js" type="text/javascript"></script>
         <script src="../js/saludsecure.js" type="text/javascript"></script>
         <script src="../js/SobreBesmo.js" type="text/javascript"></script>
 	    <link rel="Icon" href="../imagenes/logo-Header.png">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
         <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
         <link href="" rel="shortcut icon">
 
@@ -46,55 +47,55 @@ if (!isset($_SESSION['user'])){
         async function conexionWeb3(){
         
          //import detectEthereumProvider from '@metamask/detect-provider';
-			 	 if (typeof window.ethereum !== "undefined") {
-                    ethereum.request({ method: "eth_requestAccounts" })
-                    await window.ethereum.enable()
-                    connectWallet();
-                   
-                    
-                   
-
-                      
-                      //await const accounts = await ethereum.send('eth_requestAccounts');
-                      
-                      
-                      
-                      //sendReceta();
-                  //     mensajeM = "Conectando con MetaMask";                                               //Href me indica destino.
+			 	 if (typeof window.ethereum !== "undefined" || window. ethereum.state.account == null) {
+                    accounts = await window.ethereum.request({method: 'eth_requestAccounts',});
+                        if(accounts.length !== null){
+                            connectWallet();
+//DIV QUE DIGA METAMASK CONECTADO!
+                        }
+                         
+                 //sendReceta();
+                  //     mensajeM = "Conectando con MetaMask";                                               
                   //   $("#divt").html(mensajeM);
                   //   $("#divt").show();
-                   }
+                   
+                }
 			 	else{
 			 	    alert("No tiene MetaMask instalado, por favor descarguelo");
-                    mensaje = "No tiene instalado MetaMask, por favor instalelo apretando el boton 'Conectar con MetaMask'";                                               //Href me indica destino.
-                    $("#divt").html(mensaje);
-                    $("#divt").show();
+//mensaje = "No tiene instalado MetaMask, por favor instalelo apretando el boton 'Conectar con MetaMask'";                                               //Href me indica destino.
+                    //$("#divt").html(mensaje);
+                    //$("#divt").show();
                     await window.open("https://metamask.io/download/", "_blank")
 			    }
             }
 
              async function connectWallet() {
                     const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.matic.today');
-                    //await provider.send("eth_requestAccounts", []);
                     const signer = provider.getSigner()
-                    alert("Conectado");
+                    console.log(accounts);
              }
-    //MANDAR RECETA, LAS VARIABLES NO ESTAN DEL TODO BIEN
+
+            
+
+            
+//MANDAR RECETA, LAS VARIABLES NO ESTAN DEL TODO BIEN
              function sendReceta(_nombre, _apellido, _DNI, _aclaracion, _cantidad, _medicamento) {
         
                 $("#txStatus").text("Mandando receta. Puede tardar un rato...");
-       
-                return saludSecure.methods.sendReceta(_nombre, _apellido, _DNI, _aclaracion, _cantidad, _medicamento)
-                .send({ from: userAccount })
-                .on("receipt", function(receipt) {
-                 $("#txStatus").text("¡Receta mandada exitosamente!");
-         
+                
+                const contract_address = '0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5' ;
+                const SaludSecure = new ethers.Contract(contract_address,contract_abi, provider); 
+                const txn = SaludSecure.methods.ver_Receta().send(); 
+
+                // return saludSecure.methods.sendReceta(_nombre, _apellido, _DNI, _aclaracion, _cantidad, _medicamento)
+                // .send({ from: userAccount })
+                // .on("receipt", function(receipt) {
+                //  $("#txStatus").text("¡Receta mandada exitosamente!");
                 //getZombiesByOwner(userAccount).then(displayZombies);  MOSTRAR PACIENTE??
-                })
-                .on("error", function(error) {
-         
-                $("#txStatus").text(error);
-                });
+                //})
+                //.on("error", function(error) {
+                //$("#txStatus").text(error);
+               // });
              }
     
         
