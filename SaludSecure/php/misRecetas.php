@@ -77,11 +77,28 @@ if (!isset($_SESSION['user'])){
 	
 	<div id="recetasContainer" >
         <div id="MoverRecetas">
-        <div id="item1"class="receta"onclick="myFunction()">
+        <div id="item1"class="receta">
             <label id="lbl1">Tratamiento</label>
             <label id="lbl2">Fecha</label>
             <label id="verReceta">	Click para ver receta </label>
-        
+            <div class="box">
+	        <a onclick="myFunction()" class="button" href="#popup1">Click para ver receta </a>
+            </div>
+
+            <div id="popup1" class="overlay">
+	<div class="popup">
+		<h2>Here i am</h2>
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+			Thank to pop me out of that button, but now i'm done so you can close this window.
+		</div>
+	</div>
+</div>
+
+
+
+
+
         
         </div>
         <div id="item2"class="receta"onclick="myFunction()">
