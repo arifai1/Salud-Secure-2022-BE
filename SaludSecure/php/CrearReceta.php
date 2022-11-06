@@ -19,6 +19,7 @@ if (!isset($_SESSION['user'])){
 	    <link rel="Icon" href="../imagenes/logo-Header.png">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script type="module" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+        <script language="javascript" type="text/javascript" src="web3.min.js"></script>
         <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
         <link href="" rel="shortcut icon">
 
@@ -43,7 +44,25 @@ if (!isset($_SESSION['user'])){
             }
         });
        
-        
+        var saludSecure;
+         var userAccount;
+
+        function startApp() {
+        var saludSecureAddress = '0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5' ;
+        saludSecure = new web3js.eth.Contract(contract_abi,saludSecureAddress);
+
+        var accountInterval = setInterval(function() {
+          // Check if account has changed
+          if (web3.eth.accounts[0] !== userAccount) {
+            userAccount = web3.eth.accounts[0];
+            // Call a function to update the UI with the new account
+            //.then(displayZombies);
+            console.log(userAccount);
+          }
+        }, 100);
+      }
+
+
         async function conexionWeb3(){
         
          //import detectEthereumProvider from '@metamask/detect-provider';
@@ -51,6 +70,7 @@ if (!isset($_SESSION['user'])){
                     accounts = await window.ethereum.request({method: 'eth_requestAccounts',});
                         if(accounts.length !== null){
                             connectWallet();
+                            sendReceta();
 //DIV QUE DIGA METAMASK CONECTADO!
                         }
                          
@@ -82,20 +102,20 @@ if (!isset($_SESSION['user'])){
              function sendReceta(_nombre, _apellido, _DNI, _aclaracion, _cantidad, _medicamento) {
         
                 $("#txStatus").text("Mandando receta. Puede tardar un rato...");
-                
+                const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.matic.today');
                 const contract_address = '0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5' ;
                 const SaludSecure = new ethers.Contract(contract_address,contract_abi, provider); 
                 const txn = SaludSecure.methods.ver_Receta().send(); 
 
-                // return saludSecure.methods.sendReceta(_nombre, _apellido, _DNI, _aclaracion, _cantidad, _medicamento)
-                // .send({ from: userAccount })
-                // .on("receipt", function(receipt) {
-                //  $("#txStatus").text("¡Receta mandada exitosamente!");
-                //getZombiesByOwner(userAccount).then(displayZombies);  MOSTRAR PACIENTE??
-                //})
-                //.on("error", function(error) {
-                //$("#txStatus").text(error);
-               // });
+                return saludSecure.methods.sendReceta(_nombre, _apellido, _DNI, _aclaracion, _cantidad, _medicamento)
+                 .send({ from: userAccount })
+                 .on("receipt", function(receipt) {
+                  $("#txStatus").text("¡Receta mandada exitosamente!");
+                getZombiesByOwner(userAccount).then(displayZombies);   //MOSTRAR PACIENTE??
+                })
+                .on("error", function(error) {
+                $("#txStatus").text(error);
+                });
              }
     
         
