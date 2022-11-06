@@ -24,8 +24,8 @@ if (!isset($_SESSION['user'])){
 
 <body id="MPbody">
 	<header>
-		<label id="Txtlogo">BESMO</label>
-		<label id="headertitle">Menu principal</label>
+		<label id="Txtlogo">Menu principal</label>
+		<label id="headertitle">.</label>
 		<input type="button" id="logo">
 		<div id="LogOut">
 			<input type="button" class="minibutton" value="Log Out" id="LO_M">
