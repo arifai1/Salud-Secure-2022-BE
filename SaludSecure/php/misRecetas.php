@@ -52,10 +52,36 @@ if (!isset($_SESSION['user'])){
     </header>
 	<div id="recetasContainer" >
         <div id="MoverRecetas">
+<<<<<<< HEAD
+        <div id="item1"class="receta">
+            <label id="lbl1">Tratamiento</label>
+            <label id="lbl2">Fecha</label>
+            <label id="verReceta">	Click para ver receta </label>
+            <div class="box">
+	        <a onclick="myFunction()" class="button" href="#popup1">Click para ver receta </a>
+            </div>
+
+            <div id="popup1" class="overlay">
+	<div class="popup">
+		<h2>DR. Jon Doe</h2>
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+			600g Ibuprofeno por 2 días cada 12 horas.
+		</div>
+	</div>
+</div>
+
+
+
+
+
+        
+=======
             <div id="item1"class="receta"onclick="myFunction()">
             <label id="lbl1">Tratamiento</label>
             <label id="lbl2">Fecha</label>
             <label id="verReceta">	Click para ver receta </label> 
+>>>>>>> e3b0e940ea0e09d7a9a36c6e39b3f976d74b57a2
         </div>
         <div id="item2"class="receta"onclick="myFunction()">
             <label id="lbl1">Tratamiento</label>
