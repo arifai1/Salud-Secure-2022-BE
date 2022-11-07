@@ -1,4 +1,7 @@
 .box {
+    position: absolute;
+    top: 175px;
+    left: 70px;
     width: 60%;
     margin: 0 auto;
     background: rgba(255,255,255,0.2);
@@ -42,7 +45,7 @@
   
   .popup {
       position: absolute;
-      top: 20%;
+      top: 35%;
       left: 0.8%;
     margin: 70px auto;
     padding: 20px;
@@ -56,7 +59,7 @@
   .popup h2 {
     margin-top: 0;
     color: #333;
-    font-family: Tahoma, Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
   .popup .close {
     position: absolute;
@@ -70,10 +73,12 @@
   }
   .popup .close:hover {
     color: #06D85F;
+    font-family: 'Poppins', sans-serif;
   }
   .popup .content {
     max-height: 30%;
     overflow: auto;
+    font-family: 'Poppins', sans-serif;
   }
   
   @media screen and (max-width: 700px){
@@ -298,11 +303,12 @@ div{
 }
 #lbl2{
     position: relative;
-    top: 55%;
-    left:42%;
+    top: 58%;
+    left:38%;
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
     cursor: pointer;
+    color: white;
 }
 #chevron_left{
     position: absolute;
