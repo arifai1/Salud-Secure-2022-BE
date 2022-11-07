@@ -1,18 +1,6 @@
 $(document).ready(function() {
   
-  $( "#item1" ).click(function() {
-    setTimeout(function() {
-    $( "#item1" ).removeClass( "receta" );
-    $( "#item1" ).addClass( "recetaflip", fliprecetaback());
-  }, 1250 );
-    function fliprecetaback() {
-      
-        $( "#item1" ).removeClass( "recetaflip" );
-        $( "#item1" ).addClass( "receta");
-     
-    }
-    
-  });
+
  
  
  
@@ -40,10 +28,7 @@ $(document).ready(function() {
 
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> e3b0e940ea0e09d7a9a36c6e39b3f976d74b57a2
    
 
 
