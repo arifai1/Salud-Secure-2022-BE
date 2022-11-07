@@ -87,7 +87,7 @@ if (!isset($_SESSION['user'])){
         var userAccount;
         var saludSecure;
         function startApp() {
-            const saludSecureAddress = '0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5';
+            const saludSecureAddress = '0x0a487A8a6ee4ee519E9B932aEe3BD9a6f3f4aEf7';
             saludSecure = new ethers.Contract(saludSecureAddress ,contract_abi, provider);
             //saludSecure = new web3js.eth.Contract(contract_abi,saludSecureAddress);
             var accountInterval = () =>{
