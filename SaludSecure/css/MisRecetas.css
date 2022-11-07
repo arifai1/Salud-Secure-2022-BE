@@ -41,6 +41,9 @@
   }
   
   .popup {
+      position: absolute;
+      top: 20%;
+      left: 0.8%;
     margin: 70px auto;
     padding: 20px;
     background: #fff;

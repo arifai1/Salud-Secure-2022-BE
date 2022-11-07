@@ -63,10 +63,10 @@ if (!isset($_SESSION['user'])){
 
             <div id="popup1" class="overlay">
 	<div class="popup">
-		<h2>Here i am</h2>
+		<h2>DR. Jon Doe</h2>
 		<a class="close" href="#">&times;</a>
 		<div class="content">
-			Thank to pop me out of that button, but now i'm done so you can close this window.
+			600g Ibuprofeno por 2 días cada 12 horas.
 		</div>
 	</div>
 </div>
