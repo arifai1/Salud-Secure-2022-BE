@@ -77,8 +77,6 @@ if (!isset($_SESSION['user'])){
         <div class = "container">
           <button id= "EnviarSC" ></button>
         </div>
-    
-
     <script>
         //MANDAR RECETA, LAS VARIABLES NO ESTAN DEL TODO BIEN
         //_nombre, _apellido, _DNI, _aclaracion, _cantidad, _medicamento
@@ -86,12 +84,11 @@ if (!isset($_SESSION['user'])){
         //const contract_address = '0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5' ;
         //const SaludSecure = new ethers.Contract(contract_address,contract_abi, provider);
         //const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.maticvigil.com');
-        var web3 = new Web3(window.etherum);
-        const contractAddress = '0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5';
-        var contract = new web3.eth.Contract(contract_abi, contractAddress);
-        console.log(contract_abi)
-        console.log(contract.methods)
-        web3.currentProvider.enable()
+        var web3 = new Web3(window.ethereum);
+        var contract = new web3.eth.Contract(contract_abi, "0xB398BEC709dB7c11476128BBBa4586d5A315431b");
+        async () => {
+            web3 = await ethereum.request({ method: 'eth_requestAccounts'});
+        }
         var userAccount;
         var saludSecure;
         function startApp() {
@@ -101,26 +98,30 @@ if (!isset($_SESSION['user'])){
             
             var accountInterval = () =>{
                 // Check if account has changed
-                if (userAccount !== provider.getSigner()) {
-                    userAccount = provider.getSigner(); 
+                if (userAccount !== web3.currentProvider.selectedAddress) {
+                    userAccount = web3.currentProvider.selectedAddress; 
                     // Call a function to update the UI with the new account
                     //.then(displayZombies);
                 }
                 
             };
-            async function connectWallet() {
-            userAccount = provider.getSigner()     
         }
-        }
-        
-        function sendReceta() {
+        async function connectWallet() {
+        userAccount = web3.currentProvider.selectedAddress     
+    }
+    async function sendReceta() {
             $("#txStatus").text("Mandando receta. Puede tardar un rato...");
-            var pacienteDni = $_POST["usuario"];
-            var medicamento = $_POST["tratamiento"];
-            var aclaracion = $_POST["indicaciones"];
-            console.log(medicamento)
-            console.log("cvgbjn")
-            var tx = contract.methods.setReceta(pacienteDni, medicamento, aclaracion).send({from:web3.eth.currentProvider.selectedAddress});
+            var pacienteDni
+            var medicamento
+            var aclaracion
+            async () => {
+                pacienteDni = await $_POST["usuario"];
+                medicamento = await $_POST["tratamiento"];
+                aclaracion = await $_POST["indicaciones"];
+            }
+            console.log(contract.methods)
+            var tx = await contract.methods.set_receta(pacienteDni, medicamento, aclaracion)
+            tx = tx.send({from:web3.eth.currentProvider.selectedAddress});
             tx.then(t => {
                 console.log(t)
             }).catch(e => {
@@ -147,6 +148,10 @@ if (!isset($_SESSION['user'])){
                     $("#txStatus").text(error);
                 });
         }
+        async function mirarRecetas(){
+            const rec = await contract.methods.ver_Receta()
+            rec.call({from:web3.currentProvider.selectedAddress})
+        }
         $(function(){
             $( "#button" ).click(function() {
                 $( "#button" ).addClass( "onclic", 250, validate);
@@ -167,6 +172,7 @@ if (!isset($_SESSION['user'])){
         //import detectEthereumProvider from '@metamask/detect-provider';
 		    if (typeof window.ethereum !== "undefined" || window.ethereum.state.account == null) {
                 const accounts = await ethereum.request({ method: 'eth_requestAccounts'});
+                mirarRecetas();
                 if(accounts.length !== null){
                 connectWallet();
                 sendReceta();
@@ -190,6 +196,7 @@ if (!isset($_SESSION['user'])){
         
         startApp()
         sendReceta()
+    
     </script>
 </body>
 </html>
