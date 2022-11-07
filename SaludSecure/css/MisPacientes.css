@@ -8,9 +8,9 @@
     box-shadow:  0px 10px 10px #cccccc, 0 0 0 #ffffff,0 0 0 #cccccc inset,2px 2px 2px #ffffff inset;
     border-radius: 10px;
     width: 620px;
-    height: 100px;
-    padding-left: 4%;
-    padding-top: 4%;
+   
+    
+    
     
 }
 
@@ -31,8 +31,18 @@ label{
     font-size: 20px;
 }
 
-
-
+td{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+   background-color: rgba(255, 255, 255, 0.6);
+ 
+}
+th{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+     
+}
 
 
 
