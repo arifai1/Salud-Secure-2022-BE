@@ -94,7 +94,7 @@ if (!isset($_SESSION['user'])){
                 // Check if account has changed
                 if (userAccount !== provider.getSigner()) {
                     userAccount = provider.getSigner();
-                    console.log(userAccount);
+                    
                     // Call a function to update the UI with the new account
                     //.then(displayZombies);
                 }
@@ -103,6 +103,7 @@ if (!isset($_SESSION['user'])){
         }
         async function connectWallet() {
             userAccount = provider.getSigner()
+            
         }
         function sendReceta(dniPaciente, medicamento, cantidad, aclaracion) {
             $("#txStatus").text("Mandando receta. Puede tardar un rato...");
@@ -143,10 +144,11 @@ if (!isset($_SESSION['user'])){
             }        
         });
         async function conexionWeb3(){
-            console.log("mfkml")    
+            console.log("mfkml") 
+               
         //import detectEthereumProvider from '@metamask/detect-provider';
 		    if (typeof window.ethereum !== "undefined" || window.ethereum.state.account == null) {
-                const accounts = await ethereum.request({ method: 'eth_accounts'});
+                const accounts = await ethereum.request({ method: 'eth_requestAccounts'});
                 if(accounts.length !== null){
                 connectWallet();
                 sendReceta();
