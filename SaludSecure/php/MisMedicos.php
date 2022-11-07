@@ -67,12 +67,12 @@
                 echo "<label>No hay médicos</label>";
 
             } else {
-                $med="<table border=0><tr><td width='15%'>Nombre</td><td width='15%'>Apellido</td><td width='10%'>Area</td><td width='20%'>Telefono</td></tr>";
+                $med="<table border=0><tr><th width='15%'>Nombre</th><th width='15%'>Apellido</th><th width='10%'>Area</th><th width='20%'>Telefono</th></tr>";
                 foreach($userData3 as $p){      ////le asignamos a la variable $med los campos que queremos mostrar del array de usuarios asignados y en las lineas de abajo los ubicamos en las columnas que creamos arriba.
                     $med.="<tr><td>".$p["nombre"]."</td>";
                     $med.="<td>".$p["apellido"]."</td>";
                     $med.="<td>".$p["area"]."</td>";
-                    $med.="<td>".$p["telefono"]."</td>";
+                    $med.="<td>".$p["telefono"]."</td></tr>";
                     /* 
                     echo "<div class='pacientes'>";
                     echo "<label> Nombre: </label>";
