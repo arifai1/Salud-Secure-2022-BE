@@ -21,7 +21,10 @@ if (!isset($_SESSION['user'])){
         <!--<script type="module" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
         <script language="javascript" type="text/javascript" src="web3.min.js"></script>-->
         <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
-        <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script language="javascript" type="text/javascript" 
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script language="javascript" type="text/javascript" 
+        src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.8.0/web3.min.js"></script>
         <link href="" rel="shortcut icon">
 </head>
 <body>
@@ -81,39 +84,44 @@ if (!isset($_SESSION['user'])){
         //const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.maticvigil.com');
         //const contract_address = '0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5' ;
         //const SaludSecure = new ethers.Contract(contract_address,contract_abi, provider);
-        const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.maticvigil.com');
+        //const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.maticvigil.com');
+        var web3 = new Web3(window.etherum);
+        const contractAddress = '0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5';
+        var contract = new web3.eth.Contract(contract_abi, contractAddress);
+        web3.currentProvider.enable()
         var userAccount;
         var saludSecure;
         function startApp() {
-            const saludSecureAddress = '0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5';
-            saludSecure = new ethers.Contract(saludSecureAddress ,contract_abi, provider);
+            //const saludSecureAddress = '0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5';
+            //saludSecure = new web3.eth.Contract(contract_abi, saludSecureAddress); //, provider
             //saludSecure = new web3js.eth.Contract(contract_abi,saludSecureAddress);
+            
             var accountInterval = () =>{
                 // Check if account has changed
                 if (userAccount !== provider.getSigner()) {
-                    userAccount = provider.getSigner();
-                    
+                    userAccount = provider.getSigner(); 
                     // Call a function to update the UI with the new account
                     //.then(displayZombies);
                 }
                 
             };
+            async function connectWallet() {
+            userAccount = provider.getSigner()     
         }
-        async function connectWallet() {
-            userAccount = provider.getSigner()
-            
         }
-        function sendReceta(dniPaciente, medicamento, cantidad, aclaracion) {
+        
+        function sendReceta() {
             $("#txStatus").text("Mandando receta. Puede tardar un rato...");
-            var txn;
+            var tx = 
+            /*var txn;
             var sendRecetas;
             async () => {
                 txn = await saludSecure.methods.set_Receta();
                 txn.send()
-                sendRecetas = await saludSecure.methods.sendReceta(dniPaciente, medicamento, cantidad, aclaracion);
+                sendRecetas = await saludSecure.methods.sendReceta('#dnidelpacCrearRec', '#tratamiento', '#indicaciones');
             }
-            console.log(sendRecetas)
-            console.log(sendRecetas.methods)
+            //console.log(sendRecetas)
+            console.log(sendRecetas.methods)*/
             return sendRecetas.send({
                     from: userAccount
                 })
