@@ -269,6 +269,32 @@ $(document).ready(function () {
                 console.log(error);
             },
         });
+
+        $.ajax({
+            type: 'POST',
+            url: '../php/CrearReceta_asignacion.php',
+            dataType: "json",
+            data: {"tratamiento": document.querySelector("#tratamiento").value.toString() },
+            success: function (data) {
+                console.log(data);
+            },
+            // error: function (error) {
+            //     console.log(error);
+            // },
+        });
+        $.ajax({
+            type: 'POST',
+            url: '../php/CrearReceta_asignacion.php',
+            dataType: "json",
+            data: { "indicaciones": document.querySelector("#indicaciones").value.toString() },
+            success: function (data) {
+                console.log(data);
+            },
+            // error: function (error) {
+            //     console.log(error);
+            // },
+        });
+
     });
 
     //Botones LogOut

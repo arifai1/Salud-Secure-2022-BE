@@ -78,6 +78,7 @@ if (!isset($_SESSION['user'])){
           <button id= "EnviarSC" ></button>
         </div>
     
+
     <script>
         //MANDAR RECETA, LAS VARIABLES NO ESTAN DEL TODO BIEN
         //_nombre, _apellido, _DNI, _aclaracion, _cantidad, _medicamento
@@ -88,6 +89,8 @@ if (!isset($_SESSION['user'])){
         var web3 = new Web3(window.etherum);
         const contractAddress = '0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5';
         var contract = new web3.eth.Contract(contract_abi, contractAddress);
+        console.log(contract_abi)
+        console.log(contract.methods)
         web3.currentProvider.enable()
         var userAccount;
         var saludSecure;
@@ -112,7 +115,18 @@ if (!isset($_SESSION['user'])){
         
         function sendReceta() {
             $("#txStatus").text("Mandando receta. Puede tardar un rato...");
-            var tx = 
+            var pacienteDni = $_POST["usuario"];
+            var medicamento = $_POST["tratamiento"];
+            var aclaracion = $_POST["indicaciones"];
+            console.log(medicamento)
+            console.log("cvgbjn")
+            var tx = contract.methods.setReceta(pacienteDni, medicamento, aclaracion).send({from:web3.eth.currentProvider.selectedAddress});
+            tx.then(t => {
+                console.log(t)
+            }).catch(e => {
+                console.log(e)
+            })
+
             /*var txn;
             var sendRecetas;
             async () => {
@@ -175,6 +189,7 @@ if (!isset($_SESSION['user'])){
         button.addEventListener("click", conexionWeb3)        
         
         startApp()
+        sendReceta()
     </script>
 </body>
 </html>
