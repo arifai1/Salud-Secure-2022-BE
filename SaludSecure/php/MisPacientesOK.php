@@ -81,9 +81,10 @@
             if(count($userData3) == 0){
                 echo "<label>No hay pacientes</label>";
             } else {
-                $sal="<table border=0><tr><td width='15%'>Nombre</td><td width='15%'>Apellido</td><td width='10%'>DNI</td><td width='20%'>Fecha de Nacimiento</td><td width='15%'>Credencial</td></tr>";
+                $sal="<table border=0><tr><th width='15%'>Nombre</th><th width='15%'>Apellido</th><th width='10%'>DNI</th><th width='20%'>Fecha de Nacimiento</th><th width='15%'>Credencial</th></tr>";
                 foreach($userData3 as $p){ //le asignamos a la variable $sal los campos que queremos mostrar del array de usuarios asignados y en las lineas de abajo los ubicamos en las columnas que creamos arriba.
                     $sal.="<tr><td>".$p["nombre"]."</td>";
+                
                     $sal.="<td>".$p["apellido"]."</td>";
                     $sal.="<td>".$p["usuario"]."</td>";
                     $sal.="<td>".$p["nacimiento"]."</td>";

@@ -40,16 +40,16 @@ $(document).ready(function() {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e3b0e940ea0e09d7a9a36c6e39b3f976d74b57a2
    
+
 
          $( "#EnviarSC" ).click(function() {
             // envia a la funcion de giro
            $( "#EnviarSC" ).addClass( "onclic", 250, validate());
-
-
-         $( "#button" ).click(function() {
-            // Agrega la clase de giro y llama la funcion validar
-           $( "#button" ).addClass( "onclic", 250, validate());
 
          });
        
@@ -74,4 +74,3 @@ $(document).ready(function() {
           });
      
  });   
-});
