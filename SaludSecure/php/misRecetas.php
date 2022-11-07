@@ -5,61 +5,44 @@ if (!isset($_SESSION['user'])){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../css/MisRecetas.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <UTF-8>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
-	    <script src="../js/saludsecure.js" type="text/javascript"></script>
-		<script src="../js/saludSecureABI.js" type="text/javascript"></script>
-		<script src="../js/SobreBesmo.js" type="text/javascript"></script>
-        <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
-        <link rel="stylesheet" href="../css/font.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
-		<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-		<script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		
-
+    <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
+	<script src="../js/saludsecure.js" type="text/javascript"></script>
+	<script src="../js/saludSecureABI.js" type="text/javascript"></script>
+	<script src="../js/SobreBesmo.js" type="text/javascript"></script>
+    <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/MisRecetas.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="Icon" href="../imagenes/logo-Header.png">
-    
-   
     <title>Mis Recetas</title>
-	
-	</head>
-
-	
-	<script>
-        //CODIGO PARA LEER RECETA --> PACIENTE
-        // var Web3 = require("web3")
-		// const web3 = new Web3("https://cloudflare-eth.com")
-
-      //  const Web3 = new Web3(window.ethereum);
-
-        
-
-      
-		
-
+</head>
+<script>
+    //CODIGO PARA LEER RECETA --> PACIENTE
+    // var Web3 = require("web3")
+	// const web3 = new Web3("https://cloudflare-eth.com")
+    //  const Web3 = new Web3(window.ethereum);   
 	async function myFunction() {
-            const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.matic.today'); 
-            const contract_address = '0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5' ;
-            const SaludSecure = new ethers.Contract(contract_address,contract_abi, provider); 
-            const txn = SaludSecure.methods.ver_Receta().call(); 
-             txn.then(function(result) {
-                    alert(result) 
-             })
+        const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.maticvigil.com'); 
+        const contract_address = '0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5' ;
+        const SaludSecure = new ethers.Contract(contract_address,contract_abi, provider); 
+        const txn = SaludSecure.methods.ver_Receta().call(); 
+        txn.then(function(result) {
+            alert(result) 
+        })
     }
-	</script>
-       
-	<script type="module" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+</script>
 <body>
-
     <header>
         <label id="Txtlogo">Mis Recetas</label>
-        
         <label id="headertitle"> . </label>
         <input id="logo"type="button">
         <div id="LogOut">
@@ -67,29 +50,17 @@ if (!isset($_SESSION['user'])){
         </div>
         <input id="Usuario"type ="button"/>
     </header>
-
-
-    
-  
-
-
-
-	
 	<div id="recetasContainer" >
         <div id="MoverRecetas">
-        <div id="item1"class="receta"onclick="myFunction()">
+            <div id="item1"class="receta"onclick="myFunction()">
             <label id="lbl1">Tratamiento</label>
             <label id="lbl2">Fecha</label>
-            <label id="verReceta">	Click para ver receta </label>
-        
-        
+            <label id="verReceta">	Click para ver receta </label> 
         </div>
         <div id="item2"class="receta"onclick="myFunction()">
             <label id="lbl1">Tratamiento</label>
             <label id="lbl2">Fecha</label>
-            <label id="verReceta">	Clik para ver receta </label>
-        
-        
+            <label id="verReceta">	Clik para ver receta </label>       
         </div>
         </div>
     </div>
@@ -100,9 +71,5 @@ if (!isset($_SESSION['user'])){
     
     <input type="button" value="?" class="ayuda">
     <a class="btn-floating btn-large waves-effect" id="RegresarP"><i id="IconregresarP" class="material-icons">arrow_back</i></a>
-   
-    
-        
- 
 </body>
 </html>
