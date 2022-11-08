@@ -77,6 +77,7 @@ if (!isset($_SESSION['user'])){
         <div class = "container">
           <button id= "EnviarSC" ></button>
         </div>
+
     <script>
         //MANDAR RECETA, LAS VARIABLES NO ESTAN DEL TODO BIEN
         //_nombre, _apellido, _DNI, _aclaracion, _cantidad, _medicamento
@@ -85,7 +86,7 @@ if (!isset($_SESSION['user'])){
         //const SaludSecure = new ethers.Contract(contract_address,contract_abi, provider);
         //const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.maticvigil.com');
         var web3 = new Web3(window.ethereum);
-        var contract = new web3.eth.Contract(contract_abi, "0xB398BEC709dB7c11476128BBBa4586d5A315431b");
+        var contract = new web3.eth.Contract(contract_abi, "0x633284cb7e86cf89C42297FA5b533e9aB1F0dA18");
         async () => {
             web3 = await ethereum.request({ method: 'eth_requestAccounts'});
         }
@@ -95,19 +96,20 @@ if (!isset($_SESSION['user'])){
             //const saludSecureAddress = '0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5';
             //saludSecure = new web3.eth.Contract(contract_abi, saludSecureAddress); //, provider
             //saludSecure = new web3js.eth.Contract(contract_abi,saludSecureAddress);
-            
             var accountInterval = () =>{
                 // Check if account has changed
-                if (userAccount !== web3.currentProvider.selectedAddress) {
+                /*if (userAccount !== web3.currentProvider.selectedAddress) {
                     userAccount = web3.currentProvider.selectedAddress; 
                     // Call a function to update the UI with the new account
                     //.then(displayZombies);
-                }
+                }*/
                 
             };
+            accountInterval 
         }
         async function connectWallet() {
-        userAccount = web3.currentProvider.selectedAddress     
+        userAccount = web3.currentProvider.selectedAddress
+        console.log(userAccount)     
     }
     async function sendReceta() {
             $("#txStatus").text("Mandando receta. Puede tardar un rato...");
@@ -120,14 +122,13 @@ if (!isset($_SESSION['user'])){
                 aclaracion = await $_POST["indicaciones"];
             }
             console.log(contract.methods)
-            var tx = await contract.methods.set_receta(pacienteDni, medicamento, aclaracion)
-            tx = tx.send({from:web3.eth.currentProvider.selectedAddress});
-            tx.then(t => {
+            var txn = await contract.methods.set_receta(pacienteDni, medicamento, aclaracion)
+            txn = txn.send({from:web3.eth.currentProvider.selectedAddress});
+            txn.then(t => {
                 console.log(t)
             }).catch(e => {
                 console.log(e)
             })
-
             /*var txn;
             var sendRecetas;
             async () => {
@@ -192,7 +193,7 @@ if (!isset($_SESSION['user'])){
 		    }
         }
         var button = document.getElementById("EnviarSC")
-        button.addEventListener("click", conexionWeb3)        
+        button.addEventListener("click", conexionWeb3, startApp, sendReceta)        
         
         startApp()
         sendReceta()
