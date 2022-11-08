@@ -170,7 +170,7 @@ if (!isset($_SESSION['user'])){
         });
         async function conexionWeb3(){
         //import detectEthereumProvider from '@metamask/detect-provider';
-		    if (typeof window.ethereum !== "undefined" || window.ethereum._state.account == null) {   
+		    if (typeof window.ethereum !== "undefined" || window.ethereum._state.account == undefined) {   
                 const accounts = await ethereum.request({ method: 'eth_requestAccounts'});
                 mirarRecetas();
                 if(accounts.length !== null){
