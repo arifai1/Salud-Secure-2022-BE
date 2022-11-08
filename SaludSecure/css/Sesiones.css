@@ -539,6 +539,14 @@ font-family: 'Poppins', sans-serif;
     font-size: medium;
     color: red;
 }
+#divr{
+    position:absolute;
+    top: 38%;
+    left: 21%;
+    font-family: 'Poppins', sans-serif;
+    font-size: medium;
+    color: red;
+}
 #msgDOC{
     position:absolute;
     top: 38%;

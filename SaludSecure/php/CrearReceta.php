@@ -170,7 +170,7 @@ if (!isset($_SESSION['user'])){
         });
         async function conexionWeb3(){
         //import detectEthereumProvider from '@metamask/detect-provider';
-		    if (typeof window.ethereum !== "undefined" || window.ethereum.state.account == null) {
+		    if (typeof window.ethereum !== "undefined" || window.ethereum._state.account == null) {   
                 const accounts = await ethereum.request({ method: 'eth_requestAccounts'});
                 mirarRecetas();
                 if(accounts.length !== null){
@@ -184,7 +184,7 @@ if (!isset($_SESSION['user'])){
             //   $("#divt").show();         
             }
 	        else{
-		        alert("No tiene MetaMask instalado, por favor descarguelo");
+		        alert("No tiene instalado MetaMask, por favor instalelo");
                 //mensaje = "No tiene instalado MetaMask, por favor instalelo apretando el boton 'Conectar con MetaMask'";                                                           //Href me indica destino.
                 //$("#divt").html(mensaje);
                 //$("#divt").show();

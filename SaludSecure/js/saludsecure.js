@@ -90,20 +90,21 @@ $(document).ready(function () {
             data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val() + '&nom=' + $("#n").val() + '&ape=' + $("#a").val() + '&Credencial=' + $("#c").val() + '&FechadeNacimiento=' + $("#f").val(),       //mandamos toda la info para que se registre en nuestra bdd.
             success: function (data) {
                 if (data.status == 'ok') {
+                    console.log("hola")
                     mensaje = "Se registro correctamente el usuario";
-                    $("#divi").html(mensaje);
-                    $("#divi").show();
+                    $("#divr").html(mensaje);
+                    $("#divr").show();
                     window.location.replace('../php/pantallaprincipal.php');
                 }
                 else if (data.status == 'err') {
                     mensaje = ("El usuario que intento ingresar ya existe");
-                    $("#divi").html(mensaje);
-                    $("#divi").show();
+                    $("#divr").html(mensaje);
+                    $("#divr").show();
                 }
                 else {
                     mensaje=("Ocurrio un error");
-                    $("#divi").html(mensaje);
-                    $("#divi").show();
+                    $("#divr").html(mensaje);
+                    $("#divr").show();
                 }
             },
             error: function (error) {
