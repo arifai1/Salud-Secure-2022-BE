@@ -11,8 +11,23 @@
         <link rel="stylesheet" href="../css/Sesiones.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="Icon" href="../imagenes/logo-Header.png">
+        <script src="../js/metaMask.js" type="text/javascript"></script>
+        <script src="../js/saludSecureABI.js" type="text/javascript"></script>
+        <script src="../js/SobreBesmo.js" type="text/javascript"></script>
+        <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+        <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
-
+<script>
+async function myFunction() {
+    const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.maticvigil.com'); 
+    const contract_address = '0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5' ;
+    const SaludSecure = new ethers.Contract(contract_address,contract_abi, provider); 
+    const txn = SaludSecure.methods.ver_Receta().call(); 
+    txn.then(function(result) {
+        alert(result) 
+    })
+}
+</script>
 <body class= "autoLayoutIS">
     <input type="button" id="backgroundimgPReg"value="">
     <div id="transition"> 

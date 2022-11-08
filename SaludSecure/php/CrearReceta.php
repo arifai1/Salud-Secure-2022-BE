@@ -76,15 +76,11 @@ if (!isset($_SESSION['user'])){
     </div>
         <div class = "container">
           <button id= "EnviarSC" ></button>
+          
         </div>
 
     <script>
-        //MANDAR RECETA, LAS VARIABLES NO ESTAN DEL TODO BIEN
-        //_nombre, _apellido, _DNI, _aclaracion, _cantidad, _medicamento
-        //const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.maticvigil.com');
-        //const contract_address = '0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5' ;
-        //const SaludSecure = new ethers.Contract(contract_address,contract_abi, provider);
-        //const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.maticvigil.com');
+        //ESTO 
         var web3 = new Web3(window.ethereum);
         var contract = new web3.eth.Contract(contract_abi, "0x633284cb7e86cf89C42297FA5b533e9aB1F0dA18");
         async () => {
@@ -93,24 +89,22 @@ if (!isset($_SESSION['user'])){
         var userAccount;
         var saludSecure;
         function startApp() {
-            //const saludSecureAddress = '0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5';
-            //saludSecure = new web3.eth.Contract(contract_abi, saludSecureAddress); //, provider
-            //saludSecure = new web3js.eth.Contract(contract_abi,saludSecureAddress);
             var accountInterval = () =>{
                 // Check if account has changed
                 /*if (userAccount !== web3.currentProvider.selectedAddress) {
                     userAccount = web3.currentProvider.selectedAddress; 
                     // Call a function to update the UI with the new account
                     //.then(displayZombies);
-                }*/
-                
+                }*/  
             };
             accountInterval 
         }
+        //AGARRA EL ADDRESS DE LA WALLET CONECTADA ACUTALMENTE
         async function connectWallet() {
         userAccount = web3.currentProvider.selectedAddress
         console.log(userAccount)     
     }
+    //AGARRA LOS INPUTS Y MANDA LA RECETA??
     async function sendReceta() {
             $("#txStatus").text("Mandando receta. Puede tardar un rato...");
             var pacienteDni
@@ -149,6 +143,7 @@ if (!isset($_SESSION['user'])){
                     $("#txStatus").text(error);
                 });
         }
+        //LLAMA A LA FUNCIÓN VER_RECETA PARA VERLA.
         async function mirarRecetas(){
             const rec = await contract.methods.ver_Receta()
             rec.call({from:web3.currentProvider.selectedAddress})
@@ -178,22 +173,16 @@ if (!isset($_SESSION['user'])){
                 connectWallet();
                 sendReceta();
                     //DIV QUE DIGA METAMASK CONECTADO!
-                }                                  
-            //sendReceta();
-            //   mensajeM = "Conectando con MetaMask";                                                           
-            //   $("#divt").html(mensajeM);
-            //   $("#divt").show();         
+                }                                      
             }
 	        else{
-		        alert("No tiene instalado MetaMask, por favor instalelo");
-                //mensaje = "No tiene instalado MetaMask, por favor instalelo apretando el boton 'Conectar con MetaMask'";                                                           //Href me indica destino.
-                //$("#divt").html(mensaje);
-                //$("#divt").show();
+		        alert("No tiene instalado MetaMask, por favor instalelo");  
                 await window.open("https://metamask.io/download/", "_blank")
 		    }
         }
+        
         var button = document.getElementById("EnviarSC")
-        button.addEventListener("click", conexionWeb3, startApp, sendReceta)        
+        button.addEventListener("click", conexionWeb3, startApp, sendReceta)  
         
         startApp()
         sendReceta()
