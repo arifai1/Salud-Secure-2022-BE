@@ -23,6 +23,23 @@ $data=array();
 	}
 	echo json_encode($data);
 	$con->close();						                                                      
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+    <script language="javascript" type="text/javascript" 
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" 
+    src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.8.0/web3.min.js"></script>
+    <link href="" rel="shortcut icon">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
 ?>
 

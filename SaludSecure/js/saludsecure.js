@@ -235,6 +235,34 @@ $(document).ready(function () {
             },
         });
     });
+    $.ajax({
+        type: 'POST',
+        url: '../html/registrar_doc.html',
+        dataType: "json",
+        data: { "NomMed": document.querySelector("#NomMed").value.toString() },
+        success: function (data) {
+            console.log(data);
+        },
+    });
+    $.ajax({
+        type: 'POST',
+        url: '../html/resgistrar_doc.html',
+        dataType: "json",
+        data: {"ApeMed": document.querySelector("#ApeMed").value.toString() },
+        success: function (data) {
+            console.log(data);
+        },
+    });
+    $.ajax({
+        type: 'POST',
+        url: '../html/resgistrar_doc.html',
+        dataType: "json",
+        data: {"AreaMed": document.querySelector("#AreaMed").value.toString() },
+        success: function (data) {
+            console.log(data);
+        },
+    });
+
 
     $("#RegistrarMed").mouseover(function () {
         $(".boton").css("cursor", "pointer");
@@ -273,7 +301,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: 'POST',
-            url: '../php/CrearReceta_asignacion.php',
+            url: '../php/CrearReceta.php',
             dataType: "json",
             data: {"tratamiento": document.querySelector("#tratamiento").value.toString() },
             success: function (data) {
@@ -285,7 +313,7 @@ $(document).ready(function () {
         });
         $.ajax({
             type: 'POST',
-            url: '../php/CrearReceta_asignacion.php',
+            url: '../php/CrearReceta.php',
             dataType: "json",
             data: { "indicaciones": document.querySelector("#indicaciones").value.toString() },
             success: function (data) {
