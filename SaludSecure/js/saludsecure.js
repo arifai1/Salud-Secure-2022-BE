@@ -119,40 +119,40 @@ $(document).ready(function () {
 
 
     //LogIn del Medico
-    $("#msgDoc").hide();
+    $("#divi").hide();
     $("#LogInMed").click(function () {
         $( "#LogInMed" ).removeClass( "minibutton" );
         $( "#LogInMed" ).addClass( "minibuttonClick");
         $(".boton").css("cursor", "pointer");
         //hacemos que el que intenta ingresar este obligado a llenar todos los inputs.
         if ($("#q").val() =='' && $("#c").val() =='') {
-            $("#msgDoc").html("Debe agregar Usuario y Contrase&ntildea");
-            $("#msgDoc").show();
+            $("#divi").html("Debe agregar Usuario y Contrase&ntildea");
+            $("#divi").show();
             $( "#q" ).removeClass( "ingresar" );
             $( "#q" ).addClass( "noIngresado");
             $( "#c" ).removeClass( "ingresar" );
             $( "#c" ).addClass( "noIngresado");
         } else if ($("#q").val() == '' && $("#c").val() != "") {
-            $("#msgDoc").html("Debe agregar Usuario");
-            $("#msgDoc").show();
+            $("#divi").html("Debe agregar Usuario");
+            $("#divi").show();
             $( "#q" ).removeClass( "ingresar" );
             $( "#q" ).addClass( "noIngresado");
         } else if ($("#q").val() != '' && $("#c").val() == "") {
-            $("#msgDoc").html("Debe agregar Contrase&ntildea");
-            $("#msgDoc").show();
+            $("#divi").html("Debe agregar Contrase&ntildea");
+            $("#divi").show();
             $( "#c" ).removeClass( "ingresar" );
             $( "#c" ).addClass( "noIngresado");
         }
     });
 
     $("#q").focus(function () {
-        $("#msgDoc").html("");
-        $("#msgDoc").hide();
+        $("#divi").html("");
+        $("#divi").hide();
     });
 
     $("#c").focus(function () {
-        $("#msgDoc").html("");
-        $("#msgDoc").hide();
+        $("#divi").html("");
+        $("#divi").hide();
     });
 
     $("#LogInMed").click(function (event) {
@@ -167,14 +167,14 @@ $(document).ready(function () {
                     console.log(data);
                     if (data == "") {
                         mensaje = "Ocurrio un error";
-                        $("#msgDoc").html(mensaje);
-                        $("#msgDoc").show();
+                        $("divi#").html(mensaje);
+                        $("#divi").show();
                     }
                     else if (data.status == 'ok') {
                         mensaje = "Bienvenido: " + data.result['nombre'] + " " + data.result['apellido'] + "";
 
-                        $("#msgDoc").html(mensaje);
-                        $("#msgDoc").show();
+                        $("#divi").html(mensaje);
+                        $("#divi").show();
                         //alert(mensaje);
 
                         //alert(mensaje);
@@ -184,8 +184,8 @@ $(document).ready(function () {
                     }
                     else {
                         mensaje = "Usuario no encontrado, por favor registrarse";
-                        $("#msgDoc").html(mensaje);
-                        $("#msgDoc").show();
+                        $("#divi").html(mensaje);
+                        $("#divi").show();
                     }
                 },
                 error: function (error) {
