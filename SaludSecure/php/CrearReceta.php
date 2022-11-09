@@ -110,8 +110,10 @@ if (!isset($_SESSION['user'])){
             var pacienteDni
             var medicamento
             var aclaracion
+            
             async () => {
                 pacienteDni = await $_POST["usuario"];
+                console.log(pacienteDni);
                 medicamento = await $_POST["tratamiento"];
                 aclaracion = await $_POST["indicaciones"];
             }
