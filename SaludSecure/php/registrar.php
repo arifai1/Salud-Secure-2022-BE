@@ -24,15 +24,6 @@ $data=array();
 	}
 	echo json_encode($data);
 	$con->close();	
-	async function myFunction() {
-        const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.maticvigil.com'); 
-        const contract_address = '0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5' ;
-        const SaludSecure = new ethers.Contract(contract_address,contract_abi, provider); 
-        const txn = SaludSecure.methods.ver_Receta().call(); 
-        txn.then(function(result) {
-            alert(result) 
-        })
-    }
 ?>
 
 
