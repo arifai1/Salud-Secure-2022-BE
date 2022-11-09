@@ -23,7 +23,7 @@ $(document).ready(function () {
         } else if ($("#u").val() != '' && $("#p").val() == "") {
             $("#divi").html("Debe agregar Contrase&ntildea");
             $("#divi").show();
-            $( "#p" ).removeClass( "ingresar" );
+            $("#p").removeClass( "ingresar" );
             $( "#p" ).addClass( "noIngresado");
         }
     });
@@ -235,33 +235,33 @@ $(document).ready(function () {
             },
         });
     });
-    $.ajax({
-        type: 'POST',
-        url: '../html/registrar_doc.html',
-        dataType: "json",
-        data: { "NomMed": document.querySelector("#NomMed").value.toString() },
-        success: function (data) {
-            console.log(data);
-        },
-    });
-    $.ajax({
-        type: 'POST',
-        url: '../html/resgistrar_doc.html',
-        dataType: "json",
-        data: {"ApeMed": document.querySelector("#ApeMed").value.toString() },
-        success: function (data) {
-            console.log(data);
-        },
-    });
-    $.ajax({
-        type: 'POST',
-        url: '../html/resgistrar_doc.html',
-        dataType: "json",
-        data: {"AreaMed": document.querySelector("#AreaMed").value.toString() },
-        success: function (data) {
-            console.log(data);
-        },
-    });
+    // $.ajax({
+    //     type: 'POST',
+    //     url: '../html/registrar_doc.html',
+    //     dataType: "json",
+    //     data: { "NomMed": document.querySelector("#NomMed").value.toString() },
+    //     success: function (data) {
+    //         console.log(data);
+    //     },
+    // });
+    // $.ajax({
+    //     type: 'POST',
+    //     url: '../html/resgistrar_doc.html',
+    //     dataType: "json",
+    //     data: {"ApeMed": document.querySelector("#ApeMed").value.toString() },
+    //     success: function (data) {
+    //         console.log(data);
+    //     },
+    // });
+    // $.ajax({
+    //     type: 'POST',
+    //     url: '../html/resgistrar_doc.html',
+    //     dataType: "json",
+    //     data: {"AreaMed": document.querySelector("#AreaMed").value.toString() },
+    //     success: function (data) {
+    //         console.log(data);
+    //     },
+    // });
 
 
     $("#RegistrarMed").mouseover(function () {
@@ -311,18 +311,18 @@ $(document).ready(function () {
             //     console.log(error);
             // },
         });
-        $.ajax({
-            type: 'POST',
-            url: '../php/CrearReceta.php',
-            dataType: "json",
-            data: { "indicaciones": document.querySelector("#indicaciones").value.toString() },
-            success: function (data) {
-                console.log(data);
-            },
-            // error: function (error) {
-            //     console.log(error);
-            // },
-        });
+        // $.ajax({
+        //     type: 'POST',
+        //     url: '../php/CrearReceta.php',
+        //     dataType: "json",
+        //     data: { "indicaciones": document.querySelector("#indicaciones").value.toString() },
+        //     success: function (data) {
+        //         console.log(data);
+        //     },
+        //     // error: function (error) {
+        //     //     console.log(error);
+        //     // },
+        // });
 
     });
 
