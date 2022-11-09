@@ -1,4 +1,6 @@
 $(document).ready(function () {
+
+
     //LogIn del paciente                                                                                                        
     $("#divi").hide();
     $("#LogIn").click(function () {
@@ -88,20 +90,21 @@ $(document).ready(function () {
             data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val() + '&nom=' + $("#n").val() + '&ape=' + $("#a").val() + '&Credencial=' + $("#c").val() + '&FechadeNacimiento=' + $("#f").val(),       //mandamos toda la info para que se registre en nuestra bdd.
             success: function (data) {
                 if (data.status == 'ok') {
+                    console.log("hola")
                     mensaje = "Se registro correctamente el usuario";
-                    $("#divi").html(mensaje);
-                    $("#divi").show();
+                    $("#divr").html(mensaje);
+                    $("#divr").show();
                     window.location.replace('../php/pantallaprincipal.php');
                 }
                 else if (data.status == 'err') {
                     mensaje = ("El usuario que intento ingresar ya existe");
-                    $("#divi").html(mensaje);
-                    $("#divi").show();
+                    $("#divr").html(mensaje);
+                    $("#divr").show();
                 }
                 else {
                     mensaje=("Ocurrio un error");
-                    $("#divi").html(mensaje);
-                    $("#divi").show();
+                    $("#divr").html(mensaje);
+                    $("#divr").show();
                 }
             },
             error: function (error) {
@@ -117,40 +120,40 @@ $(document).ready(function () {
 
 
     //LogIn del Medico
-    $("#msgDoc").hide();
+    $("#divi").hide();
     $("#LogInMed").click(function () {
         $( "#LogInMed" ).removeClass( "minibutton" );
         $( "#LogInMed" ).addClass( "minibuttonClick");
         $(".boton").css("cursor", "pointer");
         //hacemos que el que intenta ingresar este obligado a llenar todos los inputs.
         if ($("#q").val() =='' && $("#c").val() =='') {
-            $("#msgDoc").html("Debe agregar Usuario y Contrase&ntildea");
-            $("#msgDoc").show();
+            $("#divi").html("Debe agregar Usuario y Contrase&ntildea");
+            $("#divi").show();
             $( "#q" ).removeClass( "ingresar" );
             $( "#q" ).addClass( "noIngresado");
             $( "#c" ).removeClass( "ingresar" );
             $( "#c" ).addClass( "noIngresado");
         } else if ($("#q").val() == '' && $("#c").val() != "") {
-            $("#msgDoc").html("Debe agregar Usuario");
-            $("#msgDoc").show();
+            $("#divi").html("Debe agregar Usuario");
+            $("#divi").show();
             $( "#q" ).removeClass( "ingresar" );
             $( "#q" ).addClass( "noIngresado");
         } else if ($("#q").val() != '' && $("#c").val() == "") {
-            $("#msgDoc").html("Debe agregar Contrase&ntildea");
-            $("#msgDoc").show();
+            $("#divi").html("Debe agregar Contrase&ntildea");
+            $("#divi").show();
             $( "#c" ).removeClass( "ingresar" );
             $( "#c" ).addClass( "noIngresado");
         }
     });
 
     $("#q").focus(function () {
-        $("#msgDoc").html("");
-        $("#msgDoc").hide();
+        $("#divi").html("");
+        $("#divi").hide();
     });
 
     $("#c").focus(function () {
-        $("#msgDoc").html("");
-        $("#msgDoc").hide();
+        $("#divi").html("");
+        $("#divi").hide();
     });
 
     $("#LogInMed").click(function (event) {
@@ -165,14 +168,14 @@ $(document).ready(function () {
                     console.log(data);
                     if (data == "") {
                         mensaje = "Ocurrio un error";
-                        $("#msgDoc").html(mensaje);
-                        $("#msgDoc").show();
+                        $("divi#").html(mensaje);
+                        $("#divi").show();
                     }
                     else if (data.status == 'ok') {
                         mensaje = "Bienvenido: " + data.result['nombre'] + " " + data.result['apellido'] + "";
 
-                        $("#msgDoc").html(mensaje);
-                        $("#msgDoc").show();
+                        $("#divi").html(mensaje);
+                        $("#divi").show();
                         //alert(mensaje);
 
                         //alert(mensaje);
@@ -182,8 +185,8 @@ $(document).ready(function () {
                     }
                     else {
                         mensaje = "Usuario no encontrado, por favor registrarse";
-                        $("#msgDoc").html(mensaje);
-                        $("#msgDoc").show();
+                        $("#divi").html(mensaje);
+                        $("#divi").show();
                     }
                 },
                 error: function (error) {
@@ -231,35 +234,35 @@ $(document).ready(function () {
                 ;
             },
         });
-        $.ajax({
-            type: 'POST',
-            url: '../html/registrar_doc.html',
-            dataType: "json",
-            data: { "NomMed": document.querySelector("#NomMed").value.toString() },
-            success: function (data) {
-                console.log(data);
-            },
-        });
-        $.ajax({
-            type: 'POST',
-            url: '../html/resgistrar_doc.html',
-            dataType: "json",
-            data: {"ApeMed": document.querySelector("#ApeMed").value.toString() },
-            success: function (data) {
-                console.log(data);
-            },
-        });
-        $.ajax({
-            type: 'POST',
-            url: '../html/resgistrar_doc.html',
-            dataType: "json",
-            data: {"AreaMed": document.querySelector("#AreaMed").value.toString() },
-            success: function (data) {
-                console.log(data);
-            },
-        });
-    
     });
+    $.ajax({
+        type: 'POST',
+        url: '../html/registrar_doc.html',
+        dataType: "json",
+        data: { "NomMed": document.querySelector("#NomMed").value.toString() },
+        success: function (data) {
+            console.log(data);
+        },
+    });
+    $.ajax({
+        type: 'POST',
+        url: '../html/resgistrar_doc.html',
+        dataType: "json",
+        data: {"ApeMed": document.querySelector("#ApeMed").value.toString() },
+        success: function (data) {
+            console.log(data);
+        },
+    });
+    $.ajax({
+        type: 'POST',
+        url: '../html/resgistrar_doc.html',
+        dataType: "json",
+        data: {"AreaMed": document.querySelector("#AreaMed").value.toString() },
+        success: function (data) {
+            console.log(data);
+        },
+    });
+
 
     $("#RegistrarMed").mouseover(function () {
         $(".boton").css("cursor", "pointer");
@@ -277,24 +280,25 @@ $(document).ready(function () {
             data: { "usuario": document.querySelector("#dnidelpacCrearRec").value.toString() },
             success: function (data) {
                 console.log(data);
-                         if (data.status == 'ok') {
-                             mensaje = "Se envio la receta correctamente";
-                             $("#divt").html(mensaje);
-                             $("#divt").show();
-                         }
-                         else{
-                             mensaje = "Ocurrio un error";
-                             $("#divt").html(mensaje);
-                             $("#divt").show();
-                         }
-                         //mostramos la $data en la consola para verificar que este todo en orden
-                      //   console.log("te muestro la data");
-                        console.log(data);
-                     },
-                     error: function (error) {
-                        console.log(error);
+                if (data.status == 'ok') {
+                    mensaje = "Se envio la receta correctamente";
+                    $("#divt").html(mensaje);
+                    $("#divt").show();
+                }
+                else{
+                    mensaje = "Ocurrio un error";
+                    $("#divt").html(mensaje);
+                    $("#divt").show();
+                }
+                //mostramos la $data en la consola para verificar que este todo en orden
+                //   console.log("te muestro la data");
+                console.log(data);
+            },
+            error: function (error) {
+                console.log(error);
             },
         });
+
         $.ajax({
             type: 'POST',
             url: '../php/CrearReceta.php',
