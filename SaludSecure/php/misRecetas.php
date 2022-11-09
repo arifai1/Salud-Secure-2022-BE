@@ -25,21 +25,7 @@ if (!isset($_SESSION['user'])){
 	<link rel="Icon" href="../imagenes/logo-Header.png">
     <title>Mis Recetas</title>
 </head>
-<script>
-    //CODIGO PARA LEER RECETA --> PACIENTE
-    // var Web3 = require("web3")
-	// const web3 = new Web3("https://cloudflare-eth.com")
-    //  const Web3 = new Web3(window.ethereum);   
-	async function myFunction() {
-        const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.maticvigil.com'); 
-        const contract_address = '0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5' ;
-        const SaludSecure = new ethers.Contract(contract_address,contract_abi, provider); 
-        const txn = SaludSecure.methods.ver_Receta().call(); 
-        txn.then(function(result) {
-            alert(result) 
-        })
-    }
-</script>
+
 <body>
     <header>
         <label id="Txtlogo">Mis Recetas</label>
@@ -69,13 +55,7 @@ if (!isset($_SESSION['user'])){
 		</div>
         
 	</div>
-</div>
-
-
-
-
-
-        
+</div>   
         </div>
        
         </div>
@@ -87,5 +67,20 @@ if (!isset($_SESSION['user'])){
     
     <input type="button" value="?" class="ayuda">
     <a class="btn-floating btn-large waves-effect" id="RegresarP"><i id="IconregresarP" class="material-icons">arrow_back</i></a>
+    <script>
+    //CODIGO PARA LEER RECETA --> PACIENTE
+    // var Web3 = require("web3")
+	// const web3 = new Web3("https://cloudflare-eth.com")
+    //  const Web3 = new Web3(window.ethereum);   
+	async function myFunction() {
+        const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.maticvigil.com'); 
+        const contract_address = '0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5' ;
+        const SaludSecure = new ethers.Contract(contract_address,contract_abi, provider); 
+        const txn = SaludSecure.methods.ver_Receta().call(); 
+        txn.then(function(result) {
+            alert(result) 
+        })
+    }
+</script>
 </body>
 </html>

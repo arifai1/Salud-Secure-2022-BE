@@ -4,50 +4,38 @@ if (!isset($_SESSION['user'])){
     }?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <UTF-8>
         <title>SobreBesmo</title>
-
-        <link rel="stylesheet" href="../css/SobreNosotros.css">
         <script src="../js/SobreBesmo.js" type="text/javascript"></script>
         <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
         <script src="../js/saludsecure.js" type="text/javascript"></script>
-
+        <link rel="stylesheet" href="../css/SobreNosotros.css">
         <link rel="Icon" href="../imagenes/logo-Header.png">
         <link rel="stylesheet" href="../css/font.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
 
         <style>
             div.sticky {
               position: sticky;
               top: 0;
-            
               padding: 50px;
-
             }
-            </style>
-
-
-
+        </style>
 </head>
 
 <body>
-
-      
     <div id="background0">
         <div id=position0>
             <div class="container">
                 <div class="box"></div>
-              </div>
+            </div>
             <label class="txt">¿Qué es </label><label class="BESMO">BESMO?</label>
             <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
             <i id="scroll" class="material-icons">arrow_downward</i>
         </div>
     </div>
-
 
     <div class="sticky" id="background1">
         <div id=position1>
@@ -59,7 +47,6 @@ if (!isset($_SESSION['user'])){
             <br>
             <label> de los pacientes.</label>
         </div>
-
         <input id="SaludImg" type="button">
     </div>
     <hr id="hr1">
@@ -78,7 +65,6 @@ if (!isset($_SESSION['user'])){
         <input id="BlockChainImg" type="button">
     </div>
     
-
     <div class="sticky" id="background3">
         <div id="position3">
             <label>Blockchain</label> <br>
@@ -95,11 +81,8 @@ if (!isset($_SESSION['user'])){
             <label class="subrayado">experiencia</label> <br>
             <label>centrada en los</label>
             <label class="subrayado">pacientes</label><br><br><br>
-            
         </div>
-        
     </div>
     <input class="minibutton" type="button" value="Regresar" id="RegresarP">
 </body>
-
 </html>

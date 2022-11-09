@@ -5,23 +5,19 @@ if (!isset($_SESSION['user'])){
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta http-equiv="Contet-Type" content="text/html; charset=UTF-8">
 	<title>Menu Principal</title>
 
 	<!--<link rel="stylesheet" href="../css/styles_Buttons.css">
-<link rel="stylesheet" href="../css/styles_Layout.css">-->
-	<link rel="stylesheet" href="../css/MenuPrincipal.css">
-	
-	<link rel="Icon" href="../imagenes/logo-Header.png">
+	<link rel="stylesheet" href="../css/styles_Layout.css">-->
 	<script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
 	<script src="../js/saludsecure.js" type="text/javascript"></script>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../css/font.css">
-
+	<link rel="stylesheet" href="../css/MenuPrincipal.css">
+	<link rel="Icon" href="../imagenes/logo-Header.png">
 </head>
-
 <body id="MPbody">
 	<header>
 		<label id="Txtlogo">Menu principal</label>
@@ -42,7 +38,6 @@ if (!isset($_SESSION['user'])){
 				<input type="button" id="NosotrosM" class="bigBTN"/> <!--value= echo $_SESSION['user']"/>   esto es para mostrar la variable de sesión-->
 				<input type="button" id="CrearRec" class="bigBTN" />
 				<input type="button" id="MisPacientes" class="bigBTN" />
-
 			</form>
 			<div id="divt">
 			</div>

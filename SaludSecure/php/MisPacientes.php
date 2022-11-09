@@ -8,7 +8,7 @@
 	<script src="../js/saludsecure.js" type="text/javascript"></script>
     <title>Mis Pacientes</title>
     <link rel="stylesheet" href="../css/MisPacientes.css">
-        <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/font.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="Icon" href="../imagenes/logo-Header.png">
 </head>
