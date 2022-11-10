@@ -42,7 +42,7 @@
     <div id="registerformM">
       <h1 id="regh1">Registrarse</h1>
       <br>
-        <input class= "ingresarR" name="SignInNombrem" id="NomMed" placeholder="Nombre real" />
+        <input class= "ingresarR" name="SignInNombrem" id="NomMed" placeholder="Nombre" />
         <br><br>
         <input class= "ingresarR" name= "Aream" id="AreaMed" placeholder="Area medica" />
         <br><br>
@@ -50,7 +50,7 @@
         <br><br>
         <input class= "ingresarR" name="SingInContram" id="PassMed" type= "password"  placeholder="Crea una contrasenia" />
         <br><br>
-        <input class= "ingresarR" name="SingInApellm" id="ApeMed" placeholder="Apellido real" />
+        <input class= "ingresarR" name="SingInApellm" id="ApeMed" placeholder="Apellido" />
         <br><br>
         <input class= "ingresarR" name= "Telefonom" id="teleMed" placeholder="Telefono" />
         <br><br> 
@@ -66,41 +66,56 @@
     <div id="msgDoc">
     </div>
     <script>
+        var web3 = new Web3(window.ethereum);
+        var contract = new web3.eth.Contract(contract_abi, "0x633284cb7e86cf89C42297FA5b533e9aB1F0dA18");
+        async () => {
+            web3 = await ethereum.request({ method: 'eth_requestAccounts'});
+        }
+        async function connectWallet() {
+            userAccount = web3.currentProvider.selectedAddress
+            console.log(userAccount)     
+        }
         function setearMedico() {
             $("#txStatus").text("Asignando medico. Puede tardar un rato...");
             var nombrePaciente;
             var especializacion;
-            pacienteDni = document.getElementById('dnidelpacCrearRec').value;
-            medicamento = document.getElementById('tratamiento').value;
-            aclaracion = document.getElementById('indicaciones').value;
-            console.log(contract.methods)
-            var txn = /*await*/ contract.methods.set_receta(pacienteDni, medicamento, aclaracion)
+            nombreApellido = (document.getElementById('NomMed').value) + (" ") +(document.getElementById('ApeMed').value);
+            especializacion = document.getElementById('AreaMed').value;
+            var txn = contract.methods.set_Medico(nombreApellido, especializacion)
             txn = txn.send({from:web3.eth.currentProvider.selectedAddress});
             txn.then(t => {
                 console.log(t)
             }).catch(e => {
                 console.log(e)
             })
-            /*var txn;
-            var sendRecetas;
-            async () => {
-                txn = await saludSecure.methods.set_Receta();
-                txn.send()
-                sendRecetas = await saludSecure.methods.sendReceta('#dnidelpacCrearRec', '#tratamiento', '#indicaciones');
-            }
-            //console.log(sendRecetas)
-            console.log(sendRecetas.methods)*/
-            return sendRecetas.send({
+            return setearMedico.send({
                     from: userAccount
                 })
                 .on("receipt", function (receipt) {
-                    $("#txStatus").text("¡Receta mandada exitosamente!");
-                    //getZombiesByOwner(userAccount).then(displayZombies);   //MOSTRAR PACIENTE??
+                    $("#txStatus").text("Nuevo medico asignado");
                 })
                 .on("error", function (error) {
                     $("#txStatus").text(error);
                 });
         }
+        async function conexionWeb3(){
+        //import detectEthereumProvider from '@metamask/detect-provider';
+		    if (typeof window.ethereum !== "undefined" || window.ethereum._state.account == undefined) {   
+                const accounts = await ethereum.request({ method: 'eth_requestAccounts'});
+                mirarRecetas();
+                if(accounts.length !== null){
+                connectWallet();
+                sendReceta();
+                    //DIV QUE DIGA METAMASK CONECTADO!
+                }                                      
+            }
+	        else{
+		        alert("No tiene instalado MetaMask, por favor instalelo");  
+                await window.open("https://metamask.io/download/", "_blank")
+		    }
+        }
+        var button = document.getElementById("RegistrarMed")
+        button.addEventListener("click", conexionWeb3, setearReceta)  
     </script>
 </body>
 
