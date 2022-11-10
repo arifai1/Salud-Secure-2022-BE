@@ -139,11 +139,11 @@
     font-size: 22px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
-    
+    font-family: 'Poppins', sans-serif;
 
 }
 .minibuttonClick{
-   
+    font-family: 'Poppins', sans-serif;
     background-color: #B8EEFF;
     border-radius: 10px;
     color:#555555;
@@ -398,7 +398,7 @@ font-family: 'Poppins', sans-serif;
 .text{
     position: relative;
     top: 12%;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #555555;
     z-index: 9;
 }
@@ -406,7 +406,7 @@ font-family: 'Poppins', sans-serif;
     position: relative;
     top: 5%;
     right: 4%;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #555555;
     z-index: 9;
     
@@ -415,7 +415,7 @@ font-family: 'Poppins', sans-serif;
     position: relative;
     top: 5%;
     right: 4%;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 18px;
     color: blue;
 }
@@ -423,7 +423,7 @@ font-family: 'Poppins', sans-serif;
     position: absolute;
     top: 220%;
     left: 2%;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 18px;
     color: #555555;
    height: 40px;
@@ -439,14 +439,14 @@ font-family: 'Poppins', sans-serif;
     
 }
 .title{
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #555555;
     font-size: 20px;
 }
 .links{
     position: relative;
     top: 12%;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 18px;
     color: blue;
 }
@@ -486,7 +486,7 @@ font-family: 'Poppins', sans-serif;
     top: 40%;
     left: 42%;
     font-size: 40px;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 #lbl2{
     animation: 2s ease-out 0s 1 slideInFromLeft2;
@@ -494,7 +494,7 @@ font-family: 'Poppins', sans-serif;
     top: 55%;
     left: 42%;
     font-size: 40px;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 #lbl3{
     animation: 2s ease-out 0s 1 slideInFromLeft2;
@@ -502,7 +502,7 @@ font-family: 'Poppins', sans-serif;
     top: 70%;
     left: 42%;
     font-size: 40px;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 #transition{
     position: absolute;
@@ -516,7 +516,7 @@ font-family: 'Poppins', sans-serif;
     color: black;
    padding: 1%;
     font-size: 60px;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     text-decoration: underline;
     z-index: 9;
     font-weight: bold;
@@ -642,7 +642,7 @@ font-family: 'Poppins', sans-serif;
     color: black;
     padding: 1%;
     font-size: 60px;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     text-decoration: underline;
     z-index: 9;
     font-weight: bold;
@@ -668,7 +668,7 @@ font-family: 'Poppins', sans-serif;
     top: 54%;
     left: 45%;
     font-size: 40px;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 #lbl5{
     animation: 2s ease-out 0s 1 slideInFromLeft2;
@@ -676,7 +676,7 @@ font-family: 'Poppins', sans-serif;
     top: 70%;
     left: 45%;
     font-size: 40px;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 
@@ -722,7 +722,7 @@ font-family: 'Poppins', sans-serif;
     left: 50%;
     height: 400px;
     width: 270px;
-    border:4px solid #4A4EB5;
+    border:4px solid #3FADCF;
     border-radius: 40px;
     
     background-image: url("../imagenes/imgUsuarioM.png");
@@ -742,7 +742,7 @@ font-family: 'Poppins', sans-serif;
     left: 75%;
     height: 400px;
     width: 270px;
-    border:4px solid #4A4EB5;
+    border:4px solid #3FADCF;
     border-radius: 40px;
 
     background-image: url("../imagenes/imgUsuarioP.png");
@@ -761,7 +761,7 @@ font-family: 'Poppins', sans-serif;
     font-size: 18px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
-    
+    font-family: 'Poppins', sans-serif;
 }
 #contenedor{
     animation: 1.5s ease-out 0s 1 slideInFromLeft;

@@ -108,13 +108,13 @@ header{
 
 #LogOut{
     position: absolute;
-    top:8%;
-    left: 80%;
+    top:12%;
+    right: 10%;
 }
 #Usuario{
     position: absolute;
-    top:3%;
-    left: 90%;
+    top:8%;
+    right: 5%;
     width: 60px;
     height: 60px;
     background-position: center;
@@ -129,7 +129,7 @@ header{
     background-color: #B8EEFF;
     border-radius: 10px;
     color: #222222;
-
+    font-family: 'Poppins', sans-serif;
     border: 0px;
     width: 120px;
     height: 54px;

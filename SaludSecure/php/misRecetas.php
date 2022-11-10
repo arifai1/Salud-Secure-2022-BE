@@ -46,7 +46,7 @@ if (!isset($_SESSION['user'])){
         <label id="headertitle"> . </label>
         <input id="logo"type="button">
         <div id="LogOut">
-            <input type ="button" class="minibutton" value="Log Out" id="LO_M"/>
+            <input type ="button"  value="Log Out" id="LO_M"/>
         </div>
         <input id="Usuario"type ="button"/>
     </header>
