@@ -16,6 +16,8 @@
         <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
         <script language="javascript" type="text/javascript" 
         src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script language="javascript" type="text/javascript" 
+        src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.8.0/web3.min.js"></script>
 
         <link rel="stylesheet" href="../css/Sesiones.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -76,47 +78,34 @@
             console.log(userAccount)     
         }
         function setearMedico() {
+            console.log("set")
             $("#txStatus").text("Asignando medico. Puede tardar un rato...");
             var nombrePaciente;
             var especializacion;
             nombreApellido = (document.getElementById('NomMed').value) + (" ") +(document.getElementById('ApeMed').value);
             especializacion = document.getElementById('AreaMed').value;
             var txn = contract.methods.set_Medico(nombreApellido, especializacion)
-            txn = txn.send({from:web3.eth.currentProvider.selectedAddress});
-            txn.then(t => {
-                console.log(t)
-            }).catch(e => {
-                console.log(e)
-            })
-            return setearMedico.send({
-                    from: userAccount
-                })
-                .on("receipt", function (receipt) {
-                    $("#txStatus").text("Nuevo medico asignado");
-                })
-                .on("error", function (error) {
-                    $("#txStatus").text(error);
-                });
-        }
-        async function conexionWeb3(){
-        //import detectEthereumProvider from '@metamask/detect-provider';
-		    if (typeof window.ethereum !== "undefined" || window.ethereum._state.account == undefined) {   
-                const accounts = await ethereum.request({ method: 'eth_requestAccounts'});
-                mirarRecetas();
-                if(accounts.length !== null){
-                connectWallet();
-                sendReceta();
-                    //DIV QUE DIGA METAMASK CONECTADO!
-                }                                      
+                txn = txn.send({from:web3.eth.currentProvider.selectedAddress});
+            async function conexionWeb3(){
+            //import detectEthereumProvider from '@metamask/detect-provider';
+                if (typeof window.etherseum !== "undefined" || window.ethereum._state.account == undefined) {   
+                    const accounts = await ethereum.request({ method: 'eth_requestAccounts'});
+                    // mirarRecetas();
+                    if(accounts.length !== null){
+                    await connectWallet();
+                    await setearMedico();
+                    // await sendReceta();
+                        //DIV QUE DIGA METAMASK CONECTADO!
+                    }                                      
+                }
+                else{
+                    alert("No tiene instalado MetaMask, por favor instalelo");  
+                    await window.open("https://metamask.io/download/", "_blank")
+                }
             }
-	        else{
-		        alert("No tiene instalado MetaMask, por favor instalelo");  
-                await window.open("https://metamask.io/download/", "_blank")
-		    }
-        }
-        var button = document.getElementById("RegistrarMed")
-        button.addEventListener("click", conexionWeb3, setearReceta)  
-    </script>
+            var button = document.getElementById("RegistrarMed")
+            button.addEventListener("click",  conexionWeb3)  
+        </script>
 </body>
 
 </html>
