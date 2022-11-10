@@ -83,10 +83,10 @@
                 if (typeof window.etherseum !== "undefined" || window.ethereum._state.account == undefined) {   
                     const accounts = await ethereum.request({ method: 'eth_requestAccounts'});
                     // mirarRecetas();
-                    if(accounts.length !== null){
+                    
                     await connectWallet();
                     await setearPacientes();
-                    }                                      
+                                                     
                 }
                 else{
                     alert("No tiene instalado MetaMask, por favor instalelo");  
