@@ -58,6 +58,7 @@
             <div id="divi">
             </div>
     <script>
+        console.log("EDFCGH")
         var web3 = new Web3(window.ethereum);
         var contract = new web3.eth.Contract(contract_abi, "0x633284cb7e86cf89C42297FA5b533e9aB1F0dA18");
         async () => {            
@@ -69,7 +70,7 @@
         }
         function setearPacientes() {
             console.log("setP")
-            $("#txStatus").text("Asignando medico. Puede tardar un rato...");
+            $("#txStatus").text("Asignando pacientes. Puede tardar un rato...");
             var nombrePaciente;
             var apellidoPaciente;
             var dni;
@@ -79,22 +80,23 @@
             var txn = contract.methods.set_Paciente(nombrePaciente, apellidoPaciente, dni);
                 txn = txn.send({from:web3.eth.currentProvider.selectedAddress});
             }
-                async function conexionWeb3(){
-                //import detectEthereumProvider from '@metamask/detect-provider';
-                    if (typeof window.etherseum !== "undefined" || window.ethereum._state.account == undefined) {   
-                        const accounts = await ethereum.request({ method: 'eth_requestAccounts'});
-                        // mirarRecetas();
-                        if(accounts.length !== null){
-                        await connectWallet();
-                        await setearPacientes();
-                //DIV QUE DIGA METAMASK CONECTADO!
-            }                                      
+            async function conexionWeb3(){
+            //import detectEthereumProvider from '@metamask/detect-provider';
+                if (typeof window.etherseum !== "undefined" || window.ethereum._state.account == undefined) {   
+                    const accounts = await ethereum.request({ method: 'eth_requestAccounts'});
+                    // mirarRecetas();
+                    if(accounts.length !== null){
+                    await connectWallet();
+                    await setearPacientes();
+                    // await sendReceta();
+                        //DIV QUE DIGA METAMASK CONECTADO!
+                    }                                      
+                }
+                else{
+                    alert("No tiene instalado MetaMask, por favor instalelo");  
+                    await window.open("https://metamask.io/download/", "_blank");
+                }
             }
-            else{
-                alert("No tiene instalado MetaMask, por favor instalelo");  
-                await window.open("https://metamask.io/download/", "_blank")
-            }
-        }
         var button = document.getElementById("RegistrarPac")
         button.addEventListener("click",  conexionWeb3)  
     </script>
