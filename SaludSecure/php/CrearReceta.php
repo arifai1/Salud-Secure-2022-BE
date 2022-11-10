@@ -111,22 +111,9 @@ if (!isset($_SESSION['user'])){
             var pacienteDni;
             var medicamento;
             var aclaracion;
-            console.log("hi");
-            //pacienteDni = document.getElementById('dnidelpacCrearRec');
-            //console.log(pacienteDni);
-            async () => {
-                /*pacienteDni = await $_POST["usuario"];
-                console.log(pacienteDni);
-                medicamento = await $_POST["tratamiento"];
-                aclaracion = await $_POST["indicaciones"];
-                }*/
-                pacienteDni = await document.getElementById('dnidelpacCrearRec');
-                console.log(pacienteDni);
-                /*pacienteDni = ["usuario"].post;
-                console.log(pacienteDni);
-                medicamento = ["tratamiento"].post;
-                aclaracion = ["indicaciones"].post;*/
-            }
+            pacienteDni = document.getElementById('dnidelpacCrearRec').value;
+            medicamento = document.getElementById('tratamiento').value;
+            aclaracion = document.getElementById('indicaciones').value;
             console.log(contract.methods)
             var txn = /*await*/ contract.methods.set_receta(pacienteDni, medicamento, aclaracion)
             txn = txn.send({from:web3.eth.currentProvider.selectedAddress});
