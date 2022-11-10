@@ -112,15 +112,15 @@ if (!isset($_SESSION['user'])){
             var medicamento;
             var aclaracion;
             console.log("hi");
-            pacienteDni = document.getElementById('dnidelpacCrearRecnumero');
-            console.log(pacienteDni);
+            //pacienteDni = document.getElementById('dnidelpacCrearRec');
+            //console.log(pacienteDni);
             async () => {
                 /*pacienteDni = await $_POST["usuario"];
                 console.log(pacienteDni);
                 medicamento = await $_POST["tratamiento"];
                 aclaracion = await $_POST["indicaciones"];
                 }*/
-                pacienteDni = await document.getElementById('dnidelpacCrearRecnumero');
+                pacienteDni = await document.getElementById('dnidelpacCrearRec');
                 console.log(pacienteDni);
                 /*pacienteDni = ["usuario"].post;
                 console.log(pacienteDni);
