@@ -77,13 +77,16 @@ if (!isset($_SESSION['user'])){
     </div>
         <div class = "container">
           <button id= "EnviarSC" ></button>
-          
         </div>
-
     <script>
-        //ESTO 
+        //MANDAR RECETA, LAS VARIABLES NO ESTAN DEL TODO BIEN
+        //_nombre, _apellido, _DNI, _aclaracion, _cantidad, _medicamento
+        //const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.maticvigil.com');
+        //const contract_address = '0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5' ;
+        //const SaludSecure = new ethers.Contract(contract_address,contract_abi, provider);
+        //const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.maticvigil.com');
         var web3 = new Web3(window.ethereum);
-        var contract = new web3.eth.Contract(contract_abi, "0x633284cb7e86cf89C42297FA5b533e9aB1F0dA18");
+        var contract = new web3.eth.Contract(contract_abi, "0xB398BEC709dB7c11476128BBBa4586d5A315431b");
         async () => {
             web3 = await ethereum.request({ method: 'eth_requestAccounts'});
         }
@@ -91,27 +94,27 @@ if (!isset($_SESSION['user'])){
         var saludSecure;
         //AGARRA EL ADDRESS DE LA WALLET CONECTADA ACUTALMENTE
         async function connectWallet() {
-        userAccount = web3.currentProvider.selectedAddress
-        console.log(userAccount)     
+        userAccount = web3.currentProvider.selectedAddress     
     }
-    //AGARRA LOS INPUTS Y MANDA LA RECETA??
-    //async 
-    function sendReceta() {
+    async function sendReceta() {
             $("#txStatus").text("Mandando receta. Puede tardar un rato...");
-            var pacienteDni;
-            var medicamento;
-            var aclaracion;
-            pacienteDni = document.getElementById('dnidelpacCrearRec').value;
-            medicamento = document.getElementById('tratamiento').value;
-            aclaracion = document.getElementById('indicaciones').value;
+            var pacienteDni
+            var medicamento
+            var aclaracion
+            async () => {
+                pacienteDni = await $_POST["usuario"];
+                medicamento = await $_POST["tratamiento"];
+                aclaracion = await $_POST["indicaciones"];
+            }
             console.log(contract.methods)
-            var txn = /*await*/ contract.methods.set_receta(pacienteDni, medicamento, aclaracion)
-            txn = txn.send({from:web3.eth.currentProvider.selectedAddress});
-            txn.then(t => {
+            var tx = await contract.methods.set_receta(pacienteDni, medicamento, aclaracion)
+            tx = tx.send({from:web3.eth.currentProvider.selectedAddress});
+            tx.then(t => {
                 console.log(t)
             }).catch(e => {
                 console.log(e)
             })
+
             /*var txn;
             var sendRecetas;
             async () => {
@@ -131,7 +134,6 @@ if (!isset($_SESSION['user'])){
                     $("#txStatus").text(error);
                 });
         }
-        //LLAMA A LA FUNCIÓN VER_RECETA PARA VERLA.
         async function mirarRecetas(){
             const rec = await contract.methods.ver_Receta()
             rec.call({from:web3.currentProvider.selectedAddress})
@@ -154,21 +156,27 @@ if (!isset($_SESSION['user'])){
         });
         async function conexionWeb3(){
         //import detectEthereumProvider from '@metamask/detect-provider';
-		    if (typeof window.ethereum !== "undefined" || window.ethereum._state.account == undefined) {   
+		    if (typeof window.ethereum !== "undefined" || window.ethereum._state.account == null) {   
                 const accounts = await ethereum.request({ method: 'eth_requestAccounts'});
                 mirarRecetas();
                 if(accounts.length !== null){
                 connectWallet();
                 sendReceta();
                     //DIV QUE DIGA METAMASK CONECTADO!
-                }                                      
+                }                                  
+            //sendReceta();
+            //   mensajeM = "Conectando con MetaMask";                                                           
+            //   $("#divt").html(mensajeM);
+            //   $("#divt").show();         
             }
 	        else{
-		        alert("No tiene instalado MetaMask, por favor instalelo");  
+		        alert("No tiene instalado MetaMask, por favor instalelo");
+                //mensaje = "No tiene instalado MetaMask, por favor instalelo apretando el boton 'Conectar con MetaMask'";                                                           //Href me indica destino.
+                //$("#divt").html(mensaje);
+                //$("#divt").show();
                 await window.open("https://metamask.io/download/", "_blank")
 		    }
         }
-        
         var button = document.getElementById("EnviarSC")
         button.addEventListener("click", conexionWeb3, sendReceta)  
         

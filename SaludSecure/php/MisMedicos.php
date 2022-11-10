@@ -42,7 +42,7 @@
         <label id="headertitle"> Mis Medicos </label>
         <input id="logo"type="button">
         <div id="LogOut">
-            <input type ="button" id="LO_M" class="minibutton" value="Log Out"/>
+            <input type ="button" id="LO_M"  value="Log Out"/>
         </div>
         <input id="Usuario"type ="button"/>
     </header>
