@@ -25,21 +25,6 @@ if (!isset($_SESSION['user'])){
 	<link rel="Icon" href="../imagenes/logo-Header.png">
     <title>Mis Recetas</title>
 </head>
-<script>
-    //CODIGO PARA LEER RECETA --> PACIENTE
-    // var Web3 = require("web3")
-	// const web3 = new Web3("https://cloudflare-eth.com")
-    //  const Web3 = new Web3(window.ethereum);   
-	async function myFunction() {
-        const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.maticvigil.com'); 
-        const contract_address = '0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5' ;
-        const SaludSecure = new ethers.Contract(contract_address,contract_abi, provider); 
-        const txn = SaludSecure.methods.ver_Receta().call(); 
-        txn.then(function(result) {
-            alert(result) 
-        })
-    }
-</script>
 <body>
     <header>
         <label id="Txtlogo">Mis Recetas</label>
@@ -57,7 +42,7 @@ if (!isset($_SESSION['user'])){
             <label id="lbl2">Ibuprofeno</label>
 
             <div class="box">
-	        <a onclick="myFunction()" class="button" href="#popup1">Click para ver receta </a>
+	        <a id= "botonPopup" onclick="myFunction()" class="button" href="#popup1">Click para ver receta </a>
             </div>
 
             <div id="popup1" class="overlay">
@@ -69,13 +54,7 @@ if (!isset($_SESSION['user'])){
 		</div>
         
 	</div>
-</div>
-
-
-
-
-
-        
+</div>       
         </div>
        
         </div>
@@ -87,5 +66,49 @@ if (!isset($_SESSION['user'])){
     
     <input type="button" value="?" class="ayuda">
     <a class="btn-floating btn-large waves-effect" id="RegresarP"><i id="IconregresarP" class="material-icons">arrow_back</i></a>
+    <script>
+        var web3 = new Web3(window.ethereum);
+        var contract = new web3.eth.Contract(contract_abi, "0x633284cb7e86cf89C42297FA5b533e9aB1F0dA18");
+        async () => {
+            web3 = await ethereum.request({ method: 'eth_requestAccounts'});
+        }
+        async function connectWallet() {
+            userAccount = web3.currentProvider.selectedAddress
+            console.log(userAccount)     
+        }
+        async function mirarRecetas(){
+            const rec = await contract.methods.ver_Receta()
+            rec.call({from:web3.currentProvider.selectedAddress})
+            console.log(rec)
+        }
+        /*function () {
+            console.log("set")
+            $("#txStatus").text("Asignando medico. Puede tardar un rato...");
+            nombreApellido = (document.getElementById('NomMed').value) + (" ") +(document.getElementById('ApeMed').value);
+            especializacion = document.getElementById('AreaMed').value;
+            var txn = contract.methods.set_Medico(nombreApellido, especializacion)
+                txn = txn.send({from:web3.eth.currentProvider.selectedAddress});
+        }*/
+            async function conexionWeb3(){
+            //import detectEthereumProvider from '@metamask/detect-provider';
+                if (typeof window.etherseum !== "undefined" || window.ethereum._state.account == undefined) {   
+                    const accounts = await ethereum.request({ method: 'eth_requestAccounts'});
+                    // mirarRecetas();
+                    if(accounts.length !== null){
+                    await connectWallet();
+                    await mirarRecetas();
+                    // await sendReceta();
+                        //DIV QUE DIGA METAMASK CONECTADO!
+                    }                                      
+                }
+                else{
+                    alert("No tiene instalado MetaMask, por favor instalelo");  
+                    await window.open("https://metamask.io/download/", "_blank");
+                }
+            }
+            var button = document.getElementById("botonPopup")
+            button.addEventListener("click",  conexionWeb3)  
+        </script>
+    </script>
 </body>
 </html>

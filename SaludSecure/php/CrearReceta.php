@@ -134,10 +134,6 @@ if (!isset($_SESSION['user'])){
                     $("#txStatus").text(error);
                 });
         }
-        async function mirarRecetas(){
-            const rec = await contract.methods.ver_Receta()
-            rec.call({from:web3.currentProvider.selectedAddress})
-        }
         $(function(){
             $( "#button" ).click(function() {
                 $( "#button" ).addClass( "onclic", 250, validate);

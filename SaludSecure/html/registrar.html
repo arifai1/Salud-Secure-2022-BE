@@ -33,8 +33,6 @@
 
             <div id="registerformP" >
                 <h1 id="regPh1">Crear Cuenta</h1>
-
-                
                     <input id="u" name="SignInUsu" type="number" class="ingresarR" placeholder="DNI real" />
                     <br><br>
                     <input id="p" name="SingInContra" type="password" class="ingresarR" placeholder="Crear una contrase&ntilde;a" />
@@ -49,7 +47,6 @@
                     <br><br>
                     <input id="RegistrarPac" type="submit" class="minibutton" name="Registrarse" value="Crear cuenta"  />
                     
-               
                     <br><br>    
                     <label id="yatienescuenta"  >ya tienes cuenta? </label>
                     <a href="../html/Iniciarsesion.html" class="linkIS">Inicia Sesion</a>
@@ -64,9 +61,10 @@
         async () => {            
             web3 = await ethereum.request({ method: 'eth_requestAccounts'});
         }
+        alert("wdfgh")
         async function connectWallet() {
-        userAccount = web3.currentProvider.selectedAddress
-        console.log(userAccount)     
+            userAccount = web3.currentProvider.selectedAddress
+            console.log(userAccount)     
         }
         function setearPacientes() {
             console.log("setP")
@@ -78,7 +76,7 @@
             apellidoPaciente = document.getElementById('a').value; 
             dni = document.getElementById('u').value;
             var txn = contract.methods.set_Paciente(nombrePaciente, apellidoPaciente, dni);
-                txn = txn.send({from:web3.eth.currentProvider.selectedAddress});
+            txn = txn.send({from:web3.eth.currentProvider.selectedAddress});
             }
             async function conexionWeb3(){
             //import detectEthereumProvider from '@metamask/detect-provider';
@@ -88,8 +86,6 @@
                     if(accounts.length !== null){
                     await connectWallet();
                     await setearPacientes();
-                    // await sendReceta();
-                        //DIV QUE DIGA METAMASK CONECTADO!
                     }                                      
                 }
                 else{
