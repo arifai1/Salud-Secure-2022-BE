@@ -272,7 +272,7 @@ $(document).ready(function () {
     //asignacion paciente-medico por el dni ingresado en el input del Smart Contract.
     $("#EnviarSC").click(function (e) {
         e.preventDefault();
-        //console.log(document.querySelector("#dnidelpacCrearRec").value);
+        //console.log(document.querySelector("#dnidelpacCrearRec").value.toString());
         $.ajax({
             type: 'POST',
             url: '../php/CrearReceta_asignacion.php',

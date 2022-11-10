@@ -105,20 +105,30 @@ if (!isset($_SESSION['user'])){
         console.log(userAccount)     
     }
     //AGARRA LOS INPUTS Y MANDA LA RECETA??
-    async function sendReceta() {
+    //async 
+    function sendReceta() {
             $("#txStatus").text("Mandando receta. Puede tardar un rato...");
-            var pacienteDni
-            var medicamento
-            var aclaracion
-            
+            var pacienteDni;
+            var medicamento;
+            var aclaracion;
+            console.log("hi");
+            pacienteDni = document.getElementById('dnidelpacCrearRecnumero');
+            console.log(pacienteDni);
             async () => {
-                pacienteDni = await $_POST["usuario"];
+                /*pacienteDni = await $_POST["usuario"];
                 console.log(pacienteDni);
                 medicamento = await $_POST["tratamiento"];
                 aclaracion = await $_POST["indicaciones"];
+                }*/
+                pacienteDni = await document.getElementById('dnidelpacCrearRecnumero');
+                console.log(pacienteDni);
+                /*pacienteDni = ["usuario"].post;
+                console.log(pacienteDni);
+                medicamento = ["tratamiento"].post;
+                aclaracion = ["indicaciones"].post;*/
             }
             console.log(contract.methods)
-            var txn = await contract.methods.set_receta(pacienteDni, medicamento, aclaracion)
+            var txn = /*await*/ contract.methods.set_receta(pacienteDni, medicamento, aclaracion)
             txn = txn.send({from:web3.eth.currentProvider.selectedAddress});
             txn.then(t => {
                 console.log(t)
@@ -187,8 +197,6 @@ if (!isset($_SESSION['user'])){
         button.addEventListener("click", conexionWeb3, startApp, sendReceta)  
         
         startApp()
-        sendReceta()
-    
     </script>
 </body>
 </html>
