@@ -10,7 +10,6 @@ if (!isset($_SESSION['user'])){
     <title>Crear Receta</title>
     <link rel="stylesheet" href="../css/CrearReceta.css">
     <link rel="stylesheet" href="../css/font.css">
-  
         <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
         <script src="../js/metaMask.js" type="text/javascript"></script>
         <script src="../js/saludSecureABI.js" type="text/javascript"></script>
@@ -18,13 +17,15 @@ if (!isset($_SESSION['user'])){
         <script src="../js/SobreBesmo.js" type="text/javascript"></script>
 	    <link rel="Icon" href="../imagenes/logo-Header.png">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!--<script type="module" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-        <script language="javascript" type="text/javascript" src="web3.min.js"></script>-->
+        <script type="module" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+        <!-- <script language="javascript" type="text/javascript" src="web3.min.js"></script> -->
+        <!-- <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>  -->
         <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
         <script language="javascript" type="text/javascript" 
         src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script language="javascript" type="text/javascript" 
-        src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.8.0/web3.min.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script> -->
+        <!-- <script language="javascript" type="text/javascript" 
+        src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.8.0/web3.min.js"></script> -->
         <link href="" rel="shortcut icon">
 </head>
 <body>
@@ -88,17 +89,6 @@ if (!isset($_SESSION['user'])){
         }
         var userAccount;
         var saludSecure;
-        function startApp() {
-            var accountInterval = () =>{
-                // Check if account has changed
-                /*if (userAccount !== web3.currentProvider.selectedAddress) {
-                    userAccount = web3.currentProvider.selectedAddress; 
-                    // Call a function to update the UI with the new account
-                    //.then(displayZombies);
-                }*/  
-            };
-            accountInterval 
-        }
         //AGARRA EL ADDRESS DE LA WALLET CONECTADA ACUTALMENTE
         async function connectWallet() {
         userAccount = web3.currentProvider.selectedAddress
@@ -136,7 +126,6 @@ if (!isset($_SESSION['user'])){
                 })
                 .on("receipt", function (receipt) {
                     $("#txStatus").text("¡Receta mandada exitosamente!");
-                    //getZombiesByOwner(userAccount).then(displayZombies);   //MOSTRAR PACIENTE??
                 })
                 .on("error", function (error) {
                     $("#txStatus").text(error);
@@ -183,7 +172,6 @@ if (!isset($_SESSION['user'])){
         var button = document.getElementById("EnviarSC")
         button.addEventListener("click", conexionWeb3, startApp, sendReceta)  
         
-        startApp()
     </script>
 </body>
 </html>
