@@ -78,6 +78,7 @@
             dni = document.getElementById('u').value;
             var txn = contract.methods.set_Paciente(nombrePaciente, apellidoPaciente, dni);
                 txn = txn.send({from:web3.eth.currentProvider.selectedAddress});
+            }
                 async function conexionWeb3(){
                 //import detectEthereumProvider from '@metamask/detect-provider';
                     if (typeof window.etherseum !== "undefined" || window.ethereum._state.account == undefined) {   

@@ -86,6 +86,8 @@
             especializacion = document.getElementById('AreaMed').value;
             var txn = contract.methods.set_Medico(nombreApellido, especializacion)
                 txn = txn.send({from:web3.eth.currentProvider.selectedAddress});
+
+        }
             async function conexionWeb3(){
             //import detectEthereumProvider from '@metamask/detect-provider';
                 if (typeof window.etherseum !== "undefined" || window.ethereum._state.account == undefined) {   
@@ -100,12 +102,11 @@
                 }
                 else{
                     alert("No tiene instalado MetaMask, por favor instalelo");  
-                    await window.open("https://metamask.io/download/", "_blank")
+                    await window.open("https://metamask.io/download/", "_blank");
                 }
             }
             var button = document.getElementById("RegistrarMed")
             button.addEventListener("click",  conexionWeb3)  
         </script>
 </body>
-
 </html>
