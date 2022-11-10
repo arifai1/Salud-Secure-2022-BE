@@ -26,9 +26,6 @@ $data=array();
 	echo json_encode($data);
 	$con->close();	
 	
-
-
-
 ?>
 
 
