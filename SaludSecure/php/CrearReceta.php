@@ -24,8 +24,8 @@ if (!isset($_SESSION['user'])){
         <script language="javascript" type="text/javascript" 
         src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <!-- <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script> -->
-        <!-- <script language="javascript" type="text/javascript" 
-        src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.8.0/web3.min.js"></script> -->
+        <script language="javascript" type="text/javascript" 
+        src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.8.0/web3.min.js"></script>
         <link href="" rel="shortcut icon">
 </head>
 <body>
@@ -170,7 +170,7 @@ if (!isset($_SESSION['user'])){
         }
         
         var button = document.getElementById("EnviarSC")
-        button.addEventListener("click", conexionWeb3, startApp, sendReceta)  
+        button.addEventListener("click", conexionWeb3, sendReceta)  
         
     </script>
 </body>
