@@ -11,7 +11,6 @@ if (!isset($_SESSION['user'])){
     <link rel="stylesheet" href="../css/CrearReceta.css">
     <link rel="stylesheet" href="../css/font.css">
         <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
-        <script src="../js/metaMask.js" type="text/javascript"></script>
         <script src="../js/saludSecureABI.js" type="text/javascript"></script>
         <script src="../js/saludsecure.js" type="text/javascript"></script>
         <script src="../js/SobreBesmo.js" type="text/javascript"></script>
@@ -97,15 +96,14 @@ if (!isset($_SESSION['user'])){
         userAccount = web3.currentProvider.selectedAddress     
     }
     async function sendReceta() {
+        console.log("va")
             $("#txStatus").text("Mandando receta. Puede tardar un rato...");
             var pacienteDni
             var medicamento
             var aclaracion
-            async () => {
-                pacienteDni = await $_POST["usuario"];
-                medicamento = await $_POST["tratamiento"];
-                aclaracion = await $_POST["indicaciones"];
-            }
+            pacienteDni = await document.getElementById('dnidelpacCrearRec').value;
+            medicamento = await document.getElementById('tratamiento').value;
+            aclaracion = await document.getElementById('indicaciones').value;
             console.log(contract.methods)
             var tx = await contract.methods.set_receta(pacienteDni, medicamento, aclaracion)
             tx = tx.send({from:web3.eth.currentProvider.selectedAddress});
@@ -124,15 +122,7 @@ if (!isset($_SESSION['user'])){
             }
             //console.log(sendRecetas)
             console.log(sendRecetas.methods)*/
-            return sendRecetas.send({
-                    from: userAccount
-                })
-                .on("receipt", function (receipt) {
-                    $("#txStatus").text("¡Receta mandada exitosamente!");
-                })
-                .on("error", function (error) {
-                    $("#txStatus").text(error);
-                });
+            
         }
         $(function(){
             $( "#button" ).click(function() {
@@ -154,8 +144,7 @@ if (!isset($_SESSION['user'])){
         //import detectEthereumProvider from '@metamask/detect-provider';
 		    if (typeof window.ethereum !== "undefined" || window.ethereum._state.account == null) {   
                 const accounts = await ethereum.request({ method: 'eth_requestAccounts'});
-                mirarRecetas();
-                if(accounts.length !== null){
+                //if(accounts.length !== null){
                 connectWallet();
                 sendReceta();
                     //DIV QUE DIGA METAMASK CONECTADO!
@@ -164,7 +153,7 @@ if (!isset($_SESSION['user'])){
             //   mensajeM = "Conectando con MetaMask";                                                           
             //   $("#divt").html(mensajeM);
             //   $("#divt").show();         
-            }
+            
 	        else{
 		        alert("No tiene instalado MetaMask, por favor instalelo");
                 //mensaje = "No tiene instalado MetaMask, por favor instalelo apretando el boton 'Conectar con MetaMask'";                                                           //Href me indica destino.
@@ -174,7 +163,7 @@ if (!isset($_SESSION['user'])){
 		    }
         }
         var button = document.getElementById("EnviarSC")
-        button.addEventListener("click", conexionWeb3, sendReceta)  
+        button.addEventListener("click", conexionWeb3)  
         
     </script>
 </body>

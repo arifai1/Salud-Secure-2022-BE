@@ -76,9 +76,8 @@ if (!isset($_SESSION['user'])){
             userAccount = web3.currentProvider.selectedAddress
             console.log(userAccount)     
         }
-        async function mirarRecetas(){
-            const rec = await contract.methods.ver_Receta()
-            rec.call({from:web3.currentProvider.selectedAddress})
+        function mirarRecetas(){
+            var rec = contract.methods.ver_Receta().call({from:web3.currentProvider.selectedAddress})
             console.log(rec)
         }
         /*function () {

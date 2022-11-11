@@ -235,34 +235,7 @@ $(document).ready(function () {
             },
         });
     });
-    // $.ajax({
-    //     type: 'POST',
-    //     url: '../html/registrar_doc.html',
-    //     dataType: "json",
-    //     data: { "NomMed": document.querySelector("#NomMed").value.toString() },
-    //     success: function (data) {
-    //         console.log(data);
-    //     },
-    // });
-    // $.ajax({
-    //     type: 'POST',
-    //     url: '../html/resgistrar_doc.html',
-    //     dataType: "json",
-    //     data: {"ApeMed": document.querySelector("#ApeMed").value.toString() },
-    //     success: function (data) {
-    //         console.log(data);
-    //     },
-    // });
-    // $.ajax({
-    //     type: 'POST',
-    //     url: '../html/resgistrar_doc.html',
-    //     dataType: "json",
-    //     data: {"AreaMed": document.querySelector("#AreaMed").value.toString() },
-    //     success: function (data) {
-    //         console.log(data);
-    //     },
-    // });
-
+    
 
     $("#RegistrarMed").mouseover(function () {
         $(".boton").css("cursor", "pointer");
