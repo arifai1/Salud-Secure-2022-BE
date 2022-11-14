@@ -85,7 +85,7 @@ if (!isset($_SESSION['user'])){
         //const SaludSecure = new ethers.Contract(contract_address,contract_abi, provider);
         //const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.maticvigil.com');
         var web3 = new Web3(window.ethereum);
-        var contract = new web3.eth.Contract(contract_abi, "0xB398BEC709dB7c11476128BBBa4586d5A315431b");
+        var contract = new web3.eth.Contract(contract_abi, "0x633284cb7e86cf89C42297FA5b533e9aB1F0dA18"); //0xB398BEC709dB7c11476128BBBa4586d5A315431b
         async () => {
             web3 = await ethereum.request({ method: 'eth_requestAccounts'});
         }

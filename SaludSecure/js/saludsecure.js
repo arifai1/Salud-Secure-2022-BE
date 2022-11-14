@@ -83,6 +83,14 @@ $(document).ready(function () {
     $("#RegistrarPac").click(function () {
         $( "#RegistrarPac" ).removeClass( "minibutton" );
         $( "#RegistrarPac" ).addClass( "minibuttonClick");
+        if ($("#u").val() == '' || $("#p").val() ==''|| $("#n").val() ==''|| $("#a").val() ==''|| $("#c").val() ==''|| $("#f").val() =='') {
+            $("#divAgregardatos").html("Hay campos vacios");
+            $("#divAgregardatos").show();
+            $( "#u" ).removeClass( "ingresar" );
+            $( "#u" ).addClass( "noIngresado");
+            $( "#p" ).removeClass( "ingresar" );
+            $( "#p" ).addClass( "noIngresado");
+        }else{ 
         $.ajax({
             type: 'POST',
             url: '../php/registrar.php',
@@ -111,6 +119,7 @@ $(document).ready(function () {
                 ;
             },
         });
+    }
     });
 
     $("#RegistrarPac").mouseover(function () {
