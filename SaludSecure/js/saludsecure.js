@@ -216,6 +216,14 @@ $(document).ready(function () {
     $("#RegistrarMed").click(function () {
         $( "#RegistrarMed" ).removeClass( "minibutton" );
         $( "#RegistrarMed" ).addClass( "minibuttonClick");
+        if ($("#UsuMed").val() == '' || $("#PassMed").val() ==''|| $("#NomMed").val() ==''|| $("#ApeMed").val() ==''|| $("#AreaMed").val() ==''|| $("#teleMed").val() =='') {
+            $("#divAgregardatosM").html("Hay campos vacios");
+            $("#divAgregardatosM").show();
+            $( "#u" ).removeClass( "ingresar" );
+            $( "#u" ).addClass( "noIngresado");
+            $( "#p" ).removeClass( "ingresar" );
+            $( "#p" ).addClass( "noIngresado");
+        }else{
         $.ajax({
             type: 'POST',
             url: '../php/registrar_doc.php',
@@ -243,8 +251,8 @@ $(document).ready(function () {
                 ;
             },
         });
+    }
     });
-    
 
     $("#RegistrarMed").mouseover(function () {
         $(".boton").css("cursor", "pointer");
