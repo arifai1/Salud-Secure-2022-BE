@@ -14,57 +14,61 @@
         <script src="../js/saludSecureABI.js" type="text/javascript"></script>
         <script src="../js/SobreBesmo.js" type="text/javascript"></script>
         <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
-        <script language="javascript" type="text/javascript" 
-        src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.8.0/web3.min.js"></script>
-        <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script language="javascript" type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.8.0/web3.min.js"></script>
+        <script language="javascript" type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
-<body class= "autoLayoutIS">
-    <input type="button" id="backgroundimgPReg"value="">
-    <div id="transition"> 
-    <label id="textlos">Los </label> <label id="pacientestxt">pacientes</label> <label id="textpueden"> pueden:</label>
+
+<body class="autoLayoutIS">
+    <input type="button" id="backgroundimgPReg" value="">
+    <div id="transition">
+        <label id="textlos">Los </label> <label id="pacientestxt">pacientes</label> <label id="textpueden">
+            pueden:</label>
     </div>
-   
+
     <br><br><br>
     <label id="lbl4">- Ver sus recetas disponibles</label>
     <br><br><br>
     <label id="lbl5">- Tener una lista de médicos a mano</label>
     <br><br><br>
 
-            <div id="registerformP" >
-                <h1 id="regPh1">Crear Cuenta</h1>
-                    <input id="u" name="SignInUsu" type="number" class="ingresarR" placeholder="DNI real" />
-                    <br><br>
-                    <input id="p" name="SingInContra" type="password" class="ingresarR" placeholder="Crear una contrase&ntilde;a" />
-                    <br><br>
-                    <input id="n" name="SignInNombre" type="text" class="ingresarR" placeholder="Nombre Real" />
-                    <br><br>
-                    <input id="a" name="SingInApell" type="text" class="ingresarR" placeholder="Apellido real" />
-                    <br><br>
-                    <input id="c" name="Credencial" type="number" class="ingresarR" placeholder="Credencial" />
-                    <br><br>
-                    <input id="f" name="FechadeNacimiento" type="date" class="ingresarR" placeholder="Fecha de nacimiento" />
-                    <br><br>
-                    <button id="RegistrarPac" onclick="conexionWeb3()" class="minibutton" name="Registrarse" value="Crear cuenta">Registrarse</button>
-                    
-                    <br><br>    
-                    <label id="yatienescuenta"  >ya tienes cuenta? </label>
-                    <a href="../html/Iniciarsesion.html" class="linkIS">Inicia Sesion</a>
-                    
-            </div>
-            <div id="divi">
-            </div>
-            <div id="divAgregardatos">
-            </div>
+    <div id="registerformP">
+        <h1 id="regPh1">Crear Cuenta</h1>
+        <input id="u" name="SignInUsu" type="number" class="ingresarR" placeholder="DNI real" />
+        <br><br>
+        <input id="p" name="SingInContra" type="password" class="ingresarR" placeholder="Crear una contrase&ntilde;a" />
+        <br><br>
+        <input id="n" name="SignInNombre" type="text" class="ingresarR" placeholder="Nombre Real" />
+        <br><br>
+        <input id="a" name="SingInApell" type="text" class="ingresarR" placeholder="Apellido real" />
+        <br><br>
+        <input id="c" name="Credencial" type="number" class="ingresarR" placeholder="Credencial" />
+        <br><br>
+        <input id="f" name="FechadeNacimiento" type="date" class="ingresarR" placeholder="Fecha de nacimiento" />
+        <br><br>
+        <button id="RegistrarPac" onclick="conexionWeb3()" class="minibutton" name="Registrarse"
+            value="Crear cuenta">Registrarse</button>
+
+        <br><br>
+        <label id="yatienescuenta">ya tienes cuenta? </label>
+        <a href="../html/Iniciarsesion.html" class="linkIS">Inicia Sesion</a>
+
+    </div>
+    <div id="divi">
+    </div>
+    <div id="divAgregardatos">
+    </div>
     <script>
         console.log("EDFCGH")
         var web3 = new Web3(window.ethereum);
         var contract = new web3.eth.Contract(contract_abi, "0x633284cb7e86cf89C42297FA5b533e9aB1F0dA18");
-        async () => {            
-            web3 = await ethereum.request({ method: 'eth_requestAccounts'});
+        async () => {
+            web3 = await ethereum.request({ method: 'eth_requestAccounts' });
         }
         async function connectWallet() {
             userAccount = web3.currentProvider.selectedAddress
-            console.log(userAccount)     
+            console.log(userAccount)
         }
         function setearPacientes() {
             console.log("setP")
@@ -73,36 +77,77 @@
             var apellidoPaciente;
             var dni;
             nombrePaciente = document.getElementById('n').value;
-            apellidoPaciente = document.getElementById('a').value; 
+            apellidoPaciente = document.getElementById('a').value;
             dni = document.getElementById('u').value;
             console.log(dni)
             var txn = contract.methods.set_Paciente(nombrePaciente, apellidoPaciente, dni);
-            txn.send({from:web3.eth.currentProvider.selectedAddress}).then(
+            txn.send({ from: web3.eth.currentProvider.selectedAddress }).then(
                 param => {
-                    if(param.blockHash){
+                    if (param.blockHash) {
                         //redirect
-                    }   
+                    }
                 }
             )
         }
-        async function conexionWeb3(){
+        async function conexionWeb3() {
             // checkear si la cuenta existe
-
+            //Registrar del paciente
+            $("#RegistrarPac").click(function () {
+                $("#RegistrarPac").removeClass("minibutton");
+                $("#RegistrarPac").addClass("minibuttonClick");
+                if ($("#u").val() == '' || $("#p").val() == '' || $("#n").val() == '' || $("#a").val() == '' || $("#c").val() == '' || $("#f").val() == '') {
+                    $("#divAgregardatos").html("Hay campos vacios");
+                    $("#divAgregardatos").show();
+                    $("#u").removeClass("ingresar");
+                    $("#u").addClass("noIngresado");
+                    $("#p").removeClass("ingresar");
+                    $("#p").addClass("noIngresado");
+                } else {
+                    $.ajax({
+                        type: 'POST',
+                        url: '../php/registrar.php',
+                        dataType: "json",
+                        data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val() + '&nom=' + $("#n").val() + '&ape=' + $("#a").val() + '&Credencial=' + $("#c").val() + '&FechadeNacimiento=' + $("#f").val(),       //mandamos toda la info para que se registre en nuestra bdd.
+                        success: function (data) {
+                            if (data.status == 'ok') {
+                                console.log("hola")
+                                mensaje = "Se registro correctamente el usuario";
+                                $("#divr").html(mensaje);
+                                $("#divr").show();
+                                window.location.replace('../php/pantallaprincipal.php');
+                            }
+                            else if (data.status == 'err') {
+                                mensaje = ("El usuario que intento ingresar ya existe");
+                                $("#divr").html(mensaje);
+                                $("#divr").show();
+                            }
+                            else {
+                                mensaje = ("Ocurrio un error");
+                                $("#divr").html(mensaje);
+                                $("#divr").show();
+                            }
+                        },
+                        error: function (error) {
+                            ;
+                        },
+                    });
+                }
+            });
             //import detectEthereumProvider from '@metamask/detect-provider';
-                if (typeof window.etherseum !== "undefined" || window.ethereum._state.account == undefined) {   
-                    const accounts = await ethereum.request({ method: 'eth_requestAccounts'});
-                    //await connectWallet();
-                    await setearPacientes();                               
-                }
-                else{
-                    alert("No tiene instalado MetaMask, por favor instalelo");  
-                    await window.open("https://metamask.io/download/", "_blank");
-                }
+            if (typeof window.etherseum !== "undefined" || window.ethereum._state.account == undefined) {
+                const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+                //await connectWallet();
+                await setearPacientes();
             }
+            else {
+                alert("No tiene instalado MetaMask, por favor instalelo");
+                await window.open("https://metamask.io/download/", "_blank");
+            }
+        }
         //var button = document.getElementById("RegistrarPac")
         //button.addEventListener("click",  conexionWeb3)  
     </script>
-   
+
 </body>
 
 </html>
