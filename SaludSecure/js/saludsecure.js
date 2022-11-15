@@ -78,7 +78,7 @@ $(document).ready(function () {
     //finaliza aca
 
 
-
+    /*
     //Registrar del paciente
     $("#RegistrarPac").click(function () {
         $( "#RegistrarPac" ).removeClass( "minibutton" );
@@ -120,7 +120,7 @@ $(document).ready(function () {
             },
         });
     }
-    });
+    });*/
 
     $("#RegistrarPac").mouseover(function () {
         $(".boton").css("cursor", "pointer");

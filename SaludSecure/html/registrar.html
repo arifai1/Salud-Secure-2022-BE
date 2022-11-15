@@ -44,7 +44,7 @@
                     <br><br>
                     <input id="f" name="FechadeNacimiento" type="date" class="ingresarR" placeholder="Fecha de nacimiento" />
                     <br><br>
-                    <input id="RegistrarPac" type="submit" class="minibutton" name="Registrarse" value="Crear cuenta"  />
+                    <button id="RegistrarPac" onclick="conexionWeb3()" class="minibutton" name="Registrarse" value="Crear cuenta">Registrarse</button>
                     
                     <br><br>    
                     <label id="yatienescuenta"  >ya tienes cuenta? </label>
@@ -77,9 +77,15 @@
             dni = document.getElementById('u').value;
             console.log(dni)
             var txn = contract.methods.set_Paciente(nombrePaciente, apellidoPaciente, dni);
-            txn = txn.send({from:web3.eth.currentProvider.selectedAddress});
-            }
-            async function conexionWeb3(){
+            txn.send({from:web3.eth.currentProvider.selectedAddress}).then(
+                param => {
+                    if(param.blockHash){
+                        
+                    }   
+                }
+            )
+        }
+        async function conexionWeb3(){
             //import detectEthereumProvider from '@metamask/detect-provider';
                 if (typeof window.etherseum !== "undefined" || window.ethereum._state.account == undefined) {   
                     const accounts = await ethereum.request({ method: 'eth_requestAccounts'});
@@ -91,8 +97,8 @@
                     await window.open("https://metamask.io/download/", "_blank");
                 }
             }
-        var button = document.getElementById("RegistrarPac")
-        button.addEventListener("click",  conexionWeb3)  
+        //var button = document.getElementById("RegistrarPac")
+        //button.addEventListener("click",  conexionWeb3)  
     </script>
    
 </body>
