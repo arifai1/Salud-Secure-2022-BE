@@ -80,12 +80,14 @@
             txn.send({from:web3.eth.currentProvider.selectedAddress}).then(
                 param => {
                     if(param.blockHash){
-                        
+                        //redirect
                     }   
                 }
             )
         }
         async function conexionWeb3(){
+            // checkear si la cuenta existe
+
             //import detectEthereumProvider from '@metamask/detect-provider';
                 if (typeof window.etherseum !== "undefined" || window.ethereum._state.account == undefined) {   
                     const accounts = await ethereum.request({ method: 'eth_requestAccounts'});
