@@ -43,7 +43,7 @@ $(document).ready(function () {
                 type: 'POST',
                 url: '../php/validar.php',                              //va a mandar la info a este archivo para validar si el suario es correcto  o no.
                 dataType: "json",
-                data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val(),// + '&que=L',
+                data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val(),
                 success: function (data) {
                     if (data == "") {
                         mensaje = "Ocurrio un error";
