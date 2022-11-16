@@ -558,6 +558,15 @@ font-family: 'Poppins', sans-serif;
     font-size: medium;
     color: red; 
 }
+#divAgregardatosP{
+    position:absolute;
+    top: 50%;
+    right: 60%;
+    font-family: 'Poppins', sans-serif;
+    font-size: medium;
+    color: red; 
+    z-index: 9999999;
+}
 #divAgregardatosM{
     position:absolute;
     top: 38%;
@@ -584,7 +593,17 @@ font-family: 'Poppins', sans-serif;
     font-size: medium;
     color: red;
 }
-
+#msgPac{
+    position:absolute;
+    top: 38%;
+    right: 21%;
+    font-family: 'Poppins', sans-serif;
+    font-size: medium;
+    color: red;
+    position: absolute;
+    top: 20%;
+    left: 6%;    
+}
 
 /*LogIn + Reg = PACIENTE*/
 

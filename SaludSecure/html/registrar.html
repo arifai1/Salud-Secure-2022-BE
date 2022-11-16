@@ -55,9 +55,9 @@
         <a href="../html/Iniciarsesion.html" class="linkIS">Inicia Sesion</a>
 
     </div>
-    <div id="divMsgDoc">
+    <div id="msgPac">
     </div>
-    <div id="divAgregardatos">
+    <div id="divAgregardatosP">
     </div>
     <script>
         console.log("EDFCGH")
@@ -93,8 +93,8 @@
             // checkear si la cuenta existe
             //Registrar del paciente
                 if ($("#u").val() == '' || $("#p").val() == '' || $("#n").val() == '' || $("#a").val() == '' || $("#c").val() == '' || $("#f").val() == '') {
-                    $("#divAgregardatos").html("Hay campos vacios");
-                    $("#divAgregardatos").show();
+                    $("#divAgregardatosP").html("Hay campos vacios");
+                    $("#divAgregardatosP").show();
                     console.log("ayayay");
                     $("#u").removeClass("ingresar");
                     $("#u").addClass("noIngresado");
@@ -110,8 +110,8 @@
                             if (data.status == 'ok') {
                                 console.log("hola")
                                 mensaje = "Se registro correctamente el usuario";
-                                $("#divAgregardatos").html(mensaje);
-                                $("#divAgregardatos").show();
+                                $("#msgPac").html(mensaje);
+                                $("#msgPac").show();
                                 if (typeof window.etherseum !== "undefined" || window.ethereum._state.account == undefined) {
                                     const accounts = /*await*/ ethereum.request({ method: 'eth_requestAccounts' });
                                     //await connectWallet();
@@ -121,13 +121,13 @@
                             }
                             else if (data.status == 'err') {
                                 mensaje = ("El usuario que intento ingresar ya existe");
-                                $("#divAgregardatos").html(mensaje);
-                                $("#divAgregardatos").show();
+                                $("#msgPac").html(mensaje);
+                                $("#msgPac").show();
                             }
                             else {
                                 mensaje = ("Ocurrio un error");
-                                $("#divAgregardatos").html(mensaje);
-                                $("#divAgregardatos").show();
+                                $("#msgPac").html(mensaje);
+                                $("#msgPac").show();
                             }
                         },
                         error: function (error) {
