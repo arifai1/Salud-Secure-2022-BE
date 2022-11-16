@@ -12,18 +12,14 @@ if (!isset($_SESSION['user'])){
     <link rel="stylesheet" href="../css/font.css">
         <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
         <script src="../js/saludSecureABI.js" type="text/javascript"></script>
-        <script src="../js/asignacionPyM.js" type="text/javascript"></script>
         <script src="../js/saludsecure.js" type="text/javascript"></script>
         <script src="../js/SobreBesmo.js" type="text/javascript"></script>
 	    <link rel="Icon" href="../imagenes/logo-Header.png">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script type="module" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-        <!-- <script language="javascript" type="text/javascript" src="web3.min.js"></script> -->
-        <!-- <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>  -->
         <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
         <script language="javascript" type="text/javascript" 
         src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <!-- <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script> -->
         <script language="javascript" type="text/javascript" 
         src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.8.0/web3.min.js"></script>
         <link href="" rel="shortcut icon">
@@ -76,17 +72,11 @@ if (!isset($_SESSION['user'])){
             cols="30"></textarea>
     </div>
         <div class = "container">
-          <button id= "EnviarSC" ></button>
+          <button id= "EnviarSC" onclick = "conexionWeb3()"></button>
         </div>
     <script>
-        //MANDAR RECETA, LAS VARIABLES NO ESTAN DEL TODO BIEN
-        //_nombre, _apellido, _DNI, _aclaracion, _cantidad, _medicamento
-        //const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.maticvigil.com');
-        //const contract_address = '0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5' ;
-        //const SaludSecure = new ethers.Contract(contract_address,contract_abi, provider);
-        //const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.maticvigil.com');
         var web3 = new Web3(window.ethereum);
-        var contract = new web3.eth.Contract(contract_abi, "0x633284cb7e86cf89C42297FA5b533e9aB1F0dA18"); //0xB398BEC709dB7c11476128BBBa4586d5A315431b
+        var contract = new web3.eth.Contract(contract_abi, "0xB398BEC709dB7c11476128BBBa4586d5A315431b");
         async () => {
             web3 = await ethereum.request({ method: 'eth_requestAccounts'});
         }
@@ -102,28 +92,20 @@ if (!isset($_SESSION['user'])){
             var pacienteDni
             var medicamento
             var aclaracion
-            pacienteDni = await document.getElementById('dnidelpacCrearRec').value;
-            medicamento = await document.getElementById('tratamiento').value;
-            aclaracion = await document.getElementById('indicaciones').value;
+            pacienteDni = document.getElementById('dnidelpacCrearRec').value;
+            medicamento = document.getElementById('tratamiento').value;
+            aclaracion = document.getElementById('indicaciones').value;
             console.log(contract.methods)
             var tx = await contract.methods.set_receta(pacienteDni, medicamento, aclaracion)
-            tx = tx.send({from:web3.eth.currentProvider.selectedAddress});
-            tx.then(t => {
-                console.log(t)
-            }).catch(e => {
-                console.log(e)
-            })
-
-            /*var txn;
-            var sendRecetas;
-            async () => {
-                txn = await saludSecure.methods.set_Receta();
-                txn.send()
-                sendRecetas = await saludSecure.methods.sendReceta('#dnidelpacCrearRec', '#tratamiento', '#indicaciones');
-            }
-            //console.log(sendRecetas)
-            console.log(sendRecetas.methods)*/
-            
+            tx.send({from:web3.eth.currentProvider.selectedAddress}).then(
+                param => {
+                    if (param.blockHash) {
+                        alert("La receta fue enviada exitosamente");
+                        //vaciar los inputs 
+                        //window.location.replace('../php/pantallaprincipal.php');
+                    }
+                }
+            )
         }
         $(function(){
             $( "#button" ).click(function() {
@@ -142,30 +124,16 @@ if (!isset($_SESSION['user'])){
             }        
         });
         async function conexionWeb3(){
-        //import detectEthereumProvider from '@metamask/detect-provider';
 		    if (typeof window.ethereum !== "undefined" || window.ethereum._state.account == null) {   
                 const accounts = await ethereum.request({ method: 'eth_requestAccounts'});
-                //if(accounts.length !== null){
-                connectWallet();
                 sendReceta();
-                    //DIV QUE DIGA METAMASK CONECTADO!
-                }                                  
-            //sendReceta();
-            //   mensajeM = "Conectando con MetaMask";                                                           
-            //   $("#divt").html(mensajeM);
-            //   $("#divt").show();         
+            }                                          
             
 	        else{
 		        alert("No tiene instalado MetaMask, por favor instalelo");
-                //mensaje = "No tiene instalado MetaMask, por favor instalelo apretando el boton 'Conectar con MetaMask'";                                                           //Href me indica destino.
-                //$("#divt").html(mensaje);
-                //$("#divt").show();
-                await window.open("https://metamask.io/download/", "_blank")
+                //await window.open("https://metamask.io/download/", "_blank")
 		    }
         }
-        var button = document.getElementById("EnviarSC")
-        button.addEventListener("click", conexionWeb3)  
-        
     </script>
 </body>
 </html>
