@@ -164,7 +164,7 @@ p{
     background-image: url("../imagenes/UsuPaciente-1.png");
     background-repeat: no-repeat;
     background-size: 208px 410px;
-    
+    cursor:pointer;    
 }
 #CrearRec{
     background-color: #4a4eb5;

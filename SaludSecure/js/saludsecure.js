@@ -318,27 +318,7 @@ $(document).ready(function () {
     $("#LO_M").click(function () {
         window.location.replace('../php/logout.php');
     });
-    $("#LO_M").mouseover(function () {
-        $(".boton").css("cursor", "pointer");
-    });
-    $("#LO").click(function () {
-        window.location.replace('../php/logout.php');
-    });
-    $("#LO").mouseover(function () {
-        $(".boton").css("cursor", "pointer");
-    });
     //finaliza aca los LogOut
-
-    $("#Recetas").click(function () {
-        window.location.replace('../php/misRecetas.php'); //redirigimos a donde estan todos las recetas.
-    });
-    $("#Recetas").mouseover(function () {
-        $(".boton").css("cursor", "pointer");
-    });
-    $("#Buscar").mouseover(function () {
-        $(".boton").css("cursor", "pointer");
-    });
-
     $("#RegresarSB").click(function () {
         window.location.replace('../html/SobreBesmo.html');
     });
@@ -383,33 +363,18 @@ $(document).ready(function () {
     $("#MisRecetas").click(function () {
         window.location.replace('../php/misRecetas.php');
     });
-    $("#MisRecetas").mouseover(function () {
-        $(".boton").css("cursor", "pointer");
-    });
     $("#MisMedicos").click(function () {
         window.location.replace('../php/MisMedicos.php'); //redirigimos a una pagina en la que esten todos los medicos asignados.
-    });
-    $("#MisMedicos").mouseover(function () {
-        $(".boton").css("cursor", "pointer");
     });
 
     //botones pantallaprincipal_doc.html
     $("#NosotrosM").click(function () {
         window.location.replace('../php/pantallanosotros_doc.php'); //mostramos info sobre nosotros
     });
-    $("#NosotrosM").mouseover(function () {
-        $(".boton").css("cursor", "pointer");
-    });
     $("#CrearRec").click(function () {
         window.location.replace('../php/CrearReceta.php'); //redirigimos al smartcontract.
     });
-    $("#CrearRec").mouseover(function () {
-        $(".boton").css("cursor", "pointer");
-    });
     $("#MisPacientes").click(function () {
         window.location.replace('../php/MisPacientesOK.php');
-    });
-    $("#MisPacientes").mouseover(function () {
-        $(".boton").css("cursor", "pointer");
     });
 });

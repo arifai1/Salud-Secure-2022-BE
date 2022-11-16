@@ -80,9 +80,9 @@ $(document).ready(function () {
         $( "#RegistrarPac" ).removeClass( "minibutton" );
         $( "#RegistrarPac" ).addClass( "minibuttonClick");
 
-    $("#RegistrarPac").mouseover(function () {
-        $(".boton").css("cursor", "pointer");
-    });
+    // $("#RegistrarPac").mouseover(function () {
+    //     $(".boton").css("cursor", "pointer");
+    // });
     //finaliza aca
     });
 });

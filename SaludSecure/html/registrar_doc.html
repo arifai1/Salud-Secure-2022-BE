@@ -57,18 +57,18 @@
         <br><br>
         <div id="divr">
         </div>
-        <button id="RegistrarMed" onclick="conexionWeb3()" class="minibutton" name="Registrarse"
-            value="Crear cuenta"></button>
+        <button id="RegistrarMed" onclick="conexionWeb3()" class="minibutton" name="Registrarse">Crear Cuenta</button>
         <br><br>
         <label id="yatienescuenta">ya tienes cuenta? </label>
         <a href="../html/Iniciarsesion_med.html" class="linkIS">Inicia Sesion</a>
         <br>
-
+        <div id="msgDoc">
+        </div>
+        <div id="divAgregardatosM">
+        </div>
     </div>
-    <div id="msgDoc">
-    </div>
-    <div id="divAgregardatosM">
-    </div>
+ 
+   
     <script>
         var web3 = new Web3(window.ethereum);
         var contract = new web3.eth.Contract(contract_abi, "0x633284cb7e86cf89C42297FA5b533e9aB1F0dA18");
