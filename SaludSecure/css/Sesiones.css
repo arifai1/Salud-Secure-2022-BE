@@ -552,16 +552,17 @@ font-family: 'Poppins', sans-serif;
 
 #divAgregardatos{
     position:absolute;
-    top: 38%;
-    right: 21%;
-font-family: 'Poppins', sans-serif;
+    top: 120%;
+    right: 80%;
+    font-family: 'Poppins', sans-serif;
     font-size: medium;
     color: red; 
+    z-index: 9999999;
 }
 #divAgregardatosP{
     position:absolute;
-    top: 50%;
-    right: 60%;
+    top: 120%;
+    right: 80%;
     font-family: 'Poppins', sans-serif;
     font-size: medium;
     color: red; 
@@ -569,11 +570,12 @@ font-family: 'Poppins', sans-serif;
 }
 #divAgregardatosM{
     position:absolute;
-    top: 38%;
-    right: 21%;
-font-family: 'Poppins', sans-serif;
+    top: 120%;
+    right: 80%;
+    font-family: 'Poppins', sans-serif;
     font-size: medium;
     color: red; 
+    z-index: 9999999;
 }
 
 
@@ -595,14 +597,12 @@ font-family: 'Poppins', sans-serif;
 }
 #msgPac{
     position:absolute;
-    top: 38%;
-    right: 21%;
+    top: 118%;
+    right: 70%;
     font-family: 'Poppins', sans-serif;
     font-size: medium;
-    color: red;
-    position: absolute;
-    top: 20%;
-    left: 6%;    
+    color: red; 
+    z-index: 9999999;
 }
 
 /*LogIn + Reg = PACIENTE*/

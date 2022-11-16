@@ -93,9 +93,9 @@
             // checkear si la cuenta existe
             //Registrar del paciente
                 if ($("#u").val() == '' || $("#p").val() == '' || $("#n").val() == '' || $("#a").val() == '' || $("#c").val() == '' || $("#f").val() == '') {
+                    $("#msgPac").show();
                     $("#divAgregardatosP").html("Hay campos vacios");
                     $("#divAgregardatosP").show();
-                    console.log("ayayay");
                     $("#u").removeClass("ingresar");
                     $("#u").addClass("noIngresado");
                     $("#p").removeClass("ingresar");
@@ -108,7 +108,8 @@
                         data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val() + '&nom=' + $("#n").val() + '&ape=' + $("#a").val() + '&Credencial=' + $("#c").val() + '&FechadeNacimiento=' + $("#f").val(),       //mandamos toda la info para que se registre en nuestra bdd.
                         success: function (data) {
                             if (data.status == 'ok') {
-                                console.log("hola")
+                                $("#divAgregardatosP").hide();
+                                $("#msgPac").hide();
                                 mensaje = "Se registro correctamente el usuario";
                                 $("#msgPac").html(mensaje);
                                 $("#msgPac").show();
@@ -120,11 +121,15 @@
                                 //window.location.replace('../php/pantallaprincipal.php');
                             }
                             else if (data.status == 'err') {
+                                $("#divAgregardatosP").hide();
+                                $("#msgPac").hide();
                                 mensaje = ("El usuario que intento ingresar ya existe");
                                 $("#msgPac").html(mensaje);
                                 $("#msgPac").show();
                             }
                             else {
+                                $("#divAgregardatosP").hide();
+                                $("#msgPac").hide();
                                 mensaje = ("Ocurrio un error");
                                 $("#msgPac").html(mensaje);
                                 $("#msgPac").show();
