@@ -16,13 +16,14 @@ if (!isset($_SESSION['user'])){
         <script src="../js/SobreBesmo.js" type="text/javascript"></script>
 	    <link rel="Icon" href="../imagenes/logo-Header.png">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script type="module" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+        //<script type="module" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
         <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
         <script language="javascript" type="text/javascript" 
         src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script language="javascript" type="text/javascript" 
         src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.8.0/web3.min.js"></script>
         <link href="" rel="shortcut icon">
+        
 </head>
 <body>
     <header>
@@ -100,7 +101,7 @@ if (!isset($_SESSION['user'])){
             tx.send({from:web3.eth.currentProvider.selectedAddress}).then(
                 param => {
                     if (param.blockHash) {
-                        alert("La receta fue enviada exitosamente");
+                        mensaje = ("La receta fue enviada exitosamente");
                         //vaciar los inputs 
                         //window.location.replace('../php/pantallaprincipal.php');
                     }
@@ -126,6 +127,7 @@ if (!isset($_SESSION['user'])){
         async function conexionWeb3(){
 		    if (typeof window.ethereum !== "undefined" || window.ethereum._state.account == null) {   
                 const accounts = await ethereum.request({ method: 'eth_requestAccounts'});
+                console.log("hi")
                 sendReceta();
             }                                          
             
