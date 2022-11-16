@@ -79,7 +79,7 @@ $(document).ready(function () {
     $("#RegistrarPac").click(function () {
         $( "#RegistrarPac" ).removeClass( "minibutton" );
         $( "#RegistrarPac" ).addClass( "minibuttonClick");
-        if ($("#u").val() == '' || $("#p").val() ==''|| $("#n").val() ==''|| $("#a").val() ==''|| $("#c").val() ==''|| $("#f").val() =='') {
+        /*if ($("#u").val() == '' || $("#p").val() ==''|| $("#n").val() ==''|| $("#a").val() ==''|| $("#c").val() ==''|| $("#f").val() =='') {
             $("#divAgregardatos").html("Hay campos vacios");
             $("#divAgregardatos").show();
             $( "#u" ).removeClass( "ingresar" );
@@ -120,6 +120,7 @@ $(document).ready(function () {
 
     $("#RegistrarPac").mouseover(function () {
         $(".boton").css("cursor", "pointer");
-    });
+    });*/
     //finaliza aca
-})
+    });
+});
