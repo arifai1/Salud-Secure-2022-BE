@@ -79,48 +79,10 @@ $(document).ready(function () {
     $("#RegistrarPac").click(function () {
         $( "#RegistrarPac" ).removeClass( "minibutton" );
         $( "#RegistrarPac" ).addClass( "minibuttonClick");
-        /*if ($("#u").val() == '' || $("#p").val() ==''|| $("#n").val() ==''|| $("#a").val() ==''|| $("#c").val() ==''|| $("#f").val() =='') {
-            $("#divAgregardatos").html("Hay campos vacios");
-            $("#divAgregardatos").show();
-            $( "#u" ).removeClass( "ingresar" );
-            $( "#u" ).addClass( "noIngresado");
-            $( "#p" ).removeClass( "ingresar" );
-            $( "#p" ).addClass( "noIngresado");
-        }else{ 
-        $.ajax({
-            type: 'POST',
-            url: '../php/registrar.php',
-            dataType: "json",
-            data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val() + '&nom=' + $("#n").val() + '&ape=' + $("#a").val() + '&Credencial=' + $("#c").val() + '&FechadeNacimiento=' + $("#f").val(),       //mandamos toda la info para que se registre en nuestra bdd.
-            success: function (data) {
-                if (data.status == 'ok') {
-                    console.log("hola")
-                    mensaje = "Se registro correctamente el usuario";
-                    $("#divr").html(mensaje);
-                    $("#divr").show();
-                    window.location.replace('../php/pantallaprincipal.php');
-                }
-                else if (data.status == 'err') {
-                    mensaje = ("El usuario que intento ingresar ya existe");
-                    $("#divr").html(mensaje);
-                    $("#divr").show();
-                }
-                else {
-                    mensaje=("Ocurrio un error");
-                    $("#divr").html(mensaje);
-                    $("#divr").show();
-                }
-            },
-            error: function (error) {
-                ;
-            },
-        });
-    }
-    });
 
     $("#RegistrarPac").mouseover(function () {
         $(".boton").css("cursor", "pointer");
-    });*/
+    });
     //finaliza aca
     });
 });
