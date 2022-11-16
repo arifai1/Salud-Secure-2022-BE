@@ -1,6 +1,4 @@
 $(document).ready(function () {
-
-
 //     //LogIn del paciente                                                                                                        
 //     $("#divi").hide();
 //     $("#LogIn").click(function () {
