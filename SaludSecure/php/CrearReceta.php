@@ -59,7 +59,7 @@ if (!isset($_SESSION['user'])){
 
         </div>
     </form>
-
+    <div id = "ExistePaciente">
     <div id="CrearReceta">
         <div class="smallheader2">
             <label id="title2" class="titles">Crear Receta</label>

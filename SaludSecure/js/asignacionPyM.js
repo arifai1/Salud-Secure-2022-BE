@@ -12,13 +12,18 @@ $("#EnviarSC").click(function (e) {
             console.log(data);
             if (data.status == 'ok') {
                 mensaje = "Se envio la receta correctamente";
-                $("#divt").html(mensaje);
-                $("#divt").show();
+                $("ExistePaciente").html(mensaje);
+                $("#ExistePaciente").show();
+            }
+            else if (data.status == 'err'){
+                mensaje = "No hay pacientes con ese DNI";
+                $("#ExistePaciente").html(mensaje);
+                $("#ExistePaciente").show();
             }
             else{
                 mensaje = "Ocurrio un error";
-                $("#divt").html(mensaje);
-                $("#divt").show();
+                $("#ExistePaciente").html(mensaje);
+                $("#ExistePaciente").show();
             }
             //mostramos la $data en la consola para verificar que este todo en orden
             //   console.log("te muestro la data");
