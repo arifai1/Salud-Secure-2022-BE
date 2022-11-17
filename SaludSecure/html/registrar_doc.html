@@ -62,12 +62,12 @@
         <label id="yatienescuenta">ya tienes cuenta? </label>
         <a href="../html/Iniciarsesion_med.html" class="linkIS">Inicia Sesion</a>
         <br>
-        <div id="msgDoc">
-        </div>
-        <div id="divAgregardatosM">
-        </div>
+        
     </div>
- 
+    <div id="msgDoc">
+    </div>
+    <div id="divAgregardatosM">
+    </div>
    
     <script>
         var web3 = new Web3(window.ethereum);
@@ -98,10 +98,12 @@
         }
         async function conexionWeb3() {
             //registrar del medico
-            $("#RegistrarMed").click(function () {
+            //$("#RegistrarMed").click(function () {
                 $("#RegistrarMed").removeClass("minibutton");
                 $("#RegistrarMed").addClass("minibuttonClick");
                 if ($("#UsuMed").val() == '' || $("#PassMed").val() == '' || $("#NomMed").val() == '' || $("#ApeMed").val() == '' || $("#AreaMed").val() == '' || $("#teleMed").val() == '') {
+                    console.log("faltan cosas")
+                    $("#msgdDoc").show();
                     $("#divAgregardatosM").html("Hay campos vacios");
                     $("#divAgregardatosM").show();
                     $("#u").removeClass("ingresar");
@@ -116,6 +118,11 @@
                         data: 'usum=' + $("#UsuMed").val() + '&passm=' + $("#PassMed").val() + '&nom=' + $("#NomMed").val() + '&ape=' + $("#ApeMed").val() + '&Aream=' + $("#AreaMed").val() + '&telefonoMed=' + $("#teleMed").val(), //'&DNI='+$("#DNIMed").val()+
                         success: function (data) {
                             if (data.status == 'ok') {
+                                $("#divAgregardatosM").hide();
+                                $("#msgDoc").hide();
+                                mensaje = "Se registro correctamente el usuario";
+                                $("#msgDoc").html(mensaje);         //no se muestra
+                                $("#msgDoc").show();
                                 if (typeof window.etherseum !== "undefined" || window.ethereum._state.account == undefined) {
                                     const accounts = ethereum.request({ method: 'eth_requestAccounts' });
                                     setearMedico();
@@ -124,15 +131,18 @@
                                     alert("No tiene instalado MetaMask, por favor instalelo");
                                     window.open("https://metamask.io/download/", "_blank");
                                 }
-                                $("#msgDoc").html(mensaje);
-                                $("#msgDoc").show();
+                                
                             }
                             else if (data.status == 'err') {
+                                $("#divAgregardatosM").hide();
+                                $("#msgDoc").hide();
                                 mensaje = "El usuario que intento ingresar ya existe";      //lo tira en cualquier lado
                                 $("#msgDoc").html(mensaje);
                                 $("#msgDoc").show();
                             }
                             else {
+                                $("#divAgregardatosM").hide();
+                                $("#msgDoc").hide();
                                 mensaje = "Ocurrio un error";
                                 $("#msgDoc").html(mensaje);
                                 $("#msgDoc").show();
@@ -143,8 +153,8 @@
                         },
                     });
                 }
-            });
-        }
+            //});
+        };
         var button = document.getElementById("RegistrarMed")
         button.addEventListener("click", conexionWeb3)
     </script>
