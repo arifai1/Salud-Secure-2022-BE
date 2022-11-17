@@ -33,8 +33,10 @@ if (!isset($_SESSION['user'])){
 	async function mirarReceta() {
         const provider = web3.currentProvider.selectedAddress; 
         const contract_address = "0xB398BEC709dB7c11476128BBBa4586d5A315431b" ;
-        const SaludSecure = new ethers.Contract(contract_address,contract_abi, provider); 
-        const txn = SaludSecure.methods.ver_Receta().call(); 
+        const contract = new ethers.Contract(contract_address,contract_abi, provider); 
+        //const txn = SaludSecure.methods.ver_Receta().call(); 
+        const txn = contract.ver_Receta("0xB398BEC709dB7c11476128BBBa4586d5A315431b")
+        console.log(txn);
         txn.then(function(result) {
             alert(result) 
         })
@@ -62,7 +64,7 @@ if (!isset($_SESSION['user'])){
 
             <div id="popup1" class="overlay">
 	        <div class="popup">
-		    <h2>Dr. Jon Doe</h2>
+		     <!--<h2>Dr. Jon Doe</h2>-->
 		    <a class="close" href="#">&times;</a>
             <!-- CAMBIAR LO DEL CONTENT POR LAS VARIABLES DEL SMART CONTRACT -->
             <div class="content">
