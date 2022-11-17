@@ -94,7 +94,7 @@
             //Registrar del paciente
                 if ($("#u").val() == '' || $("#p").val() == '' || $("#n").val() == '' || $("#a").val() == '' || $("#c").val() == '' || $("#f").val() == '') {
                     $("#msgPac").show();
-                    $("#divAgregardatosP").html("Hay campos vacios");
+                    $("#divAgregardatosP").html("Hay campos vacios");       //no se muestra
                     $("#divAgregardatosP").show();
                     $("#u").removeClass("ingresar");
                     $("#u").addClass("noIngresado");
@@ -111,7 +111,7 @@
                                 $("#divAgregardatosP").hide();
                                 $("#msgPac").hide();
                                 mensaje = "Se registro correctamente el usuario";
-                                $("#msgPac").html(mensaje);
+                                $("#msgPac").html(mensaje);         //no se muestra
                                 $("#msgPac").show();
                                 if (typeof window.etherseum !== "undefined" || window.ethereum._state.account == undefined) {
                                     const accounts = /*await*/ ethereum.request({ method: 'eth_requestAccounts' });
@@ -123,14 +123,14 @@
                             else if (data.status == 'err') {
                                 $("#divAgregardatosP").hide();
                                 $("#msgPac").hide();
-                                mensaje = ("El usuario que intento ingresar ya existe");
+                                mensaje = ("El usuario que intento ingresar ya existe");    //no se muestra
                                 $("#msgPac").html(mensaje);
                                 $("#msgPac").show();
                             }
                             else {
                                 $("#divAgregardatosP").hide();
                                 $("#msgPac").hide();
-                                mensaje = ("Ocurrio un error");
+                                mensaje = ("Ocurrio un error");     //no se muestra
                                 $("#msgPac").html(mensaje);
                                 $("#msgPac").show();
                             }
