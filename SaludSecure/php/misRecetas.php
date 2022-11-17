@@ -18,7 +18,10 @@ if (!isset($_SESSION['user'])){
     <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
 	<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-	<script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.8.0/web3.min.js"></script>
+    <script language="javascript" type="text/javascript" 
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../css/MisRecetas.css">
     <link rel="stylesheet" href="../css/font.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -29,17 +32,25 @@ if (!isset($_SESSION['user'])){
     //CODIGO PARA LEER RECETA --> PACIENTE
     // var Web3 = require("web3")
 	// const web3 = new Web3("https://cloudflare-eth.com")
-    //  const Web3 = new Web3(window.ethereum);   
-	async function mirarReceta() {
+    //  const Web3 = new Web3(window.ethereum);  
+    async function mirarReceta() {
+        console.log(contract_abi)
+        console.log("hi")
+        var web3 = new Web3(window.ethereum);
         const provider = web3.currentProvider.selectedAddress; 
-        const contract_address = "0xB398BEC709dB7c11476128BBBa4586d5A315431b" ;
-        const contract = new ethers.Contract(contract_address,contract_abi, provider); 
-        //const txn = SaludSecure.methods.ver_Receta().call(); 
-        const txn = contract.ver_Receta("0xB398BEC709dB7c11476128BBBa4586d5A315431b")
-        console.log(txn);
-        txn.then(function(result) {
-            alert(result) 
-        })
+        const SaludSecure = new web3.eth.Contract(contract_abi, "0xB398BEC709dB7c11476128BBBa4586d5A315431b", provider); 
+        var userAccount = web3.currentProvider.selectedAddress;
+        console.log(userAccount);
+        if (typeof window.etherseum !== "undefined" || window.ethereum._state.account == undefined) {
+            console.log("fh")
+            const accounts = ethereum.request({ method: 'eth_requestAccounts' });
+            const txn = await SaludSecure.methods.ver_Receta().call(/*{from: userAccount}*/); 
+            console.log(accounts)
+            console.log(txn)
+            /*txn.then(function(result) {
+                alert(result) 
+        }) */
+        }
     }
 </script>
 <body>
@@ -64,7 +75,7 @@ if (!isset($_SESSION['user'])){
 
             <div id="popup1" class="overlay">
 	        <div class="popup">
-		     <!--<h2>Dr. Jon Doe</h2>-->
+		    <h2>Dr. Jon Doe</h2>
 		    <a class="close" href="#">&times;</a>
             <!-- CAMBIAR LO DEL CONTENT POR LAS VARIABLES DEL SMART CONTRACT -->
             <div class="content">

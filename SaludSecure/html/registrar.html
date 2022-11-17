@@ -66,10 +66,9 @@
         async () => {
             web3 = await ethereum.request({ method: 'eth_requestAccounts' });
         }
-        async function connectWallet() {
-            userAccount = web3.currentProvider.selectedAddress
-            console.log(userAccount)
-        }
+        userAccount = web3.currentProvider.selectedAddress;
+        console.log(userAccount);
+
         function setearPacientes() {
             console.log("setP")
             $("#txStatus").text("Asignando pacientes. Puede tardar un rato...");
@@ -94,7 +93,7 @@
             //Registrar del paciente
                 if ($("#u").val() == '' || $("#p").val() == '' || $("#n").val() == '' || $("#a").val() == '' || $("#c").val() == '' || $("#f").val() == '') {
                     $("#msgPac").show();
-                    $("#divAgregardatosP").html("Hay campos vacios");       //no se muestra
+                    $("#divAgregardatosP").html("Hay campos vacios");
                     $("#divAgregardatosP").show();
                     $("#u").removeClass("ingresar");
                     $("#u").addClass("noIngresado");
@@ -111,26 +110,25 @@
                                 $("#divAgregardatosP").hide();
                                 $("#msgPac").hide();
                                 mensaje = "Se registro correctamente el usuario";
-                                $("#msgPac").html(mensaje);         //no se muestra
+                                $("#msgPac").html(mensaje);
                                 $("#msgPac").show();
                                 if (typeof window.etherseum !== "undefined" || window.ethereum._state.account == undefined) {
                                     const accounts = /*await*/ ethereum.request({ method: 'eth_requestAccounts' });
-                                    //await connectWallet();
                                     /*await*/ setearPacientes();
+                                    //cargar pantalla 
                                 }
-                                //window.location.replace('../php/pantallaprincipal.php');
                             }
                             else if (data.status == 'err') {
                                 $("#divAgregardatosP").hide();
                                 $("#msgPac").hide();
-                                mensaje = ("El usuario que intento ingresar ya existe");    //no se muestra
+                                mensaje = ("El usuario que intento ingresar ya existe");
                                 $("#msgPac").html(mensaje);
                                 $("#msgPac").show();
                             }
                             else {
                                 $("#divAgregardatosP").hide();
                                 $("#msgPac").hide();
-                                mensaje = ("Ocurrio un error");     //no se muestra
+                                mensaje = ("Ocurrio un error");
                                 $("#msgPac").html(mensaje);
                                 $("#msgPac").show();
                             }
@@ -140,19 +138,7 @@
                         },
                     });
                 }
-            };
-            //import detectEthereumProvider from '@metamask/detect-provider';
-            // if (typeof window.etherseum !== "undefined" || window.ethereum._state.account == undefined) {
-            //     const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-            //     //await connectWallet();
-            //     await setearPacientes();
-            // }
-            // else {
-            //     alert("No tiene instalado MetaMask, por favor instalelo");
-            //     await window.open("https://metamask.io/download/", "_blank");
-            // }
-        
-        //var button = document.getElementById("RegistrarPac")   
+            }; 
     </script>
 </body>
 
