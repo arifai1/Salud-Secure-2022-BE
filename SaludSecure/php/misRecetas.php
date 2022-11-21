@@ -37,14 +37,18 @@ if (!isset($_SESSION['user'])){
         console.log(contract_abi)
         console.log("hi")
         var web3 = new Web3(window.ethereum);
-        const provider = web3.currentProvider.selectedAddress; 
+        var provider = web3.currentProvider.selectedAddress; 
         const SaludSecure = new web3.eth.Contract(contract_abi, "0xB398BEC709dB7c11476128BBBa4586d5A315431b", provider); 
         var userAccount = web3.currentProvider.selectedAddress;
+        console.log(SaludSecure)
         console.log(userAccount);
         if (typeof window.etherseum !== "undefined" || window.ethereum._state.account == undefined) {
             console.log("fh")
             const accounts = ethereum.request({ method: 'eth_requestAccounts' });
-            const txn = await SaludSecure.methods.ver_Receta().call(/*{from: userAccount}*/); 
+            const txn = await SaludSecure.methods.getReceta.call({from: userAccount});
+            myString = Object.values(txn)
+            document.getElementById("miReceta").innerHTML = myString
+          
             console.log(accounts)
             console.log(txn)
             /*txn.then(function(result) {
@@ -67,7 +71,7 @@ if (!isset($_SESSION['user'])){
         <div id="MoverRecetas">
         <div id="item1"class="receta">
 
-            <label id="lbl2">Ibuprofeno</label>
+            <label id="lbl2"></label>
 
             <div class="box">
 	        <a onclick="mirarReceta()" class="button" href="#popup1">Click para ver receta </a>
@@ -75,11 +79,10 @@ if (!isset($_SESSION['user'])){
 
             <div id="popup1" class="overlay">
 	        <div class="popup">
-		    <h2>Dr. Jon Doe</h2>
 		    <a class="close" href="#">&times;</a>
-            <!-- CAMBIAR LO DEL CONTENT POR LAS VARIABLES DEL SMART CONTRACT -->
             <div class="content">
-			<!--Ibuprofeno 600g por cada 12 horas-->
+            <span id="miReceta"></span>
+			
 		</div>
         
 	</div>
