@@ -12,11 +12,12 @@ if (!isset($_SESSION['user'])){
     <link rel="stylesheet" href="../css/font.css">
         <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
         <script src="../js/saludSecureABI.js" type="text/javascript"></script>
+        <script src="../js/saludSecureAbi.01.js" type="text/javascript"></script>
         <script src="../js/saludsecure.js" type="text/javascript"></script>
         <script src="../js/SobreBesmo.js" type="text/javascript"></script>
 	    <link rel="Icon" href="../imagenes/logo-Header.png">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        //<script type="module" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
         <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
         <script language="javascript" type="text/javascript" 
         src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -77,7 +78,8 @@ if (!isset($_SESSION['user'])){
         </div>
     <script>
         var web3 = new Web3(window.ethereum);
-        var contract = new web3.eth.Contract(contract_abi, "0xB398BEC709dB7c11476128BBBa4586d5A315431b");
+        //var contract = new web3.eth.Contract(contract_abi, "0xB398BEC709dB7c11476128BBBa4586d5A315431b");
+        var contract = new web3.eth.Contract(contract_abi2, "0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5");
         async () => {
             web3 = await ethereum.request({ method: 'eth_requestAccounts'});
         }

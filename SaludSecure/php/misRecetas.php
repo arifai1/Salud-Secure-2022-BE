@@ -13,6 +13,7 @@ if (!isset($_SESSION['user'])){
     <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
 	<script src="../js/saludsecure.js" type="text/javascript"></script>
 	<script src="../js/saludSecureABI.js" type="text/javascript"></script>
+    <script src="../js/saludSecureAbi.01.js" type="text/javascript"></script>
 	<script src="../js/SobreBesmo.js" type="text/javascript"></script>
     <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
     <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
@@ -38,20 +39,29 @@ if (!isset($_SESSION['user'])){
         console.log("hi")
         var web3 = new Web3(window.ethereum);
         var provider = web3.currentProvider.selectedAddress; 
-        const SaludSecure = new web3.eth.Contract(contract_abi, "0xB398BEC709dB7c11476128BBBa4586d5A315431b", provider); 
+        //const SaludSecure = new web3.eth.Contract(contract_abi, "0xB398BEC709dB7c11476128BBBa4586d5A315431b", provider); 
+        const SaludSecure = new web3.eth.Contract(contract_abi2, "0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5", provider);
         var userAccount = web3.currentProvider.selectedAddress;
         console.log(SaludSecure)
         console.log(userAccount);
         if (typeof window.etherseum !== "undefined" || window.ethereum._state.account == undefined) {
             console.log("fh")
-            const accounts = ethereum.request({ method: 'eth_requestAccounts' });
-            const txn = await SaludSecure.methods.getReceta.call({from: userAccount});
+            const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+            await SaludSecure.methods.getReceta().call(function (err, res) {
+            if (err) {
+              console.log("An error occured", err)
+              return
+            }
+            console.log(res)
+})
+
+            /*const txn = await SaludSecure.methods.getReceta.call({from: userAccount});
             myString = Object.values(txn)
             document.getElementById("miReceta").innerHTML = myString
           
             console.log(accounts)
             console.log(txn)
-            /*txn.then(function(result) {
+            txn.then(function(result) {
                 alert(result) 
         }) */
         }
