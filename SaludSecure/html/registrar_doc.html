@@ -39,7 +39,7 @@
     <br><br><br>
     <label id="lbl3"><strong>V</strong>isualizar las recetas creadas</label>
   
-    <div id="popupmed" >
+    <div id="popupmed" class="card">
     
         <h1>Espere un momento</h1>
         <label>Se están verificando sus datos</label>
@@ -118,7 +118,7 @@
             //$("#RegistrarMed").click(function () {
                 $("#RegistrarMed").removeClass("minibutton");
                 $("#RegistrarMed").addClass("minibuttonClick");
-                $("#popupmed").addClass("card");
+                document.getElementById("popupmed").style.display = "block";
                 document.getElementById("overlay").style.display = "block";
                 if ($("#UsuMed").val() == '' || $("#PassMed").val() == '' || $("#NomMed").val() == '' || $("#ApeMed").val() == '' || $("#AreaMed").val() == '' || $("#teleMed").val() == '') {
                     console.log("faltan cosas")
@@ -129,6 +129,7 @@
                     $("#u").addClass("noIngresado");
                     $("#p").removeClass("ingresar");
                     $("#p").addClass("noIngresado");
+                    
                 } else {
                     $.ajax({
                         type: 'POST',
@@ -139,7 +140,7 @@
                             if (data.status == 'ok') {
                                 $("#divAgregardatosM").hide();
                                 $("#msgDoc").hide();
-                                $("#popupmed").removeClass("card");
+                                
                                 mensaje = "Se registro correctamente el usuario";
                                 $("#msgDoc").html(mensaje);         //no se muestra
                                 $("#msgDoc").show();

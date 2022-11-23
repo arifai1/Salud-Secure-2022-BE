@@ -33,6 +33,16 @@
     <br><br><br>
     <label id="lbl5"><strong>T</strong>ener una lista de médicos a mano</label>
     <br><br><br>
+    <div id="popupPac" class="card">
+    
+        <h1>Espere un momento</h1>
+        <label>Se están verificando sus datos</label>
+        <div class="loader">
+          <div class="spin"></div>
+          <div class="bounce"></div>
+        </div>
+    </div>
+      <div id="overlayPac"></div>
 
     <div id="registerformP">
         <h1 id="regPh1">Crear Cuenta</h1>
@@ -93,6 +103,8 @@
         async function conexionWeb3() {
             // checkear si la cuenta existe
             //Registrar del paciente
+            document.getElementById("popupPac").style.display = "block";
+            document.getElementById("overlayPac").style.display = "block";
                 if ($("#u").val() == '' || $("#p").val() == '' || $("#n").val() == '' || $("#a").val() == '' || $("#c").val() == '' || $("#f").val() == '') {
                     $("#msgPac").show();
                     $("#divAgregardatosP").html("Hay campos vacios");
@@ -102,6 +114,7 @@
                     $("#p").removeClass("ingresar");
                     $("#p").addClass("noIngresado");
                 } else {
+                    
                     $.ajax({
                         type: 'POST',
                         url: '../php/registrar.php',

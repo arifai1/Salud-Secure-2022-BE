@@ -5,7 +5,26 @@
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
 }
+#popupmed{
+    display: none;
+}
+#popupPac{
+    display: none;
+}
 #overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }
+  #overlayPac {
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */
     width: 100%; /* Full width (cover the whole page) */
@@ -29,9 +48,9 @@
     padding: 24px 32px;
     position: relative;
     text-align: center;
-    top: 50%;
-    -webkit-transform: translateY(-50%) translateX(-50%);
-    transform: translateY(-50%) translateX(-50%);
+    top: 60%;
+    -webkit-transform: translateY(-5%) translateX(-30%);
+    transform: translateY(-5%) translateX(-30%);
     width: 400px;
     z-index: 999999;
 }
@@ -50,7 +69,7 @@
     color: #303030;
     font-weight: 300;
     line-height: 24px;
-    margin: 8px 0 24px 0;
+    margin: 2px 0 2px 0;
     text-align: center;
 }
 @keyframes spin {
@@ -177,7 +196,7 @@
     width: 70px;
 }
 .card .loader:before {
-    border: 2px solid #111;
+    border: 2px solid #3FADCF;
     box-sizing: content-box;
     content: '';
     height: 0;
@@ -198,7 +217,7 @@
     width: 14px;
 }
 .card .loader .spin:before {
-    border: 3px solid #111;
+    border: 3px solid #3FADCF;
     box-sizing: content-box;
     content: '';
     height: 14px;
@@ -228,13 +247,13 @@
     width: 10px;
 }
 .card .loader .bounce:before {
-    border-bottom: 3px solid #111;
-    border-left: 3px solid #111;
+    border-bottom: 3px solid #3FADCF;
+    border-left: 3px solid #3FADCF;
     left: 0;
 }
 .card .loader .bounce:after {
-    border-right: 3px solid #111;
-    border-top: 3px solid #111;
+    border-right: 3px solid #3FADCF;
+    border-top: 3px solid #3FADCF;
     right: 0;
 }
 
