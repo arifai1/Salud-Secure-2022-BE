@@ -35,7 +35,7 @@ if (!isset($_SESSION['user'])){
 	// const web3 = new Web3("https://cloudflare-eth.com")
     //  const Web3 = new Web3(window.ethereum);  
     async function mirarReceta() {
-        console.log(contract_abi)
+        console.log(contract_abi2)
         console.log("hi")
         var web3 = new Web3(window.ethereum);
         var provider = web3.currentProvider.selectedAddress; 
