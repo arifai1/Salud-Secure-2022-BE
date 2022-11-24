@@ -197,7 +197,7 @@ font-family: 'Poppins', sans-serif;
 }
 .minibutton{
     position: absolute;
-    top: 480%;
+    top: 500%;
     left: 12%;
     background-color: #B8EEFF;
     border-radius: 10px;
@@ -313,11 +313,7 @@ font-family: 'Poppins', sans-serif;
     background-size: 451px 456px;
     
 }
-#GoToDecide{
-    position: relative;
-    top: 10%;
-    left:5%;
-}
+
 
 
 

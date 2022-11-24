@@ -47,6 +47,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
 	<script src="../js/saludsecure.js" type="text/javascript"></script>
+    <script src="../js/asignacionPyM.js" type="text/javascript"></script>
     <title>Mis Pacientes</title>
     <link rel="stylesheet" href="../css/MisPacientes.css">  
     <link rel="Icon" href="../imagenes/logo-Header.png">

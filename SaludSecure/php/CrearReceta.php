@@ -99,8 +99,7 @@ if (!isset($_SESSION['user'])){
             medicamento = document.getElementById('tratamiento').value;
             aclaracion = document.getElementById('indicaciones').value;
             console.log(contract.methods)
-            document.getElementById("popupmed").style.display = "block";
-            document.getElementById("overlay").style.display = "block";
+
             var tx = await contract.methods.set_receta(pacienteDni, medicamento, aclaracion)
             tx.send({from:web3.eth.currentProvider.selectedAddress}).then(
                 param => {

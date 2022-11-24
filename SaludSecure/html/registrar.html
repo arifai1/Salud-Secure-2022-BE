@@ -77,8 +77,6 @@
             apellidoPaciente = document.getElementById('a').value;
             dni = document.getElementById('u').value;
             console.log(dni)
-            document.getElementById("popupmed").style.display = "block";
-            document.getElementById("overlay").style.display = "block";
             var txn = contract.methods.set_Paciente(nombrePaciente, apellidoPaciente, dni);
             txn.send({ from: web3.eth.currentProvider.selectedAddress }).then(
                 param => {
