@@ -42,19 +42,23 @@ if (!isset($_SESSION['user'])){
         //const SaludSecure = new web3.eth.Contract(contract_abi, "0xB398BEC709dB7c11476128BBBa4586d5A315431b", provider); 
         const SaludSecure = new web3.eth.Contract(contract_abi2, "0x45fB7303FB0269D09865Dbe0df1f31D2f37E88f2", provider);
         var userAccount = web3.currentProvider.selectedAddress;
-        console.log(SaludSecure)
+        console.log(SaludSecure);
         console.log(userAccount);
         if (typeof window.etherseum !== "undefined" || window.ethereum._state.account == undefined) {
 
             const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-            await SaludSecure.methods.getReceta().call(function (err, res) {
-            if (err) {
-              console.log("An error occured", err)
-              return
-            }
-            console.log(res)
-            document.getElementById("miReceta").innerHTML = res;//("Medicamento: " + res.medicamento_ + "<br>" + "Aclaracion: " + res.aclaracion_);
-})
+            const txn = await SaludSecure.methods.getReceta.call({from: userAccount});
+            myString = Object.values(txn)
+            document.getElementById("miReceta").innerHTML = myString;
+            console.log(accounts)
+            console.log(txn.Receta[userAccount])
+            // await SaludSecure.methods.getReceta().call(function (err, res) {
+            // if (err) {
+            //   console.log("An error occured", err)
+            //   return
+            // }
+            // console.log(res)
+            // document.getElementById("miReceta").innerHTML = res;//("Medicamento: " + res.medicamento_ + "<br>" + "Aclaracion: " + res.aclaracion_);
 
             /*const txn = await SaludSecure.methods.getReceta.call({from: userAccount});
             myString = Object.values(txn)
