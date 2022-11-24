@@ -38,7 +38,7 @@ if (!isset($_SESSION['user'])){
         var web3 = new Web3(window.ethereum);
         var provider = web3.currentProvider.selectedAddress; 
         //const SaludSecure = new web3.eth.Contract(contract_abi, "0xB398BEC709dB7c11476128BBBa4586d5A315431b", provider); 
-        const SaludSecure = new web3.eth.Contract(contract_abi2, "0x45fB7303FB0269D09865Dbe0df1f31D2f37E88f2", provider);
+        const SaludSecure = new web3.eth.Contract(contract_abi2, "0xa7Fa723659DE8a1F5fd0Bd8020170E368C16c289", provider);
         var userAccount = web3.currentProvider.selectedAddress;
         console.log(SaludSecure);
         console.log(userAccount);
@@ -48,7 +48,7 @@ if (!isset($_SESSION['user'])){
             const txn = await SaludSecure.methods.getReceta().call({from: userAccount});
             console.log(txn)
             myString = Object.values(txn)
-            document.getElementById("miReceta2").innerHTML = "<strong>"  + "Medicamento: " + "</strong>" + txn[txn.length-1].medicamento + "<br>" + "<strong>" + "Aclaración: " + "</strong>" + txn[txn.length-1].aclaracion;
+            document.getElementById("miReceta2").innerHTML = "<h3>" + "Dr. " + txn[txn.length-1].nomApeM + "</h3>" + "<strong>"  + "Medicamento: " + "</strong>" + txn[txn.length-1].medicamento + "<br>" + "<strong>" + "Aclaración: " + "</strong>" + txn[txn.length-1].aclaracion;
             console.log(accounts)
             // for(let i = 0; i<myString.length; i++){
             //     console.log(myString[i])

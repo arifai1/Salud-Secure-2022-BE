@@ -148,9 +148,9 @@ const contract_abi2 = [
 						"type": "address"
 					},
 					{
-						"internalType": "address",
-						"name": "idM",
-						"type": "address"
+						"internalType": "string",
+						"name": "nomApeM",
+						"type": "string"
 					},
 					{
 						"internalType": "string",
@@ -210,6 +210,19 @@ const contract_abi2 = [
 		"type": "function"
 	},
 	{
+		"inputs": [],
+		"name": "nomMedico",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "address",
@@ -235,9 +248,9 @@ const contract_abi2 = [
 				"type": "address"
 			},
 			{
-				"internalType": "address",
-				"name": "idM",
-				"type": "address"
+				"internalType": "string",
+				"name": "nomApeM",
+				"type": "string"
 			},
 			{
 				"internalType": "string",

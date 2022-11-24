@@ -88,7 +88,7 @@
  
         var web3 = new Web3(window.ethereum);
         //var contract = new web3.eth.Contract(contract_abi, "0x633284cb7e86cf89C42297FA5b533e9aB1F0dA18");
-        var contract = new web3.eth.Contract(contract_abi2, "0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5");
+        var contract = new web3.eth.Contract(contract_abi2, "0xa7Fa723659DE8a1F5fd0Bd8020170E368C16c289");
         async () => {
             web3 = await ethereum.request({ method: 'eth_requestAccounts' });
         }
@@ -101,7 +101,7 @@
             $("#txStatus").text("Asignando medico. Puede tardar un rato...");
             var nombrePaciente;
             var especializacion;
-            nombreApellido = (document.getElementById('NomMed').value) + (" ") + (document.getElementById('ApeMed').value);
+            nombreApellido = (document.getElementById('ApeMed').value) + (" ") + (document.getElementById('NomMed').value);
             especializacion = document.getElementById('AreaMed').value;
             var txn = contract.methods.set_Medico(nombreApellido, especializacion)
             txn.send({ from: web3.eth.currentProvider.selectedAddress }).then(
@@ -149,11 +149,6 @@
                                     const accounts = ethereum.request({ method: 'eth_requestAccounts' });
                                     setearMedico();
                                 }                   
-                                else {
-                                    alert("No tiene instalado MetaMask, por favor instalelo");
-                                    window.open("https://metamask.io/download/", "_blank");
-                                }
-                                
                             }
                             else if (data.status == 'err') {
                                 $("#divAgregardatosM").hide();

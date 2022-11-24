@@ -79,7 +79,7 @@ if (!isset($_SESSION['user'])){
     <script>
         var web3 = new Web3(window.ethereum);
         //var contract = new web3.eth.Contract(contract_abi, "0xB398BEC709dB7c11476128BBBa4586d5A315431b");
-        var contract = new web3.eth.Contract(contract_abi2, "0x45fB7303FB0269D09865Dbe0df1f31D2f37E88f2");
+        var contract = new web3.eth.Contract(contract_abi2, "0xa7Fa723659DE8a1F5fd0Bd8020170E368C16c289");
         async () => {
             web3 = await ethereum.request({ method: 'eth_requestAccounts'});
         }
@@ -99,6 +99,8 @@ if (!isset($_SESSION['user'])){
             medicamento = document.getElementById('tratamiento').value;
             aclaracion = document.getElementById('indicaciones').value;
             console.log(contract.methods)
+            document.getElementById("popupmed").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
             var tx = await contract.methods.set_receta(pacienteDni, medicamento, aclaracion)
             tx.send({from:web3.eth.currentProvider.selectedAddress}).then(
                 param => {
