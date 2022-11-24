@@ -35,8 +35,6 @@ if (!isset($_SESSION['user'])){
 	// const web3 = new Web3("https://cloudflare-eth.com")
     //  const Web3 = new Web3(window.ethereum);  
     async function mirarReceta() {
-        console.log(contract_abi2)
-        console.log("hi")
         var web3 = new Web3(window.ethereum);
         var provider = web3.currentProvider.selectedAddress; 
         //const SaludSecure = new web3.eth.Contract(contract_abi, "0xB398BEC709dB7c11476128BBBa4586d5A315431b", provider); 
@@ -47,11 +45,23 @@ if (!isset($_SESSION['user'])){
         if (typeof window.etherseum !== "undefined" || window.ethereum._state.account == undefined) {
 
             const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-            const txn = await SaludSecure.methods.getReceta.call({from: userAccount});
+            const txn = await SaludSecure.methods.getReceta().call({from: userAccount});
+            console.log(txn)
             myString = Object.values(txn)
-            document.getElementById("miReceta").innerHTML = myString;
+            document.getElementById("miReceta2").innerHTML = "<strong>"  + "Medicamento: " + "</strong>" + txn[txn.length-1].medicamento + "<br>" + "<strong>" + "Aclaración: " + "</strong>" + txn[txn.length-1].aclaracion;
             console.log(accounts)
-            console.log(txn.Receta[userAccount])
+            // for(let i = 0; i<myString.length; i++){
+            //     console.log(myString[i])
+            //      //let algo = await myString[i].request();
+            //     // console.log(algo)
+            // }
+            let getValues = await txn
+            console.log(getValues)
+            console.log(myString)
+
+            //console.log(txn.Receta[userAccount])
+
+
             // await SaludSecure.methods.getReceta().call(function (err, res) {
             // if (err) {
             //   console.log("An error occured", err)
@@ -97,17 +107,12 @@ if (!isset($_SESSION['user'])){
 		    <a class="close" href="#">&times;</a>
             <div class="content">
             <span id="miReceta"></span>
+            <span id="miReceta2"></span>
 			
 		</div>
         
 	</div>
 </div>
-
-
-
-
-
-        
         </div>
        
         </div>
