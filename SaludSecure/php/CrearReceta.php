@@ -79,7 +79,7 @@ if (!isset($_SESSION['user'])){
     <script>
         var web3 = new Web3(window.ethereum);
         //var contract = new web3.eth.Contract(contract_abi, "0xB398BEC709dB7c11476128BBBa4586d5A315431b");
-        var contract = new web3.eth.Contract(contract_abi2, "0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5");
+        var contract = new web3.eth.Contract(contract_abi2, "0x45fB7303FB0269D09865Dbe0df1f31D2f37E88f2");
         async () => {
             web3 = await ethereum.request({ method: 'eth_requestAccounts'});
         }

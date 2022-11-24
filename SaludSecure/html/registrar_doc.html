@@ -107,7 +107,7 @@
             txn.send({ from: web3.eth.currentProvider.selectedAddress }).then(
                 param => {
                     if (param.blockHash) {
-                        mensaje = "Se registró correctamente el usuario";
+                        mensaje = "Registrando usuario...";
                         window.location.replace('../php/pantallaprincipal.php');
                     }
                 }

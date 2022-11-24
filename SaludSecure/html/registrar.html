@@ -74,7 +74,7 @@
         console.log("EDFCGH")
         var web3 = new Web3(window.ethereum);
         //var contract = new web3.eth.Contract(contract_abi, "0x633284cb7e86cf89C42297FA5b533e9aB1F0dA18");
-        var contract = new web3.eth.Contract(contract_abi2, "0xc2c4106be5581A131dC9ced2bd6FFCa3b0B0E9E5");
+        var contract = new web3.eth.Contract(contract_abi2, "0x45fB7303FB0269D09865Dbe0df1f31D2f37E88f2");
         async () => {
             web3 = await ethereum.request({ method: 'eth_requestAccounts' });
         }
@@ -92,6 +92,8 @@
             dni = document.getElementById('u').value;
             console.log(dni)
             var txn = contract.methods.set_Paciente(nombrePaciente, apellidoPaciente, dni);
+            document.getElementById("popupPac").style.display = "block";
+            document.getElementById("overlayPac").style.display = "block";
             txn.send({ from: web3.eth.currentProvider.selectedAddress }).then(
                 param => {
                     if (param.blockHash) {
@@ -103,8 +105,7 @@
         async function conexionWeb3() {
             // checkear si la cuenta existe
             //Registrar del paciente
-            document.getElementById("popupPac").style.display = "block";
-            document.getElementById("overlayPac").style.display = "block";
+            
                 if ($("#u").val() == '' || $("#p").val() == '' || $("#n").val() == '' || $("#a").val() == '' || $("#c").val() == '' || $("#f").val() == '') {
                     $("#msgPac").show();
                     $("#divAgregardatosP").html("Hay campos vacios");
@@ -124,7 +125,7 @@
                             if (data.status == 'ok') {
                                 $("#divAgregardatosP").hide();
                                 $("#msgPac").hide();
-                                mensaje = "Se registro correctamente el usuario";
+                                mensaje = "Registrando usuario...";
                                 $("#msgPac").html(mensaje);
                                 $("#msgPac").show();
                                 if (typeof window.etherseum !== "undefined" || window.ethereum._state.account == undefined) {

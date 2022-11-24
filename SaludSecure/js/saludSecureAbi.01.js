@@ -68,62 +68,6 @@ const contract_abi2 = [
 		"type": "event"
 	},
 	{
-		"inputs": [],
-		"name": "getReceta",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "medicamento_",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "aclaracion_",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "idPaciente",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "medico",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"inputs": [
 			{
 				"internalType": "string",
@@ -185,6 +129,128 @@ const contract_abi2 = [
 		"name": "set_receta",
 		"outputs": [],
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getReceta",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "idR",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "idP",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "idM",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "medicamento",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "aclaracion",
+						"type": "string"
+					}
+				],
+				"internalType": "struct saludSecure.Receta[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "idPaciente",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "medico",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "recetaA",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "idR",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "idP",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "idM",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "medicamento",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "aclaracion",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	}
 ]
