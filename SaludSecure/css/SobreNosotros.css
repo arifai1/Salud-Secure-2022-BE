@@ -313,7 +313,11 @@ font-family: 'Poppins', sans-serif;
     background-size: 451px 456px;
     
 }
-
+#GoToDecide{
+    position: relative;
+    top: 10%;
+    left:5%;
+}
 
 
 
