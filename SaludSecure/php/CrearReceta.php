@@ -40,6 +40,16 @@ if (!isset($_SESSION['user'])){
         </div>
     </header>
     <!--BTN Regresar--> 
+     <div id="popupCrear" class="card">
+    
+        <h1>Espere un momento</h1>
+        <label>Se está enviando la receta</label>
+        <div class="loader">
+          <div class="spin"></div>
+          <div class="bounce"></div>
+        </div>
+      </div>
+      <div id="overlayCrear"></div>
     <input type="button" value="?" class="ayuda">
     <a class="btn-floating btn-large waves-effect" id="RegresarM"><i id="IconregresarM"
             class="material-icons">arrow_back</i></a>
@@ -108,6 +118,8 @@ if (!isset($_SESSION['user'])){
                         mensaje = ("La receta fue enviada exitosamente");
                         //vaciar los inputs 
                         //window.location.replace('../php/pantallaprincipal.php');
+                        document.getElementById("popupCrear").style.display = "none";
+                document.getElementById("overlayCrear").style.display = "none";
                     }
                 }
             )
@@ -129,6 +141,8 @@ if (!isset($_SESSION['user'])){
             }        
         });
         async function conexionWeb3(){
+                document.getElementById("popupCrear").style.display = "block";
+                document.getElementById("overlayCrear").style.display = "block";
 		    if (typeof window.ethereum !== "undefined" || window.ethereum._state.account == null) {   
                 const accounts = await ethereum.request({ method: 'eth_requestAccounts'});
                 console.log("hi")
