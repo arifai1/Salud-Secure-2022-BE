@@ -9,13 +9,12 @@ if (!isset($_SESSION['user'])){
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <UTF-8>
         <title>SobreBesmo</title>
-
         <link rel="stylesheet" href="../css/SobreNosotros.css">
         <script src="../js/SobreBesmo.js" type="text/javascript"></script>
         <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
         <script src="../js/saludsecure.js" type="text/javascript"></script>
-
         <link rel="Icon" href="../imagenes/logo-Header.png">
+        <link rel="stylesheet" href="../css/font.css">
 
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -29,9 +28,6 @@ if (!isset($_SESSION['user'])){
 
             }
             </style>
-
-
-
 </head>
 
 <body>

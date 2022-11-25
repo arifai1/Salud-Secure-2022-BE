@@ -1,8 +1,8 @@
 <?php
     include_once("db.php");
 
-
     $nombrepac = $_POST["usuario"];
+
     $id = "SELECT idpaciente FROM `paciente` WHERE usuario = $nombrepac";
     // echo $id;
     $res = $con->query($id);

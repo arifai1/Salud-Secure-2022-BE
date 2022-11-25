@@ -4,13 +4,13 @@
     position: absolute;
     left: 10%;
     top: 15%;
-    background-color: #eeeeee;
-    box-shadow:  0px 20px 20px #cccccc, 0 0 0 #ffffff,0 0 0 #cccccc inset,2px 2px 2px #ffffff inset;
+    background-image: linear-gradient(to bottom right,  #B8EEFF, rgba(63, 173, 207), rgb(54, 152, 182));
+    box-shadow:  0px 10px 10px #cccccc, 0 0 0 #ffffff,0 0 0 #cccccc inset,2px 2px 2px #ffffff inset;
     border-radius: 10px;
     width: 620px;
-    height: 500px;
-    padding-left: 4%;
-    padding-top: 4%;
+   
+    
+    
     
 }
 
@@ -26,10 +26,23 @@
 
 
 
+label{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+}
 
-
-
-
+td{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+   background-color: rgba(255, 255, 255, 0.6);
+ 
+}
+th{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+     
+}
 
 
 
@@ -59,6 +72,17 @@ header{
 #headertitle{
     font-family: 'Poppins', sans-serif;
     font-size: 30px;
+
+    color: white;
+
+}
+#documentTitle{
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+
 }
 #Txtlogo{
     position:absolute;
@@ -84,13 +108,13 @@ header{
 
 #LogOut{
     position: absolute;
-    top:8%;
-    left: 80%;
+    top:12%;
+    right: 10%;
 }
 #Usuario{
     position: absolute;
-    top:3%;
-    left: 90%;
+    top:8%;
+    right: 5%;
     width: 60px;
     height: 60px;
     background-position: center;
@@ -105,39 +129,30 @@ header{
     background-color: #B8EEFF;
     border-radius: 10px;
     color: #222222;
-
+    font-family: 'Poppins', sans-serif;
     border: 0px;
     width: 120px;
     height: 54px;
     font-size: 18px;
     cursor: pointer;
 }
-#headerbuscador{
-    position: fixed;
-    top: 15%;
-    left: 20%;
-    width: 800px;
-    height:100px;
-    background-color: #dddddd;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
 .buscador{
+    outline: 0px;
     position: fixed;
     width: 450px;
-    top: 20%;
-    left: 26%;
-    border-radius: 10px;
+    top: 19%;
+    right: 24%;
+    border-radius: 20px;
     border: 2px solid #3FADCF;
-    background-color: #ffffff98;
+    background-color: #ffffff;
     padding: 10px 30px;
     font-size: 18px;
     z-index: 3;
 }
 #buscar{
     position: fixed;
-    top: 21%;
-    right: 42%;
+    top: 20%;
+    right: 25%;
     font-size: 35px;
     color: #adadad;
     z-index: 5;
@@ -161,12 +176,12 @@ header{
 #background{
     position: absolute;
     overflow-y: scroll;
-    top:30%;
+    top:20%;
     left:20%;
-    background-color: rgba(255, 255, 255,0.6);
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
     width: 800px;
-    height: 400px;
+    height: 500px;
     z-index: -99999;
 }
 .ayuda{

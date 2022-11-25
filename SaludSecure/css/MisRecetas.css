@@ -1,3 +1,158 @@
+.box {
+    position: absolute;
+    top: 175px;
+    left: 70px;
+    width: 60%;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.2);
+    padding: 20px;
+    border: 2px solid #fff;
+    border-radius: 20px/50px;
+    background-clip: padding-box;
+    text-align: center;
+  }
+  
+  .button {
+    font-size: 1.4em;
+    padding: 1px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    
+    border-radius: 20px/50px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+  }
+  .button:hover {
+    background: #06D85F;
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .popup {
+      position: absolute;
+      top: 35%;
+      left: 0.8%;
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+  
+  .popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+  }
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .popup .close:hover {
+    color: #06D85F;
+    font-family: 'Poppins', sans-serif;
+  }
+  .popup .content {
+    max-height: 30%;
+    overflow: auto;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  @media screen and (max-width: 700px){
+    .box{
+      width: 70%;
+    }
+    .popup{
+      width: 70%;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#MoverRecetas{
+    position: absolute;
+
+    top: 5%;
+
+    height: 100%;
+    width: 1000%;
+
+}
+#recetasContainer{
+    position:absolute;
+    top: 12%;
+    left: 30%;
+    background-color: rgb(236, 234, 234);
+    width: 550px;
+    height: 600px;
+    border-radius: 30px;
+    overflow-x: scroll;
+  
+}
+#item1{
+    position: absolute;
+    top: 8%;
+    left: 1%;
+    cursor: pointer;
+    
+}
+#item2{
+    position: absolute;
+    top: 8%;
+    left: 11.9%;
+    cursor: pointer;
+}
+
+.receta{
+    align-content: center;
+    background-image: linear-gradient(to bottom right,  #B8EEFF, rgba(63, 173, 207), rgb(54, 152, 182));
+    width: 450px;
+    height: 465px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
 body{
     height: 100%;
     margin: 0;
@@ -44,30 +199,51 @@ header{
     
 }
 
+
 #LogOut{
-    position: absolute;
-    top:8%;
-    left: 80%;
+  position: absolute;
+  top:12%;
+  right: 10%;
 }
 #Usuario{
-    position: absolute;
-    top:3%;
-    left: 90%;
-    width: 60px;
-    height: 60px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url("../imagenes/imgUsuarioM.png");
-    background-size: 60px 60px;
-    background-color: rgba(0, 0, 0,0);
-    border-width: 0px;
+  position: absolute;
+  top:8%;
+  right: 5%;
+  width: 60px;
+  height: 60px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../imagenes/imgUsuarioM.png");
+  background-size: 60px 60px;
+  background-color: rgba(0, 0, 0,0);
+  border-width: 0px;
 }
-
+#verReceta{
+    position: relative;
+    top:40%;
+    left: 3%;
+    text-decoration: underline;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+}
+#LO_M{
+  
+  border-radius: 10px;
+  color:#555555;
+  border: 0px;
+  width: 100px;
+  height: 54px;
+  font-size: 18px;
+  border-radius: 10px; 
+  cursor: pointer;
+}
 .minibutton{
     background-color: #B8EEFF;
     border-radius: 20px;
     color: #222222;
-
+    font-family: 'Poppins', sans-serif;
     border: 0px;
     width: 120px;
     height: 54px;
@@ -118,59 +294,40 @@ header{
 div{
     overflow: hidden;
 }
-#recetasContainer{
-    position:absolute;
-    top: 15%;
-    left: 20%;
-    background-color: rgba(63, 173, 207,0.30);
-    width: 850px;
-    height: 500px;
-    border-radius: 30px;
-    overflow-x: scroll;
-}
-#item1{
-    position: relative;
-    top: 14%;
-    left: 35%;
+
+.recetaflip{
+ 
+    width: 450px;
+    height: 465px;
+    background-color: rgb(73, 201, 240);
+    border-radius: 20px;
 }
 
-.receta{
-    flex-direction: row;
-    width: 250px;
-    height: 365px;
-    background-color: rgb(240, 240, 240);
-    border-radius: 20px;
-}
-.recetaVisual{
-    position: relative;
-    top: 8%;
-    left: 35%;
-    width: 250px;
-    height: 365px;
-    background-color: rgb(240, 240, 240);
-    border-radius: 20px;
-}
+
 #lbl1{
     position: absolute;
-    top: 85%;
-    left: 30%;
+    top: 50%;
+    left: 35%;
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
+    cursor: pointer;
     
 }
 #lbl2{
     position: relative;
-    top: 92%;
-    left: 40%;
+    top: 58%;
+    left:38%;
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
+    cursor: pointer;
+    color: white;
 }
 #chevron_left{
     position: absolute;
     top: 21.5%;
     left: 21.5%;
     font-size: 35px;
-    color: rgb(102, 102, 102);
+    color: rgb(0, 0, 0);
     cursor: pointer;
 }
 #chevron_right{
@@ -178,17 +335,17 @@ div{
     top: 21.5%;
     left: 21.5%;
     font-size: 35px;
-    color: rgb(102, 102, 102);
+    color: rgb(0, 0, 0);
     cursor: pointer;
 }
 
 #Izq{
     position: absolute;
-    top: 50%;
-    left: 15%;
+    top: 52%;
+    left: 26%;
     width: 55px;
     height: 55px;
-    background-color: #ffffff9f;
+    background-color: white;
     border-radius: 20px;
     
     border-width: 0px;
@@ -196,11 +353,11 @@ div{
 }
 #Der{
     position: absolute;
-    top: 50%;
-    right: 19%;
+    top: 52%;
+    right: 25%;
     width: 55px;
     height: 55px;
-    background-color: #ffffff9f;
+    background-color: white;
     border-radius: 20px;
     
     border-width: 0px;

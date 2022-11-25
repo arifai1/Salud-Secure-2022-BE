@@ -34,7 +34,7 @@
         $data['status']='err';
         $data['result']= 'No hay pacientes';
     }
-    echo json_encode($data);
+    //echo json_encode($data);
     $con->close();
     //die();
 ?>
@@ -47,23 +47,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
 	<script src="../js/saludsecure.js" type="text/javascript"></script>
+    <script src="../js/asignacionPyM.js" type="text/javascript"></script>
     <title>Mis Pacientes</title>
     <link rel="stylesheet" href="../css/MisPacientes.css">  
     <link rel="Icon" href="../imagenes/logo-Header.png">
+    <link rel="stylesheet" href="../css/font.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <header>
-        <label id="Txtlogo">BESMO</label>
+        <label id="Txtlogo">Mis pacientes</label>
         <label id="headertitle"> Mis Pacientes</label>
         <input id="logo"type="button">
         <div id="LogOut">
-            <input type ="button" class="minibutton" value="Log Out"/>
+            <input type ="button" class="minibutton" value="Log Out" id="LO_M"/>
         </div>
         <input id="Usuario"type ="button"/>
        
     </header>
-     <input type="button" value="?" class="ayuda">
+    
+    <input type="button" value="?" class="ayuda">
     <input type="button" value="" class="regresar" id="RegresarM">
     <i class="large material-icons" id="IconregresarM">arrow_back</i>
     <div id="headerbuscador">
@@ -76,11 +79,19 @@
    
     <div class="paciente" id="losPacientesAsignados">
         <?php
-        //tengo que mandar al doctor por POST antes de tocar el boton para ir a MisPacientes.php
             if(count($userData3) == 0){
-                echo "No hay pacientes";
+                echo "<label>No hay pacientes</label>";
             } else {
-                foreach($userData3 as $p){ 
+                $sal="<table border=0><tr><th width='15%'>Nombre</th><th width='15%'>Apellido</th><th width='10%'>DNI</th><th width='20%'>Fecha de Nacimiento</th><th width='15%'>Credencial</th></tr>";
+                foreach($userData3 as $p){ //le asignamos a la variable $sal los campos que queremos mostrar del array de usuarios asignados y en las lineas de abajo los ubicamos en las columnas que creamos arriba.
+                    $sal.="<tr><td>".$p["nombre"]."</td>";
+                
+                    $sal.="<td>".$p["apellido"]."</td>";
+                    $sal.="<td>".$p["usuario"]."</td>";
+                    $sal.="<td>".$p["nacimiento"]."</td>";
+                    $sal.="<td>".$p["credencial"]."</td></tr>";
+
+                    /*
                     echo "<div class='pacientes'>";
                     echo "<label> Nombre: </label>";
                     echo "<label>". $p["nombre"] ."</label>";
@@ -94,7 +105,10 @@
                     echo "<label> Credencial: </label>";
                     echo "<label>". $p["credencial"] ."</label>";
                     echo "<label> \n </label>";
+                */
                 }
+                $sal.="</table>";
+                echo $sal;
             }
         ?>
     </div>

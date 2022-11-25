@@ -20,6 +20,7 @@ header{
 #headertitle{
     font-family: 'Poppins', sans-serif;
     font-size: 30px;
+    color: white;
 }
 #Txtlogo{
     position:absolute;
@@ -53,13 +54,13 @@ header{
 
 #LogOut{
     position: absolute;
-    top:8%;
-    left: 80%;
+    top:12%;
+    right: 10%;
 }
 #Usuario{
     position: absolute;
-    top:3%;
-    left: 90%;
+    top:8%;
+    right: 5%;
     width: 60px;
     height: 60px;
     background-position: center;
@@ -70,21 +71,35 @@ header{
     border-width: 0px;
 }
 .minibutton{
-    background-color: #B8EEFF;
+    background-color: #3fadcf94;
     border-radius: 10px;
-    color: #222222;
-
+    color:#555555;
     border: 0px;
-    width: 120px;
+    width: 210px;
     height: 54px;
     font-size: 18px;
+    font-family: 'Poppins', sans-serif;
     cursor: pointer;
+    
+
 }
 #mainMenuform{
     position: absolute;
     top: 20%;
     left:20%;
     
+}
+#LO_M{
+  
+    border-radius: 10px;
+    color:#555555;
+    border: 0px;
+    width: 100px;
+    height: 54px;
+    font-size: 18px;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
 }
 .bigBTN{
     background-color: rgba(63, 173, 207);
@@ -143,6 +158,7 @@ header{
     text-align: center;
     color: rgb(102, 102, 102);
     cursor: pointer;
+    font-family: 'Poppins', sans-serif;
 }
 .regresar{
     position: absolute;

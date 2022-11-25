@@ -16,17 +16,17 @@ if (!isset($_SESSION['user'])){
 	<script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
 	<script src="../js/saludsecure.js" type="text/javascript"></script>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <link rel="stylesheet" href="../css/font.css">
 
 </head>
 
 <body id="MPbody">
 	<header>
-		<label id="Txtlogo">BESMO</label>
-		<label id="headertitle">Menu principal</label>
+		<label id="Txtlogo">Menu principal</label>
+		<label id="headertitle">.</label>
 		<input type="button" id="logo">
 		<div id="LogOut">
-			<input type="button" class="minibutton" value="Log Out" id="LO_M">
+			<input type="button"  value="Log Out" id="LO_M">
 		</div>
 		<input id="Usuario" type="button">
 

@@ -8,6 +8,7 @@
 	<script src="../js/saludsecure.js" type="text/javascript"></script>
     <title>Mis Pacientes</title>
     <link rel="stylesheet" href="../css/MisPacientes.css">
+        <link rel="stylesheet" href="../css/font.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="Icon" href="../imagenes/logo-Header.png">
 </head>
@@ -17,7 +18,7 @@
         <label id="headertitle"> Mis Pacientes</label>
         <input id="logo"type="button">
         <div id="LogOut">
-            <input type ="button" class="minibutton" value="Log Out"/>
+            <input type ="button" class="minibutton" value="Log Out" />
         </div>
         <input id="Usuario"type ="button"/>
        

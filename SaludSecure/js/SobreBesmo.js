@@ -1,35 +1,41 @@
 $(document).ready(function() {
   
+
  
  
  
- 
- 
- 
-  $(".receta").css({transition: ".2s all ease"})
-   let izq = 300;
+  $("#MoverRecetas").css({transition: ".2s all ease"})
+   let izq = 600;
    let der = 0;
-   $("#Izq").click(()=>{
-     izq -= 250;
-     $(".receta").css({"position": "relative", top: "14%", left: izq-der})
+   $("#Der").click(()=>{
+     izq -= 600;
+     $("#MoverRecetas").css({"position": "relative", top: "5%", left: izq-der })
+     
    
    })
-   $("#Der").click(()=>{
-     der -= 250;
-     $(".receta").css({"position": "relative", top: "14%", left: izq-der})
+   $("#Izq").click(()=>{
+     der -= 600;
+     $("#MoverRecetas").css({"position": "relative", top: "5%", left: izq-der})
    })
+
 
 
     // $(function() {
-<<<<<<< Updated upstream
+
+
+
+
+
+
+
+
+   
+
+
          $( "#EnviarSC" ).click(function() {
-            // alert ("hola");
+            // envia a la funcion de giro
            $( "#EnviarSC" ).addClass( "onclic", 250, validate());
-=======
-         $( "#button" ).click(function() {
-            // Agrega la clase de giro y llama la funcion validar
-           $( "#button" ).addClass( "onclic", 250, validate());
->>>>>>> Stashed changes
+
          });
        
          function validate() {
@@ -48,8 +54,8 @@ $(document).ready(function() {
  
            $( "#receta" ).click(function() {
            
-             // alert ("hola");
+           
              $( "#receta" ).addClass( "recetaIzq");
           });
-     //    });
- });
+     
+ });   

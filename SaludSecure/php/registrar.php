@@ -1,8 +1,9 @@
 <?php
 include_once("db.php");
 
-$data=array();
 
+$data=array();
+	
     $sql="SELECT IDpaciente from paciente where usuario='".$_REQUEST['usu'] . "'";
 	$res=$con->query($sql);
 	
@@ -23,7 +24,6 @@ $data=array();
 	}
 	echo json_encode($data);
 	$con->close();	
-	
 ?>
 
 

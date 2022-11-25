@@ -20,6 +20,7 @@ header{
 #headertitle{
     font-family: 'Poppins', sans-serif;
     font-size: 30px;
+    color: white;
 }
 #Txtlogo{
     position:absolute;
@@ -45,13 +46,13 @@ header{
 
 #LogOut{
     position: absolute;
-    top:8%;
-    left: 80%;
+    top:12%;
+    right: 10%;
 }
 #Usuario{
     position: absolute;
-    top:3%;
-    left: 90%;
+    top:8%;
+    right: 5%;
     width: 60px;
     height: 60px;
     background-position: center;
@@ -62,7 +63,7 @@ header{
     border-width: 0px;
 }
 #LO_M{
-    background-color: #B8EEFF;
+  
     border-radius: 10px;
     color:#555555;
     border: 0px;
@@ -70,18 +71,17 @@ header{
     height: 54px;
     font-size: 18px;
     border-radius: 10px;
-   
     cursor: pointer;
 }
 .minibutton{
-    background-color: #B8EEFF;
+    background-color: #3fadcf94;
     border-radius: 10px;
     color:#555555;
     border: 0px;
     width: 210px;
     height: 54px;
     font-size: 18px;
-   
+    font-family: 'Poppins', sans-serif;
     cursor: pointer;
     
 
@@ -154,6 +154,7 @@ header{
     border-width: 2px;
     padding: 10px 30px;
     font-size: 18px;
+    outline: 0px;
 }
 .Bigtxtbox{
     border-top-right-radius: 0px;
@@ -166,7 +167,7 @@ header{
     width: 320px;
     height: 300px;
     padding-right: 30px;
-    
+    outline: 0px;
 }
 
 #indicaciones {
@@ -224,6 +225,7 @@ header{
 }
 
 
+
 /* BOTON DE METAMASK*/
 
 * {
@@ -231,8 +233,8 @@ header{
 }
 .container {
     position: absolute;
-    top: 75%;
-    left:35%;
+    top: 90%;
+    right:35%;
     margin-left: -65px;
     margin-top: -20px;
     width: 130px;
@@ -263,7 +265,7 @@ button:active {
     letter-spacing: 2px;
 }
 button:after {
-    content: "Metamask";
+    content: "ENVIAR";
 }
 .onclic {
     width: 40px;
